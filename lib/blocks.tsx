@@ -16,6 +16,8 @@ import { INVALID_BLOCK, type ParsedBlock } from "@/lib/content";
  */
 
 const BLOCK_TYPE = /^[A-Z][A-Za-z0-9]*$/;
+/** A hackathon's own folder. Checked before it reaches an import path. */
+const EVENT_SLUG = /^[a-z0-9][a-z0-9-]{0,63}$/;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type BlockComponent = ComponentType<any>;
@@ -24,18 +26,36 @@ export function isProduction(): boolean {
   return process.env.VERCEL_ENV === "production";
 }
 
-async function loadBlock(type: string): Promise<BlockComponent | null> {
+/**
+ * The component for a block, from this hackathon first.
+ *
+ * Every component a group builds is written to `app/blocks/<event>/`, because
+ * one repo holds many hackathons and two rooms may both build something called
+ * `ProductPage`. This only ever looked in the shared root, so nothing any group
+ * built was ever found: the block was written, placed in the document, and then
+ * silently omitted, and the room saw a page of prose where their prototype
+ * should have been.
+ *
+ * The shared root is still the fallback, for the components that belong to the
+ * site rather than to a day.
+ */
+async function loadBlock(type: string, event?: string): Promise<BlockComponent | null> {
   if (!BLOCK_TYPE.test(type)) return null;
-  try {
-    const mod = await import(`../app/blocks/${type}`);
-    const component = (mod as { default?: BlockComponent }).default;
-    return typeof component === "function" ? component : null;
-  } catch {
-    return null;
+  if (event && !EVENT_SLUG.test(event)) return null;
+
+  for (const path of event ? [`${event}/${type}`, type] : [type]) {
+    try {
+      const mod = await import(`../app/blocks/${path}`);
+      const component = (mod as { default?: BlockComponent }).default;
+      if (typeof component === "function") return component;
+    } catch {
+      // Try the next place it could be.
+    }
   }
+  return null;
 }
 
-export async function RenderBlock({ block }: { block: ParsedBlock }) {
+export async function RenderBlock({ block, event }: { block: ParsedBlock; event?: string }) {
   const production = isProduction();
 
   if (block.type === INVALID_BLOCK) {
@@ -47,7 +67,7 @@ export async function RenderBlock({ block }: { block: ParsedBlock }) {
     );
   }
 
-  const Component = await loadBlock(block.type);
+  const Component = await loadBlock(block.type, event);
   if (!Component) {
     if (production) return null;
     return (
@@ -74,11 +94,11 @@ export async function RenderBlock({ block }: { block: ParsedBlock }) {
   );
 }
 
-export function RenderBlocks({ blocks }: { blocks: ParsedBlock[] }) {
+export function RenderBlocks({ blocks, event }: { blocks: ParsedBlock[]; event?: string }) {
   return (
     <>
       {blocks.map((block, index) => (
-        <RenderBlock key={`${block.type}-${index}`} block={block} />
+        <RenderBlock key={`${block.type}-${index}`} block={block} event={event} />
       ))}
     </>
   );
