@@ -33,7 +33,10 @@ export default async function LivePage({ params }: { params: Promise<{ event: st
   if (!event) notFound();
 
   const docs = await readCanon(slug);
-  const blocks = docs.flatMap((doc) => doc.blocks);
+  // Prose is a block too: the parser wraps every paragraph in a Post. Keeping
+  // them here would put the commentary back on the page, which is the thing
+  // this view exists to get away from.
+  const blocks = docs.flatMap((doc) => doc.blocks).filter((block) => block.type !== "Post");
   const theme = await readTheme(slug);
 
   return (
