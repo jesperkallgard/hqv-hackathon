@@ -21,33 +21,33 @@ export default async function CyclePage({
   const docs = await readCycle(slug, cycle);
 
   return (
-    <div className="space-y-10">
+    <div className="stack">
       <header className="space-y-2">
         <Link
           href={`/${slug}/contributions`}
-          className="text-sm text-ink-soft hover:text-lime"
+          className="muted text-sm underline-offset-4 hover:underline"
         >
           ← Contributions
         </Link>
-        <h1 className="text-3xl font-semibold tracking-tight">Sprint {cycle}</h1>
-        <p className="text-ink-soft">
+        <h1 >Sprint {cycle}</h1>
+        <p className="muted">
           {event.sprintMinutes} minutes of {event.name}
         </p>
       </header>
 
       {docs.length === 0 ? (
-        <p className="text-ink-soft">No group has handed in yet.</p>
+        <p className="muted">No group has handed in yet.</p>
       ) : (
         docs.map((doc) => (
-          <article key={doc.slug} className="space-y-4 border-t border-rule pt-8">
+          <article key={doc.slug} className="stack rule border-t pt-8">
             <div>
               <Link
                 href={`/${slug}/contributions/${cycle}/${doc.slug}`}
-                className="text-xl font-semibold tracking-tight hover:text-lime"
+                className="underline-offset-4 hover:underline"
               >
                 {doc.frontmatter.title ?? doc.slug}
               </Link>
-              <p className="text-sm text-ink-soft">
+              <p className="muted text-sm">
                 {doc.frontmatter.authors?.length
                   ? doc.frontmatter.authors.join(" and ")
                   : doc.slug}

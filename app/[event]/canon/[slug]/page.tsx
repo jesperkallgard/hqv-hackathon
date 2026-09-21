@@ -16,15 +16,15 @@ export default async function CanonDocPage({
   if (!event || !doc) notFound();
 
   return (
-    <article className="space-y-6">
+    <article className="stack">
       <Link
         href={`/${eventSlug}`}
-        className="text-sm text-ink-soft hover:text-lime"
+        className="muted text-sm underline-offset-4 hover:underline"
       >
         ← {event.name}
       </Link>
       {doc.frontmatter.title && (
-        <h1 className="text-3xl font-semibold tracking-tight text-balance">
+        <h1 className="text-balance">
           {doc.frontmatter.title}
         </h1>
       )}

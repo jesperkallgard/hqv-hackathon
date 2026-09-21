@@ -20,31 +20,31 @@ export default async function ContributionsIndex({
   );
 
   return (
-    <div className="space-y-8">
+    <div className="stack">
       <header className="space-y-2">
-        <Link href={`/${slug}`} className="text-sm text-ink-soft hover:text-lime">
+        <Link href={`/${slug}`} className="muted text-sm underline-offset-4 hover:underline">
           ← {event.name}
         </Link>
-        <h1 className="text-3xl font-semibold tracking-tight">Contributions</h1>
-        <p className="max-w-2xl text-ink-soft">
+        <h1 >Contributions</h1>
+        <p className="measure muted">
           Everything the groups handed in, before the vote and before the curator.
           One file per group.
         </p>
       </header>
 
       {summaries.length === 0 ? (
-        <p className="text-ink-soft">Nothing handed in yet.</p>
+        <p className="muted">Nothing handed in yet.</p>
       ) : (
         <ul className="space-y-4">
           {summaries.map(({ cycle, docs }) => (
-            <li key={cycle} className="border-t border-rule pt-4">
+            <li key={cycle} className="rule border-t pt-4">
               <Link
                 href={`/${slug}/contributions/${cycle}`}
-                className="text-lg font-medium hover:text-lime"
+                className="underline-offset-4 hover:underline"
               >
                 Sprint {cycle}
               </Link>
-              <p className="text-sm text-ink-soft">
+              <p className="muted text-sm">
                 {docs.length} {docs.length === 1 ? "group" : "groups"}
               </p>
             </li>

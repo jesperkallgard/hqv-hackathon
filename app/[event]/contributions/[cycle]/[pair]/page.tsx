@@ -22,18 +22,18 @@ export default async function ContributionPage({
   if (!event || !doc) notFound();
 
   return (
-    <article className="space-y-6">
-      <header className="space-y-2">
+    <article className="stack">
+      <header className="stack">
         <Link
           href={`/${slug}/contributions/${cycle}`}
-          className="text-sm text-ink-soft hover:text-lime"
+          className="muted text-sm underline-offset-4 hover:underline"
         >
           ← Sprint {cycle}
         </Link>
-        <h1 className="text-3xl font-semibold tracking-tight text-balance">
+        <h1 className="text-balance">
           {doc.frontmatter.title ?? doc.slug}
         </h1>
-        <p className="text-sm text-ink-soft">
+        <p className="muted text-sm">
           {doc.frontmatter.authors?.length
             ? doc.frontmatter.authors.join(" and ")
             : doc.slug}

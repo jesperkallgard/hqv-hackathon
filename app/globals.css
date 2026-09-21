@@ -1,30 +1,18 @@
 @import "tailwindcss";
 
 /*
- * Grace's palette, from gracestudio.se. The portal is the read surface — what
- * the room built — so it sits on bone and gets out of the way of the writing.
+ * A reset and nothing else.
+ *
+ * Every result must look like the hackathon that made it, so this file carries
+ * no palette, no typeface and no spacing. All of that arrives per event from
+ * `content/events/<event>/theme.json`, scoped to `.result`.
+ *
+ * The one exception is the index at `/`, which is this repo's own listing
+ * rather than anybody's result, and styles itself inline.
  */
 
 :root {
-  --ink: #1d1d1b;
-  --bone: #ede8e3;
-  --paper: #f7f5f3;
-  --lime: #ccf871;
-  --periwinkle: #8290ff;
-
-  --ink-soft: color-mix(in oklab, var(--ink) 58%, var(--bone));
-  --rule: color-mix(in oklab, var(--ink) 14%, var(--bone));
-}
-
-@theme inline {
-  --font-sans: var(--font-grotesk), ui-sans-serif, system-ui, sans-serif;
-  --color-ink: var(--ink);
-  --color-ink-soft: var(--ink-soft);
-  --color-bone: var(--bone);
-  --color-paper: var(--paper);
-  --color-rule: var(--rule);
-  --color-lime: var(--lime);
-  --color-periwinkle: var(--periwinkle);
+  color-scheme: light;
 }
 
 html {
@@ -32,100 +20,83 @@ html {
 }
 
 body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-sans);
-  font-size: 17px;
+  margin: 0;
+  background: #fff;
+  color: #111;
+  font-family: ui-sans-serif, system-ui, sans-serif;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
 :focus-visible {
-  outline: 2px solid var(--ink);
+  outline: 2px solid currentColor;
   outline-offset: 2px;
 }
 
-/*
- * Prose for the Post block. Hand-rolled rather than pulling in the Tailwind
- * typography plugin.
- */
-.prose {
-  max-width: 68ch;
+/* Prose inside a result, driven entirely by that event's tokens. */
+.result .prose {
+  max-width: var(--measure);
 }
 
-.prose > * + * {
-  margin-top: 1.1em;
+.result .prose > * + * {
+  margin-top: calc(1em * var(--rhythm));
 }
 
-.prose h1,
-.prose h2,
-.prose h3,
-.prose h4 {
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin-top: 1.9em;
+.result .prose h1,
+.result .prose h2,
+.result .prose h3,
+.result .prose h4 {
+  margin-top: calc(1.8em * var(--rhythm));
   margin-bottom: 0.5em;
   text-wrap: balance;
 }
 
-.prose h1 { font-size: 2rem; }
-.prose h2 { font-size: 1.5rem; }
-.prose h3 { font-size: 1.15rem; }
-.prose h4 { font-size: 1rem; }
+.result .prose > :first-child {
+  margin-top: 0;
+}
 
-.prose > :first-child { margin-top: 0; }
-
-.prose a {
-  color: inherit;
+.result .prose a {
   text-decoration: underline;
-  text-decoration-thickness: 1px;
   text-underline-offset: 3px;
-  text-decoration-color: var(--rule);
 }
 
-.prose a:hover {
-  text-decoration-color: currentColor;
-}
-
-.prose ul,
-.prose ol {
+.result .prose ul,
+.result .prose ol {
   padding-left: 1.3em;
 }
 
-.prose ul { list-style: disc; }
-.prose ol { list-style: decimal; }
-.prose li + li { margin-top: 0.35em; }
+.result .prose ul { list-style: disc; }
+.result .prose ol { list-style: decimal; }
+.result .prose li + li { margin-top: 0.35em; }
 
-.prose blockquote {
-  border-left: 2px solid var(--ink);
+.result .prose blockquote {
+  border-left: 2px solid var(--accent);
   padding-left: 1em;
-  color: var(--ink-soft);
+  color: var(--muted);
 }
 
-.prose code {
+.result .prose code {
   font-size: 0.9em;
-  background: var(--bone);
-  border-radius: 3px;
+  background: color-mix(in oklab, var(--ink) 8%, transparent);
+  border-radius: calc(var(--radius) / 2);
   padding: 0.1em 0.35em;
 }
 
-.prose pre {
+.result .prose pre {
   background: var(--ink);
   color: var(--paper);
-  border-radius: 8px;
+  border-radius: var(--radius);
   padding: 1rem 1.15rem;
   overflow-x: auto;
 }
 
-.prose pre code {
+.result .prose pre code {
   background: none;
   padding: 0;
   font-size: 0.85em;
 }
 
-.prose table {
+.result .prose table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.95em;
@@ -133,29 +104,27 @@ body {
   overflow-x: auto;
 }
 
-.prose th,
-.prose td {
+.result .prose th,
+.result .prose td {
   border-bottom: 1px solid var(--rule);
   padding: 0.5em 0.7em;
   text-align: left;
 }
 
-.prose hr {
+.result .prose hr {
   border: 0;
   border-top: 1px solid var(--rule);
-  margin: 2.2em 0;
+  margin: calc(2.2em * var(--rhythm)) 0;
 }
 
-.prose img {
+.result .prose img {
   max-width: 100%;
   height: auto;
-  border-radius: 6px;
+  border-radius: var(--radius);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
