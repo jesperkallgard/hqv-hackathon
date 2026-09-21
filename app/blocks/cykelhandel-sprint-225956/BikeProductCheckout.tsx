@@ -1,201 +1,322 @@
 "use client";
 
 /**
- * A single bike product page (image, price, 1-2 specs, Buy button) that steps into an email checkout and then an order confirmation — proves the buy flow end to end without routing or a backend.
+ * A single hardcoded bike product page (image, price, two specs) where the Buy button drives a real state machine through cart, shipping, and payment to a confirmation screen — all local state, no backend.
  */
-import { useState } from "react";
+import React, { useState } from "react";
 
-type Spec = { label: string; value: string };
+type Step = "product" | "cart" | "shipping" | "payment" | "confirmed";
 
-type BikeProductCheckoutProps = {
-  bikeName?: string;
-  price?: string;
-  specs?: Spec[];
+type ShippingInfo = {
+  name: string;
+  address: string;
+  city: string;
+  zip: string;
+};
+
+type PaymentInfo = {
+  cardNumber: string;
+  expiry: string;
+  cvc: string;
+};
+
+export type BikeProductCheckoutProps = {
+  /** URL for the bike photo. Falls back to a simple inline SVG bike if not given. */
   imageUrl?: string;
 };
 
-function BikeIllustration() {
+const BIKE = {
+  name: "Ranger Gravel 3",
+  price: "$1,450",
+  specs: [
+    { label: "Frame", value: "Aluminum" },
+    { label: "Gears", value: "11-speed" },
+  ],
+};
+
+function BikeIcon() {
   return (
     <svg
       viewBox="0 0 200 120"
       width="100%"
-      height="auto"
+      height="100%"
       role="img"
-      aria-label="Bike illustration"
-      style={{ display: "block", maxWidth: 320, margin: "0 auto" }}
+      aria-label="Ranger Gravel 3 bike illustration"
     >
-      <circle cx="50" cy="90" r="24" fill="none" stroke="var(--ink)" strokeWidth="4" />
-      <circle cx="150" cy="90" r="24" fill="none" stroke="var(--ink)" strokeWidth="4" />
-      <path
-        d="M50 90 L85 50 L120 50 L150 90 M85 50 L70 90 M120 50 L100 30 L75 30"
-        fill="none"
-        stroke="var(--accent)"
-        strokeWidth="4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path d="M100 30 L110 30" stroke="var(--accent)" strokeWidth="4" strokeLinecap="round" />
-      <path d="M120 50 L150 90" fill="none" stroke="var(--accent)" strokeWidth="4" strokeLinecap="round" />
+      <g fill="none" stroke="var(--ink)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="45" cy="90" r="24" />
+        <circle cx="155" cy="90" r="24" />
+        <path d="M45 90 L85 40 L120 40 L155 90" />
+        <path d="M85 40 L70 90" />
+        <path d="M120 40 L100 20 L80 20" />
+        <path d="M100 20 L110 10" />
+        <path d="M155 90 L135 55" />
+      </g>
     </svg>
   );
 }
 
-export default function BikeProductCheckout({
-  bikeName = "Canyon Grail CF",
-  price = "$2,899",
-  specs = [
-    { label: "Frame size", value: "56cm" },
-    { label: "Gearing", value: "1x12, SRAM Rival XPLR" },
-  ],
-  imageUrl,
-}: BikeProductCheckoutProps) {
-  const [step, setStep] = useState<"product" | "checkout" | "confirmed">("product");
-  const [email, setEmail] = useState("");
-  const [orderNumber, setOrderNumber] = useState("");
+const initialShipping: ShippingInfo = { name: "", address: "", city: "", zip: "" };
+const initialPayment: PaymentInfo = { cardNumber: "", expiry: "", cvc: "" };
 
-  const radius = "var(--radius, 6px)";
+export default function BikeProductCheckout({ imageUrl }: BikeProductCheckoutProps) {
+  const [step, setStep] = useState<Step>("product");
+  const [shipping, setShipping] = useState<ShippingInfo>(initialShipping);
+  const [payment, setPayment] = useState<PaymentInfo>(initialPayment);
+
+  const reset = () => {
+    setStep("product");
+    setShipping(initialShipping);
+    setPayment(initialPayment);
+  };
+
+  const wrapStyle: React.CSSProperties = {
+    maxWidth: 420,
+    width: "100%",
+    margin: "0 auto",
+    padding: "24px 20px 40px",
+    boxSizing: "border-box",
+    fontFamily: "inherit",
+    color: "var(--ink)",
+    background: "var(--paper)",
+  };
+
+  const headerStyle: React.CSSProperties = {
+    fontSize: 22,
+    fontWeight: 700,
+    margin: "0 0 16px",
+    color: "var(--ink)",
+  };
 
   const bigButtonStyle: React.CSSProperties = {
+    display: "block",
     width: "100%",
-    padding: "18px",
-    fontSize: "1.1rem",
+    padding: "16px 20px",
+    fontSize: 17,
     fontWeight: 700,
-    background: "var(--accent)",
     color: "var(--paper)",
+    background: "var(--accent)",
     border: "none",
-    borderRadius: radius,
+    borderRadius: "var(--radius)",
     cursor: "pointer",
+    marginTop: 12,
+  };
+
+  const backLinkStyle: React.CSSProperties = {
+    display: "inline-block",
+    marginTop: 14,
+    fontSize: 14,
+    color: "var(--muted)",
+    background: "none",
+    border: "none",
+    padding: 0,
+    cursor: "pointer",
+    textDecoration: "underline",
   };
 
   const cardStyle: React.CSSProperties = {
-    maxWidth: 420,
-    margin: "0 auto",
-    padding: "20px",
-    background: "var(--paper)",
-    color: "var(--ink)",
-    borderRadius: radius,
-    border: "1px solid var(--rule, #ddd)",
-    boxSizing: "border-box",
+    border: "1px solid var(--rule)",
+    borderRadius: "var(--radius)",
+    padding: 16,
+    marginBottom: 12,
   };
 
-  if (step === "checkout") {
-    return (
-      <div style={cardStyle}>
-        <button
-          onClick={() => setStep("product")}
-          style={{
-            background: "none",
-            border: "none",
-            color: "var(--ink)",
-            opacity: 0.7,
-            cursor: "pointer",
-            padding: 0,
-            marginBottom: "16px",
-            fontSize: "0.9rem",
-          }}
-        >
-          ← Back
-        </button>
-        <h2 style={{ margin: "0 0 4px" }}>{bikeName}</h2>
-        <p style={{ margin: "0 0 20px", opacity: 0.8 }}>Enter your email to lock it in.</p>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            const fake = "BK-" + Math.floor(10000 + Math.random() * 90000);
-            setOrderNumber(fake);
-            setStep("confirmed");
-          }}
-        >
-          <input
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="you@email.com"
-            style={{
-              width: "100%",
-              padding: "14px",
-              fontSize: "1rem",
-              marginBottom: "16px",
-              borderRadius: radius,
-              border: "1px solid var(--rule, #ccc)",
-              background: "var(--paper)",
-              color: "var(--ink)",
-              boxSizing: "border-box",
-            }}
-          />
-          <button type="submit" style={bigButtonStyle}>
-            Place order
-          </button>
-        </form>
-      </div>
-    );
-  }
+  const inputStyle: React.CSSProperties = {
+    width: "100%",
+    boxSizing: "border-box",
+    padding: "12px 14px",
+    fontSize: 16,
+    color: "var(--ink)",
+    background: "var(--paper)",
+    border: "1px solid var(--rule)",
+    borderRadius: "var(--radius)",
+    marginBottom: 10,
+  };
 
-  if (step === "confirmed") {
+  const labelStyle: React.CSSProperties = {
+    fontSize: 13,
+    color: "var(--muted)",
+    marginBottom: 4,
+    display: "block",
+  };
+
+  if (step === "product") {
     return (
-      <div style={{ ...cardStyle, textAlign: "center" }}>
-        <h2 style={{ margin: "0 0 8px" }}>You're set — check your email.</h2>
-        <p style={{ margin: "0 0 4px", opacity: 0.8 }}>
-          {bikeName} is yours. We sent the details to <strong>{email}</strong>.
-        </p>
-        <p style={{ margin: "16px 0", fontSize: "0.9rem", opacity: 0.6 }}>
-          Order #{orderNumber}
-        </p>
-        <button
-          onClick={() => {
-            setStep("product");
-            setEmail("");
-          }}
+      <div style={wrapStyle}>
+        <div
           style={{
-            ...bigButtonStyle,
+            width: "100%",
+            aspectRatio: "5 / 3",
             background: "var(--paper)",
-            color: "var(--ink)",
-            border: "1px solid var(--rule, #ccc)",
+            border: "1px solid var(--rule)",
+            borderRadius: "var(--radius)",
+            overflow: "hidden",
+            marginBottom: 16,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          Back to bike
+          {imageUrl ? (
+            <img
+              src={imageUrl}
+              alt={BIKE.name}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          ) : (
+            <div style={{ width: "80%", height: "80%" }}>
+              <BikeIcon />
+            </div>
+          )}
+        </div>
+
+        <h1 style={{ fontSize: 24, fontWeight: 800, margin: "0 0 4px" }}>{BIKE.name}</h1>
+        <div style={{ fontSize: 20, fontWeight: 700, color: "var(--accent)", marginBottom: 12 }}>
+          {BIKE.price}
+        </div>
+
+        <div style={{ display: "flex", gap: 16, marginBottom: 8 }}>
+          {BIKE.specs.map((s) => (
+            <div key={s.label} style={{ fontSize: 14, color: "var(--muted)" }}>
+              <span style={{ color: "var(--ink)", fontWeight: 600 }}>{s.label}: </span>
+              {s.value}
+            </div>
+          ))}
+        </div>
+
+        <button style={bigButtonStyle} onClick={() => setStep("cart")}>
+          Buy it
         </button>
       </div>
     );
   }
 
-  return (
-    <div style={cardStyle}>
-      {imageUrl ? (
-        <img
-          src={imageUrl}
-          alt={bikeName}
-          style={{ width: "100%", height: "auto", borderRadius: radius, marginBottom: "16px" }}
-        />
-      ) : (
-        <div style={{ marginBottom: "16px" }}>
-          <BikeIllustration />
+  if (step === "cart") {
+    return (
+      <div style={wrapStyle}>
+        <h1 style={headerStyle}>Your cart</h1>
+        <div style={cardStyle}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+            <span style={{ fontWeight: 700 }}>{BIKE.name}</span>
+            <span style={{ fontWeight: 700, color: "var(--accent)" }}>{BIKE.price}</span>
+          </div>
         </div>
-      )}
-      <h2 style={{ margin: "0 0 4px" }}>{bikeName}</h2>
-      <p style={{ fontSize: "2rem", fontWeight: 800, margin: "0 0 16px", color: "var(--accent)" }}>
-        {price}
+        <button style={bigButtonStyle} onClick={() => setStep("shipping")}>
+          Continue to shipping
+        </button>
+        <button style={backLinkStyle} onClick={() => setStep("product")}>
+          Keep browsing
+        </button>
+      </div>
+    );
+  }
+
+  if (step === "shipping") {
+    return (
+      <div style={wrapStyle}>
+        <h1 style={headerStyle}>Where's it headed?</h1>
+
+        <label style={labelStyle}>Name</label>
+        <input
+          style={inputStyle}
+          placeholder="Your name"
+          value={shipping.name}
+          onChange={(e) => setShipping({ ...shipping, name: e.target.value })}
+        />
+
+        <label style={labelStyle}>Address</label>
+        <input
+          style={inputStyle}
+          placeholder="Street address"
+          value={shipping.address}
+          onChange={(e) => setShipping({ ...shipping, address: e.target.value })}
+        />
+
+        <label style={labelStyle}>City</label>
+        <input
+          style={inputStyle}
+          placeholder="City"
+          value={shipping.city}
+          onChange={(e) => setShipping({ ...shipping, city: e.target.value })}
+        />
+
+        <label style={labelStyle}>Zip</label>
+        <input
+          style={inputStyle}
+          placeholder="Zip code"
+          value={shipping.zip}
+          onChange={(e) => setShipping({ ...shipping, zip: e.target.value })}
+        />
+
+        <button style={bigButtonStyle} onClick={() => setStep("payment")}>
+          Continue to payment
+        </button>
+        <button style={backLinkStyle} onClick={() => setStep("cart")}>
+          Back to cart
+        </button>
+      </div>
+    );
+  }
+
+  if (step === "payment") {
+    return (
+      <div style={wrapStyle}>
+        <h1 style={headerStyle}>Pay up</h1>
+
+        <label style={labelStyle}>Card number</label>
+        <input
+          style={inputStyle}
+          placeholder="1234 1234 1234 1234"
+          value={payment.cardNumber}
+          onChange={(e) => setPayment({ ...payment, cardNumber: e.target.value })}
+        />
+
+        <div style={{ display: "flex", gap: 10 }}>
+          <div style={{ flex: 1 }}>
+            <label style={labelStyle}>Expiry</label>
+            <input
+              style={inputStyle}
+              placeholder="MM/YY"
+              value={payment.expiry}
+              onChange={(e) => setPayment({ ...payment, expiry: e.target.value })}
+            />
+          </div>
+          <div style={{ flex: 1 }}>
+            <label style={labelStyle}>CVC</label>
+            <input
+              style={inputStyle}
+              placeholder="123"
+              value={payment.cvc}
+              onChange={(e) => setPayment({ ...payment, cvc: e.target.value })}
+            />
+          </div>
+        </div>
+
+        <button style={bigButtonStyle} onClick={() => setStep("confirmed")}>
+          Confirm order
+        </button>
+        <button style={backLinkStyle} onClick={() => setStep("shipping")}>
+          Back to shipping
+        </button>
+      </div>
+    );
+  }
+
+  // confirmed
+  return (
+    <div style={wrapStyle}>
+      <h1 style={headerStyle}>Nice, it's yours.</h1>
+      <p style={{ color: "var(--muted)", marginTop: -8, marginBottom: 20 }}>
+        We'll get it out the door.
       </p>
-      <ul style={{ listStyle: "none", padding: 0, margin: "0 0 20px" }}>
-        {specs.map((s) => (
-          <li
-            key={s.label}
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              padding: "8px 0",
-              borderTop: "1px solid var(--rule, #eee)",
-              fontSize: "0.95rem",
-            }}
-          >
-            <span style={{ opacity: 0.7 }}>{s.label}</span>
-            <span style={{ fontWeight: 600 }}>{s.value}</span>
-          </li>
-        ))}
-      </ul>
-      <button onClick={() => setStep("checkout")} style={bigButtonStyle}>
-        Buy this bike
+      <div style={cardStyle}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+          <span style={{ fontWeight: 700 }}>{BIKE.name}</span>
+          <span style={{ fontWeight: 700, color: "var(--accent)" }}>{BIKE.price}</span>
+        </div>
+      </div>
+      <button style={bigButtonStyle} onClick={reset}>
+        Buy another
       </button>
     </div>
   );
