@@ -26,9 +26,18 @@ export default async function CanonPage({ params }: { params: Promise<{ event: s
         <h1 className="measure mt-3">
           {event.goal}
         </h1>
-        <p className="muted mt-3 text-sm">
-          <Link href={`/${slug}/contributions`} className="underline-offset-4 hover:underline">
-            All contributions
+        {/* The thing first. Somebody arriving here wants to see what the room
+            built, not read about it, and what they built has to survive being
+            looked at without the commentary holding it up. */}
+        <p className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+          <Link
+            href={`/${slug}/live`}
+            className="rule inline-block border px-4 py-2 font-bold underline-offset-4 hover:underline"
+          >
+            Open the page on its own
+          </Link>
+          <Link href={`/${slug}/contributions`} className="muted underline-offset-4 hover:underline">
+            Everything handed in
           </Link>
         </p>
       </section>
@@ -56,10 +65,12 @@ export default async function CanonPage({ params }: { params: Promise<{ event: s
 
           {docs.map((doc) => (
             <article key={doc.slug} id={doc.slug} className="stack scroll-mt-8">
-              {doc.frontmatter.title && (
-                <h2 >{doc.frontmatter.title}</h2>
-              )}
-              <RenderBlocks blocks={doc.blocks} event={slug} />
+              {doc.frontmatter.title && <h2>{doc.frontmatter.title}</h2>}
+              {/* Set in a frame, so it reads as the thing being discussed
+                  rather than an illustration dropped into an article. */}
+              <div className="rule overflow-hidden border">
+                <RenderBlocks blocks={doc.blocks} event={slug} />
+              </div>
             </article>
           ))}
         </>
