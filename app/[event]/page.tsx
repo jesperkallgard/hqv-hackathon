@@ -63,16 +63,41 @@ export default async function CanonPage({ params }: { params: Promise<{ event: s
             </ul>
           </nav>
 
-          {docs.map((doc) => (
-            <article key={doc.slug} id={doc.slug} className="stack scroll-mt-8">
-              {doc.frontmatter.title && <h2>{doc.frontmatter.title}</h2>}
-              {/* Set in a frame, so it reads as the thing being discussed
-                  rather than an illustration dropped into an article. */}
-              <div className="rule overflow-hidden border">
-                <RenderBlocks blocks={doc.blocks} event={slug} />
-              </div>
-            </article>
-          ))}
+          {docs.map((doc) => {
+            // The page and the talk about it are two different things. Threaded
+            // together they read as an article somebody dropped a prototype
+            // into, which is not what the room built.
+            const page = doc.blocks.filter((block) => block.type !== "Post");
+            const notes = doc.blocks.filter((block) => block.type === "Post");
+            return (
+              <article key={doc.slug} id={doc.slug} className="scroll-mt-8">
+                {doc.frontmatter.title && <h2>{doc.frontmatter.title}</h2>}
+
+                <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_20rem]">
+                  <div className="rule overflow-hidden border">
+                    {page.length > 0 ? (
+                      <RenderBlocks blocks={page} event={slug} />
+                    ) : (
+                      <p className="muted p-6 text-sm">
+                        This one is prose. Nothing was built for it.
+                      </p>
+                    )}
+                  </div>
+
+                  {notes.length > 0 && (
+                    <aside className="text-sm">
+                      <h3 className="muted text-xs font-bold tracking-wider uppercase">
+                        What was decided
+                      </h3>
+                      <div className="mt-3">
+                        <RenderBlocks blocks={notes} event={slug} />
+                      </div>
+                    </aside>
+                  )}
+                </div>
+              </article>
+            );
+          })}
         </>
       )}
     </div>
