@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+/*
+ * The site's palette. This repo has no shadcn components — the chat UI lives in
+ * the engine repo — so there is only one token set here.
+ */
+
+:root {
+  color-scheme: light dark;
+
+  --brand: oklch(0.63 0.19 42);
+  --ink: oklch(0.21 0.01 260);
+  --ink-soft: oklch(0.48 0.01 260);
+  --paper: oklch(0.99 0.002 260);
+  --rule: oklch(0.9 0.004 260);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand: oklch(0.74 0.16 45);
+    --ink: oklch(0.95 0.005 260);
+    --ink-soft: oklch(0.72 0.01 260);
+    --paper: oklch(0.18 0.008 260);
+    --rule: oklch(0.32 0.01 260);
+  }
+}
+
+@theme inline {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --color-brand: var(--brand);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-rule: var(--rule);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Prose styling for the Post block. Hand-rolled rather than pulling in the
+ * Tailwind typography plugin.
+ */
+.prose {
+  max-width: 68ch;
+}
+
+.prose > * + * {
+  margin-top: 1em;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin-top: 1.8em;
+  margin-bottom: 0.5em;
+  text-wrap: balance;
+}
+
+.prose h1 { font-size: 1.9rem; }
+.prose h2 { font-size: 1.45rem; }
+.prose h3 { font-size: 1.15rem; }
+.prose h4 { font-size: 1rem; }
+
+.prose > :first-child { margin-top: 0; }
+
+.prose a {
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.4em;
+}
+
+.prose ul { list-style: disc; }
+.prose ol { list-style: decimal; }
+.prose li + li { margin-top: 0.3em; }
+
+.prose blockquote {
+  border-left: 3px solid var(--brand);
+  padding-left: 1em;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: color-mix(in oklch, var(--ink) 8%, transparent);
+  border-radius: 4px;
+  padding: 0.12em 0.36em;
+}
+
+.prose pre {
+  background: color-mix(in oklch, var(--ink) 92%, var(--paper));
+  color: var(--paper);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.85em;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+  display: block;
+  overflow-x: auto;
+}
+
+.prose th,
+.prose td {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.5em 0.7em;
+  text-align: left;
+}
+
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2em 0;
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
