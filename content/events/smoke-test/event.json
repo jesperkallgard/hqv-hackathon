@@ -1,0 +1,9 @@
+{
+  "slug": "smoke-test",
+  "name": "Smoke Test",
+  "goal": "Prove the write path.",
+  "participants": [],
+  "sprintMinutes": 25,
+  "sprintCount": 6,
+  "createdAt": "2026-09-21T12:25:17.817Z"
+}
