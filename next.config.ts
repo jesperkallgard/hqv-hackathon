@@ -18,7 +18,6 @@ const nextConfig: NextConfig = {
    * warning in preview and is left out in production.
    */
   typescript: { ignoreBuildErrors: true },
-  eslint: { ignoreDuringBuilds: true },
 };
 
 export default nextConfig;
