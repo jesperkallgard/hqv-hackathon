@@ -1,202 +1,196 @@
 /**
- * A single bike product page: photo, price, always-visible per-size stock, a size dropdown (S/M/L/XL), and a Buy button that's disabled/blocked for out-of-stock sizes and otherwise logs the pick and confirms on-page.
+ * A single bike product page: photo, price, per-size stock shown on size buttons (not a dropdown), and a Buy button that's disabled for out-of-stock sizes and otherwise logs the pick and confirms on-page.
  */
 "use client";
 
 import { useState } from "react";
 
-type StockBySize = Record<"S" | "M" | "L" | "XL", number>;
+export default function BikeProductPage({
+  name = "",
+  price = 0,
+  currency = "$",
+  summary = "",
+  specs = [],
+  photo = "",
+  photoAlt = "",
+  photoNote = "",
+  sizes = [],
+  defaultSize = "",
+}) {
+  const start = sizes.find((s) => s.label === defaultSize) || sizes[0] || null;
+  const [size, setSize] = useState(start ? start.label : "");
+  const [added, setAdded] = useState("");
 
-const STOCK: StockBySize = {
-  S: 6,
-  M: 4,
-  L: 3,
-  XL: 0,
-};
+  const picked = sizes.find((s) => s.label === size) || null;
+  const stock = picked ? Number(picked.stock) || 0 : 0;
+  const canBuy = stock > 0;
 
-const BIKE = {
-  name: "Trek Marlin 7",
-  price: 899,
-  photo:
-    "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=800&q=80",
-  description:
-    "Hardtail mountain bike, aluminum frame, hydraulic disc brakes, 21-speed drivetrain. It's heavier than a carbon bike, but the gearing is basic and holds up — a solid first mountain bike, not a race bike.",
-};
-
-type Size = keyof StockBySize;
-
-export default function BikeProductPage() {
-  const [size, setSize] = useState<Size>("M");
-  const [message, setMessage] = useState<string>("");
-
-  const stockLeft = STOCK[size];
-  const outOfStock = stockLeft <= 0;
-
-  function handleBuy() {
-    if (outOfStock) {
-      setMessage(`Out of stock in size ${size}`);
-      return;
-    }
-    const order = { bike: BIKE.name, size, price: BIKE.price };
-    console.log(order);
-    setMessage(`Added: ${BIKE.name}, size ${size}`);
+  function pick(label) {
+    setSize(label);
+    setAdded("");
   }
 
-  function handleSizeChange(next: Size) {
-    setSize(next);
-    setMessage("");
+  function buy() {
+    if (!canBuy) return;
+    console.log({ bike: name, size, price });
+    setAdded("Added: " + name + ", size " + size);
   }
 
   return (
     <div
-      className="bike-product-page"
       style={{
-        background: "var(--paper, #fff)",
-        color: "var(--ink, #111)",
-        fontFamily: "inherit",
-        maxWidth: "720px",
-        margin: "0 auto",
-        padding: "16px",
+        display: "flex",
+        flexWrap: "wrap",
+        gap: "1.5rem",
+        alignItems: "flex-start",
+        background: "var(--paper)",
+        color: "var(--ink)",
       }}
     >
-      <style>{`
-        .bike-product-page .bpp-layout {
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-        }
-        @media (min-width: 640px) {
-          .bike-product-page .bpp-layout {
-            flex-direction: row;
-            align-items: flex-start;
-            gap: 24px;
-          }
-          .bike-product-page .bpp-photo,
-          .bike-product-page .bpp-details {
-            flex: 1 1 50%;
-          }
-        }
-      `}</style>
-
-      <div className="bpp-layout">
-        <div className="bpp-photo">
+      <div style={{ flex: "1 1 320px", minWidth: "260px" }}>
+        {photo ? (
           <img
-            src={BIKE.photo}
-            alt={BIKE.name}
+            src={photo}
+            alt={photoAlt || name}
             style={{
+              display: "block",
               width: "100%",
               height: "auto",
-              display: "block",
-              border: "1px solid var(--rule, #ccc)",
+              border: "1px solid var(--rule)",
+              borderRadius: "var(--radius)",
             }}
           />
+        ) : null}
+        {photoNote ? (
+          <p
+            style={{
+              margin: "0.5rem 0 0",
+              fontSize: "0.75rem",
+              color: "var(--muted)",
+            }}
+          >
+            {photoNote}
+          </p>
+        ) : null}
+      </div>
+
+      <div style={{ flex: "1 1 300px", minWidth: "260px" }}>
+        <h2 style={{ margin: 0, fontSize: "1.5rem", lineHeight: 1.2 }}>{name}</h2>
+
+        <p style={{ margin: "0.25rem 0 0", fontSize: "2rem", fontWeight: 700 }}>
+          {currency}
+          {price}
+        </p>
+
+        {summary ? (
+          <p style={{ margin: "0.75rem 0 0", lineHeight: 1.5 }}>{summary}</p>
+        ) : null}
+
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "0.5rem",
+            margin: "1rem 0 0",
+          }}
+        >
+          {sizes.map((s) => {
+            const left = Number(s.stock) || 0;
+            const active = s.label === size;
+            return (
+              <button
+                key={s.label}
+                type="button"
+                onClick={() => pick(s.label)}
+                aria-pressed={active}
+                style={{
+                  flex: "1 1 4.5rem",
+                  padding: "0.5rem 0.4rem",
+                  cursor: "pointer",
+                  font: "inherit",
+                  textAlign: "center",
+                  borderRadius: "var(--radius)",
+                  border:
+                    "1px solid " + (active ? "var(--accent)" : "var(--rule)"),
+                  background: active ? "var(--accent)" : "transparent",
+                  color: active
+                    ? "var(--paper)"
+                    : left > 0
+                    ? "var(--ink)"
+                    : "var(--muted)",
+                }}
+              >
+                <span style={{ display: "block", fontWeight: 700 }}>
+                  {s.label}
+                </span>
+                <span style={{ display: "block", fontSize: "0.7rem" }}>
+                  {left > 0 ? left + " in stock" : "Out of stock"}
+                </span>
+              </button>
+            );
+          })}
         </div>
 
-        <div className="bpp-details">
-          <h1
+        <button
+          type="button"
+          onClick={buy}
+          disabled={!canBuy}
+          style={{
+            width: "100%",
+            margin: "0.75rem 0 0",
+            padding: "0.75rem 1rem",
+            font: "inherit",
+            fontWeight: 700,
+            borderRadius: "var(--radius)",
+            cursor: canBuy ? "pointer" : "not-allowed",
+            border: "1px solid " + (canBuy ? "var(--accent)" : "var(--rule)"),
+            background: canBuy ? "var(--accent)" : "transparent",
+            color: canBuy ? "var(--paper)" : "var(--muted)",
+          }}
+        >
+          {canBuy ? "Buy — " + currency + price : "Out of stock"}
+        </button>
+
+        <p
+          role="status"
+          style={{
+            margin: "0.5rem 0 0",
+            minHeight: "1.25rem",
+            fontSize: "0.875rem",
+            color: added ? "var(--ink)" : "var(--muted)",
+          }}
+        >
+          {added ||
+            (canBuy
+              ? "Size " + size + " — ready to buy"
+              : "Size " + size + " — can't be bought")}
+        </p>
+
+        {specs.length ? (
+          <dl
             style={{
-              fontSize: "1.4rem",
-              margin: "0 0 4px 0",
-              color: "var(--ink, #111)",
+              margin: "1.25rem 0 0",
+              borderTop: "1px solid var(--rule)",
+              fontSize: "0.875rem",
             }}
           >
-            {BIKE.name}
-          </h1>
-
-          <p
-            style={{
-              fontSize: "1.2rem",
-              fontWeight: 700,
-              margin: "0 0 4px 0",
-              color: "var(--ink, #111)",
-            }}
-          >
-            ${BIKE.price}
-          </p>
-
-          <p
-            style={{
-              margin: "0 0 16px 0",
-              fontWeight: 600,
-              color: outOfStock ? "var(--accent, #b00020)" : "var(--muted, #555)",
-            }}
-          >
-            {outOfStock ? "Out of stock" : `In stock — ${stockLeft} left`}
-          </p>
-
-          <p
-            style={{
-              margin: "0 0 20px 0",
-              color: "var(--ink, #111)",
-              lineHeight: 1.5,
-            }}
-          >
-            {BIKE.description}
-          </p>
-
-          <div style={{ marginBottom: "16px" }}>
-            <label
-              htmlFor="bpp-size"
-              style={{
-                display: "block",
-                marginBottom: "6px",
-                color: "var(--muted, #555)",
-                fontSize: "0.9rem",
-              }}
-            >
-              Size
-            </label>
-            <select
-              id="bpp-size"
-              value={size}
-              onChange={(e) => handleSizeChange(e.target.value as Size)}
-              style={{
-                width: "100%",
-                padding: "8px",
-                background: "var(--paper, #fff)",
-                color: "var(--ink, #111)",
-                border: "1px solid var(--rule, #ccc)",
-                borderRadius: "var(--radius, 0px)",
-                fontSize: "1rem",
-              }}
-            >
-              <option value="S">S — {STOCK.S > 0 ? `${STOCK.S} left` : "out of stock"}</option>
-              <option value="M">M — {STOCK.M > 0 ? `${STOCK.M} left` : "out of stock"}</option>
-              <option value="L">L — {STOCK.L > 0 ? `${STOCK.L} left` : "out of stock"}</option>
-              <option value="XL">XL — {STOCK.XL > 0 ? `${STOCK.XL} left` : "out of stock"}</option>
-            </select>
-          </div>
-
-          <button
-            onClick={handleBuy}
-            disabled={outOfStock}
-            style={{
-              width: "100%",
-              padding: "12px",
-              fontSize: "1rem",
-              fontWeight: 700,
-              cursor: outOfStock ? "not-allowed" : "pointer",
-              background: outOfStock ? "var(--paper, #fff)" : "var(--accent, #111)",
-              color: outOfStock ? "var(--muted, #555)" : "var(--paper, #fff)",
-              border: "1px solid var(--rule, #ccc)",
-              borderRadius: "var(--radius, 0px)",
-            }}
-          >
-            {outOfStock ? "Out of stock" : "Buy"}
-          </button>
-
-          {message && (
-            <p
-              style={{
-                marginTop: "12px",
-                fontSize: "0.9rem",
-                color: "var(--muted, #555)",
-              }}
-            >
-              {message}
-            </p>
-          )}
-        </div>
+            {specs.map((spec) => (
+              <div
+                key={spec.label}
+                style={{
+                  display: "flex",
+                  gap: "1rem",
+                  justifyContent: "space-between",
+                  padding: "0.4rem 0",
+                  borderBottom: "1px solid var(--rule)",
+                }}
+              >
+                <dt style={{ color: "var(--muted)" }}>{spec.label}</dt>
+                <dd style={{ margin: 0, textAlign: "right" }}>{spec.value}</dd>
+              </div>
+            ))}
+          </dl>
+        ) : null}
       </div>
     </div>
   );
