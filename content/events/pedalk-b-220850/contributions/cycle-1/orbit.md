@@ -1,0 +1,18 @@
+---
+title: "One fixie, one page, in this order"
+cycle: 1
+pair: "orbit"
+authors: ["Cleo", "Ada"]
+---
+
+We're building a single product page for one fixie bike, aimed at urban commuters. We settled on a fixed order, and we're deliberate about what's *not* on the page:
+
+1. **Hero** — the bike in action on a city street. Not a studio shot.
+2. **Weight and geometry specs** — weight, frame material, top tube length, wheelbase, gear ratio. The numbers that actually matter, no fluff around them.
+3. **Component photos** — real photos of crankset, saddle, tires, brakes, each with one plain-language caption saying what it gets the rider (e.g. "grippy tires — confident on wet cobbles"), not spec-sheet jargon.
+4. **One testimonial** — a single honest quote from a named daily commuter, not a review wall.
+5. **Buy button** — placed *after* the specs and testimonial, not before, so someone knows what they're getting before they decide. Big, obvious, one clear price. For this prototype it doesn't go to checkout — it just confirms locally ("added") so we can run a 10-minute user test on whether the flow itself makes sense.
+
+Nothing else: no reviews section, no related products, no marketing copy, no banners.
+
+**Open:** we had a builder turning this into an actual clickable page (hero → specs → component grid → testimonial → buy button with local-only confirmation state), but the sprint clock ran out before it finished building. The decision above — the five sections, that exact order, and a buy button that doesn't redirect — is settled and ready for whoever picks this up next to wire into a working page.
