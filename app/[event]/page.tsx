@@ -59,7 +59,7 @@ export default async function CanonPage({ params }: { params: Promise<{ event: s
               {doc.frontmatter.title && (
                 <h2 >{doc.frontmatter.title}</h2>
               )}
-              <RenderBlocks blocks={doc.blocks} />
+              <RenderBlocks blocks={doc.blocks} event={slug} />
             </article>
           ))}
         </>
