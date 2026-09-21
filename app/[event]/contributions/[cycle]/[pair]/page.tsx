@@ -39,7 +39,7 @@ export default async function ContributionPage({
             : doc.slug}
         </p>
       </header>
-      <RenderBlocks blocks={doc.blocks} />
+      <RenderBlocks blocks={doc.blocks} event={slug} />
     </article>
   );
 }
