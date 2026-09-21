@@ -2,77 +2,72 @@
 title: Buy this bike, end to end
 slug: buy-this-bike
 hackathon: cykelhandel-sprint-225956
-cycle: 1
+cycle: 2
 status: canon
-groups:
-  - Satchel
-authors:
-  - Cleo
-  - Ada
-blocks:
-  - BikeProductCheckout
+groups: [Satchel, Yarrow]
+authors: [Cleo, Ada, Bo]
+blocks: [BikeProductCheckout]
 ---
-
-# Buy this bike, end to end
 
 ```block
 type: BikeProductCheckout
 data:
   shopName: Cykelhandel
   bike:
-    name: Ranger Gravel 3
-    price: $1,450
+    name: Stålhest 8-speed
+    price: 6.450 kr
+    imageUrl: ""
     specs:
-      - { label: Frame size, value: 54 cm / M }
-      - { label: Gearing, value: 11-speed 1x }
-  shippingNote: Ships assembled. Two days to most addresses.
-  footerNote: Questions? Ask us in the shop — we ride these too.
+      - { label: Frame, value: Steel, 54 cm }
+      - { label: Gears, value: 8-speed hub }
+  shippingNote: Ships assembled. Two to four days inside Denmark.
+  footerNote: Questions about fit or delivery — call the shop.
 ```
 
-## What's on the page
+## What this page is
 
-A photo, a price, and the two specs that actually decide it: frame size and
-gearing. No description, no reviews, no "our story". You came here to buy a
-bike, not to read about one.
+One bike, one page, one purchase. It is the whole transaction, not a demo of
+part of it: you can start at the photo and finish holding an order number.
 
-One button does the work — **Buy this bike** — and from there the page walks
-itself: cart, shipping, payment, done. It never leaves the page and it never
-asks you to make an account. At the end you get an order number and your email
-read back to you, so the flow closes instead of trailing off into nothing.
+Cycle 1 (Satchel) set the product half and it stands. A photo, the price, and
+two specs — frame and gears, the things someone asks before they ask anything
+else. No description, no reviews, no related products. Someone landing here has
+already decided they want this kind of bike; the page's job is to not get in
+the way.
 
-## What we argued about
+## One form, not three steps
 
-Satchel's write-up wanted this even shorter: tap Buy, type an email, **Place
-order**. Three taps, no shipping form, no card fields. The prototype they
-actually built keeps the full cart → shipping → payment run, and that's the one
-on the page, because a bike is a $1,450 object that has to arrive at an address
-and the sprint's job was to prove the whole path holds, not the fun half of it.
-The email field survived from the short version: it's in the shipping step and
-it's what the confirmation echoes back.
+Cycle 2 (Yarrow) took the checkout apart. Satchel's version walked you through
+cart, then shipping, then payment, then confirmed — four screens and a step
+indicator to tell you how much was left. Yarrow's call: that is a wizard built
+for someone who might change their mind, and the person filling it in already
+decided at the photo. So the three steps collapse into one form with three
+fields — email, shipping address, card number — and one button. No login, no
+saved addresses, nothing else on the page.
 
-Left out on purpose: real payment processing, accounts, delivery scheduling,
-stock checks. The card fields take anything you type. That's next sprint.
+The point was to remove steps, not to add fields. Name, city and zip went into
+the address field because they were always going to be typed in one go anyway,
+and expiry and CVC come off the same card as the number. A shop owner loses
+sales in the gaps between screens, not on the last field of the last one. That
+is the version of the bar this clears: fewer places to abandon a purchase that
+was already decided.
 
-## Why it clears the bar
+## Still open
 
-It's the sale a shop loses today. Someone stands on the sidewalk, decides they
-want the bike, and hits a checkout that wants a password first — so they don't
-buy it. This one goes from "I want it" to "I'm getting it" without a login, and
-every button is thumb-sized because that decision gets made on a phone.
+Yarrow agreed on the three fields and the one-page shape and ran out of time on
+what the confirmation actually shows back — just the email, or the email plus
+the address and a summary of what was bought. The block currently echoes all
+three, because a confirmation screen that only repeats your email address does
+not tell you the right bike is coming to the right door. That is a prototype
+call to keep the flow working end to end, not a decision the room made. Settling
+it is the next thing.
 
-## Block: BikeProductCheckout
+## The block
 
-A self-contained product page. Header, product, checkout state machine
-(`product → cart → shipping → payment → confirmed`), footer — all local state,
-no backend, no stored data. Everything visible comes from props:
+`BikeProductCheckout` takes `shopName`, `bike` (`name`, `price`, optional
+`imageUrl`, optional `specs` of `label`/`value` pairs), `shippingNote` and
+`footerNote`. With no `imageUrl` it draws a bike outline rather than a broken
+frame. It carries its own header and footer so the page can be opened on its
+own and shown to someone outside the room.
 
-- `shopName` — name in the header and footer.
-- `bike` — `{ name, price, imageUrl?, specs: [{ label, value }] }`. Two specs is
-  the intent; the grid takes more if a later cycle insists.
-- `shippingNote` — one line shown in the cart.
-- `footerNote` — one line in the footer.
-
-Without `imageUrl` it draws a line-art bike rather than a grey box, so the
-layout is honest about its proportions even before there's a photo.
-
-<!-- merged: cykelhandel-sprint-225956 sprint 1 — Satchel -->
+<!-- merged: cykelhandel-sprint-225956 sprint 2 — Yarrow -->
