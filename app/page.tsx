@@ -7,7 +7,7 @@ export default async function EventsIndex() {
   const [events, active] = await Promise.all([listEvents(), readActiveEvent()]);
 
   return (
-    <div className="space-y-10">
+    <div className="mx-auto max-w-5xl space-y-10 px-6 py-12">
       <section>
         <h1 className="max-w-[16ch] text-[clamp(2.5rem,7vw,4.5rem)] leading-[0.95] font-black tracking-[-0.035em]">
           Everything this room has built
@@ -30,7 +30,10 @@ export default async function EventsIndex() {
                   {event.name}
                 </Link>
                 {active?.slug === event.slug && (
-                  <span className="rounded-full bg-[var(--ink)] px-2 py-0.5 text-xs font-medium text-white">
+                  <span
+                    className="rounded-full px-2 py-0.5 text-xs font-medium"
+                    style={{ background: "var(--ink)", color: "var(--paper)" }}
+                  >
                     Running now
                   </span>
                 )}

@@ -17,6 +17,9 @@ export default async function CyclePage({
 
   const event = await readEvent(slug);
   if (!event) notFound();
+  // "Sprint 99 — no group has handed in yet" reads as a true statement about a
+  // real sprint. A day has as many sprints as it was set up with.
+  if (cycle > event.sprintCount) notFound();
 
   const docs = await readCycle(slug, cycle);
 

@@ -13,6 +13,21 @@
 
 :root {
   color-scheme: light;
+
+  /*
+   * The index at `/` is this repo's own listing rather than anybody's result,
+   * so it needs a plain set of its own. Every event page overrides all of these
+   * inside `.result` with its own theme, which is why they are deliberately
+   * unremarkable: nothing here should leak a look into what a room made.
+   */
+  --paper: #ffffff;
+  --ink: #111111;
+  --muted: #595959;
+  --rule: #e2e2e0;
+  --accent: #111111;
+  --radius: 0px;
+  --measure: 68ch;
+  --rhythm: 1;
 }
 
 html {
