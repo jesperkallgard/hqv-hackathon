@@ -5,18 +5,20 @@ pair: "spruce"
 authors: ["Bo", "Cleo"]
 ---
 
-## What we're building
+## What we built
 
-A single product page for one bike. Nothing behind it — no database, no account system, no real checkout. The point is to prove someone can look at a bike, pick a size, and hit buy without the page breaking.
+A single product page for one bike. No database, no account system, no real checkout behind it. Someone can look at the bike, pick a size, and hit buy without the page breaking.
 
-On the page:
-- One bike: image, plain description, price, specs (weight, gearing, frame material) — stated as fact, trade-offs included if the bike has any (heavy, basic gearing, whatever's true).
-- Stock status shown right on the product — in stock with a count, or out of stock and the button turns off.
-- A size dropdown — realistic sizes, not placeholder text.
-- A Buy button. One click. It doesn't process payment — it logs the bike and the chosen size to the console and shows a small on-page confirmation ("Added: [bike], size [X]") so the click isn't silent.
+- One bike, real numbers: $729, 13.4 kg (heavy for the price — that's the steel fork and rack), 7-speed Shimano Tourney (fine flat, you'll feel hills).
+- Stock shown right on the product: "3 in stock." If it were zero, the button turns off and says so.
+- A size dropdown — S/M/L/XL with actual cm.
+- A Buy button. One click. No payment processed — it logs the bike and size to console and shows "Added: [bike], size [X]" on the page so the click isn't silent.
 
-Follows the shop's tone: real numbers, real trade-offs, no "elevate your ride" copy. Follows the look: fast, tactile, honest, real-feeling placeholder image rather than stock photography, buy reachable in one click.
+Follows the shop's tone: plain trade-offs stated as fact, no "elevate your ride" copy. Follows the look: one click from landing to buy, real-feeling image, stock always visible.
 
-## What's open
+```block
+type: SpruceBikeProductPage
+data: {}
+```
 
-We handed this to the builder to turn into an actual working component, and the sprint clock ran out before it came back. The decision on scope and copy direction above is settled — what's not yet in hand is the built, clickable page itself. That still needs finishing and committing as a working component next.
+Left out on purpose: per-size stock, quantity, anything resembling a real cart or checkout — none of that was needed to prove the point.
