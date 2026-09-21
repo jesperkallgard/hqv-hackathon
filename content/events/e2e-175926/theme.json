@@ -1,0 +1,15 @@
+{
+  "font": "grotesk",
+  "headingFont": null,
+  "paper": "#FAFAF8",
+  "ink": "#1A1A1A",
+  "accent": "#3F5468",
+  "radius": 0,
+  "headingScale": 1.05,
+  "headingWeight": 600,
+  "headingTracking": -0.01,
+  "measure": 70,
+  "density": "airy",
+  "align": "left",
+  "uppercaseHeadings": false
+}
