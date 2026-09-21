@@ -1,38 +1,30 @@
 @import "tailwindcss";
 
 /*
- * The site's palette. This repo has no shadcn components — the chat UI lives in
- * the engine repo — so there is only one token set here.
+ * Grace's palette, from gracestudio.se. The portal is the read surface — what
+ * the room built — so it sits on bone and gets out of the way of the writing.
  */
 
 :root {
-  color-scheme: light dark;
+  --ink: #1d1d1b;
+  --bone: #ede8e3;
+  --paper: #f7f5f3;
+  --lime: #ccf871;
+  --periwinkle: #8290ff;
 
-  --brand: oklch(0.63 0.19 42);
-  --ink: oklch(0.21 0.01 260);
-  --ink-soft: oklch(0.48 0.01 260);
-  --paper: oklch(0.99 0.002 260);
-  --rule: oklch(0.9 0.004 260);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --brand: oklch(0.74 0.16 45);
-    --ink: oklch(0.95 0.005 260);
-    --ink-soft: oklch(0.72 0.01 260);
-    --paper: oklch(0.18 0.008 260);
-    --rule: oklch(0.32 0.01 260);
-  }
+  --ink-soft: color-mix(in oklab, var(--ink) 58%, var(--bone));
+  --rule: color-mix(in oklab, var(--ink) 14%, var(--bone));
 }
 
 @theme inline {
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-  --color-brand: var(--brand);
+  --font-sans: var(--font-grotesk), ui-sans-serif, system-ui, sans-serif;
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
+  --color-bone: var(--bone);
   --color-paper: var(--paper);
   --color-rule: var(--rule);
+  --color-lime: var(--lime);
+  --color-periwinkle: var(--periwinkle);
 }
 
 html {
@@ -43,77 +35,87 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
 }
 
 /*
- * Prose styling for the Post block. Hand-rolled rather than pulling in the
- * Tailwind typography plugin.
+ * Prose for the Post block. Hand-rolled rather than pulling in the Tailwind
+ * typography plugin.
  */
 .prose {
   max-width: 68ch;
 }
 
 .prose > * + * {
-  margin-top: 1em;
+  margin-top: 1.1em;
 }
 
 .prose h1,
 .prose h2,
 .prose h3,
 .prose h4 {
-  font-weight: 650;
-  line-height: 1.25;
-  letter-spacing: -0.015em;
-  margin-top: 1.8em;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-top: 1.9em;
   margin-bottom: 0.5em;
   text-wrap: balance;
 }
 
-.prose h1 { font-size: 1.9rem; }
-.prose h2 { font-size: 1.45rem; }
+.prose h1 { font-size: 2rem; }
+.prose h2 { font-size: 1.5rem; }
 .prose h3 { font-size: 1.15rem; }
 .prose h4 { font-size: 1rem; }
 
 .prose > :first-child { margin-top: 0; }
 
 .prose a {
-  color: var(--brand);
+  color: inherit;
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--rule);
+}
+
+.prose a:hover {
+  text-decoration-color: currentColor;
 }
 
 .prose ul,
 .prose ol {
-  padding-left: 1.4em;
+  padding-left: 1.3em;
 }
 
 .prose ul { list-style: disc; }
 .prose ol { list-style: decimal; }
-.prose li + li { margin-top: 0.3em; }
+.prose li + li { margin-top: 0.35em; }
 
 .prose blockquote {
-  border-left: 3px solid var(--brand);
+  border-left: 2px solid var(--ink);
   padding-left: 1em;
   color: var(--ink-soft);
-  font-style: italic;
 }
 
 .prose code {
-  font-family: var(--font-mono);
-  font-size: 0.88em;
-  background: color-mix(in oklch, var(--ink) 8%, transparent);
-  border-radius: 4px;
-  padding: 0.12em 0.36em;
+  font-size: 0.9em;
+  background: var(--bone);
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
 }
 
 .prose pre {
-  background: color-mix(in oklch, var(--ink) 92%, var(--paper));
+  background: var(--ink);
   color: var(--paper);
-  border-radius: 10px;
-  padding: 1rem 1.1rem;
+  border-radius: 8px;
+  padding: 1rem 1.15rem;
   overflow-x: auto;
 }
 
@@ -141,11 +143,20 @@ body {
 .prose hr {
   border: 0;
   border-top: 1px solid var(--rule);
-  margin: 2em 0;
+  margin: 2.2em 0;
 }
 
 .prose img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

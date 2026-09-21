@@ -26,17 +26,17 @@ export default async function ContributionPage({
       <header className="space-y-2">
         <Link
           href={`/${slug}/contributions/${cycle}`}
-          className="text-sm text-[var(--ink-soft)] hover:text-[var(--brand)]"
+          className="text-sm text-ink-soft hover:text-lime"
         >
           ← Sprint {cycle}
         </Link>
         <h1 className="text-3xl font-semibold tracking-tight text-balance">
           {doc.frontmatter.title ?? doc.slug}
         </h1>
-        <p className="text-sm text-[var(--ink-soft)]">
-          {doc.slug}
-          {doc.frontmatter.authors?.length ? ` · ${doc.frontmatter.authors.join(" & ")}` : ""}
-          {` · ${event.name}`}
+        <p className="text-sm text-ink-soft">
+          {doc.frontmatter.authors?.length
+            ? doc.frontmatter.authors.join(" and ")
+            : doc.slug}
         </p>
       </header>
       <RenderBlocks blocks={doc.blocks} />

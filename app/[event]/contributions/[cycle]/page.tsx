@@ -25,33 +25,32 @@ export default async function CyclePage({
       <header className="space-y-2">
         <Link
           href={`/${slug}/contributions`}
-          className="text-sm text-[var(--ink-soft)] hover:text-[var(--brand)]"
+          className="text-sm text-ink-soft hover:text-lime"
         >
           ← Contributions
         </Link>
         <h1 className="text-3xl font-semibold tracking-tight">Sprint {cycle}</h1>
-        <p className="text-[var(--ink-soft)]">
-          {event.name} · {event.sprintMinutes} minutes
+        <p className="text-ink-soft">
+          {event.sprintMinutes} minutes of {event.name}
         </p>
       </header>
 
       {docs.length === 0 ? (
-        <p className="text-[var(--ink-soft)]">No group has handed in yet.</p>
+        <p className="text-ink-soft">No group has handed in yet.</p>
       ) : (
         docs.map((doc) => (
-          <article key={doc.slug} className="space-y-4 border-t border-[var(--rule)] pt-8">
+          <article key={doc.slug} className="space-y-4 border-t border-rule pt-8">
             <div>
               <Link
                 href={`/${slug}/contributions/${cycle}/${doc.slug}`}
-                className="text-xl font-semibold tracking-tight hover:text-[var(--brand)]"
+                className="text-xl font-semibold tracking-tight hover:text-lime"
               >
                 {doc.frontmatter.title ?? doc.slug}
               </Link>
-              <p className="text-sm text-[var(--ink-soft)]">
-                {doc.slug}
+              <p className="text-sm text-ink-soft">
                 {doc.frontmatter.authors?.length
-                  ? ` · ${doc.frontmatter.authors.join(" & ")}`
-                  : ""}
+                  ? doc.frontmatter.authors.join(" and ")
+                  : doc.slug}
               </p>
             </div>
             <RenderBlocks blocks={doc.blocks} />

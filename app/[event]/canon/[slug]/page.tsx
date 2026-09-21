@@ -19,7 +19,7 @@ export default async function CanonDocPage({
     <article className="space-y-6">
       <Link
         href={`/${eventSlug}`}
-        className="text-sm text-[var(--ink-soft)] hover:text-[var(--brand)]"
+        className="text-sm text-ink-soft hover:text-lime"
       >
         ← {event.name}
       </Link>

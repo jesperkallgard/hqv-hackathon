@@ -16,32 +16,30 @@ export default async function CanonPage({ params }: { params: Promise<{ event: s
   return (
     <div className="space-y-14">
       <section>
-        <p className="text-xs font-medium tracking-widest text-[var(--brand)] uppercase">
-          {event.name}
-        </p>
-        <h1 className="mt-2 max-w-3xl text-4xl font-semibold tracking-tight text-balance">
+        <p className="text-sm font-medium text-ink-soft">{event.name}</p>
+        <h1 className="mt-3 max-w-[22ch] text-[clamp(2rem,5.5vw,3.75rem)] leading-[0.98] font-black tracking-[-0.03em]">
           {event.goal}
         </h1>
-        <p className="mt-3 text-sm text-[var(--ink-soft)]">
-          <Link href={`/${slug}/contributions`} className="hover:text-[var(--brand)]">
-            All contributions →
+        <p className="mt-3 text-sm text-ink-soft">
+          <Link href={`/${slug}/contributions`} className="hover:text-lime">
+            All contributions
           </Link>
         </p>
       </section>
 
       {docs.length === 0 ? (
-        <p className="text-[var(--ink-soft)]">
+        <p className="text-ink-soft">
           Nothing in the canon yet. It fills up as the day&rsquo;s winners are merged.
         </p>
       ) : (
         <>
-          <nav className="border-y border-[var(--rule)] py-4">
+          <nav className="border-y border-rule py-4">
             <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
               {docs.map((doc) => (
                 <li key={doc.slug}>
                   <Link
                     href={`/${slug}/canon/${doc.slug}`}
-                    className="text-[var(--ink-soft)] hover:text-[var(--brand)]"
+                    className="text-ink-soft hover:text-lime"
                   >
                     {doc.frontmatter.title ?? doc.slug}
                   </Link>
