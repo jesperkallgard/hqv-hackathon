@@ -28,7 +28,7 @@ export default async function CanonDocPage({
           {doc.frontmatter.title}
         </h1>
       )}
-      <RenderBlocks blocks={doc.blocks} />
+      <RenderBlocks blocks={doc.blocks} event={slug} />
     </article>
   );
 }
