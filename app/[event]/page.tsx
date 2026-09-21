@@ -6,6 +6,12 @@ import { readEvent } from "@/lib/events";
 
 export const dynamic = "force-dynamic";
 
+export async function generateMetadata({ params }: { params: Promise<{ event: string }> }) {
+  const { event: slug } = await params;
+  const event = await readEvent(slug);
+  return { title: event?.name ?? "Made in a day", description: event?.goal };
+}
+
 export default async function CanonPage({ params }: { params: Promise<{ event: string }> }) {
   const { event: slug } = await params;
   const event = await readEvent(slug);

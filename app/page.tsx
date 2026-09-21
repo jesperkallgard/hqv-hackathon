@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { PROJECT_NAME } from "@/config/day";
 import { listEvents, readActiveEvent } from "@/lib/events";
 
 export const dynamic = "force-dynamic";
@@ -10,8 +9,7 @@ export default async function EventsIndex() {
   return (
     <div className="space-y-10">
       <section>
-        <p className="text-sm font-medium text-ink-soft">{PROJECT_NAME}</p>
-        <h1 className="mt-3 max-w-[16ch] text-[clamp(2.5rem,7vw,4.5rem)] leading-[0.95] font-black tracking-[-0.035em]">
+        <h1 className="max-w-[16ch] text-[clamp(2.5rem,7vw,4.5rem)] leading-[0.95] font-black tracking-[-0.035em]">
           Everything this room has built
         </h1>
       </section>
