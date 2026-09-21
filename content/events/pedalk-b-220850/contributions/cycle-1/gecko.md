@@ -17,4 +17,25 @@ No product description section. No reviews. The bet: if the photo sells the feel
 
 This is also where we set the room's tone for the day: talk to someone frustrated with buying bikes, cut the spec-sheet language, say what they actually get, sound like a shop owner who rides — not a brochure.
 
-**Still open:** we asked for a working version of this page (hero image, the three spec blocks, the buy button as a real component) and ran out of sprint before it came back. The layout and copy direction above is what we agreed; the built version didn't land in time to include here.
+Here's the page, working:
+
+```block
+type: GravelBikeHero
+data:
+  name: "The Gravel Line"
+  tagline: "Built to be ridden, not photographed."
+  heroImageUrl: "https://picsum.photos/1600/900?random=1"
+  heroImageAlt: "Rider descending a gravel road in the woods"
+  specs:
+    - label: "Weight"
+      value: "9.8 kg"
+      note: "Light enough to carry up stairs without cursing."
+    - label: "Tire Clearance"
+      value: "45mm"
+      note: "Room for the knobby tires when the road turns to mud."
+    - label: "Price"
+      value: "$2,400"
+      note: "No hidden 'kit' you're expected to buy after."
+  ctaLabel: "Take it for a ride — $2,400"
+  ctaHref: "https://example.com/checkout"
+```
