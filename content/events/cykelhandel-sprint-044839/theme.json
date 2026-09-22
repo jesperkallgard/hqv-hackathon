@@ -1,0 +1,15 @@
+{
+  "font": "humanist",
+  "headingFont": "slab",
+  "paper": "#F6F2EA",
+  "ink": "#211C16",
+  "accent": "#C1502E",
+  "radius": 6,
+  "headingScale": 1.15,
+  "headingWeight": 700,
+  "headingTracking": -0.01,
+  "measure": 68,
+  "density": "normal",
+  "align": "left",
+  "uppercaseHeadings": false
+}
