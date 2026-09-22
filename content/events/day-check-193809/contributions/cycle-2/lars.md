@@ -9,7 +9,7 @@ points:
   - "An outsider can read the four cards and know where to click without learning the site first."
 cycle: 2
 pair: "lars"
-authors: ["Greta", "Lars", "Kajsa", "Ada"]
+authors: ["Lars", "Greta", "Kajsa", "Ada"]
 ---
 
 An internal front door with four calm routes: What’s changed, What we’re testing, How we do things, and Who owns what. Each card tells you the last update date and the one action it wants from you, so an outsider can land, click, and know what to do next.
