@@ -1,5 +1,7 @@
 /**
- * The whole internal page: header, the single newest-first list of changes with owner, cadence and date on each row, and a footer. Built from Team Ada's and Team Cleo's ideas.
+ * The whole internal page: header, the single newest-first list of changes with
+ * owner, cadence and date on each row, and a footer. A row shows three of the
+ * seven fields; the headline opens the post.
  */
 import ChangeRow from "./ChangeRow";
 
@@ -64,6 +66,7 @@ export default function WhatsChangedPage({
               owner={e.owner}
               meta={e.meta}
               date={e.date}
+              href={e.href}
               first={i === 0}
             />
           ))}
