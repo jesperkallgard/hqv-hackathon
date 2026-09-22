@@ -1,46 +1,76 @@
 ---
-title: "Find the latest answer by staleness"
-ingress: "When the question is “what changed?”, the site puts the newest, least-stale answer first and makes owner and update timing impossible to miss. It is for people who need the answer fast and should not have to ask a colleague."
+title: "One site for the answer and the owner"
+ingress: "A single internal site with the feed, the owners, and the working rules in one calm place. It is for people who need to find the right answer without asking a colleague."
 points:
-  - "The feed is the main way in, not a dashboard or a chart."
-  - "Every row shows the owner and the last update date beside the change."
-  - "Newest items come first so stale posts sink down the page."
-  - "The site keeps the navigation simple: feed, who owns what, and how we work."
-  - "The one clear action is to open the post; everything else stays calm and factual."
+  - "The header names the site and gives a short way in to the feed, who owns what, and how we work."
+  - "The feed is the main page and shows what changed, newest first."
+  - "Every item shows who owns it and when it was last touched so staleness is obvious."
+  - "The site stays quiet and plain: white, navy headings, no charts, no dashboard."
+  - "The footer says who keeps the site and the page only uses orange for the one main action."
 cycle: 4
 pair: "wille"
 authors: ["Wille", "Yara", "Kajsa", "Jonas"]
 ---
 
-When the question is “what changed?”, the site puts the newest, least-stale answer first and makes owner and update timing impossible to miss. It is for people who need the answer fast and should not have to ask a colleague.
+A single internal site with the feed, the owners, and the working rules in one calm place. It is for people who need to find the right answer without asking a colleague.
 
-- The feed is the main way in, not a dashboard or a chart.
-- Every row shows the owner and the last update date beside the change.
-- Newest items come first so stale posts sink down the page.
-- The site keeps the navigation simple: feed, who owns what, and how we work.
-- The one clear action is to open the post; everything else stays calm and factual.
+- The header names the site and gives a short way in to the feed, who owns what, and how we work.
+- The feed is the main page and shows what changed, newest first.
+- Every item shows who owns it and when it was last touched so staleness is obvious.
+- The site stays quiet and plain: white, navy headings, no charts, no dashboard.
+- The footer says who keeps the site and the page only uses orange for the one main action.
 
-Build the internal site as a plain white page with navy headings, left-aligned text, flat panels, and a header, short nav, one generous content column, and footer.
+Build the whole site as a real internal website, not a document.
 
-Keep the site name as **What's Changed**.
+Use this site name: **What's Changed**.
 
-The top navigation must include exactly three routes: **the feed**, **who owns what**, and **how we work**.
+Structure:
+- a header with the site name
+- a short navigation
+- one generous content column
+- a footer
 
-The feed is the main screen. It should read as a list of changes, newest first, with each row showing:
-- the change title
-- the owner
+Navigation:
+- the feed
+- who owns what
+- how we work
+
+The feed is the main entry point. It should show changes newest first.
+
+Each row in the feed must show:
+- what changed
+- who owns it
 - the date it was last touched
 
-Staleness must be obvious at a glance. Use the date prominently and make it clear who last touched each item.
+Staleness must be obvious. The last-touched date and owner should be easy to scan.
 
-The page should feel calm and uncluttered. No dashboard, no charts, no busy widgets.
+The site exists to save somebody from asking a colleague.
 
-Use orange only for the one primary action button. All other buttons are outlined in navy. States are small round tags, not coloured words.
+Every post must name an owner and say how often it is updated.
 
-The site exists to save somebody from asking a colleague. Every post must name an owner and say how often it is updated.
+Tone:
+- plain and concrete
+- short sentences
+- say what changed and what it meant
+- no marketing language
 
-The content should stay concrete and short. Say what changed and what it meant, not what was done. No marketing language.
+Look and feel:
+- white background
+- a lot of air
+- navy headings
+- left-aligned text
+- flat panels
+- no shadows
+- fully round pill buttons
+- orange with white text for the one primary action
+- outlined navy for the rest
+- states are small round tags, not coloured words
 
-If there is a footer, it should say who keeps the site.
+Keep it calm and simple.
 
-Out of scope: charts, admin screens, analytics, and any extra navigation beyond the three routes above.
+Out of scope:
+- dashboards
+- charts
+- extra nav items
+- busy widgets
+- any other section that makes it feel like a report instead of an internal site
