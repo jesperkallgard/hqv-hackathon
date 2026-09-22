@@ -1,63 +1,71 @@
 ---
 title: "What's Changed"
-ingress: "An internal site for people who need to know what changed and what to do next. It helps the team answer questions without asking a colleague."
+ingress: "A real internal site that helps people see what changed, who owns it, and what to do next. It is there so nobody has to ask a colleague."
 points:
-  - "A header names the site and gives three ways in: the feed, who owns what, and how we work."
-  - "The feed is the main view, sorted newest first, with each entry showing what changed, an owner, and a date."
-  - "Every entry says the one action it wants from you, so the next step is obvious."
-  - "A who owns what view shows the dealer locator, its owner, and how often it is updated."
-  - "There is no dashboard or charts; it stays calm, white, and navy, with orange only on the one primary button."
+  - "The site has a header with the name and three ways in: the feed, who owns what, and how we work."
+  - "The feed is the main view, in one generous column, with the newest items first."
+  - "Every entry shows what changed, who owns it, when it was updated, and the one action it wants from you."
+  - "A who owns what view lists things like the dealer locator, with an owner and an update cadence."
+  - "A footer says who keeps the site; there is no dashboard, no charts, and the UI stays white, calm, and flat."
 cycle: 1
 pair: "ada"
 authors: ["Ada", "Iris", "Cleo", "Hugo"]
 ---
 
-An internal site for people who need to know what changed and what to do next. It helps the team answer questions without asking a colleague.
+A real internal site that helps people see what changed, who owns it, and what to do next. It is there so nobody has to ask a colleague.
 
-- A header names the site and gives three ways in: the feed, who owns what, and how we work.
-- The feed is the main view, sorted newest first, with each entry showing what changed, an owner, and a date.
-- Every entry says the one action it wants from you, so the next step is obvious.
-- A who owns what view shows the dealer locator, its owner, and how often it is updated.
-- There is no dashboard or charts; it stays calm, white, and navy, with orange only on the one primary button.
+- The site has a header with the name and three ways in: the feed, who owns what, and how we work.
+- The feed is the main view, in one generous column, with the newest items first.
+- Every entry shows what changed, who owns it, when it was updated, and the one action it wants from you.
+- A who owns what view lists things like the dealer locator, with an owner and an update cadence.
+- A footer says who keeps the site; there is no dashboard, no charts, and the UI stays white, calm, and flat.
 
 Build a single internal website called **What's Changed**.
 
-### Content
-- Header title: **What's Changed**
-- Header navigation: **Feed**, **Who owns what**, **How we work**
-- Feed items are about things like:
-  - what changed this week
-  - what's being tested
-  - who owns the dealer locator
-- Each feed row shows:
-  - a short change summary
-  - an owner
-  - a date
-  - one clear action it wants from the viewer
-- Include a footer that says who keeps the site.
+### Structure
+- Header with the site name.
+- Short navigation to:
+  - Feed
+  - Who owns what
+  - How we work
+- Main content in one generous column.
+- Footer that says who keeps the site.
 
-### Layout and feel
-- Make it feel like a real internal website, not a document.
-- Header, one generous content column, footer.
+### Feed
+- The feed is the main view.
+- Newest items first.
+- Each entry shows:
+  - what changed
+  - who owns it
+  - when it was updated
+  - the one action it wants from you
+- Use real internal-site style, not a document layout.
+
+### Who owns what
+- Include items such as the dealer locator.
+- Each item shows the owner.
+- Each item shows how often it is updated.
+
+### How we work
+- Explain the site in plain, concrete language.
+- Short sentences.
+- Say what changed and what it meant.
+- No marketing language.
+
+### Look and feel
 - White background.
-- Lots of air.
+- A lot of air.
 - Navy headings.
-- Text left-aligned.
-- Flat panels only.
+- Left-aligned text.
+- Flat panels.
 - No shadows anywhere.
-
-### Buttons and states
-- One primary button only.
-- Primary button is a fully round orange pill with white text.
-- All other buttons are outlined in navy and fully round.
+- Buttons are fully round pills.
+- Primary action: orange with white text.
+- Other buttons: outlined in navy.
 - States are small round tags, not coloured words.
 
 ### Out of scope
 - No dashboard.
 - No charts.
-- No marketing language.
-- No complex data views or analytics.
-
-### Notes
-- The site should help someone avoid asking a colleague.
-- Every post must name an owner and how often it is updated.
+- No extra analytics views.
+- No decorative marketing copy.
