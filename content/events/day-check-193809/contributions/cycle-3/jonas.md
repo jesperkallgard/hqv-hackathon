@@ -1,40 +1,30 @@
 ---
-title: "Open each post to see the full brief"
-ingress: "Each post shows only the headline, owner, and update date in the list. Open it for the audience, summary, status or date, update rhythm, and the onward link, so the front door stays calm and spare."
+title: "My Husqvarna login moved"
+ingress: "The post is for people who need the answer fast and do not want to ask a colleague. It shows the short version on the list, then opens to the full brief."
 points:
-  - "The list shows only the headline, owner, and update date for each post."
-  - "Opening a post reveals the audience, a three-line summary, its status or date, how often it is updated, and one onward link."
-  - "Every post still has a named owner and an update rhythm, so the right person is easy to find."
-  - "The page stays restrained: fewer visible fields, with each one doing more work."
-  - "Nothing adds extra feed noise, tags, or secondary actions to the list view."
+  - "The list shows only the headline, owner, and update date."
+  - "Opening the post shows the audience, a three-line summary, a status or date, how often it is updated, and one link onward."
+  - "The post is owned by Jonas B and is updated monthly."
+  - "The open view keeps the tone plain, concrete, and short."
+  - "The page stays restrained and does not add extra feed noise or extra actions."
 cycle: 3
 pair: "jonas"
 authors: ["Jonas", "Bo", "Quinn", "Ulf"]
 ---
 
-Each post shows only the headline, owner, and update date in the list. Open it for the audience, summary, status or date, update rhythm, and the onward link, so the front door stays calm and spare.
+The post is for people who need the answer fast and do not want to ask a colleague. It shows the short version on the list, then opens to the full brief.
 
-- The list shows only the headline, owner, and update date for each post.
-- Opening a post reveals the audience, a three-line summary, its status or date, how often it is updated, and one onward link.
-- Every post still has a named owner and an update rhythm, so the right person is easy to find.
-- The page stays restrained: fewer visible fields, with each one doing more work.
-- Nothing adds extra feed noise, tags, or secondary actions to the list view.
+- The list shows only the headline, owner, and update date.
+- Opening the post shows the audience, a three-line summary, a status or date, how often it is updated, and one link onward.
+- The post is owned by Jonas B and is updated monthly.
+- The open view keeps the tone plain, concrete, and short.
+- The page stays restrained and does not add extra feed noise or extra actions.
 
-## What this keeps
-- The site remains a real internal website with a header, short navigation, one generous content column, and a footer.
-- Keep the white, airy layout with navy headings, left-aligned text, flat panels, no shadows, and fully round pills for buttons.
-- State stays as small round tags, not coloured words.
-- Tone stays plain and concrete: short sentences, no marketing language.
-
-## What changes on the front door
-- The list for posts shows only three things: headline, owner, and update date.
-- The card or row title is the headline.
-- The owner is shown by name.
-- The date is shown in the list view.
-- No other post fields appear in the list view.
-
-## What opens inside a post
-- A post contains seven things in total:
+## Post content
+- Title: My Husqvarna login moved
+- Owner: Jonas B
+- Update cadence: Monthly
+- The post must have seven things in total:
   1. headline
   2. audience
   3. a three-line summary
@@ -42,24 +32,48 @@ Each post shows only the headline, owner, and update date in the list. Open it f
   5. an owner by name
   6. how often it is updated
   7. one link onward
-- On open, show the fields that are hidden from the list view: audience, three-line summary, status or date, update cadence, and the onward link.
-- Keep the owner visible in the open view as well.
-- Keep the headline at the top.
-- The summary must read as three short lines, not a long paragraph.
-- The onward link is the only extra action inside the post.
 
-## Content rules
-- Every post must name an owner.
-- Every post must say how often it is updated.
-- The list should help someone decide whether they need to open the post.
-- The open view should answer the question without sending people elsewhere.
+## List view
+- In the list, show only:
+  - headline
+  - owner
+  - update date
+- Do not show the audience, summary, cadence, or onward link in the list.
+- Keep the list calm and spare.
+
+## Open view
+- On open, show the hidden post details:
+  - audience
+  - three-line summary
+  - status or date
+  - update cadence
+  - one link onward
+- Keep the owner visible.
+- Keep the headline at the top.
+- The summary must be exactly three short lines, not a paragraph.
+- The onward link is the only extra action in the post.
+
+## Look and feel
+- Keep the site as a real internal website, not a document.
+- Header with the site name and a short navigation.
+- One generous content column.
+- Footer at the bottom.
+- White background, lots of air, navy headings, left-aligned text.
+- Flat panels, no shadows anywhere.
+- Buttons are fully round pills.
+- Primary action: orange with white text.
+- Other actions: outlined in navy.
+- Statuses are small round tags, not coloured words.
+
+## Tone
+- Plain and concrete.
+- Short sentences.
+- Say what changed and what it meant.
+- No marketing language.
 
 ## Out of scope
-- No extra tags, badges, or filters in the list view.
-- No preview text beyond the three visible list fields.
-- No secondary calls to action.
-- No redesign of the site structure beyond this post drill-down.
-- No marketing copy or decorative content.
-
-## Notes
-- The direction says the merge earns its place if it saves somebody from asking a colleague. This version does that by keeping the list lean while still making the owner and freshness visible, and by putting the fuller brief behind the open state.
+- No extra tags or filters.
+- No secondary call to action.
+- No extra feed items or previews.
+- No new site structure beyond the opened post.
+- No decorative copy.
