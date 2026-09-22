@@ -39,11 +39,23 @@ export function isProduction(): boolean {
  * The shared root is still the fallback, for the components that belong to the
  * site rather than to a day.
  */
-async function loadBlock(type: string, event?: string): Promise<BlockComponent | null> {
+async function loadBlock(
+  type: string,
+  event?: string,
+  group?: string,
+): Promise<BlockComponent | null> {
   if (!BLOCK_TYPE.test(type)) return null;
   if (event && !EVENT_SLUG.test(event)) return null;
+  if (group && !EVENT_SLUG.test(group)) return null;
 
-  for (const path of event ? [`${event}/${type}`, type] : [type]) {
+  // A group's own shelf first, then what the room has merged, then the site's
+  // own components. Seven groups all wanting to call it ProductPage is why the
+  // shelf exists.
+  const places = event
+    ? [...(group ? [`${event}/by/${group}/${type}`] : []), `${event}/${type}`, type]
+    : [type];
+
+  for (const path of places) {
     try {
       const mod = await import(`../app/blocks/${path}`);
       const component = (mod as { default?: BlockComponent }).default;
@@ -55,7 +67,15 @@ async function loadBlock(type: string, event?: string): Promise<BlockComponent |
   return null;
 }
 
-export async function RenderBlock({ block, event }: { block: ParsedBlock; event?: string }) {
+export async function RenderBlock({
+  block,
+  event,
+  group,
+}: {
+  block: ParsedBlock;
+  event?: string;
+  group?: string;
+}) {
   const production = isProduction();
 
   if (block.type === INVALID_BLOCK) {
@@ -67,7 +87,7 @@ export async function RenderBlock({ block, event }: { block: ParsedBlock; event?
     );
   }
 
-  const Component = await loadBlock(block.type, event);
+  const Component = await loadBlock(block.type, event, group);
   if (!Component) {
     if (production) return null;
     return (
@@ -94,11 +114,19 @@ export async function RenderBlock({ block, event }: { block: ParsedBlock; event?
   );
 }
 
-export function RenderBlocks({ blocks, event }: { blocks: ParsedBlock[]; event?: string }) {
+export function RenderBlocks({
+  blocks,
+  event,
+  group,
+}: {
+  blocks: ParsedBlock[];
+  event?: string;
+  group?: string;
+}) {
   return (
     <>
       {blocks.map((block, index) => (
-        <RenderBlock key={`${block.type}-${index}`} block={block} event={event} />
+        <RenderBlock key={`${block.type}-${index}`} block={block} event={event} group={group} />
       ))}
     </>
   );
