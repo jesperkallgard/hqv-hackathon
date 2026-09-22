@@ -1,29 +1,32 @@
 ---
-title: "Open the post and show the seven fields"
-ingress: "A post opens to the seven things people need to judge freshness fast: what it is, who it is for, when it changed, who owns it, how often it moves, and where to go next. The list keeps the headline, owner, and date in view so stale posts are obvious at a glance."
+title: "My Husqvarna login moved"
+ingress: "My Husqvarna login moved for people who need the new place to sign in. It shows who owns it, how often it changes, and what to do next so nobody has to ask around."
 points:
-  - "Each post opens with seven fields: headline, audience, summary, status or date, owner name, update frequency, and one onward link."
-  - "The list view shows only the headline, the owner, and the date so people can scan for stale items fast."
-  - "The open post keeps the three-line summary together and makes the freshness details impossible to miss."
-  - "Every post names the owner and says how often it is updated, so nobody has to guess who keeps it current."
-  - "The page stays a simple internal site with a header, one wide content column, flat panels, and pill buttons."
+  - "The post opens with the login move as the headline and makes the change clear at once."
+  - "It names Jonas B as the owner and says the post is updated monthly."
+  - "It shows the audience up front so people know if the change affects them."
+  - "It gives a short three-line summary, a status or date, and one onward link on the opened post."
+  - "The list view still keeps the headline, owner, and date visible for a quick scan of staleness."
 cycle: 3
 pair: "iris"
 authors: ["Rut", "Greta", "Sam", "Iris"]
 ---
 
-A post opens to the seven things people need to judge freshness fast: what it is, who it is for, when it changed, who owns it, how often it moves, and where to go next. The list keeps the headline, owner, and date in view so stale posts are obvious at a glance.
+My Husqvarna login moved for people who need the new place to sign in. It shows who owns it, how often it changes, and what to do next so nobody has to ask around.
 
-- Each post opens with seven fields: headline, audience, summary, status or date, owner name, update frequency, and one onward link.
-- The list view shows only the headline, the owner, and the date so people can scan for stale items fast.
-- The open post keeps the three-line summary together and makes the freshness details impossible to miss.
-- Every post names the owner and says how often it is updated, so nobody has to guess who keeps it current.
-- The page stays a simple internal site with a header, one wide content column, flat panels, and pill buttons.
+- The post opens with the login move as the headline and makes the change clear at once.
+- It names Jonas B as the owner and says the post is updated monthly.
+- It shows the audience up front so people know if the change affects them.
+- It gives a short three-line summary, a status or date, and one onward link on the opened post.
+- The list view still keeps the headline, owner, and date visible for a quick scan of staleness.
 
-Build on the current What’s Changed page as a single post opened from the list.
+Use the current opened-post layout for the first post.
 
-### Content
-- The open post must contain exactly these seven things:
+### Post content
+- Title: My Husqvarna login moved
+- Owner: Jonas B
+- Update frequency: monthly
+- Keep the seven required fields on the open post:
   1. Headline
   2. Audience
   3. A three-line summary
@@ -31,30 +34,24 @@ Build on the current What’s Changed page as a single post opened from the list
   5. Owner by name
   6. How often it is updated
   7. One link onward
-- In the list view, show only the headline, the owner, and the date.
-- Make staleness obvious at a glance. The date and owner must be visible without opening the post.
-- Keep the owner name and the update frequency on every post.
-- Use real, concrete copy. No placeholder labels.
-- If the update frequency is unknown for a post, leave it visibly absent rather than inventing it.
+- The post must read as a real internal update, plain and concrete.
+- The summary should explain what changed and what it means.
+- The audience should say who needs to care about the login move.
+- The status/date should make freshness obvious.
+
+### List view
+- Keep the list scan to headline, owner, and date only.
+- The list must make stale posts easy to spot.
 
 ### Look and feel
-- Keep the current direction: a real internal website, not a document.
-- Header with site name and short nav.
-- One generous content column.
-- Footer.
+- Keep the existing internal-website look.
 - White background, lots of air, navy headings, left-aligned text.
-- Flat panels only. No shadows.
-- Buttons are fully round pills: orange with white text for the primary action, navy outline for secondary actions.
-- Statuses are small round tags, not coloured words.
-
-### Behaviour
-- The list should read as a fast scan for stale items.
-- The open post should reveal the extra details without turning into a long article.
-- The onward link is the last step, not the first thing people see.
+- Flat panels only, no shadows.
+- Fully round pill buttons.
+- Small round status tags.
 
 ### Out of scope
-- No dashboard.
-- No feed.
-- No extra layer before opening a post.
-- No new site structure beyond this page and its opened state.
-- No extra fields beyond the seven above.
+- No extra sections.
+- No feed or dashboard.
+- No new navigation model.
+- No more than one onward link.
