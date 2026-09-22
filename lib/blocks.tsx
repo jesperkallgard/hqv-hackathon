@@ -1,4 +1,4 @@
-import { createElement, Suspense, type ComponentType } from "react";
+import { createElement, type ComponentType } from "react";
 import { BlockBoundary } from "@/components/BlockBoundary";
 import { BlockWarning } from "@/components/BlockWarning";
 import { INVALID_BLOCK, type ParsedBlock } from "@/lib/content";
@@ -105,13 +105,14 @@ export async function RenderBlock({
     </BlockWarning>
   );
 
-  // The Suspense boundary is what makes the failure recoverable during server
-  // rendering: without it a component that throws errors the whole response.
-  return (
-    <BlockBoundary fallback={fallback}>
-      <Suspense fallback={null}>{createElement(Component, block.data)}</Suspense>
-    </BlockBoundary>
-  );
+  // No Suspense here. With one, React streams the block: the HTML arrives
+  // with the content in a hidden segment and a placeholder in the page, and a
+  // completion script swaps them once the client bundle has run. Until then
+  // — on a projector that has just loaded, in a screenshot, for anyone whose
+  // JavaScript is slow — the prototype is a white page. The component was
+  // already resolved above, so it renders in place; the boundary still keeps
+  // a component that throws from taking the page down.
+  return <BlockBoundary fallback={fallback}>{createElement(Component, block.data)}</BlockBoundary>;
 }
 
 export function RenderBlocks({
