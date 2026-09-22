@@ -1,0 +1,15 @@
+{
+  "font": "sans",
+  "headingFont": "sans",
+  "paper": "#FFFFFF",
+  "ink": "#0B0C0C",
+  "accent": "#1D70B8",
+  "radius": 0,
+  "headingScale": 1.1,
+  "headingWeight": 700,
+  "headingTracking": -0.01,
+  "measure": 68,
+  "density": "normal",
+  "align": "left",
+  "uppercaseHeadings": false
+}
