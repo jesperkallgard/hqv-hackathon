@@ -1,49 +1,41 @@
 ---
-title: "Who owns what"
-ingress: "One of the front door's four cards: a single list answering \"who owns this, and how often do they touch it\" — nothing else. It closes the owner-name gap that \"What's changed\" left open."
+title: "The front door"
+ingress: "Four cards, one column: What's changed, What we're testing, How we do things, Who owns what. An outsider reads those four names and knows where to click — nothing else on this screen tries to explain itself."
 points:
-  - "This is the \"Who owns what\" card on the four-card front door — same one-column, no-shadow page shape as \"What's changed\", not a new design."
-  - "It answers exactly one question per row: who owns this, how often do they update it. Not what they do day to day, not a bio, not a team page."
-  - "Same row shape as the changed-feed: one line, one name, one cadence — nothing new to learn to read either page."
-  - "It closes the gap \"What's changed\" left open: two rows there had no owner name attached, because the room hadn't been given one. This page is where those names get filled in, once, in one place."
-  - "No org chart, no search box, no photos, no contact form. If you can't find an owner by scanning one short list, the list is wrong — not the answer to add a search box."
+  - "Four cards, exactly these names and no others: \"What's changed\", \"What we're testing\", \"How we do things\", \"Who owns what\". Nothing renamed, nothing merged into a fifth."
+  - "Each card shows only its name and the date it was last updated — no summary line, no icon, no preview of what's inside."
+  - "Clicking a card goes straight to that list. \"What's changed\" already exists in the canon; the other three are the same one-column, no-shadow, newest-first list, just scoped to their own question."
+  - "No fifth card, no \"see all\", no search across the four. Picking one of four and clicking is the entire job of this screen."
+  - "\"Who owns what\" fills the owner-name gap from \"What's changed\"; the other two new cards start genuinely empty rather than invented."
 cycle: 2
 pair: "dag"
 authors: ["Dag", "Cleo"]
 ---
 
-One of the front door's four cards: a single list answering "who owns this, and how often do they touch it" — nothing else. It closes the owner-name gap that "What's changed" left open.
+Four cards, one column: What's changed, What we're testing, How we do things, Who owns what. An outsider reads those four names and knows where to click — nothing else on this screen tries to explain itself.
 
-- This is the "Who owns what" card on the four-card front door — same one-column, no-shadow page shape as "What's changed", not a new design.
-- It answers exactly one question per row: who owns this, how often do they update it. Not what they do day to day, not a bio, not a team page.
-- Same row shape as the changed-feed: one line, one name, one cadence — nothing new to learn to read either page.
-- It closes the gap "What's changed" left open: two rows there had no owner name attached, because the room hadn't been given one. This page is where those names get filled in, once, in one place.
-- No org chart, no search box, no photos, no contact form. If you can't find an owner by scanning one short list, the list is wrong — not the answer to add a search box.
-
-## Assumption, stated plainly
-No focus areas had been split out to any group this sprint, and the sprint ended before this group could ask. We picked "Who owns what" ourselves, because it is the direct continuation of the gap "What's changed" left open in the canon: two example rows there ("site owner", "test owner") have no real name, on purpose, because nobody had assigned one. This page is where that gets settled, so we built this part rather than wait on the front door itself, which nobody was told to build either.
+- Four cards, exactly these names and no others: "What's changed", "What we're testing", "How we do things", "Who owns what". Nothing renamed, nothing merged into a fifth.
+- Each card shows only its name and the date it was last updated — no summary line, no icon, no preview of what's inside.
+- Clicking a card goes straight to that list. "What's changed" already exists in the canon; the other three are the same one-column, no-shadow, newest-first list, just scoped to their own question.
+- No fifth card, no "see all", no search across the four. Picking one of four and clicking is the entire job of this screen.
+- "Who owns what" fills the owner-name gap from "What's changed"; the other two new cards start genuinely empty rather than invented.
 
 ## What it is
-A page titled "Who owns what". One column, one list, same look as "What's changed": white, sparse, navy heading, flat rows, no shadows, no cards-as-decoration.
+The landing page. One column, four flat panels stacked or in a simple row — no shadows, no borders trying to look like buttons. White background, navy heading for the page ("Internal" or similar — name not settled), navy text for each of the four card titles.
 
-## Row format
-One row per thing that's owned:
-- The name of the thing (e.g. "Dealer locator", "Homepage", "Checkout").
-- The owner's name.
-- How often they touch it (e.g. "updates monthly", "updated as needed").
+## The four cards, exact names
+1. **What's changed** — links to the existing canon page. Last-updated date shown on the card is the date of its newest row.
+2. **What we're testing** — same list format as "What's changed" (one line, owner, cadence, newest first), scoped to tests only. No content yet — this sprint only builds the empty shell and the card.
+3. **How we do things** — same list format, scoped to process/how-to entries. Also empty this sprint.
+4. **Who owns what** — the list from this group's prior hand-in this sprint: one row per thing owned, owner's name, how often they touch it. Fills the owner-name gap left in "What's changed".
 
-Example rows, following the canon's own example data and marked the same way as not-yet-real:
-- "Dealer locator — Priya Nkemelu, updates monthly." (this one is real: it's already in the canon's example rows)
-- "Homepage — owner not decided yet."
-- "Checkout — owner not decided yet."
-
-This directly fills the two blanks the canon left: "Site owner — name not decided yet" and "Test owner — name not decided yet" become real rows here once someone names them. Until then the rows stay honestly blank rather than guessing.
+## Card content
+Just the name and a date, nothing else. If a card's list is empty, the card still shows — with "not started yet" instead of a date, not hidden.
 
 ## What it refuses to do
-No search, no filters, no org chart, no photo grid, no "message this person" button, no team descriptions. One name per thing, nothing about the person beyond that.
+No fifth card. No search bar across all four. No descriptions under the card titles explaining what's inside — the name is the description.
 
-## Front door, noted but not built here
-The facilitator's brief describes a front door of four cards — What's changed, What we're testing, How we do things, Who owns what — each showing its last update date. We are not building the front door itself this sprint; that is a fifth thing (the card grid) that sits above all four areas, and no group was told it was theirs. We flag it so whoever picks it up next knows it's still open.
-
-## Open gap, carried forward
-The actual owner names are still not decided — same gap as sprint 1, not closed by this page, only given a home to be closed in.
+## Open gaps, carried forward
+- Owner names for "What's changed" rows are still not decided (from sprint 1/canon).
+- "What we're testing" and "How we do things" have no real content yet — they are empty lists, honestly labelled, not filled with examples.
+- The page title above the four cards is not decided.
