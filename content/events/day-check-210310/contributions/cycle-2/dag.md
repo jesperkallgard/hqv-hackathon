@@ -1,42 +1,42 @@
 ---
-title: "Four cards, one door"
-ingress: "The front door is four cards in one column. An outsider can land there, choose one path, and know where to go next without learning our language."
+title: "What's changed / What we're testing / How we do things / Who owns what"
+ingress: "The front door is four cards in one column. Those four names are the whole way in, so an outsider can land, pick a path, and move on without learning our language."
 points:
-  - "The page shows four cards only: What's changed, What we're testing, How we do things, and Who owns what."
-  - "Each card has a last update date so freshness is visible at a glance."
-  - "The front door is a single column with less on it, so each card does more work."
-  - "The cards are the main navigation: an outsider can click straight into the right part of the site."
-  - "The page stays restrained and does not add dashboards, charts, or extra surface area."
+  - "The landing page is only four cards, one for each area."
+  - "The cards are named What's changed, What we're testing, How we do things, and Who owns what."
+  - "Each card shows the last update date on the card itself."
+  - "The page is the front door, so the cards do the navigation work without extra sections."
+  - "The page stays restrained and does not add dashboards, charts, or other surface area."
 cycle: 2
 pair: "dag"
 authors: ["Wille", "Greta", "Dag", "Cleo"]
 ---
 
-The front door is four cards in one column. An outsider can land there, choose one path, and know where to go next without learning our language.
+The front door is four cards in one column. Those four names are the whole way in, so an outsider can land, pick a path, and move on without learning our language.
 
-- The page shows four cards only: What's changed, What we're testing, How we do things, and Who owns what.
-- Each card has a last update date so freshness is visible at a glance.
-- The front door is a single column with less on it, so each card does more work.
-- The cards are the main navigation: an outsider can click straight into the right part of the site.
-- The page stays restrained and does not add dashboards, charts, or extra surface area.
+- The landing page is only four cards, one for each area.
+- The cards are named What's changed, What we're testing, How we do things, and Who owns what.
+- Each card shows the last update date on the card itself.
+- The page is the front door, so the cards do the navigation work without extra sections.
+- The page stays restrained and does not add dashboards, charts, or other surface area.
 
 # What it has to do
-- This sprint is about the front door of the site.
-- The landing page is four cards in one column.
-- The four cards are:
+- This sprint is about the front door.
+- Use these four names exactly:
   - What's changed
   - What we're testing
   - How we do things
   - Who owns what
-- Each card must show the last update date.
-- The cards must act as the main navigation into the site.
-- The page should help an outsider know where to click without needing local vocabulary.
+- The landing page is four cards in one column.
+- Each card shows the last update date.
+- The cards are the main navigation into the site.
+- An outsider should know where to click without learning our language.
 
 # Content
 - Keep the copy plain and concrete.
 - Short labels only.
 - No extra explanatory text if the card title and date already do the work.
-- Each card should communicate one clear destination.
+- Each card should point to one clear destination.
 - Keep dates visible on the card itself.
 
 # Look and feel
