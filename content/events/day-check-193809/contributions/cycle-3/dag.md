@@ -1,67 +1,79 @@
 ---
-title: "One post, opened"
-ingress: "Open one post in the list to show the full shape. The list still gives the fast answer, but the post now makes staleness, ownership, and update rhythm obvious at a glance."
+title: "My Husqvarna login moved"
+ingress: "A single opened post shows the change, the owner, and how fresh it is. It is for people who need the answer fast and do not want to ask a colleague."
 points:
-  - "The list shows headline, owner, and last updated date only."
-  - "Opening a post reveals the audience, three-line summary, status or date, owner, update cadence, and one onward link."
-  - "Every post makes it obvious who owns it and how fresh it is."
-  - "Staleness is the first thing the opened post tells you, not a detail buried in the text."
-  - "The page stays a real internal site: one narrow column, flat panels, and round tags for state."
+  - "The list stays terse: headline, owner, and last updated date."
+  - "Opening the post reveals the full detail in one place."
+  - "The post is owned by Jonas B and is updated monthly."
+  - "The page makes staleness obvious at a glance."
+  - "The view stays like a real internal website: one generous column, flat panels, and round status tags."
 cycle: 3
 pair: "dag"
 authors: ["Dag", "Cleo", "Rut", "Sam"]
 ---
 
-Open one post in the list to show the full shape. The list still gives the fast answer, but the post now makes staleness, ownership, and update rhythm obvious at a glance.
+A single opened post shows the change, the owner, and how fresh it is. It is for people who need the answer fast and do not want to ask a colleague.
 
-- The list shows headline, owner, and last updated date only.
-- Opening a post reveals the audience, three-line summary, status or date, owner, update cadence, and one onward link.
-- Every post makes it obvious who owns it and how fresh it is.
-- Staleness is the first thing the opened post tells you, not a detail buried in the text.
-- The page stays a real internal site: one narrow column, flat panels, and round tags for state.
+- The list stays terse: headline, owner, and last updated date.
+- Opening the post reveals the full detail in one place.
+- The post is owned by Jonas B and is updated monthly.
+- The page makes staleness obvious at a glance.
+- The view stays like a real internal website: one generous column, flat panels, and round status tags.
 
-Build on the existing front door in `index`.
+Build a single post experience on top of the current What's Changed site.
 
-Keep the site name as **What's Changed** and keep the current look: white background, lots of air, navy headings, left-aligned text, flat panels, no shadows, orange fully round primary pills, navy outlined secondary pills, and small round tags for state.
-
-This sprint's change is the opened post view.
+Use the first post title exactly as given: **My Husqvarna login moved**.
 
 ### List state
-- Each post in the list shows only:
+- In the list, show only:
   - headline
-  - owner by name
+  - owner
   - last updated date
-- The list must still make staleness obvious.
-- The list does not show the three-line summary, audience, cadence, or onward link.
+- Keep the list scan fast and simple.
+- The list must make staleness obvious.
 
 ### Opened post
-When a user opens a post, show all seven pieces of content:
+When the post is opened, show the fuller record.
+It must include the seven things the room asked for:
 1. headline
 2. audience
-3. three-line summary
-4. status or date
+3. a three-line summary
+4. a status or date
 5. owner by name
 6. how often it is updated
 7. one link onward
 
-### Content rules
-- Every post must show an owner by name and how often it is updated.
-- Every post should make it easy to see when it was last touched and by whom.
-- Use plain, concrete copy. Short sentences.
+### Content for this post
+- Title: My Husqvarna login moved
+- Owner: Jonas B
+- Update cadence: monthly
+
+If any other content is not yet agreed, leave it visibly open rather than inventing it.
+
+### Look and feel
+- Keep the current internal-site look.
+- White background.
+- Lots of air.
+- Navy headings.
+- Left-aligned text.
+- Flat panels, no shadows.
+- Fully round pills for buttons.
+- Orange primary pill with white text.
+- Navy outlined secondary pills.
+- Small round tags for state.
+
+### Tone
+- Plain and concrete.
+- Short sentences.
 - Say what changed and what it meant, not what was done.
 - No marketing language.
 
-### Interaction
-- The list is the fast scan.
-- Opening a post reveals the fuller detail.
-- Keep the opened view simple and readable, with the same single-column feel.
-
 ### Out of scope
-- No extra filters.
 - No search.
-- No dashboards.
-- No new sections beyond the opened post and the existing list/front door.
+- No filters.
+- No dashboard.
+- No extra browsing model beyond the list and the opened post.
 
 ### Notes
-- The room is asking for one post that opens, not a new browsing pattern.
-- If there is any tension between the list and the opened view, prefer keeping the list terse and putting the extra detail in the opened post.
+- This hand-in assumes the first post is the Husqvarna login item.
+- It keeps the opening simple and puts the detail inside the opened record.
