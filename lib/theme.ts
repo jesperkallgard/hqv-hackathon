@@ -13,6 +13,15 @@
  */
 
 export const FONTS = {
+  /**
+   * The faces a machine already has.
+   *
+   * Here because a brand's own type is often one of them: an internal tool
+   * written in Arial is not a compromise, it is the house style, and a room
+   * that hands over "Font: Arial" should get Arial rather than the nearest
+   * webfont somebody thought was close.
+   */
+  system: "Arial, Helvetica",
   grotesk: '"Schibsted Grotesk"',
   sans: '"Inter"',
   humanist: '"Work Sans"',
@@ -26,7 +35,7 @@ export const FONTS = {
 export type FontKey = keyof typeof FONTS;
 
 /** Loaded per event, so a result only ever ships the faces it asked for. */
-export const FONT_FAMILIES: Record<FontKey, string> = {
+export const FONT_FAMILIES: Partial<Record<FontKey, string>> = {
   grotesk: "Schibsted+Grotesk:wght@400;500;700;900",
   sans: "Inter:wght@400;500;700;900",
   humanist: "Work+Sans:wght@400;500;700;900",
@@ -175,9 +184,15 @@ export function themeCss(theme: Theme): string {
 }
 
 /** Only the faces this event actually uses. */
-export function fontHref(theme: Theme): string {
+export function fontHref(theme: Theme): string | null {
   const keys = new Set<FontKey>([theme.font]);
   if (theme.headingFont) keys.add(theme.headingFont);
-  const families = [...keys].map((key) => `family=${FONT_FAMILIES[key]}`).join("&");
-  return `https://fonts.googleapis.com/css2?${families}&display=swap`;
+  // A face the machine already has needs no request, and an event using only
+  // those should not be made to wait on fonts.googleapis.com at all.
+  const families = [...keys]
+    .map((key) => FONT_FAMILIES[key])
+    .filter(Boolean)
+    .map((family) => `family=${family}`);
+  if (!families.length) return null;
+  return `https://fonts.googleapis.com/css2?${families.join("&")}&display=swap`;
 }

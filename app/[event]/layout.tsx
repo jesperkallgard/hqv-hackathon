@@ -26,10 +26,18 @@ export default async function EventLayout({
 
   const theme = await readTheme(slug);
 
+  // Null when the event asked only for faces the machine already has, and then
+  // the page should not be reaching out to a font host at all.
+  const fonts = fontHref(theme);
+
   return (
     <>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-      <link rel="stylesheet" href={fontHref(theme)} />
+      {fonts && (
+        <>
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+          <link rel="stylesheet" href={fonts} />
+        </>
+      )}
       <style
         // The event's own tokens. Scoped, so two hackathons never collide.
         dangerouslySetInnerHTML={{ __html: themeCss(theme) }}
