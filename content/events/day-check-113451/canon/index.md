@@ -1,18 +1,42 @@
 ---
-title: "What's changed"
-ingress: "One list on the homepage, newest first, nothing else. It answers the three questions people keep asking a colleague instead: what changed this week, what's being tested now, who owns what."
+title: "Inside the website team"
+ingress: "The front door is four doors: What's changed, What we're testing, How we do things, Who owns what. Read the four names and you know where to click."
 ---
 
 ```block
-type: WhatsChangedPage
+type: FrontDoorPage
 data:
   siteName: Inside the website team
-  title: What's changed
-  standfirst: "One list, newest first. What changed, what's being tested, who owns what. If it isn't on the list, it isn't there."
-  exampleNote: "Example content — these rows show the shape of the page; nothing here has been measured. Only the three rows the room wrote are the room's own."
+  title: Inside the website team
+  standfirst: "Four areas, no more. Read the four names and you know where to click. Every post names an owner and how often it is updated."
+  exampleNote: "Example content — these teasers and dates show the shape of the page; nothing here has been measured. Only the rows the room wrote are the room's own."
   nav:
-    - { label: "What's changed", href: "#", current: true }
+    - { label: "Front door", href: "#", current: true }
     - { label: "Ask the team", href: "#" }
+  doors:
+    - title: "What's changed"
+      href: "#whats-changed"
+      date: "14 March"
+      teaser: "Dealer locator now shows a store's opening hours instead of just its address."
+      room: true
+    - title: "What we're testing"
+      href: "#"
+      date: "12 March"
+      teaser: "Testing a new checkout flow on 10% of traffic."
+      room: true
+    - title: "How we do things"
+      href: "#"
+      date: "7 March"
+      teaser: "A change goes out behind a flag first, then to everybody a week later if nothing breaks."
+    - title: "Who owns what"
+      href: "#"
+      date: "11 March"
+      teaser: "Dealer locator is owned by Bo. Updated monthly."
+      room: true
+  listId: whats-changed
+  listTitle: What's changed
+  listStandfirst: "One list, newest first. What changed, what's being tested, who owns what. If it isn't on the list, it isn't there."
+  listExampleNote: "Example content — these rows show the shape of the page; nothing here has been measured. Only the three rows the room wrote are the room's own."
   action: { label: "Add a row", href: "#" }
   entries:
     - text: "Dealer locator now shows a store's opening hours instead of just its address."
@@ -70,24 +94,26 @@ data:
 
 ## What the room decided
 
-Both groups came back with the same page: one list called "What's changed", newest first, and nothing else on the first screen. No dashboard, no tabs, no search box, no filters, no categories. A change to the site, a test that is running, and an answer to "who owns this" are the same kind of row, mixed by date, and the reader works out which is which from the sentence — the way they would if a colleague told them.
+The homepage is four doors, not one list. Both groups came back with the same four cards, one column, in the same fixed order — What's changed, What we're testing, How we do things, Who owns what — with no fifth card, no subcategories, no search across the four, and no way to add an area from the front door. An outsider reads four names and knows where to click.
 
-Where they differed was only in emphasis, and the sharper version won. Team Ada fixed the row as one line of plain text, then an owner, then a date, and nothing else. Team Cleo added that the row must also carry how often that thing is updated, because otherwise an ownership answer goes stale without anybody noticing. The page carries the cadence, in quiet type after the date, so both hold: the sentence is still one line, and the row still answers the follow-up question.
+Where they differed was what a card carries. Team Bo argued for the name and the date and nothing else: no summary, no count, no preview, so the front door stays a signpost and every card is the same shape whether its area moved yesterday or in November. Team Ada argued for one line of the newest entry as well, so you get a partial answer before you click. The page goes Team Ada's way: a teaser earns its place by the room's own test — it can save somebody the click, and therefore the question to a colleague. Team Bo's discipline holds everywhere else: one line only, no counts, no icons, no colour-coding by how recently something moved. A card that has not moved says so by staying quiet with an old date while the others move.
 
-Ownership rows are not a table and not a page. When an owner or a frequency changes, that is a new row, dated, at the top — which is what keeps ownership newest-first with everything else instead of static and separate.
+Sprint 1's list is not summarised on the front door. It is unchanged, and it now sits behind the first card, with the same rows, the same owner-and-cadence line, and "Add a row" still the page's one filled button.
+
+## The change of direction, stated plainly
+
+Sprint 1 decided "What's changed" should be one mixed list on purpose, refusing categories so a change, a test, and an ownership note could sit side by side. This sprint splits those three things back into separate doors. That is a real change in direction, not an accident, and Team Ada flagged it for the room. The mixed list survives inside its own door: the rows are still mixed by date there, so the refusal of categories is kept where the reading happens and dropped only at the front.
 
 ## What is not here, on purpose
 
-No search, no filter, no sort, no tags, no pagination, no comments or reactions. Team Ada's argument stands: if the list gets too long to scan, that is a sign to prune old rows, not to add search.
-
-"Add a row" is the page's one action and it is the only filled button. It points nowhere yet — this sprint did not design what happens when you press it.
+No dashboard, no nav bar with a dropdown, no search box across the four areas, no card counts, no icons, no recently-updated strip. The front door holds nothing but the four cards.
 
 ## What is still open
 
-How far back the list goes, and whether old rows ever roll off, was not decided. Neither was what the writing rule is when a test closes: the example above keeps the closed cookie-banner test in the list with its result, but the room has not agreed that closed tests stay.
+What lives behind "What we're testing", "How we do things" and "Who owns what" was not decided this sprint — only that the doors exist. Neither was what a card looks like when an area has never been updated: Team Ada suggested "Nothing posted yet", Team Bo left it open rather than invent it, and the room has not chosen. The three other doors point at `#` for now. From sprint 1, still open: how far back the list goes, whether old rows roll off, and whether a closed test stays in the list with its result.
 
 ## What was filled in
 
-Three rows are the room's own, written in Team Ada's wording: the dealer locator opening hours, the checkout flow test, and the dealer locator ownership note. Everything below them is example content, written so the list is long enough to judge. Those example rows name a team rather than a person, because an invented colleague is the one thing on this page a reader could not check.
+The room's own: the four names and their order, the three teasers and dates taken from sprint 1's rows, and those three rows in the list. Supplied so the page is whole: the "How we do things" teaser and date, and every list row below the third. Example rows name a team or a role rather than a person, because an invented colleague is the one thing on this page a reader could not check.
 
-<!-- merged: day-check-113451 sprint 1 — Team Cleo, Team Ada -->
+<!-- merged: day-check-113451 sprint 2 — Team Bo, Team Ada -->
