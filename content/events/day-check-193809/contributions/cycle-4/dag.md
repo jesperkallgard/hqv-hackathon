@@ -1,70 +1,84 @@
 ---
 title: "What's Changed"
-ingress: "A calm internal site that helps people find the answer without asking a colleague. It shows the latest changes, who owns them, and how often they are checked."
+ingress: "A real internal site that shows the feed, the owners, how the work is run, and who keeps it. It is for people who need the answer fast and do not want to ask a colleague."
 points:
-  - "One header leads to the feed, who owns what, and how we do things."
-  - "The feed is newest first and each row shows a title, owner, and date."
+  - "The site opens with a header, short navigation, one feed, and a footer."
+  - "The feed is newest first and each row shows the change, the owner, and the date."
   - "Every post names an owner and how often it is updated."
-  - "The opened post gives the answer in a short plain summary, not a dashboard."
-  - "The look stays white, airy, navy, and restrained, with orange only on the one primary pill button."
+  - "The site includes who owns what and how we work, so people can find the right answer without asking around."
+  - "The look stays white, airy, navy, and left-aligned, with flat panels and pill buttons."
 cycle: 4
 pair: "dag"
 authors: ["Iris", "Bo", "Maja", "Dag"]
 ---
 
-A calm internal site that helps people find the answer without asking a colleague. It shows the latest changes, who owns them, and how often they are checked.
+A real internal site that shows the feed, the owners, how the work is run, and who keeps it. It is for people who need the answer fast and do not want to ask a colleague.
 
-- One header leads to the feed, who owns what, and how we do things.
-- The feed is newest first and each row shows a title, owner, and date.
+- The site opens with a header, short navigation, one feed, and a footer.
+- The feed is newest first and each row shows the change, the owner, and the date.
 - Every post names an owner and how often it is updated.
-- The opened post gives the answer in a short plain summary, not a dashboard.
-- The look stays white, airy, navy, and restrained, with orange only on the one primary pill button.
+- The site includes who owns what and how we work, so people can find the right answer without asking around.
+- The look stays white, airy, navy, and left-aligned, with flat panels and pill buttons.
 
 ## Shape
-- Internal website, not a document.
-- Header with the site name: **What's Changed**.
-- Short navigation with three routes: **The feed**, **Who owns what**, **How we do things**.
-- One generous content column.
-- Footer that says who keeps the site.
+- Build the whole site as a real internal website, not a document.
+- Keep the structure simple: header, short navigation, one content column, feed, owners area, how we work area, footer.
+- The site name is **What's Changed**.
+- The footer says who keeps the site.
+
+## Navigation
+- Include a short nav in the header.
+- The nav should give access to:
+  - the feed
+  - who owns what
+  - how we work
 
 ## Feed
-- Show the latest changes first.
+- Show the feed of changes.
+- Put newest first.
 - Each row shows:
-  - title
-  - owner
-  - date
-- Keep the row content plain and concrete.
-- Posts must make it obvious who owns them and how often they are updated.
-- Include what changed, what is being tested, and who owns the dealer locator.
-- No dashboard.
-- No charts.
-- No extra visual clutter.
+  - what changed
+  - the owner
+  - the date
+- Include examples like:
+  - what changed this week
+  - what's being tested
+  - who owns the dealer locator
+- Every post must clearly show an owner and how often it is updated.
+- The feed is for people who need the answer fast and do not want to ask a colleague.
 
-## Opened post
-- Clicking a row opens a short, readable post view.
-- The post should answer the question fast.
-- Use a short summary in plain language.
-- Say what changed and what it meant, not what was done.
-- Keep the owner and checked date visible.
-- Keep the cadence visible.
+## Other areas
+- Include a section for who owns what.
+- Include a section for how we work.
+- Keep both sections plain and useful, not decorative.
+- They should help people find the right answer without asking around.
+
+## Footer
+- Include a footer.
+- Say who keeps the site.
 
 ## Look and feel
 - White background.
-- Lots of air.
+- A lot of air.
 - Navy headings.
 - Text left-aligned.
 - Flat panels only.
 - No shadows anywhere.
-- States are small round tags, not coloured words.
-- Buttons are fully round pills.
+- Every button is a fully round pill.
 - Primary action: orange with white text.
-- Secondary actions: outlined in navy.
-- Calm, restrained, plain, and concrete.
+- Rest of the buttons: outlined in navy.
+- States are small round tags, not coloured words.
+- Calm, restrained, and concrete.
+
+## Tone
+- Plain and concrete.
+- Short sentences.
+- Say what changed and what it meant, not what was done.
+- No marketing language.
 
 ## Out of scope
-- No analytics views.
+- No dashboard.
 - No charts.
-- No dashboards.
-- No marketing language.
-- No colourful status words.
-- No extra sections beyond the agreed routes and the feed.
+- No extra visual systems.
+- No coloured status words.
+- No documents pretending to be the site.
