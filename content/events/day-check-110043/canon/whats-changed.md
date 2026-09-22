@@ -52,6 +52,8 @@ Two groups, Ada and Cleo, built the same page, and where they agreed the page do
 
 A row earns its place only if it would have stopped someone asking a colleague. Status noise and in-progress chatter stay off.
 
+This page is now the first of four areas, reached from the front door. Nothing on the list changed.
+
 ## The disagreement, and which way it went
 
 Ada specified a row as `what changed — owner, date`. Cleo specified `what changed — owner, how often it's updated`, because the direction asks every post to name its cadence. Ada argued for the date on the grounds that "what changed this week" is a question about when, and a cadence answers a different question.
@@ -69,3 +71,5 @@ Eight rows are shown rather than three, so the shape of a working list is visibl
 The cadence-versus-date question above. Whether "updated whenever the store feed changes" is a cadence at all, or a way of saying there isn't one. How rows get onto the list, and who removes them when the list gets too long — the rule is Cleo's (trim, don't search), but nobody owns the trimming yet.
 
 <!-- merged: day-check-110043 sprint 1 — Team Ada, Team Cleo -->
+
+<!-- merged: day-check-110043 sprint 2 — Team Bo, Team Cleo -->
