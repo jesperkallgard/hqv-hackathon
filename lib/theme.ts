@@ -3,12 +3,13 @@
  *
  * A result inherits nothing from this repo's own chrome: no palette, no
  * typeface, no spacing. The root layout carries a reset and nothing else, and
- * everything visual comes from the event's own `theme.json`, written by its UX
- * Lead through the agent.
+ * everything visual comes from the event's own `theme.json` when it has one.
  *
- * The default below is deliberately plain rather than good-looking. An event
- * that has set no direction should look unstyled, not borrowed from whoever
- * styled it last.
+ * Most days have none — nothing writes that file any more — so the default is
+ * the common case rather than the exception, and it is a set of choices rather
+ * than an absence of them. It stays quiet on purpose: warm paper, near-black
+ * ink, one warm accent, a body face that holds at a paragraph. Whatever the
+ * room builds sits inside this and must be the loud thing on the page.
  */
 
 export const FONTS = {
@@ -64,18 +65,18 @@ export type Theme = {
 };
 
 export const DEFAULT_THEME: Theme = {
-  font: "sans",
+  font: "grotesk",
   headingFont: null,
-  paper: "#ffffff",
-  ink: "#111111",
-  accent: "#111111",
+  paper: "#f4f2ed",
+  ink: "#191817",
+  accent: "#c2410c",
   muted: null,
   rule: null,
-  radius: 0,
+  radius: 3,
   headingScale: 1,
-  headingWeight: 700,
-  headingTracking: -0.01,
-  measure: 68,
+  headingWeight: 750,
+  headingTracking: -0.028,
+  measure: 66,
   density: "normal",
   align: "left",
   uppercaseHeadings: false,
@@ -144,6 +145,9 @@ export function themeCss(theme: Theme): string {
   --rhythm: ${rhythm};
   --font-body: ${body}, ui-sans-serif, system-ui, sans-serif;
   --font-heading: ${heading}, ui-sans-serif, system-ui, sans-serif;
+  /* Exposed because a few headings are not h-anything — the goal on the
+     projector is a paragraph, and it still has to be in the heading voice. */
+  --heading-weight: ${theme.headingWeight};
 
   background: var(--paper);
   color: var(--ink);

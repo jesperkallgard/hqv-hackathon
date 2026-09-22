@@ -3,43 +3,36 @@ import { listEvents, readActiveEvent } from "@/lib/events";
 
 export const dynamic = "force-dynamic";
 
+/**
+ * The only page on the site that belongs to the repo rather than to a room.
+ *
+ * It says what these things are, because somebody landing here has no reason to
+ * know, and then gets out of the way. Its look is its own — not a theme, not
+ * any event's — so that stepping into a result is a visible change.
+ */
 export default async function EventsIndex() {
   const [events, active] = await Promise.all([listEvents(), readActiveEvent()]);
 
   return (
-    <div className="mx-auto max-w-5xl space-y-10 px-6 py-12">
-      <section>
-        <h1 className="max-w-[16ch] text-[clamp(2.5rem,7vw,4.5rem)] leading-[0.95] font-black tracking-[-0.035em]">
-          Everything this room has built
-        </h1>
-      </section>
+    <div className="index">
+      <h1 className="index-title">Made in a day</h1>
+      <p className="index-standfirst">
+        Each of these is one room, one day. Groups hand in an idea a sprint, the room votes on
+        every one, and what survives is built into a single thing before everyone goes home.
+      </p>
 
       {events.length === 0 ? (
-        <p className="text-ink-soft">
-          No hackathon has run yet. The facilitator starts one in the chat.
-        </p>
+        <p className="index-standfirst">No day has run yet.</p>
       ) : (
-        <ul className="space-y-6">
+        <ul className="mt-14">
           {events.map((event) => (
-            <li key={event.slug} className="border-t border-rule pt-5">
-              <div className="flex flex-wrap items-baseline gap-x-3">
-                <Link
-                  href={`/${event.slug}`}
-                  className="text-xl font-semibold tracking-tight hover:text-lime"
-                >
-                  {event.name}
-                </Link>
-                {active?.slug === event.slug && (
-                  <span
-                    className="rounded-full px-2 py-0.5 text-xs font-medium"
-                    style={{ background: "var(--ink)", color: "var(--paper)" }}
-                  >
-                    Running now
-                  </span>
-                )}
+            <li key={event.slug} className="index-row">
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <Link href={`/${event.slug}`}>{event.name}</Link>
+                {active?.slug === event.slug && <span className="index-now">Running now</span>}
               </div>
-              <p className="mt-1 max-w-2xl text-ink-soft">{event.goal}</p>
-              <p className="mt-1 text-sm text-ink-soft">
+              <p className="index-standfirst mt-1">{event.goal}</p>
+              <p className="index-meta mt-2">
                 {event.sprintCount} sprints of {event.sprintMinutes} minutes
               </p>
             </li>

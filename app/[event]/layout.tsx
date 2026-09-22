@@ -2,13 +2,16 @@ import { notFound } from "next/navigation";
 import { readEvent } from "@/lib/events";
 import { readTheme } from "@/lib/read-theme";
 import { fontHref, themeCss } from "@/lib/theme";
-import { isProduction } from "@/lib/blocks";
 
 /**
  * One hackathon's entire visual identity, and only this hackathon's.
  *
  * The stylesheet and the typefaces are loaded here, scoped to `.result`, so
  * nothing leaks between events and nothing is inherited from the repo.
+ *
+ * Nothing else is here. The masthead and the footer are a component the reading
+ * pages ask for, because `/<event>/live` must have neither and a layout cannot
+ * be opted out of. See [EventShell](../../components/EventShell.tsx).
  */
 export default async function EventLayout({
   children,
@@ -31,20 +34,7 @@ export default async function EventLayout({
         // The event's own tokens. Scoped, so two hackathons never collide.
         dangerouslySetInnerHTML={{ __html: themeCss(theme) }}
       />
-      <div className="result">
-        {!isProduction() && (
-          <p
-            className="px-6 py-1.5 text-center text-xs font-bold"
-            style={{ background: "var(--accent)", color: "var(--paper)" }}
-          >
-            Preview — not merged yet
-          </p>
-        )}
-        <main className="mx-auto max-w-5xl px-6 py-14">{children}</main>
-        <footer className="muted rule mx-auto max-w-5xl border-t px-6 py-8 text-sm">
-          Written in a day by everyone in the room.
-        </footer>
-      </div>
+      <div className="result">{children}</div>
     </>
   );
 }

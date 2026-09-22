@@ -1,33 +1,26 @@
 @import "tailwindcss";
 
 /*
- * A reset and nothing else.
+ * Two looks live in this file and they must not touch.
  *
- * Every result must look like the hackathon that made it, so this file carries
- * no palette, no typeface and no spacing. All of that arrives per event from
- * `content/events/<event>/theme.json`, scoped to `.result`.
+ * Everything under `.result` belongs to a hackathon and is driven entirely by
+ * that event's tokens, injected per event by the event layout. Nothing here
+ * writes a colour: the classes below are shapes and rhythms that any palette
+ * can wear.
  *
- * The one exception is the index at `/`, which is this repo's own listing
- * rather than anybody's result, and styles itself inline.
+ * Everything outside `.result` is this repo's own index at `/`, which is a
+ * listing of days rather than anybody's result, and has a small palette of its
+ * own so that leaving a result is visible.
  */
 
 :root {
   color-scheme: light;
 
-  /*
-   * The index at `/` is this repo's own listing rather than anybody's result,
-   * so it needs a plain set of its own. Every event page overrides all of these
-   * inside `.result` with its own theme, which is why they are deliberately
-   * unremarkable: nothing here should leak a look into what a room made.
-   */
-  --paper: #ffffff;
-  --ink: #111111;
-  --muted: #595959;
-  --rule: #e2e2e0;
-  --accent: #111111;
-  --radius: 0px;
-  --measure: 68ch;
-  --rhythm: 1;
+  --index-paper: #f3f1ec;
+  --index-ink: #191817;
+  --index-muted: #6a655e;
+  --index-rule: #ded9d1;
+  --index-accent: #c2410c;
 }
 
 html {
@@ -36,8 +29,8 @@ html {
 
 body {
   margin: 0;
-  background: #fff;
-  color: #111;
+  background: var(--index-paper);
+  color: var(--index-ink);
   font-family: ui-sans-serif, system-ui, sans-serif;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
@@ -48,7 +41,330 @@ body {
   outline-offset: 2px;
 }
 
-/* Prose inside a result, driven entirely by that event's tokens. */
+/* ---------------------------------------------------------------- the index */
+
+.index {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 6rem;
+}
+
+.index-title {
+  max-width: 18ch;
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+  margin: 0;
+}
+
+.index-standfirst {
+  max-width: 56ch;
+  margin-top: 1.25rem;
+  color: var(--index-muted);
+  font-size: 1.05rem;
+}
+
+.index-row {
+  border-top: 1px solid var(--index-rule);
+  padding: 1.5rem 0;
+}
+
+.index-row a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.index-row a:hover {
+  color: var(--index-accent);
+}
+
+.index-meta {
+  color: var(--index-muted);
+  font-size: 0.875rem;
+}
+
+.index-now {
+  display: inline-block;
+  border-radius: 999px;
+  background: var(--index-accent);
+  color: var(--index-paper);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.6rem;
+  vertical-align: 0.15em;
+}
+
+/* --------------------------------------------------------------- a result */
+
+/* One gutter, one measure, on every page of an event. */
+.result .shell {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.result .masthead {
+  border-bottom: 1px solid var(--rule);
+}
+
+.result .masthead-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+}
+
+.result .masthead-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.result .eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* The label above a section. Deliberately not a heading size: the sections are
+   signposts, and only the goal and the idea titles should shout. */
+.result .section-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: left;
+}
+
+.result .lead {
+  font-size: clamp(1.05rem, 1.1rem + 0.4vw, 1.3rem);
+  line-height: 1.45;
+}
+
+.result .frame-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+}
+
+/* The prototype sits in a frame so it reads as a thing on the page rather than
+   as the page. Whatever the room built brings its own layout inside it. */
+.result .frame {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.result .ghost-button {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 650;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.result .ghost-button:hover {
+  border-color: var(--accent);
+}
+
+.result .waiting {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: clamp(2rem, 6vw, 4.5rem) clamp(1.25rem, 4vw, 3rem);
+}
+
+.result .waiting-line {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3.5vw, 2.1rem);
+  font-weight: var(--heading-weight);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  max-width: 24ch;
+}
+
+/*
+ * The curator's prose beside the prototype, not instead of it. Its own
+ * headings are set at one small size: a document written as a page has an h1
+ * in it, and an h1 here would shout down the thing the notes are about.
+ */
+.result .decisions .prose h1,
+.result .decisions .prose h2,
+.result .decisions .prose h3,
+.result .decisions .prose h4 {
+  font-size: 1.05rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-top: calc(1.6em * var(--rhythm));
+}
+
+.result .decision-title {
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.result .sprint-link {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.result .sprint-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/*
+ * Moving between sprints while reading one. Numbers rather than names, because
+ * a sprint has no name and "Sprint 3" repeated six times is a wall of the same
+ * word.
+ */
+.result .switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.result .switcher a,
+.result .switcher .switcher-now {
+  display: grid;
+  place-items: center;
+  min-width: 2.25rem;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.result .switcher a:hover {
+  border-color: var(--accent);
+}
+
+.result .switcher .switcher-now {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------------ ideas */
+
+.result .ideas {
+  display: grid;
+  gap: 2.5rem;
+}
+
+@media (min-width: 60rem) {
+  .result .ideas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem 2.5rem;
+  }
+}
+
+.result .idea {
+  border-top: 2px solid var(--ink);
+  padding-top: 1.25rem;
+}
+
+.result .idea-title {
+  font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+  line-height: 1.1;
+  text-align: left;
+}
+
+.result .idea-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.result .idea-title a:hover {
+  color: var(--accent);
+}
+
+/*
+ * Five points, numbered, one line of thought each. The count is the whole
+ * mechanic — the room votes on these — so they are set as a list you can count
+ * at a glance rather than as a paragraph with bullets.
+ */
+.result .points {
+  counter-reset: point;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.result .points > li {
+  counter-increment: point;
+  display: grid;
+  grid-template-columns: 1.75rem minmax(0, 1fr);
+  gap: 0.75rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.result .points > li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.result .points > li::before {
+  content: counter(point);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* ------------------------------------------------------- the prototype alone */
+
+.result .holding {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: clamp(2rem, 7vw, 6rem);
+}
+
+/* Sized for a projector at the back of a room, not for a phone in a hand. */
+.result .holding-goal {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 5.5vw, 4.5rem);
+  font-weight: var(--heading-weight);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  max-width: 20ch;
+  margin: 0;
+}
+
+.result .holding-note {
+  max-width: 46ch;
+  margin: 0;
+}
+
+/* ------------------------------------------------------------------- prose */
+
 .result .prose {
   max-width: var(--measure);
 }

@@ -1,34 +1,21 @@
-import Link from "next/link";
-import { notFound } from "next/navigation";
-import { RenderBlocks } from "@/lib/blocks";
-import { readCanonDoc } from "@/lib/content";
-import { readEvent } from "@/lib/events";
+import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
+/**
+ * A canon document has no page of its own any more.
+ *
+ * The room builds one prototype, not a shelf of documents, and the result page
+ * shows all of it — the prototype whole, and every note the curator wrote
+ * beside it. A second page rendering the same file was the same content at a
+ * different address, and the two drifted apart the moment either was changed.
+ * Old links land on the note they were pointing at.
+ */
 export default async function CanonDocPage({
   params,
 }: {
   params: Promise<{ event: string; slug: string }>;
 }) {
-  const { event: eventSlug, slug } = await params;
-  const [event, doc] = await Promise.all([readEvent(eventSlug), readCanonDoc(eventSlug, slug)]);
-  if (!event || !doc) notFound();
-
-  return (
-    <article className="stack">
-      <Link
-        href={`/${eventSlug}`}
-        className="muted text-sm underline-offset-4 hover:underline"
-      >
-        ← {event.name}
-      </Link>
-      {doc.frontmatter.title && (
-        <h1 className="text-balance">
-          {doc.frontmatter.title}
-        </h1>
-      )}
-      <RenderBlocks blocks={doc.blocks} event={slug} />
-    </article>
-  );
+  const { event, slug } = await params;
+  redirect(`/${event}#${slug}`);
 }

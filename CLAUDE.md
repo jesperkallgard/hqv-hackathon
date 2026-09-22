@@ -20,12 +20,31 @@ developing the renderer itself.
 content/events/active.json                                   pointer to the running hackathon
 content/events/<event>/event.json                            name, goal, participants, sprint length
 content/events/<event>/canon/<name>.md                       merged winners; only the curator writes here
-content/events/<event>/contributions/cycle-<n>/pair-<xx>.md  one file per group, never shared
+content/events/<event>/contributions/cycle-<n>/<group>.md     one idea per group per sprint
 app/blocks/*.tsx                                             one file per block type
 ```
 
 **One file per group, never the same file.** That is what makes the merge at the
 end of a cycle conflict-free.
+
+A group hands in an **idea** — a title, an ingress, exactly five points, and the
+requirements under them — never a prototype. The first three are written into
+the frontmatter as well as the body; [lib/idea.ts](lib/idea.ts) renders from the
+frontmatter and mines the body only for the requirements, so nothing appears
+twice. The canon is the one prototype those ideas are built into.
+
+## Pages
+
+`/<event>` carries the whole day: the goal, the prototype, the curator's notes
+and an index of the ideas, in that order. `/<event>/live` is the same prototype
+with the chrome taken off. `/<event>/contributions/<cycle>` is one sprint's
+ideas, `/<event>/contributions/<cycle>/<group>` one hand-in in full.
+`/<event>/contributions` and `/<event>/canon/<slug>` redirect into `/<event>`:
+they were second addresses for content it already shows whole.
+
+Navigation lives in [components/EventShell.tsx](components/EventShell.tsx) and
+nowhere else. It is a component rather than a layout because `/<event>/live`
+must not have it, and a layout cannot be opted out of.
 
 ## Blocks
 
