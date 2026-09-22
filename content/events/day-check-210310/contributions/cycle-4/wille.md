@@ -1,59 +1,49 @@
 ---
 title: "Finding your way without our words"
-ingress: "Let the page explain itself with the link, the owner, and the date. People should find the right place without needing our labels."
+ingress: "A single internal site that helps people find the right thing without asking around. The feed, owners, working rules, and footer all sit in one calm place."
 points:
-  - "The site keeps the header, short navigation, content column, and footer."
-  - "The feed becomes one lean list of posts, with each row showing only what helps someone choose fast."
-  - "The opened post carries the full explanation, including audience, summary, status or date, owner, update rhythm, and one onward link."
-  - "The primary button leads to the next place to go, so people do not need to read extra words to act."
-  - "The page stays restrained and quiet: white, navy, flat, and left-aligned, with orange used only for the one primary action."
+  - "The site keeps one header, a short navigation, one content column, and a footer."
+  - "The front page shows a lean feed of recent posts so people can see what changed at a glance."
+  - "Each post names an owner and shows when it was updated, so people know who to ask and whether it is current."
+  - "The working rules live on the same site, so people can find how we do things without hunting for it."
+  - "The page stays restrained and calm: white, navy headings, flat panels, no shadows, and orange only on the one primary button."
 cycle: 4
 pair: "wille"
 authors: ["Wille"]
 ---
 
-Let the page explain itself with the link, the owner, and the date. People should find the right place without needing our labels.
+A single internal site that helps people find the right thing without asking around. The feed, owners, working rules, and footer all sit in one calm place.
 
-- The site keeps the header, short navigation, content column, and footer.
-- The feed becomes one lean list of posts, with each row showing only what helps someone choose fast.
-- The opened post carries the full explanation, including audience, summary, status or date, owner, update rhythm, and one onward link.
-- The primary button leads to the next place to go, so people do not need to read extra words to act.
-- The page stays restrained and quiet: white, navy, flat, and left-aligned, with orange used only for the one primary action.
+- The site keeps one header, a short navigation, one content column, and a footer.
+- The front page shows a lean feed of recent posts so people can see what changed at a glance.
+- Each post names an owner and shows when it was updated, so people know who to ask and whether it is current.
+- The working rules live on the same site, so people can find how we do things without hunting for it.
+- The page stays restrained and calm: white, navy headings, flat panels, no shadows, and orange only on the one primary button.
 
-Build on the existing What’s Changed site shell and keep it looking like a real internal website.
+Build the whole internal site as one calm place for finding your way without our words.
 
-### What the page is doing
-The page helps people find their way without relying on our words. It should be enough to scan the list, open the right post, and go onward.
-
-### What stays on the page
+### Site structure
 - Header with the site name
 - Short navigation
-- One generous content column
+- Feed on the front page
+- Owners section
+- How we work section
 - Footer
-- White background
-- Lots of air
-- Navy headings
-- Left-aligned text
-- Flat panels with no shadows
-- Fully round pill buttons
-- Orange button with white text for the one primary action
-- Outlined navy buttons for the rest
-- Small round tags for states, not coloured words
 
-### The list
-Keep the feed lean.
+### Front page
+The front page should be a lean feed of posts.
 
-Each row shows only:
+The feed must feel restrained. Use fewer things on the page, each doing more work.
+
+Each post row should show:
 - headline
 - owner name
 - date
 
-The list should help someone choose quickly. It should not repeat the full explanation.
+### Post detail
+Opening a post should reveal the full information people need without making them ask a colleague.
 
-### The opened post
-Opening a row reveals the post.
-
-The opened post must include:
+Each post must include:
 - headline
 - audience
 - a three-line summary
@@ -62,23 +52,27 @@ The opened post must include:
 - how often it is updated
 - one link onward
 
-The opened post should read as plain, concrete internal content. Say what changed and what it meant. Do not use marketing language.
+### Working content
+Keep the site plain and concrete.
 
-### Content to keep for this post
-- Title: My Husqvarna login moved
-- Owner: Jonas B
-- Update frequency: monthly
-- Status: live now
-- Audience: people who use My Husqvarna to sign in to work on the site
-- Summary lines:
-  - The Husqvarna login moved to a new place.
-  - Use the new login page the next time you sign in.
-  - Old bookmarks may still open the previous page and fail.
-- One onward link for support access checks if the login still does not work
+Say what changed and what it meant.
+Do not use marketing language.
+
+### Visual direction
+- White background
+- Lots of air
+- Navy headings
+- Left-aligned text
+- Flat panels
+- No shadows
+- Fully round pill buttons
+- Orange with white text for the one primary action
+- Outlined navy buttons for the rest
+- Small round tags for states, not coloured words
 
 ### Out of scope
 - No dashboard
 - No charts
 - No extra layer before opening a post
-- No feed summary cards beyond the list row
-- No extra motion or decorative chrome
+- No decorative chrome
+- No extra motion
