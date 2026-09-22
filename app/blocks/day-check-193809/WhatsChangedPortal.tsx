@@ -1,5 +1,5 @@
 /**
- * Keeps the existing front door and adds a single opened post section with a terse list row and full post detail beneath it, using the same site header and footer.
+ * A single-page internal front door with site header, short nav, four clickable route cards, and footer for the “What’s Changed” site.
  */
 import React from "react";
 
@@ -41,71 +41,7 @@ function FrontDoorCard({ card }) {
   );
 }
 
-function OpenedPostSection({ openedPost }) {
-  const { listTitle, listNote, listColumns = [], listRow, post } = openedPost;
-
-  return (
-    <section className="opened-post" id="opened-post" aria-labelledby="opened-post-title">
-      <div className="opened-post-intro">
-        <p className="section-label">{openedPost.eyebrow}</p>
-        <h2 id="opened-post-title">{listTitle}</h2>
-        <p className="section-note">{listNote}</p>
-      </div>
-
-      <div className="post-list panel">
-        <div className="post-list-header" aria-hidden="true">
-          {listColumns.map((column) => (
-            <span key={column}>{column}</span>
-          ))}
-        </div>
-        <a className="post-list-row" href="#post-detail">
-          <span className="post-list-title">{listRow.title}</span>
-          <span>{listRow.owner}</span>
-          <span>{listRow.date}</span>
-        </a>
-      </div>
-
-      <article className="post-detail panel" id="post-detail" aria-labelledby="post-title">
-        <div className="post-detail-head">
-          <div className="post-detail-title-group">
-            <h3 id="post-title" className="post-title">{post.title}</h3>
-            <p className="post-audience">{post.audience}</p>
-          </div>
-          <StatusTag status={post.status} />
-        </div>
-
-        <div className="post-summary" aria-label="Summary">
-          {post.summary.map((line) => (
-            <p key={line}>{line}</p>
-          ))}
-        </div>
-
-        <dl className="post-meta">
-          <div className="post-meta-row">
-            <dt>{post.dateLabel}</dt>
-            <dd>{post.date}</dd>
-          </div>
-          <div className="post-meta-row">
-            <dt>{post.ownerLabel}</dt>
-            <dd>{post.owner}</dd>
-          </div>
-          <div className="post-meta-row">
-            <dt>{post.cadenceLabel}</dt>
-            <dd>{post.cadence}</dd>
-          </div>
-        </dl>
-
-        <div className="post-actions">
-          <a className="button button-primary" href={post.link.href}>
-            {post.link.label}
-          </a>
-        </div>
-      </article>
-    </section>
-  );
-}
-
-export default function WhatsChangedPortal({ siteName, summary, nav = [], frontDoor, openedPost, footer }) {
+export default function WhatsChangedPortal({ siteName, summary, nav = [], frontDoor, footer }) {
   return (
     <div className="page-shell">
       <header className="site-header">
@@ -139,8 +75,6 @@ export default function WhatsChangedPortal({ siteName, summary, nav = [], frontD
             ))}
           </ol>
         </section>
-
-        {openedPost ? <OpenedPostSection openedPost={openedPost} /> : null}
       </main>
 
       <footer className="site-footer">
