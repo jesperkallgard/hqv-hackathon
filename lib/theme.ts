@@ -94,21 +94,34 @@ export type Theme = {
   uppercaseHeadings: boolean;
 };
 
+/**
+ * What a hackathon looks like before it has said.
+ *
+ * Deliberately plain rather than good-looking, and that is the whole point: the
+ * look belongs to the room. A default with a warm paper, a chosen typeface and
+ * a terracotta accent is somebody's taste imposed on twenty-five people who
+ * were never asked — and worse, a day that did choose its colours would be
+ * judged against a page that already looked designed before it started.
+ *
+ * So: white, near-black, no hue the room did not name, and a face every machine
+ * already has. The structure around it — the scale, the rhythm, the tables —
+ * still applies, because that is craft rather than identity.
+ */
 export const DEFAULT_THEME: Theme = {
-  font: "grotesk",
+  font: "system",
   headingFont: null,
-  paper: "#f4f2ed",
-  ink: "#191817",
-  accent: "#c2410c",
+  paper: "#ffffff",
+  ink: "#111111",
+  accent: "#111111",
   headingInk: null,
   muted: null,
   rule: null,
   surface: null,
   surfaceAlt: null,
-  radius: 3,
+  radius: 0,
   headingScale: 1,
-  headingWeight: 750,
-  headingTracking: -0.028,
+  headingWeight: 700,
+  headingTracking: -0.01,
   measure: 66,
   density: "normal",
   align: "left",

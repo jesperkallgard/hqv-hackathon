@@ -16,11 +16,15 @@
 :root {
   color-scheme: light;
 
-  --index-paper: #f3f1ec;
-  --index-ink: #191817;
-  --index-muted: #6a655e;
-  --index-rule: #ded9d1;
-  --index-accent: #c2410c;
+  /* The frame around somebody else's work, and it stays out of the way.
+     A warm paper and a terracotta accent here would put this site's taste on
+     every screenshot of every hackathon it hosts. Neutral, so the only colour
+     anybody sees is the room's own. */
+  --index-paper: #ffffff;
+  --index-ink: #111111;
+  --index-muted: #6b7280;
+  --index-rule: #e5e7eb;
+  --index-accent: #111111;
 }
 
 html {
