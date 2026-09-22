@@ -43,8 +43,6 @@
 .canvas *::before,
 .canvas *::after { box-sizing: border-box; }
 
-/* ---------- plain elements ---------- */
-
 .canvas h1,
 .canvas h2,
 .canvas h3,
@@ -69,7 +67,7 @@
   color: var(--accent);
   text-decoration: none;
   border-bottom: 1px solid var(--accent-soft);
-  transition: color 150ms ease, border-color 150ms ease;
+  transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease;
 }
 .canvas a:hover { color: var(--accent-strong); border-bottom-color: var(--accent); }
 
@@ -91,8 +89,6 @@
 }
 
 .canvas svg { display: block; }
-
-/* ---------- page frame ---------- */
 
 .canvas .page {
   max-width: var(--page);
@@ -170,8 +166,6 @@
   max-width: 58ch;
 }
 
-/* ---------- masthead ---------- */
-
 .canvas .masthead { padding: var(--s7) 0 var(--s5); }
 .canvas .masthead h1 {
   font-size: var(--t-display);
@@ -179,8 +173,6 @@
   margin-bottom: var(--s2);
 }
 .canvas .masthead .lede { margin-bottom: 0; }
-
-/* ---------- KPI panel ---------- */
 
 .canvas .kpi-panel {
   background: var(--surface);
@@ -216,8 +208,6 @@
   color: var(--muted);
   margin: var(--s) 0 0;
 }
-
-/* ---------- ask panel (the chat) ---------- */
 
 .canvas .ask {
   background: var(--paper);
@@ -278,8 +268,6 @@
 .canvas .ask-answer-miss { background: var(--surface-alt); border: 1px dashed var(--rule-strong); }
 .canvas .ask-answer-miss h3 { margin-bottom: var(--s); }
 .canvas .ask-answer-miss .button { margin-top: var(--s2); }
-
-/* ---------- the four doors ---------- */
 
 .canvas .door-list {
   list-style: none;
@@ -345,7 +333,101 @@
 }
 .canvas .door-arrow { flex: 0 0 auto; color: var(--heading-ink); }
 
-/* ---------- buttons: fully round pills ---------- */
+.canvas .feed-list {
+  border-top: 1px solid var(--rule);
+}
+
+.canvas .feed-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s3);
+  padding: var(--s3) 0;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+.canvas .feed-row:hover {
+  color: var(--ink);
+  background: var(--surface-alt);
+  margin: 0 calc(var(--s2) * -1);
+  padding-left: var(--s2);
+  padding-right: var(--s2);
+}
+.canvas .feed-main {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.canvas .feed-main h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--s);
+}
+.canvas .feed-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  font-size: var(--t-small);
+  color: var(--muted);
+}
+.canvas .feed-side {
+  flex: 0 0 auto;
+  padding-top: 2px;
+}
+
+.canvas .post-open {
+  padding: var(--s4);
+}
+.canvas .post-open-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s3);
+  padding-bottom: var(--s3);
+  margin-bottom: var(--s3);
+  border-bottom: 1px solid var(--rule);
+}
+.canvas .post-title {
+  font-size: var(--t-h1);
+  margin-bottom: var(--s);
+}
+.canvas .post-meta {
+  font-size: var(--t-small);
+  color: var(--muted);
+}
+.canvas .post-fields {
+  margin: 0;
+}
+.canvas .post-field {
+  padding-bottom: var(--s3);
+}
+.canvas .post-field + .post-field {
+  border-top: 1px solid var(--rule);
+  padding-top: var(--s3);
+}
+.canvas .post-field dt {
+  font-size: var(--t-micro);
+  font-weight: 700;
+  color: var(--heading-ink);
+  margin-bottom: var(--s);
+}
+.canvas .post-field dd {
+  margin: 0;
+  max-width: var(--measure);
+}
+.canvas .post-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 var(--s4);
+  border-top: 1px solid var(--rule);
+  padding-top: var(--s3);
+}
+.canvas .post-grid .post-field {
+  border-top: 0;
+  padding-top: 0;
+  margin: 0;
+}
 
 .canvas .button,
 .canvas button.button,
@@ -411,8 +493,6 @@
   align-items: center;
 }
 
-/* ---------- tags: round pills ---------- */
-
 .canvas .tag {
   display: inline-flex;
   align-items: center;
@@ -448,8 +528,6 @@
   color: var(--muted);
   font-weight: 400;
 }
-
-/* ---------- tables ---------- */
 
 .canvas .table-wrap {
   overflow-x: auto;
@@ -488,8 +566,6 @@
 }
 .canvas td .area { font-weight: 700; color: var(--heading-ink); display: block; }
 .canvas td .sub { color: var(--muted); font-size: var(--t-micro); display: block; }
-
-/* ---------- panels ---------- */
 
 .canvas .panel {
   background: var(--surface);
@@ -557,8 +633,6 @@
 .canvas .step-toggle:hover h3 { color: var(--accent-strong); }
 .canvas .steps p { font-size: var(--t-small); color: var(--muted); margin: 0; }
 
-/* ---------- inputs ---------- */
-
 .canvas input[type="text"],
 .canvas input[type="search"],
 .canvas select,
@@ -586,8 +660,6 @@
   margin-bottom: var(--s-half);
 }
 
-/* ---------- empty state ---------- */
-
 .canvas .empty {
   border: 1px dashed var(--rule-strong);
   border-radius: var(--panel-radius);
@@ -596,8 +668,6 @@
 }
 .canvas .empty h3 { margin-bottom: var(--s); }
 .canvas .empty p { color: var(--muted); font-size: var(--t-small); margin-bottom: var(--s2); }
-
-/* ---------- footer ---------- */
 
 .canvas .site-footer {
   margin-top: var(--s8);
@@ -619,8 +689,6 @@
 .canvas .site-footer a { color: var(--heading-ink); border-bottom-color: var(--rule-strong); }
 .canvas .site-footer a:hover { color: var(--accent-strong); border-bottom-color: var(--accent); }
 
-/* ---------- utility ---------- */
-
 .canvas .stack-s > * + * { margin-top: var(--s); }
 .canvas .stack > * + * { margin-top: var(--s2); }
 .canvas .stack-l > * + * { margin-top: var(--s3); }
@@ -632,12 +700,11 @@
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
 }
 
-/* ---------- responsive ---------- */
-
 @media (max-width: 900px) {
   .canvas .kpi-panel { grid-template-columns: 1fr 1fr; gap: var(--s3); padding: var(--s3); }
   .canvas .kpi + .kpi { border-left: 0; padding-left: 0; }
-  .canvas .two-col { grid-template-columns: 1fr; }
+  .canvas .two-col,
+  .canvas .post-grid { grid-template-columns: 1fr; }
   .canvas .site-footer .page { grid-template-columns: 1fr; gap: var(--s3); }
 }
 
@@ -653,11 +720,23 @@
   .canvas .site-nav { gap: var(--s2); }
   .canvas .masthead { padding: var(--s5) 0 var(--s4); }
   .canvas .section { padding-top: var(--s5); }
-  .canvas .section-head { flex-direction: column; align-items: flex-start; gap: var(--s); }
-  .canvas .ask, .canvas .panel, .canvas .panel-outline { padding: var(--s3); }
+  .canvas .section-head,
+  .canvas .post-open-head,
+  .canvas .feed-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--s);
+  }
+  .canvas .ask, .canvas .panel, .canvas .panel-outline, .canvas .post-open { padding: var(--s3); }
   .canvas .door-link { padding: var(--s3); gap: var(--s2); }
   .canvas .door-name { font-size: 1.25rem; }
   .canvas .ask-form input[type="text"] { max-width: none; }
+  .canvas .feed-row:hover {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    background: transparent;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
