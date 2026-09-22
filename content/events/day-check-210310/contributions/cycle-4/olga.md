@@ -1,60 +1,68 @@
 ---
-title: "One-screen wayfinding for the feed"
-ingress: "A simple internal site for finding the right update fast, without asking a colleague. It puts the latest changes, the owner, and the update rhythm on one screen."
+title: "The whole site in one place"
+ingress: "A real internal website for finding the right update fast. It puts the feed, owners, and how we work on one page so people get an answer without asking a colleague."
 points:
-  - "The first screen shows the feed, ownership, and working rules in one clear path."
-  - "The feed is the main route: newest changes first, each with an owner and a date."
-  - "The site says what changed and what it meant, in plain short lines."
-  - "It keeps the shell minimal: header, short navigation, one generous column, footer."
-  - "It refuses dashboards, charts, and extra layers that push the answer below the fold."
+  - "The site shows the whole shape at once: header, feed, owners, how we work, and footer."
+  - "The feed is the main thing: newest updates first, with an owner and a date on every row."
+  - "The owner view makes it obvious who keeps each area and how often it changes."
+  - "The working-rules section says how to post, how to name owners, and how to keep content current."
+  - "It stays simple and calm: white, navy headings, flat panels, one orange primary button, and no charts or dashboard clutter."
 cycle: 4
 pair: "olga"
 authors: ["Tove", "Yara", "Vera", "Olga"]
 ---
 
-A simple internal site for finding the right update fast, without asking a colleague. It puts the latest changes, the owner, and the update rhythm on one screen.
+A real internal website for finding the right update fast. It puts the feed, owners, and how we work on one page so people get an answer without asking a colleague.
 
-- The first screen shows the feed, ownership, and working rules in one clear path.
-- The feed is the main route: newest changes first, each with an owner and a date.
-- The site says what changed and what it meant, in plain short lines.
-- It keeps the shell minimal: header, short navigation, one generous column, footer.
-- It refuses dashboards, charts, and extra layers that push the answer below the fold.
+- The site shows the whole shape at once: header, feed, owners, how we work, and footer.
+- The feed is the main thing: newest updates first, with an owner and a date on every row.
+- The owner view makes it obvious who keeps each area and how often it changes.
+- The working-rules section says how to post, how to name owners, and how to keep content current.
+- It stays simple and calm: white, navy headings, flat panels, one orange primary button, and no charts or dashboard clutter.
 
-Build a real internal website, not a document.
+Build What’s Changed as a real internal website, not a document.
 
-Use the existing site shell from the canon, but make the first screen work as a single place to find the answer.
-
-Content to keep:
-- Site name: What’s Changed.
-- Header with short navigation.
+Use the full site frame:
+- Header with the site name.
+- Short navigation.
 - One generous content column.
-- Footer that says who keeps the site.
-- Feed items shown newest first.
-- Each row must show an owner and a date.
-- The feed should include the kinds of updates already named in the canon: what changed this week, what’s being tested, who owns the dealer locator.
+- Footer.
 
-What it should say:
+The site should include these parts in one viewable whole:
+- Feed of what changed.
+- Who owns what.
+- How we work.
+- Footer that says who keeps the site.
+
+Feed rules:
+- Newest first.
+- Every row shows an owner and a date.
+- Posts must earn their place by saving somebody from asking a colleague.
+- Each post must name an owner and how often it is updated.
+- Keep the feed readable in one screen wherever possible.
+
+Content style:
 - Plain and concrete.
 - Short sentences.
-- Say what changed and what it meant, not what was done.
+- Say what changed and what it meant.
 - No marketing language.
 
-What it should look and feel like:
+Look and feel:
 - White.
 - A lot of air.
 - Navy headings.
-- Text left-aligned.
-- Flat panels only, no shadows.
+- Left-aligned text.
+- Flat panels.
+- No shadows.
 - Buttons are fully round pills.
 - Orange with white text for the one primary action.
-- Navy outlined pills for the rest.
+- Navy outlined pills for secondary actions.
 - States are small round tags, not coloured words.
 
-What is deliberately out of scope:
+Deliberately out of scope:
 - No dashboard.
 - No charts.
-- No multi-step navigation that makes people scroll for the answer.
-- No extra explanatory content that pushes the feed below the fold.
+- No dense system of filters.
+- No extra layers that turn the page into a document or a reporting tool.
 
-Assumption made to keep the page sharp:
-- The main job of the first screen is to let someone get their answer in one view, with the feed carrying the quickest path.
+Keep the page calm and fast to scan. The point is that somebody should get the answer without asking a colleague.
