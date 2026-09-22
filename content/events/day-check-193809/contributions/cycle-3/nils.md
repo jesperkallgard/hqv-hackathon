@@ -1,73 +1,72 @@
 ---
-title: "One post with the next action up front"
-ingress: "Open a post that answers the question fast and tells you what to do next. It is for people who need one update, not a feed."
+title: "My Husqvarna login moved"
+ingress: "The first post tells people that the login moved and what to do next. It is for anyone who needs the new place fast, without asking a colleague."
 points:
-  - "The opened post shows seven things: headline, audience, three-line summary, status or date, owner, update frequency, and one onward link."
+  - "The opened post shows seven things: headline, audience, three-line summary, status or date, owner, update frequency, and one link onward."
   - "The list view shows only the headline, the owner, and the date."
-  - "Every post names the one action it wants from you, and that action is the clearest thing on the page."
-  - "The post opens in one generous column with flat panels, no shadows, navy headings, and round tags for status."
-  - "It stays plain and concrete, with no marketing copy and no extra fields beyond the seven agreed items."
+  - "The post says what changed and what it meant, then ends with the one action it wants from you."
+  - "The page stays an internal website with a header, short navigation, one generous column, and a footer."
+  - "The post uses flat panels, navy headings, left-aligned text, round status tags, and pill buttons in the site style."
 cycle: 3
 pair: "nils"
 authors: ["Nils", "Petter", "Greta", "Yara"]
 ---
 
-Open a post that answers the question fast and tells you what to do next. It is for people who need one update, not a feed.
+The first post tells people that the login moved and what to do next. It is for anyone who needs the new place fast, without asking a colleague.
 
-- The opened post shows seven things: headline, audience, three-line summary, status or date, owner, update frequency, and one onward link.
+- The opened post shows seven things: headline, audience, three-line summary, status or date, owner, update frequency, and one link onward.
 - The list view shows only the headline, the owner, and the date.
-- Every post names the one action it wants from you, and that action is the clearest thing on the page.
-- The post opens in one generous column with flat panels, no shadows, navy headings, and round tags for status.
-- It stays plain and concrete, with no marketing copy and no extra fields beyond the seven agreed items.
+- The post says what changed and what it meant, then ends with the one action it wants from you.
+- The page stays an internal website with a header, short navigation, one generous column, and a footer.
+- The post uses flat panels, navy headings, left-aligned text, round status tags, and pill buttons in the site style.
 
 Build the opened post view for the current internal site.
 
-## What it must show
-- A single post page, not a feed.
-- Seven fields on the open page:
-  - headline
-  - audience
-  - a three-line summary
-  - a status or date
-  - owner by name
-  - how often it is updated
-  - one link onward
-- The page must also make the post's next action obvious. That action is the main takeaway and should be written in plain language.
+## Content
+- Title: My Husqvarna login moved
+- Owner: Jonas B
+- Update frequency: Monthly
+- The post is about the login moving and the action people should take next.
+- Keep the tone plain and concrete.
+- Say what changed and what it meant.
+- Make the next action the clearest thing on the page.
 
-## What the list view shows
+## What the open post must show
+- Headline
+- Audience
+- A three-line summary
+- Status or date
+- Owner by name
+- How often it is updated
+- One link onward
+
+## What the list view must show
 - Headline
 - Owner
 - Date
-- Nothing else in the list.
-
-## Content rules
-- Use real, concrete copy.
-- Short sentences.
-- Say what changed and what it meant.
-- No marketing language.
-- Keep the owner's name visible.
-- Keep update frequency visible.
+- Nothing else in the list
 
 ## Look and feel
-- Real internal website, not a document.
-- Header with the site name and short navigation.
-- One generous content column.
-- Footer.
-- White background.
-- Lots of air.
-- Navy headings.
-- Left-aligned text.
-- Flat panels only.
-- No shadows.
-- Primary action uses a fully round orange pill with white text.
-- Secondary actions use an outlined navy pill.
-- Status should appear as a small round tag, not coloured words.
+- Real internal website, not a document
+- Header with the site's name and short navigation
+- One generous content column
+- Footer
+- White background
+- Lots of air
+- Navy headings
+- Left-aligned text
+- Flat panels only
+- No shadows
+- Primary action as a fully round orange pill with white text
+- Secondary actions as outlined navy pills
+- Status as a small round tag, not coloured words
 
 ## Out of scope
-- No feed-first homepage.
-- No extra summary cards on the front door.
-- No additional fields beyond the seven agreed items.
-- No decorative or promotional copy.
+- No feed-first homepage
+- No extra summary cards on the front door
+- No extra fields beyond the seven agreed items
+- No marketing copy
+- No decorative filler
 
 ## Assumption
-- The post page can use a single clear call to action as the onward step, and that action should be treated as part of the post content rather than a separate feature.
+- The opened post can treat the onward link as the main action people should take next.
