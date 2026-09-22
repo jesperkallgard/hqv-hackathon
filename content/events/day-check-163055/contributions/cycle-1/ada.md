@@ -1,45 +1,53 @@
 ---
 title: "What's Changed"
-ingress: "One internal site called What's Changed: a header with three ways in — the feed, who owns what, how we work — and a single chronological feed of real changes, each row naming an owner and a date."
+ingress: "The whole internal site, called What's Changed: a header, a feed, an owners directory, a how-we-work page, and a footer — one calm home for \"who owns this and what changed\" so nobody has to ask a colleague."
 points:
-  - "One site, one name — What's Changed — not a dashboard and not a document."
-  - "The header has exactly three ways in: the feed, who owns what, how we work."
-  - "The feed is the front door: what changed this week, what's being tested, who owns things like the dealer locator — newest first."
-  - "Every row names an owner and how often it's updated — a post that can't say who owns it doesn't earn its place."
-  - "The footer names who keeps the site itself, so the site owns up to its own upkeep."
+  - "One site, one name — What's Changed — with five parts: header, feed, who owns what, how we work, footer. No dashboard, no charts."
+  - "The header carries the site name and three ways in: the feed, who owns what, how we work."
+  - "The feed is home: newest first, each row plain — what changed and what it meant, not what was done — with an owner and a date."
+  - "Who owns what is a directory, not a feed: every area of the site (like the dealer locator) is listed with its current owner and how often it's updated, whether or not it changed recently."
+  - "How we work is one short, plain page: what earns a post here, who can write one, and who to ask if something's missing — no process document, no marketing language."
 cycle: 1
 pair: "ada"
 authors: ["Ada", "Cleo"]
 ---
 
-One internal site called What's Changed: a header with three ways in — the feed, who owns what, how we work — and a single chronological feed of real changes, each row naming an owner and a date.
+The whole internal site, called What's Changed: a header, a feed, an owners directory, a how-we-work page, and a footer — one calm home for "who owns this and what changed" so nobody has to ask a colleague.
 
-- One site, one name — What's Changed — not a dashboard and not a document.
-- The header has exactly three ways in: the feed, who owns what, how we work.
-- The feed is the front door: what changed this week, what's being tested, who owns things like the dealer locator — newest first.
-- Every row names an owner and how often it's updated — a post that can't say who owns it doesn't earn its place.
-- The footer names who keeps the site itself, so the site owns up to its own upkeep.
+- One site, one name — What's Changed — with five parts: header, feed, who owns what, how we work, footer. No dashboard, no charts.
+- The header carries the site name and three ways in: the feed, who owns what, how we work.
+- The feed is home: newest first, each row plain — what changed and what it meant, not what was done — with an owner and a date.
+- Who owns what is a directory, not a feed: every area of the site (like the dealer locator) is listed with its current owner and how often it's updated, whether or not it changed recently.
+- How we work is one short, plain page: what earns a post here, who can write one, and who to ask if something's missing — no process document, no marketing language.
 
 ## What it is
-A single internal site, called **What's Changed**. Not a dashboard, no charts, no metrics tiles — a feed of real changes people can read in place of asking a colleague.
+One internal site, **What's Changed**. Every part exists to save someone from asking a colleague. No dashboard, no charts, no metrics.
 
-## Structure
-- **Header**: site name ("What's Changed") and three nav items — the feed, who owns what, how we work.
-- **The feed** (home): a list of rows, newest first. Examples of what belongs in it: "what changed this week", "what's being tested", "who owns the dealer locator".
-- **Footer**: names who keeps the site itself (who to go to if the site is wrong or out of date).
+## Header
+Site name, "What's Changed", and three nav items: **the feed**, **who owns what**, **how we work**.
 
-## Feed row content
-Each row is a real change, written plainly — what changed and what it meant, not what was done. Each row carries:
+## The feed (home page)
+A single column list of rows, newest first. Each row is a real change written plainly: what changed and what it meant — not a log of tasks done. Examples: "what changed this week", "what's being tested", "who owns the dealer locator". Every row names:
 - An owner (a name or team)
 - A date, or how often that thing is updated
 
-This is the merge bar from the direction: a post without an owner and an update cadence doesn't belong.
+A row without an owner doesn't get posted — that's the merge bar.
+
+## Who owns what
+A directory page, separate from the feed. It lists every area of the site or product (e.g. the dealer locator, pricing page, onboarding) with:
+- Its current owner
+- How often it's updated
+
+This exists even for things that haven't changed recently — the feed is "what's new", this page is "who do I ask", and together they cover both questions.
+
+## How we work
+One short page, plain text, no process diagram. It says: what earns a post on this site (saves someone asking a colleague), who is allowed to post, and who to ask if the site itself is wrong or missing something. A paragraph or two, not a manual.
+
+## Footer
+Names who keeps the site itself — who to contact if the site is broken or out of date.
 
 ## Look and feel
-Follows the day's direction as given: white, generous air, navy headings, left-aligned text, one generous column. Flat panels, no shadows. The one primary action (if any exists on this page, e.g. "post an update") is an orange pill with white text; anything else is an outlined navy pill. Status, if shown on a row, is a small round tag — not a coloured word. Calm, plain, short sentences, no marketing language.
+White, a lot of air, one generous column, navy headings, text left-aligned. Flat panels, no shadows anywhere. Buttons are fully round pills: orange with white text for the one primary action (e.g. "post an update"), outlined navy for everything else. States (like "in testing", "shipped") are small round tags, never coloured words. Plain, concrete, short sentences throughout — no marketing language anywhere, including on the how-we-work page.
 
 ## Out of scope
-No dashboard view, no charts, no analytics. "Who owns what" and "how we work" are named as nav destinations only — their own content is not decided here.
-
-## Assumption
-Ada gave a full picture in one go, so nothing here is invented; the only assumption made is that "who owns what" and "how we work" are separate pages reachable from the header, with their content left open for a later sprint.
+No dashboard, no charts, no analytics, no comments/reactions on rows. The exact list of areas on "who owns what" is not decided beyond the dealer locator example — that's for a later sprint to fill in with real names.
