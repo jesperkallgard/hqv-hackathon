@@ -1,13 +1,15 @@
 import { notFound } from "next/navigation";
 import { readEvent } from "@/lib/events";
-import { readTheme } from "@/lib/read-theme";
+import { readStyles, readTheme } from "@/lib/read-theme";
 import { fontHref, themeCss } from "@/lib/theme";
 
 /**
  * One hackathon's entire visual identity, and only this hackathon's.
  *
- * The stylesheet and the typefaces are loaded here, scoped to `.result`, so
- * nothing leaks between events and nothing is inherited from the repo.
+ * The tokens, the typefaces and the curator's own stylesheet are loaded here,
+ * scoped to `.result`, so nothing leaks between events and nothing is
+ * inherited from the repo. The site draws the reading pages around the
+ * prototype; it never draws the prototype.
  *
  * Nothing else is here. The masthead and the footer are a component the reading
  * pages ask for, because `/<event>/live` must have neither and a layout cannot
@@ -24,7 +26,7 @@ export default async function EventLayout({
   const event = await readEvent(slug);
   if (!event) notFound();
 
-  const theme = await readTheme(slug);
+  const [theme, styles] = await Promise.all([readTheme(slug), readStyles(slug)]);
 
   // Null when the event asked only for faces the machine already has, and then
   // the page should not be reaching out to a font host at all.
@@ -42,6 +44,13 @@ export default async function EventLayout({
         // The event's own tokens. Scoped, so two hackathons never collide.
         dangerouslySetInnerHTML={{ __html: themeCss(theme) }}
       />
+      {styles && (
+        <style
+          // The look the curator wrote for this hackathon, from the tokens the
+          // facilitator set. The site designs nothing; this does.
+          dangerouslySetInnerHTML={{ __html: styles }}
+        />
+      )}
       <div className="result">{children}</div>
     </>
   );

@@ -12,3 +12,16 @@ export async function readTheme(event: string): Promise<Theme> {
     return DEFAULT_THEME;
   }
 }
+
+/**
+ * The hackathon's own stylesheet, written by the curator from the graphic
+ * tokens the facilitator set. Empty when there is none yet — before the first
+ * build, the page is the goal in plain type and nothing else.
+ */
+export async function readStyles(event: string): Promise<string> {
+  try {
+    return await readFile(path.join(EVENTS_DIR, event, "styles.css"), "utf8");
+  } catch {
+    return "";
+  }
+}
