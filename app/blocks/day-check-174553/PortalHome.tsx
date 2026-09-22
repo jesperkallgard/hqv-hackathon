@@ -1,10 +1,11 @@
 /**
- * Portal home: masthead, four flat numbers, three phase entry points that filter the feed in place, the feed, the owners table, the working rules, header and footer.
+ * Portal front door: masthead, four KPIs, the AI chat, the four doors, owners, working rules, header and footer.
  */
 "use client";
 
 import React, { useState } from "react";
-import FeedRow from "./FeedRow";
+import AskPanel from "./AskPanel";
+import DoorCard from "./DoorCard";
 
 const KPIS = [
   { label: "Deployed this quarter", value: "48", note: "14 in the last 30 days" },
@@ -13,96 +14,21 @@ const KPIS = [
   { label: "Visitors", value: "1.92m", note: "Last 30 days" }
 ];
 
-const PHASES = [
-  {
-    key: "Explore",
-    blurb: "We do not know yet. Research, a prototype, a question we are trying to answer."
-  },
-  {
-    key: "Optimize",
-    blurb: "It is live and we are testing it. A number is moving, or it is not."
-  },
-  {
-    key: "Scale",
-    blurb: "It won. We are rolling it out everywhere it belongs and handing it over."
-  }
-];
-
-const POSTS = [
-  {
-    title: "Dealer locator moved to the new maps API",
-    body: "The old provider stopped returning opening hours in November, so half the dealer cards showed nothing. Hours are back on every dealer. Load time on the locator dropped from 4.1s to 1.3s.",
-    phase: "Scale",
-    owner: "Priya Raman, Platform",
-    date: "12 March",
-    cadence: "Updated when the API changes"
-  },
-  {
-    title: "Checkout now remembers the bike you configured",
-    body: "People left to check a price and came back to an empty basket. The configuration is kept for 30 days. Completed checkouts are up 9% on returning visitors; no change on first-time visitors.",
-    phase: "Optimize",
-    owner: "Martin Holt, Commerce",
-    date: "9 March",
-    cadence: "Updated weekly while the test runs"
-  },
-  {
-    title: "Test: shorter product titles on category pages",
-    body: "Titles were being cut off on phones mid-word. We are running full titles against a 40-character version. Two weeks in, click-through is level \u2014 the shorter titles are not losing anything, so the argument is readability, not revenue.",
-    phase: "Optimize",
-    owner: "Sofia Lindqvist, Content",
-    date: "6 March",
-    cadence: "Updated weekly while the test runs"
-  },
-  {
-    title: "Service booking: what people actually type in the free-text box",
-    body: "We read 600 bookings. Two thirds of the free text is one of four things: brake noise, gears, a flat, or a date change. A four-option picker would cover them. Nothing is built yet \u2014 this is the case for building it.",
-    phase: "Explore",
-    owner: "Jonas Bregendahl, Service digital",
-    date: "4 March",
-    cadence: "Updated when the research moves"
-  },
-  {
-    title: "Stock badge is honest again",
-    body: "\u201cIn stock\u201d meant in stock in the warehouse, not in the shop you were looking at. It now reads per shop. Returns of the \u201cit was not there\u201d kind fell from 38 a week to 11.",
-    phase: "Scale",
-    owner: "Priya Raman, Platform",
-    date: "28 February",
-    cadence: "Updated monthly"
-  },
-  {
-    title: "Payment page loses one field",
-    body: "The company-name field was filled in by 3% of people and blocked 100% of them for a second. It is gone from private checkout and stays on business checkout. Drop-off on the payment step is down 2.4 points.",
-    phase: "Optimize",
-    owner: "Martin Holt, Commerce",
-    date: "26 February",
-    cadence: "Updated weekly while the test runs"
-  },
-  {
-    title: "Search understands misspelt model names",
-    body: "\u201cIntro7\u201d, \u201cintro 7\u201d and \u201cintro-7\u201d used to return nothing. They now return the bike. Zero-result searches fell from 7.8% to 2.1% of all searches.",
-    phase: "Scale",
-    owner: "Alina Kov\u00e1cs, Search",
-    date: "21 February",
-    cadence: "Updated monthly"
-  },
-  {
-    title: "Where people give up on the size guide",
-    body: "Nine sessions watched end to end. Everyone got to the height table and nobody scrolled past it to the inseam question, which is the one that decides the frame. We are drafting a version that asks inseam first.",
-    phase: "Explore",
-    owner: "Sofia Lindqvist, Content",
-    date: "18 February",
-    cadence: "Updated when the research moves"
-  }
+const DOORS = [
+  { name: "What's changed", updated: "Last updated 2 hours ago" },
+  { name: "What we're testing", updated: "Last updated 3 days ago" },
+  { name: "How we do things", updated: "Last updated 2 weeks ago" },
+  { name: "Who owns what", updated: "Last updated 5 days ago" }
 ];
 
 const OWNERS = [
-  { area: "Dealer locator", sub: "Map, opening hours, stock per shop", person: "Priya Raman", team: "Platform", cadence: "Weekly", open: "2" },
-  { area: "Checkout and payment", sub: "Basket to receipt", person: "Martin Holt", team: "Commerce", cadence: "Weekly", open: "3" },
-  { area: "Product and category pages", sub: "Titles, images, copy, size guide", person: "Sofia Lindqvist", team: "Content", cadence: "Weekly", open: "4" },
-  { area: "Search", sub: "Query handling, synonyms, ranking", person: "Alina Kov\u00e1cs", team: "Search", cadence: "Monthly", open: "1" },
-  { area: "Service booking", sub: "Booking flow and workshop hand-off", person: "Jonas Bregendahl", team: "Service digital", cadence: "Monthly", open: "2" },
-  { area: "Tracking and measurement", sub: "Events, test setup, reporting", person: "Elias Thorne", team: "Analytics", cadence: "Weekly", open: "1" },
-  { area: "Design system", sub: "Components, tokens, accessibility", person: "Nadia Fournier", team: "Design", cadence: "Monthly", open: "0" }
+  { area: "Dealer locator", sub: "Map, opening hours, stock per shop", person: "Priya Raman", team: "Platform", phase: "Scale", cadence: "Weekly", open: "2" },
+  { area: "Checkout and payment", sub: "Basket to receipt", person: "Martin Holt", team: "Commerce", phase: "Optimize", cadence: "Weekly", open: "3" },
+  { area: "Product and category pages", sub: "Titles, images, copy, size guide", person: "Sofia Lindqvist", team: "Content", phase: "Optimize", cadence: "Weekly", open: "4" },
+  { area: "Search", sub: "Query handling, synonyms, ranking", person: "Alina Kov\u00e1cs", team: "Search", phase: "Scale", cadence: "Monthly", open: "1" },
+  { area: "Service booking", sub: "Booking flow and workshop hand-off", person: "Jonas Bregendahl", team: "Service digital", phase: "Explore", cadence: "Monthly", open: "2" },
+  { area: "Tracking and measurement", sub: "Events, test setup, reporting", person: "Elias Thorne", team: "Analytics", phase: "Optimize", cadence: "Weekly", open: "1" },
+  { area: "Design system", sub: "Components, tokens, accessibility", person: "Nadia Fournier", team: "Design", phase: "Scale", cadence: "Monthly", open: "0" }
 ];
 
 const STEPS = [
@@ -128,14 +54,12 @@ const STEPS = [
   }
 ];
 
+function phaseClass(p) {
+  return "tag tag-" + p.toLowerCase();
+}
+
 export default function PortalHome() {
-  const [phase, setPhase] = useState(null);
-
-  const shown = phase ? POSTS.filter(function (p) { return p.phase === phase; }) : POSTS;
-
-  function countFor(key) {
-    return POSTS.filter(function (p) { return p.phase === key; }).length;
-  }
+  const [open, setOpen] = useState(null);
 
   return (
     <div>
@@ -143,7 +67,7 @@ export default function PortalHome() {
         <div className="page">
           <a className="wordmark" href="#">DBS 4 President</a>
           <nav className="site-nav" aria-label="Main">
-            <a className="nav-link is-active" href="#feed" aria-current="page">Feed</a>
+            <a className="nav-link is-active" href="#doors" aria-current="page">Front door</a>
             <a className="nav-link" href="#owners">Who owns what</a>
             <a className="nav-link" href="#how">How we work</a>
             <a className="button button-primary" href="#">Post an update</a>
@@ -155,7 +79,7 @@ export default function PortalHome() {
         <div className="page">
           <section className="masthead">
             <h1>What changed on the website</h1>
-            <p className="lede">Everything the web team is running, testing and learning, newest first. Every post names an owner and how often it is updated. If it does not save you from asking a colleague, it is not here.</p>
+            <p className="lede">Everything the web team is running, testing and learning. Every post names an owner and how often it is updated. If it does not save you from asking a colleague, it is not here.</p>
           </section>
 
           <section aria-label="Where the site stands">
@@ -172,58 +96,20 @@ export default function PortalHome() {
             </div>
           </section>
 
-          <section className="section" id="feed">
+          <section className="section" aria-label="Ask about an initiative">
+            <AskPanel />
+          </section>
+
+          <section className="section" id="doors">
             <div className="section-head">
-              <h2>Explore, Optimize, Scale</h2>
-              <p className="lede">The three phases every initiative moves through. Pick one to see what is in it.</p>
+              <h2>Four ways in</h2>
+              <p className="lede">What's changed first \u2014 that is the one people check most.</p>
             </div>
-
-            <div className="phase-grid">
-              {PHASES.map(function (p) {
-                const on = phase === p.key;
-                return (
-                  <button
-                    type="button"
-                    className="phase-card"
-                    key={p.key}
-                    aria-pressed={on}
-                    onClick={function () { setPhase(on ? null : p.key); }}
-                  >
-                    <h3>{p.key}</h3>
-                    <p>{p.blurb}</p>
-                    <span className="phase-count">{countFor(p.key)} posts</span>
-                  </button>
-                );
+            <ul className="door-list">
+              {DOORS.map(function (d, i) {
+                return <DoorCard key={d.name} index={i + 1} name={d.name} updated={d.updated} />;
               })}
-            </div>
-
-            <div className="filter-bar">
-              <span className="filter-label">Showing</span>
-              <span className="tag tag-quiet">{phase ? phase + " \u2014 " + shown.length + " posts" : "Everything \u2014 " + POSTS.length + " posts"}</span>
-              <button
-                type="button"
-                className="button button-quiet"
-                onClick={function () { setPhase(null); }}
-                aria-disabled={phase ? undefined : true}
-                disabled={!phase}
-              >
-                Clear phase
-              </button>
-            </div>
-
-            {shown.length === 0 ? (
-              <div className="empty">
-                <h3>Nothing is in {phase} this week.</h3>
-                <p>A post moves here the moment its owner changes the phase on it. Until then, the work sits in one of the other two.</p>
-                <button type="button" className="button button-outline" onClick={function () { setPhase(null); }}>Show everything</button>
-              </div>
-            ) : (
-              <ul className="feed">
-                {shown.map(function (p) {
-                  return <FeedRow key={p.title} post={p} />;
-                })}
-              </ul>
-            )}
+            </ul>
           </section>
 
           <section className="section" id="owners">
@@ -238,6 +124,7 @@ export default function PortalHome() {
                     <th scope="col">Area</th>
                     <th scope="col">Owner</th>
                     <th scope="col">Team</th>
+                    <th scope="col">Phase</th>
                     <th scope="col">Updated</th>
                     <th scope="col" className="num">Open items</th>
                   </tr>
@@ -252,6 +139,7 @@ export default function PortalHome() {
                         </td>
                         <td>{o.person}</td>
                         <td>{o.team}</td>
+                        <td><span className={phaseClass(o.phase)}>{o.phase}</span></td>
                         <td>{o.cadence}</td>
                         <td className="num">{o.open}</td>
                       </tr>
@@ -269,10 +157,18 @@ export default function PortalHome() {
             </div>
             <div className="two-col">
               <ol className="steps">
-                {STEPS.map(function (s) {
+                {STEPS.map(function (s, i) {
+                  const on = open === i;
                   return (
                     <li key={s.title}>
-                      <h3>{s.title}</h3>
+                      <button
+                        type="button"
+                        className="step-toggle"
+                        aria-expanded={on}
+                        onClick={function () { setOpen(on ? null : i); }}
+                      >
+                        <h3>{s.title}</h3>
+                      </button>
                       <p>{s.body}</p>
                     </li>
                   );
@@ -301,9 +197,10 @@ export default function PortalHome() {
           <div>
             <h4>On this site</h4>
             <ul>
-              <li><a href="#feed">Feed</a></li>
+              <li><a href="#doors">What's changed</a></li>
+              <li><a href="#doors">What we're testing</a></li>
+              <li><a href="#how">How we do things</a></li>
               <li><a href="#owners">Who owns what</a></li>
-              <li><a href="#how">How we work</a></li>
             </ul>
           </div>
           <div>
