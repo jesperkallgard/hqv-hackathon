@@ -49,14 +49,14 @@ export default async function LivePage({ params }: { params: Promise<{ event: st
 
   // Sprint one, on a projector, in front of the room that is about to fill it.
   // The goal in the room's own words is the most useful thing this page can
-  // hold until there is something to show.
+  // hold until there is something to show — and it is shown as the goal, not
+  // as a note that the page is empty. A page that describes its own state is
+  // the one thing the day is trying not to produce, and the room should not
+  // meet it first on the wall.
   return (
     <main className="canvas holding">
       <p className="eyebrow">{event.name}</p>
       <p className="holding-goal">{event.goal}</p>
-      <p className="muted holding-note">
-        This page is empty on purpose. It fills with the first thing the room votes through.
-      </p>
       <p className="holding-note">
         <Link href={`/${slug}`} className="underline underline-offset-4">
           See where the day has got to
