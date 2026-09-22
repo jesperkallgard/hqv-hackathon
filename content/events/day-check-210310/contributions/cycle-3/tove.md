@@ -1,34 +1,35 @@
 ---
-title: "Every post opens with the facts"
-ingress: "One post shows the seven facts an outsider needs, with the headline, owner, and date visible in the list and the rest inside the post. It reads like a real internal site for people outside the team who need the answer without learning the vocabulary."
+title: "My Husqvarna login moved"
+ingress: "A plain internal post for people outside the team who need to understand a change without asking a colleague. It shows the headline, owner, and date in the list, then opens to the rest of the facts."
 points:
-  - "Each post has seven parts: headline, audience, three-line summary, status or date, owner name, update frequency, and one onward link."
-  - "The list view shows only the headline, owner, and date, so people can scan fast before opening anything."
-  - "The open post shows the audience and the three-line summary first, then the status or date, the update frequency, and the onward link."
-  - "Every post names a real owner by name and says how often it is updated, so nobody has to ask who keeps it current."
-  - "It is written for outsiders first: someone from another team can read it without knowing the local terms."
+  - "The post is for outsiders first, so someone from another team can read it without knowing the local words."
+  - "The list view shows the headline, the owner, and the date, and nothing else."
+  - "When opened, the post shows the audience, a three-line summary, the status or date, the owner name, how often it is updated, and one link onward."
+  - "The owner is Jonas B, and the post is updated monthly."
+  - "The content stays plain and concrete, with short sentences and no marketing language."
 cycle: 3
 pair: "tove"
 authors: ["Tove", "Hugo", "Bo", "Kajsa"]
 ---
 
-One post shows the seven facts an outsider needs, with the headline, owner, and date visible in the list and the rest inside the post. It reads like a real internal site for people outside the team who need the answer without learning the vocabulary.
+A plain internal post for people outside the team who need to understand a change without asking a colleague. It shows the headline, owner, and date in the list, then opens to the rest of the facts.
 
-- Each post has seven parts: headline, audience, three-line summary, status or date, owner name, update frequency, and one onward link.
-- The list view shows only the headline, owner, and date, so people can scan fast before opening anything.
-- The open post shows the audience and the three-line summary first, then the status or date, the update frequency, and the onward link.
-- Every post names a real owner by name and says how often it is updated, so nobody has to ask who keeps it current.
-- It is written for outsiders first: someone from another team can read it without knowing the local terms.
+- The post is for outsiders first, so someone from another team can read it without knowing the local words.
+- The list view shows the headline, the owner, and the date, and nothing else.
+- When opened, the post shows the audience, a three-line summary, the status or date, the owner name, how often it is updated, and one link onward.
+- The owner is Jonas B, and the post is updated monthly.
+- The content stays plain and concrete, with short sentences and no marketing language.
 
-- Keep the current site as a real internal website, not a document.
-- Preserve the existing shell: header with site name and short navigation, one generous content column, and a footer.
+- This is the first post in the opened state of the one-post prototype.
+- Title: My Husqvarna login moved.
+- Owner: Jonas B.
+- Update frequency: monthly.
+- Keep the page as a real internal website, not a document.
+- Preserve the current shell: header with site name and short navigation, one generous content column, and a footer.
 - Keep the look: white background, lots of air, navy headings, left-aligned text, flat panels with no shadows.
-- Keep the buttons as fully round pills: orange with white text for the primary action, outlined navy for the rest.
+- Keep buttons as fully round pills: orange with white text for the primary action, outlined navy for the rest.
 - Keep states as small round tags, not coloured words.
-- Update each post/card so the list view clearly shows headline, owner, and date only.
-- When a post is opened, it must reveal: audience, a three-line summary, status or date, owner name, update frequency, and one link onward.
-- Make the content concrete and plain: short sentences, no marketing language, no jargon.
-- Every post must name an owner and say how often it is updated.
-- The content must work for the outsider reading first: someone from another team should understand it without shared vocabulary.
-- Do not add extra layers, dashboards, feeds, or unrelated sections.
-- Keep it to one post prototype for this sprint, matching the current “opened” state.
+- In the list view, show only the headline, owner, and date.
+- In the opened view, show: audience, three-line summary, status or date, owner name, update frequency, and one link onward.
+- The content must be understandable to someone outside the Husqvarna team.
+- Use short, plain sentences. No marketing language. No extra layers, feeds, dashboards, or unrelated sections.
