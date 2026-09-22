@@ -1,62 +1,78 @@
 ---
-title: "A calm internal feed with owners and dates"
-ingress: "A real internal site for asking what changed. It saves people from chasing colleagues by showing the feed, ownership, and how we work in one place."
+title: "What's Changed: the whole internal site"
+ingress: "A calm internal site that shows what changed, who owns it, and how the team works. It is built to stop people asking a colleague for basic updates."
 points:
-  - "The page is a single internal site called What's Changed."
-  - "The header gives three ways in: the feed, who owns what, and how we work."
-  - "The feed comes first, newest first, with each row showing what changed, an owner, and a date."
-  - "The site refuses dashboards and charts; it is a simple site, not an analytics tool."
-  - "The look stays calm and restrained: white space, navy headings, orange only for the one primary button."
+  - "The site is a real internal website, not a document."
+  - "The header shows the site name and short navigation to the feed, who owns what, and how we work."
+  - "The main content is one generous column with the feed in it, newest first."
+  - "Every post names an owner and how often it is updated, so a reader can act without asking around."
+  - "The site ends with a footer that says who keeps it, and it stays flat, white, and restrained."
 cycle: 1
 pair: "kajsa"
 authors: ["Petter", "Bo", "Vera", "Kajsa"]
 ---
 
-A real internal site for asking what changed. It saves people from chasing colleagues by showing the feed, ownership, and how we work in one place.
+A calm internal site that shows what changed, who owns it, and how the team works. It is built to stop people asking a colleague for basic updates.
 
-- The page is a single internal site called What's Changed.
-- The header gives three ways in: the feed, who owns what, and how we work.
-- The feed comes first, newest first, with each row showing what changed, an owner, and a date.
-- The site refuses dashboards and charts; it is a simple site, not an analytics tool.
-- The look stays calm and restrained: white space, navy headings, orange only for the one primary button.
+- The site is a real internal website, not a document.
+- The header shows the site name and short navigation to the feed, who owns what, and how we work.
+- The main content is one generous column with the feed in it, newest first.
+- Every post names an owner and how often it is updated, so a reader can act without asking around.
+- The site ends with a footer that says who keeps it, and it stays flat, white, and restrained.
 
-## What it is
-A real internal website, not a document. One page with a header, a generous single-column body, and a footer.
+## Site shape
+One page that feels like a real internal website.
+- Header with the site name.
+- Short navigation.
+- One generous content column.
+- Footer.
 
 ## Content
-- Site name: **What's Changed**.
-- Header navigation:
-  - Feed
-  - Who owns what
-  - How we work
-- Feed content should read like internal updates:
-  - what changed this week
-  - what's being tested
-  - who owns the dealer locator
-- Each row in the feed shows:
-  - the update
-  - an owner
-  - a date
-- Footer copy: who keeps the site.
+Site name: **What's Changed**.
+
+Navigation items:
+- Feed
+- Who owns what
+- How we work
+
+The feed should show:
+- what changed this week
+- what's being tested
+- who owns the dealer locator
+
+Posts are ordered newest first.
+Each post must show:
+- the change
+- an owner
+- how often it is updated
+- a date
+
+## Purpose
+A post earns its place if it saves somebody from asking a colleague.
 
 ## Tone
-Plain and concrete. Short sentences. Say what changed and what it meant, not what was done. No marketing language.
+Plain and concrete.
+Short sentences.
+Say what changed and what it meant, not what was done.
+No marketing language.
 
 ## Look and feel
-- White background.
+- White.
 - A lot of air.
 - Navy headings.
 - Text left-aligned.
-- Flat panels. No shadows.
+- Flat panels.
+- No shadows.
 - Buttons are fully round pills.
-- Primary button: orange with white text.
-- Other buttons: navy outline.
+- Orange with white text for the one primary action.
+- Navy outline for the rest.
 - States are small round tags, not coloured words.
 
-## Scope
+## Footer
+The footer says who keeps the site.
+
+## Out of scope
 - No dashboard.
 - No charts.
+- No extra complexity.
 - Keep it restrained: fewer things on the page, each doing more work.
-
-## Notes
-This is a prototype of an internal site that helps people avoid asking a colleague by making ownership and recent changes easy to scan.
