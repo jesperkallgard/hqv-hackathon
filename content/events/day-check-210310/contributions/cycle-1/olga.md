@@ -1,53 +1,54 @@
 ---
 title: "What's Changed"
-ingress: "A calm internal site that helps people find what changed, who owns it, and whether it is stale. It is for teams who need the answer before they ask a colleague."
+ingress: "A calm internal site that shows what changed, who owns it, and how fresh it is. It is for people who want the answer without asking a colleague."
 points:
-  - "The site opens with a header, short navigation, and one feed in a single generous column."
+  - "The site opens with a header, a short nav, the feed, the ownership view, and a footer."
   - "The feed shows what changed this week, what is being tested, and who owns the dealer locator, newest first."
-  - "Every row shows an owner and a date so stale items are obvious at a glance."
-  - "The site does not include a dashboard, charts, or any extra analysis views."
-  - "One primary action is orange and fully round; the rest are outlined in navy, with white space, navy headings, and flat panels only."
+  - "Every post names an owner and how often it is updated, so stale items are obvious."
+  - "The site includes a simple page for who owns what and a page for how we work."
+  - "It stays white, airy, and left-aligned, with flat panels, navy headings, round state tags, and orange only on the one primary button."
 cycle: 1
 pair: "olga"
 authors: ["Lars", "Olga", "Greta", "Nils"]
 ---
 
-A calm internal site that helps people find what changed, who owns it, and whether it is stale. It is for teams who need the answer before they ask a colleague.
+A calm internal site that shows what changed, who owns it, and how fresh it is. It is for people who want the answer without asking a colleague.
 
-- The site opens with a header, short navigation, and one feed in a single generous column.
+- The site opens with a header, a short nav, the feed, the ownership view, and a footer.
 - The feed shows what changed this week, what is being tested, and who owns the dealer locator, newest first.
-- Every row shows an owner and a date so stale items are obvious at a glance.
-- The site does not include a dashboard, charts, or any extra analysis views.
-- One primary action is orange and fully round; the rest are outlined in navy, with white space, navy headings, and flat panels only.
+- Every post names an owner and how often it is updated, so stale items are obvious.
+- The site includes a simple page for who owns what and a page for how we work.
+- It stays white, airy, and left-aligned, with flat panels, navy headings, round state tags, and orange only on the one primary button.
 
 Build a real internal website called **What's Changed**.
 
 ### Content
-- Header with the site name and three links:
+- Header with the site name and short navigation:
   - Feed
   - Who owns what
   - How we work
-- Main content is a single feed in one generous column.
-- Feed items should include examples like:
+- Main feed in one generous column.
+- Include items for:
   - what changed this week
   - what's being tested
   - who owns the dealer locator
-- Each row must show:
+- Every post must show:
   - owner name
-  - last updated date
-  - a small round state tag for freshness, not a coloured word
-- Footer should say who keeps the site.
+  - how often it is updated
+  - last touched date
+- Footer says who keeps the site.
 
 ### Look and feel
 - White background.
-- Lots of air.
+- A lot of air.
 - Navy headings.
 - Left-aligned text.
-- Flat panels with no shadows anywhere.
+- Flat panels only.
+- No shadows anywhere.
 - Buttons are fully round pills.
-- Only one primary action: orange with white text.
-- All other buttons are outlined in navy.
-- Use small round tags for states.
+- One primary button is orange with white text.
+- Other buttons are outlined in navy.
+- State labels are small round tags, not coloured words.
 
 ### Tone
 - Plain and concrete.
@@ -56,10 +57,11 @@ Build a real internal website called **What's Changed**.
 - No marketing language.
 
 ### Scope
+- It is the whole site for this sprint.
 - No dashboard.
 - No charts.
 - No extra analytics views.
-- The main job is to make ownership and staleness obvious so nobody has to ask a colleague.
+- The point is to save people from asking a colleague by making ownership and freshness obvious.
 
 ### Note
-- Freshness is the key point. Make it obvious who last touched an item and when.
+- The feed, the owners view, and the how-we-work page should feel like one internal site, not a document.
