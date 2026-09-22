@@ -38,4 +38,4 @@ The only cost figure the group settled on is that multi-entity consolidation cur
 
 We did not nail down the actual numbers behind the two timelines (how many days per entity, what the "with DBS" timeline looks like in real markers) — that's the next thing to pin down, not invented here. The weeks-saved figure is therefore stated as a label without a count, and the markers are the three weeks the group did agree on.
 
-<!-- merged: dbs-portal sprint 1 — Compass, Vinegar -->
+<!-- merged: dbs-portal sprint 2 — Ember -->
