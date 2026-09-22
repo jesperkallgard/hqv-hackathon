@@ -33,4 +33,4 @@ Benchmark, period and trade count sit under the number as secondary detail. They
 
 How the statement parsing actually works (OCR, format support) — not decided, don't invent it. What happens after the number — the consolidation/renegotiation flow — is a later screen, not this one. Multi-currency breakdowns, trend charts, historical comparisons beyond three months — the first screen is one number, not a report.
 
-<!-- merged: dbs-portal sprint 1 — Compass, Vinegar -->
+<!-- merged: dbs-portal sprint 2 — Ember -->
