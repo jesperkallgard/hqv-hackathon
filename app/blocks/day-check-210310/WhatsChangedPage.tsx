@@ -1,119 +1,176 @@
 /**
- * Keeps the existing internal site shell and four-card front door, then adds a single opened-post section with a lean list row and a detailed post view for “My Husqvarna login moved”.
+ * A single-page internal site with header, plain-language navigation, filterable feed, owner directory, working rules, and footer.
  */
-import React from "react";
+"use client";
+import React, { useMemo, useState } from "react";
 
 function StatusTag({ label }) {
   return <span className="status-tag">{label}</span>;
 }
 
-function DoorCard({ title, href, actionLabel, updatedLabel, ownerName, ownerRole, summary, status, prominence }) {
+function FilterIcon() {
   return (
-    <a className={`door-card ${prominence === "primary" ? "door-card-primary" : ""}`.trim()} href={href}>
-      <div className="door-card-head">
-        <div className="stack stack-tight">
-          <StatusTag label={status} />
-          <h2 className="door-card-title">{title}</h2>
-        </div>
-        <span className="button button-secondary door-card-action">{actionLabel}</span>
+    <svg viewBox="0 0 20 20" aria-hidden="true" className="icon">
+      <path
+        d="M3 5h14M6 10h8M8 15h4"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function PersonIcon() {
+  return (
+    <svg viewBox="0 0 20 20" aria-hidden="true" className="icon">
+      <path
+        d="M10 10.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Zm-5.4 6c.7-2.2 2.8-3.8 5.4-3.8s4.7 1.6 5.4 3.8"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function RuleIcon() {
+  return (
+    <svg viewBox="0 0 20 20" aria-hidden="true" className="icon">
+      <path
+        d="M5 5.5h10M5 10h10M5 14.5h7"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function FeedFilters({ filters, selected, onChange }) {
+  return (
+    <div className="feed-toolbar panel" role="group" aria-label="Filter posts">
+      <div className="feed-toolbar-label">
+        <FilterIcon />
+        <span>Find the right post</span>
       </div>
-      <p className="door-card-summary">{summary}</p>
-      <div className="door-card-meta">
-        <span>{updatedLabel}</span>
-        <div className="owner-cell">
-          <span className="owner-name">{ownerName}</span>
-          <span className="owner-role">{ownerRole}</span>
-        </div>
+      <div className="filter-list">
+        {filters.map((filter) => {
+          const active = selected === filter.value;
+          return (
+            <button
+              key={filter.value}
+              type="button"
+              className={`button ${active ? "button-primary" : "button-secondary"}`}
+              aria-pressed={active}
+              onClick={() => onChange(filter.value)}
+            >
+              {filter.label}
+            </button>
+          );
+        })}
       </div>
+    </div>
+  );
+}
+
+function PostRow({ post }) {
+  return (
+    <a className="post-row" href={post.href}>
+      <div className="post-row-main stack stack-tight">
+        <div className="post-row-topline">
+          <StatusTag label={post.status} />
+        </div>
+        <h3 className="post-row-title">{post.title}</h3>
+        <p className="post-row-meaning">{post.meaning}</p>
+      </div>
+      <div className="post-row-owner owner-cell">
+        <span className="owner-name">{post.ownerName}</span>
+        <span className="owner-role">{post.ownerRole}</span>
+      </div>
+      <div className="post-row-frequency">{post.updateFrequency}</div>
+      <div className="post-row-date">{post.date}</div>
     </a>
   );
 }
 
-function PostListRow({ listLabel, listTitle, listOwner, listDate, postId }) {
+function EmptyState({ title, body }) {
   return (
-    <div className="post-list" aria-label={listLabel || "Post list"}>
-      <a className="post-row" href={`#${postId}`}>
-        <div className="post-row-main">
-          <h3 className="post-row-title">{listTitle}</h3>
-        </div>
-        <div className="post-row-owner">{listOwner}</div>
-        <div className="post-row-date">{listDate}</div>
-      </a>
+    <div className="empty panel" role="status" aria-live="polite">
+      <h3>{title}</h3>
+      <p>{body}</p>
     </div>
   );
 }
 
-function DetailItem({ label, children }) {
+function OwnersTable({ owners }) {
   return (
-    <div className="detail-item">
-      <dt className="detail-label">{label}</dt>
-      <dd className="detail-value">{children}</dd>
+    <div className="table-wrap panel">
+      <table>
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>Owner</th>
+            <th>How often it changes</th>
+            <th>What it covers</th>
+          </tr>
+        </thead>
+        <tbody>
+          {owners.map((item) => (
+            <tr key={item.area}>
+              <th scope="row">{item.area}</th>
+              <td>
+                <div className="owner-cell">
+                  <span className="owner-name">{item.ownerName}</span>
+                  <span className="owner-role">{item.ownerRole}</span>
+                </div>
+              </td>
+              <td>{item.updateFrequency}</td>
+              <td>{item.scope}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
 
-function OpenedPost({ post }) {
-  if (!post) return null;
-
+function RulesList({ rules }) {
   return (
-    <article className="opened-post panel" id={post.id}>
-      <div className="opened-post-head stack">
-        <div className="opened-post-title-wrap stack stack-tight">
-          <StatusTag label={post.status} />
-          <h2 className="opened-post-title">{post.title}</h2>
-        </div>
-        <p className="opened-post-date">{post.dateLabel}</p>
-      </div>
-
-      <div className="opened-post-body">
-        <div className="opened-post-main stack">
-          <div className="stack stack-tight">
-            <h3 className="subheading">Audience</h3>
-            <p>{post.audience}</p>
-          </div>
-
-          <div className="stack stack-tight">
-            <h3 className="subheading">Summary</h3>
-            <div className="stack stack-tight summary-lines">
-              {post.summaryLines?.map((line) => (
-                <p key={line}>{line}</p>
-              ))}
-            </div>
-          </div>
-
-          <div className="opened-post-actions">
-            <a className="button button-primary" href={post.primaryActionHref}>
-              {post.primaryActionLabel}
-            </a>
-            <a className="inline-link" href={post.onwardLinkHref}>
-              {post.onwardLinkLabel}
-            </a>
-          </div>
-        </div>
-
-        <aside className="opened-post-side">
-          <dl className="detail-list">
-            <DetailItem label="Owner">
-              <div className="owner-cell">
-                <span className="owner-name">{post.ownerName}</span>
-                <span className="owner-role">{post.ownerRole}</span>
-              </div>
-            </DetailItem>
-            <DetailItem label="Update frequency">{post.updateFrequency}</DetailItem>
-            <DetailItem label="Status or date">
-              <div className="stack stack-tight">
-                <StatusTag label={post.status} />
-                <span>{post.dateLabel}</span>
-              </div>
-            </DetailItem>
-          </dl>
-        </aside>
-      </div>
-    </article>
+    <div className="rules-list">
+      {rules.map((rule) => (
+        <article key={rule.title} className="rule-item">
+          <h3>{rule.title}</h3>
+          <p>{rule.body}</p>
+        </article>
+      ))}
+    </div>
   );
 }
 
-export default function WhatsChangedPage({ title, summary, nav = [], cards = [], openedPost, footer }) {
+export default function WhatsChangedPage({
+  title,
+  summary,
+  nav = [],
+  feedIntro,
+  emptyState,
+  feedFilters = [],
+  posts = [],
+  owners,
+  workingRules,
+  footer,
+}) {
+  const [selectedFilter, setSelectedFilter] = useState(feedFilters[0]?.value || "all");
+
+  const visiblePosts = useMemo(() => {
+    if (selectedFilter === "all") return posts;
+    return posts.filter((post) => post.category === selectedFilter);
+  }, [posts, selectedFilter]);
+
   return (
     <div className="site-shell">
       <header className="site-header">
@@ -130,42 +187,58 @@ export default function WhatsChangedPage({ title, summary, nav = [], cards = [],
         </nav>
       </header>
 
-      <main className="page-main page-main-frontdoor">
-        <section className="section section-frontdoor">
-          <div className="section-header section-header-frontdoor">
-            <div className="stack">
-              <p className="frontdoor-kicker">Front door</p>
-              <h2 className="frontdoor-heading">Pick the place you need.</h2>
-              <p className="section-intro frontdoor-intro">
-                Four ways in. Each one tells you what it covers, who to ask, and when it was last updated.
-              </p>
+      <main className="page-main">
+        <section className="section" id="what-changed">
+          <div className="section-header section-header-feed">
+            <div className="stack stack-tight">
+              <h2>What changed</h2>
+              <p className="section-intro">{feedIntro}</p>
             </div>
           </div>
 
-          <div className="door-list">
-            {cards.map((card) => (
-              <DoorCard key={card.title} {...card} />
-            ))}
+          <FeedFilters filters={feedFilters} selected={selectedFilter} onChange={setSelectedFilter} />
+
+          <div className="post-list" aria-live="polite">
+            <div className="post-list-head">
+              <span>Update</span>
+              <span>Owner</span>
+              <span>Updated</span>
+              <span>Date</span>
+            </div>
+            {visiblePosts.length ? (
+              visiblePosts.map((post) => <PostRow key={post.id} post={post} />)
+            ) : (
+              <EmptyState title={emptyState?.title} body={emptyState?.body} />
+            )}
           </div>
         </section>
 
-        <section className="section">
+        <section className="section" id="who-owns-what">
           <div className="section-header">
             <div className="stack stack-tight">
-              <h2>What’s changed</h2>
-              <p className="section-intro">One post, opened. In the list you scan the headline, owner, and date. Opened below are the rest of the facts.</p>
+              <div className="section-mark">
+                <PersonIcon />
+                <span>Directory</span>
+              </div>
+              <h2>{owners?.title}</h2>
+              <p className="section-intro">{owners?.intro}</p>
             </div>
           </div>
+          <OwnersTable owners={owners?.areas || []} />
+        </section>
 
-          <PostListRow
-            listLabel={openedPost?.listLabel}
-            listTitle={openedPost?.listTitle}
-            listOwner={openedPost?.listOwner}
-            listDate={openedPost?.listDate}
-            postId={openedPost?.id}
-          />
-
-          <OpenedPost post={openedPost} />
+        <section className="section" id="how-we-work">
+          <div className="section-header">
+            <div className="stack stack-tight">
+              <div className="section-mark">
+                <RuleIcon />
+                <span>Working rules</span>
+              </div>
+              <h2>{workingRules?.title}</h2>
+              <p className="section-intro">{workingRules?.intro}</p>
+            </div>
+          </div>
+          <RulesList rules={workingRules?.rules || []} />
         </section>
       </main>
 
