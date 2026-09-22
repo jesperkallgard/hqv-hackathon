@@ -12,8 +12,14 @@ data:
     - What changed on the site this week.
     - What is being tested right now.
     - Who owns the dealer locator.
-  footerNote: A post earns its place if it saves somebody from asking a colleague. Every post names an owner and how often it is updated. A post says what changed and what it meant, never what was done. Nothing is posted that nobody would have asked about.
-  contact: If something you needed to know is not here, tell the owner of the nearest post and it gets written.
+  needsCheck:
+    heading: Needs a check
+    emptyLine: Nothing to flag. Every part of the site has been checked by its owner since the last sprint.
+    items:
+      - area: Stock and dealer system feed
+        since: 28 February
+      - area: Search
+        since: 14 February
   posts:
     - date: 14 March
       heading: The dealer locator now searches by postcode as well as town
@@ -57,6 +63,59 @@ data:
       meant: "Nobody is steered towards something they cannot buy. If a customer sends you a link to a discontinued model it still works, so you do not need to hunt for a replacement URL."
       owner: Search owner, web team
       cadence: Checked every sprint
+  testsHeading: What we're testing
+  testsIntro: Everything running on the live site right now. If you are looking at a page in this list, you may not be seeing what a colleague sees.
+  tests:
+    - name: Price and finance line above the gallery
+      where: Model pages
+      owner: Optimisation lead
+      until: 4 April
+      state: Running
+      running: true
+    - name: Five nearest dealers instead of ten
+      where: Dealer locator
+      owner: Dealer locator owner
+      until: 28 March
+      state: Running
+      running: true
+    - name: Preferred time as a dropdown instead of free text
+      where: Booking form
+      owner: Forms owner
+      until: 21 March
+      state: Running
+      running: true
+    - name: Stock figure shown on the model card in search results
+      where: Search results
+      owner: Search owner
+      until: 11 March
+      state: Finished, kept
+      running: false
+    - name: Shorter model names in the main menu
+      where: Navigation
+      owner: Content lead
+      until: 4 March
+      state: Finished, rolled back
+      running: false
+  howHeading: How we do things
+  footerNote: A post earns its place if it saves somebody from asking a colleague. Every post names an owner and how often it is updated. A post says what changed and what it meant, never what was done. Nothing is posted that nobody would have asked about.
+  practices:
+    - heading: A change goes live on Tuesday and Thursday
+      body: Anything merged by Monday afternoon is on the site on Tuesday morning. Nothing goes out on a Friday. If something has to go out between releases it is written up here the same day.
+      owner: Web team
+      cadence: Updated when it changes
+    - heading: A test runs to its end date or its visit count, whichever comes first
+      body: Nobody stops a test early because it looks good after three days. The end date and the visit count are set before it starts and are in the table above. A losing version is rolled back the same week.
+      owner: Optimisation lead
+      cadence: Checked every sprint
+    - heading: The site is the number, not the spreadsheet
+      body: Stock, prices and dealer details are read from the source system. Where a figure on the site disagrees with a file on your desk, the site is right and the file is old.
+      owner: Integrations owner
+      cadence: Updated when it changes
+    - heading: Every part of the site is checked by its owner each sprint
+      body: The owner confirms the row is still theirs and the date moves. Anything not confirmed shows as needing a check, at the top of this page, until it is.
+      owner: Web team
+      cadence: Checked every sprint
+  contact: If something you needed to know is not here, tell the owner of the nearest post and it gets written.
 ```
 
 ```block
@@ -66,61 +125,75 @@ data:
   intro: One name per part of the site, so a question goes to a person instead of to a channel and back.
   rows:
     - area: Dealer locator
-      owner: Dealer locator owner
+      owner: name needed
       channel: "#web-locator"
       checked: 14 March
       state: Current
       current: true
     - area: Model pages
-      owner: Content lead
+      owner: name needed
       channel: "#web-content"
       checked: 12 March
       state: Current
       current: true
     - area: Running tests
-      owner: Optimisation lead
+      owner: name needed
       channel: "#web-tests"
       checked: 12 March
       state: Current
       current: true
     - area: Booking and contact forms
-      owner: Forms owner
+      owner: name needed
       channel: "#web-forms"
       checked: 5 March
       state: Current
       current: true
     - area: Analytics and campaign tracking
-      owner: Analytics owner
+      owner: name needed
       channel: "#web-analytics"
       checked: 8 March
       state: Current
       current: true
     - area: Stock and dealer system feed
-      owner: Integrations owner
+      owner: needs a check
       channel: "#web-integrations"
       checked: 28 February
       state: Needs a check
       current: false
     - area: Search
-      owner: Search owner
+      owner: needs a check
       channel: "#web-search"
       checked: 14 February
       state: Needs a check
       current: false
 ```
 
+```block
+type: SiteFooter
+data:
+  title: The Team Log
+  kept: Kept by the web team.
+  links:
+    - { label: What's changed, href: "#log" }
+    - { label: What we're testing, href: "#tests" }
+    - { label: How we do things, href: "#how" }
+    - { label: Who owns what, href: "#who" }
+```
+
 ## What the room decided
 
-Both groups arrived at the same page from different directions, so the spine was never in doubt: one column, one list, newest first, no tabs, no search, no comments, no reactions. Each post says what changed and what it meant, never what was done or who did the work, and every post carries an owner and how often it is kept current so you know whether it is stale.
+Four areas, no more: What's changed, What we're testing, How we do things, Who owns what. An outsider reads those four and knows where to click. The log is still the spine — one column, newest first, no tabs, no search, no comments, no reactions — and each post says what changed and what it meant, never what was done or who did the work.
 
-Where they differed, Ada wanted the page to be the list of posts and nothing else on it. Cleo's framing — "the page you check before you ask" — is the one that drove the build, and it pulls in one thing Ada's version would have excluded: the sprint's third recurring question, *who owns the dealer locator*, is a question about ownership, not about a change, and it is not answered by waiting for someone to post about the locator. So there is a second band, **Who owns what**, as a table under the log. It is the only thing on the page that is not a post. If the room decides the log alone should carry it, that table is one block to delete.
+Ada's "Needs a check" list sits above everything, pulled from the owner table's own state rather than from a new field: one line per stale item, the area and since when, no reason attached and nobody chased. Ada argued the page should be the list of posts and nothing else; that lost, because "who owns the dealer locator" is a question about ownership and no amount of waiting for a post answers it. Where nothing is stale the list says so in one line rather than disappearing.
 
-Cadence is written in words a person wrote — "updated when it changes", "checked every sprint" — not a system timestamp, as both groups asked.
+Cleo's change to the owner table is in: the owner column holds a person, not a job title. Where nobody has confirmed a name it reads "name needed", in the same plain type as everything else — not an error, not a warning. A row whose check has gone stale reads "needs a check" in that column too, the same way the date does, so a name never silently outlives the person. There is still no way to edit a name from the page; it is written in by whoever confirms it, and there is no history of who owned something before.
+
+Cadence stays in words a person wrote — "updated when it changes", "checked every sprint" — not a system timestamp.
 
 ## What we supplied
 
-Neither group had time to write real posts, and both said so. The seven posts and the ownership rows here were written so there is a page to argue about; the topics, dates and figures are ours, not the team's. Owners are named by role rather than by person, which is the one place we have gone against Ada's "a person you can go and ask" — we will not attach invented work to a real colleague's name. Swapping roles for names is a find-and-replace once the team says who.
+The team has not confirmed a single owner name, so every row reads "name needed" or "needs a check". That is the honest state of the table today, and it is deliberate: we will not attach invented work or invented ownership to a real colleague. Filling it in is a find-and-replace once the team says who.
 
-What is still open: the real first posts, who actually owns each part, and whether a post ever leaves the page or just sinks. There is no editing UI and no CMS — the content is written into the page — and no notifications or subscriptions, both of which were out of scope by agreement.
+The posts, the running tests and the four working practices under "How we do things" were written so there is a page to argue about; the topics, dates and end dates are ours, not the team's. What is still open: the real first posts, the real names, whether "stale" is defined only by the owner table's check date or also by a cadence in the log going unmet — Ada flagged that and it was not settled — and whether a post ever leaves the page or just sinks. There is no editing UI and no CMS, and no notifications or subscriptions.
 
-<!-- merged: day-check-125925 sprint 1 — Team Ada, Team Cleo -->
+<!-- merged: day-check-125925 sprint 2 — Team Cleo, Team Ada -->
