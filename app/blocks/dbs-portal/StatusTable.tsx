@@ -1,74 +1,77 @@
 /**
- * One flat table, navy header row, alternating light grey rows, grouped under status headings in the order given. From Quartz.
+ * One table per status group: navy header row, alternating light grey rows,
+ * flat, no pills and no counts. Written to be the component DbsPortalPage was
+ * already importing. From Quartz (status-first grouping, the
+ * Test/Status/Result/Owner/Updated columns as the screen).
  */
 export default function StatusTable({ columns = [], groups = [] }) {
+  if (groups.length === 0) return null;
+
   const cell = {
-    padding: "0.6rem 0.75rem",
     textAlign: "left",
+    padding: "0.6rem 0.75rem",
     verticalAlign: "top",
-    borderBottom: "1px solid var(--rule)",
     fontSize: "0.9rem",
   };
 
   return (
-    <table
-      style={{
-        width: "100%",
-        borderCollapse: "collapse",
-        border: "1px solid var(--rule)",
-        borderRadius: "var(--radius)",
-        marginBottom: "1rem",
-      }}
-    >
-      <thead>
-        <tr style={{ background: "var(--accent)" }}>
-          {columns.map((c) => (
-            <th
-              key={c}
-              style={{
-                ...cell,
-                color: "var(--paper)",
-                fontWeight: 700,
-                borderBottom: "none",
-              }}
-            >
-              {c}
-            </th>
-          ))}
-        </tr>
-      </thead>
+    <div>
       {groups.map((group) => (
-        <tbody key={group.status}>
-          <tr>
-            <th
-              colSpan={columns.length}
-              style={{
-                ...cell,
-                background: "var(--panel, #F1F2F5)",
-                color: "var(--accent)",
-                fontWeight: 700,
-              }}
-            >
-              {group.status}
-            </th>
-          </tr>
-          {group.rows.map((row, i) => (
-            <tr
-              key={row.test}
-              style={{
-                background:
-                  i % 2 === 1 ? "var(--panel, #F1F2F5)" : "var(--paper)",
-              }}
-            >
-              <td style={{ ...cell, fontWeight: 700 }}>{row.test}</td>
-              <td style={cell}>{group.status}</td>
-              <td style={cell}>{row.result}</td>
-              <td style={cell}>{row.owner}</td>
-              <td style={{ ...cell, color: "var(--muted)" }}>{row.updated}</td>
-            </tr>
-          ))}
-        </tbody>
+        <section key={group.status} style={{ marginBottom: "2.25rem" }}>
+          <h3
+            style={{
+              color: "var(--accent)",
+              fontSize: "1rem",
+              fontWeight: 700,
+              margin: "0 0 0.5rem",
+            }}
+          >
+            {group.status}
+          </h3>
+          <table
+            style={{
+              width: "100%",
+              borderCollapse: "collapse",
+              border: "1px solid var(--rule)",
+              borderRadius: "var(--radius)",
+            }}
+          >
+            <thead>
+              <tr style={{ background: "var(--accent)" }}>
+                {columns.map((c) => (
+                  <th
+                    key={c}
+                    style={{
+                      ...cell,
+                      color: "var(--paper)",
+                      fontWeight: 700,
+                    }}
+                  >
+                    {c}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {group.rows.map((row, i) => (
+                <tr
+                  key={row.test}
+                  style={{
+                    background:
+                      i % 2 === 1 ? "var(--alt-row, #E4E6EB)" : "var(--paper)",
+                  }}
+                >
+                  <td style={{ ...cell, color: "var(--ink)" }}>{row.test}</td>
+                  <td style={{ ...cell, color: "var(--ink)" }}>{group.status}</td>
+                  <td style={{ ...cell, color: "var(--ink)" }}>{row.result}</td>
+                  <td style={{ ...cell, color: "var(--ink)" }}>{row.owner}</td>
+                  <td style={{ ...cell, color: "var(--muted)" }}>{row.updated}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
       ))}
-    </table>
+    </div>
   );
 }
