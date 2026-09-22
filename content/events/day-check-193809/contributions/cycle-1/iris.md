@@ -1,67 +1,83 @@
 ---
 title: "What's Changed"
-ingress: "A calm internal site for people who need to know what changed, who owns it, and what to do next. It saves a colleague from being asked the same question twice."
+ingress: "A real internal site for people who need the picture in one place: the feed, the owners, and how we work. It saves someone from asking a colleague where to look next."
 points:
-  - "It opens on a single feed of recent updates, newest first."
-  - "Every post names an owner and shows when it was last updated."
-  - "Every post says the one next action it wants from you."
-  - "It includes a simple owner view so you can find who keeps each area."
-  - "It does not add dashboards, charts, or other noise."
+  - "The site has a header with the name and short navigation to the feed, owners, and how we work."
+  - "The feed is the main thing: a single generous column of recent updates, newest first."
+  - "Each post shows an owner and how often it is updated."
+  - "Each post says what changed, what it meant, and the one action it wants from you."
+  - "The site ends with a footer that says who keeps it, and it does not use dashboards, charts, or other noise."
 cycle: 1
 pair: "iris"
 authors: ["Yara", "Olga", "Nils", "Iris"]
 ---
 
-A calm internal site for people who need to know what changed, who owns it, and what to do next. It saves a colleague from being asked the same question twice.
+A real internal site for people who need the picture in one place: the feed, the owners, and how we work. It saves someone from asking a colleague where to look next.
 
-- It opens on a single feed of recent updates, newest first.
-- Every post names an owner and shows when it was last updated.
-- Every post says the one next action it wants from you.
-- It includes a simple owner view so you can find who keeps each area.
-- It does not add dashboards, charts, or other noise.
+- The site has a header with the name and short navigation to the feed, owners, and how we work.
+- The feed is the main thing: a single generous column of recent updates, newest first.
+- Each post shows an owner and how often it is updated.
+- Each post says what changed, what it meant, and the one action it wants from you.
+- The site ends with a footer that says who keeps it, and it does not use dashboards, charts, or other noise.
 
-## What it has to do
+## What it has to be
 - Build one internal website called **What's Changed**.
-- It is for people who need the latest change, the owner, and the next action without asking a colleague.
-- Main screen: a feed of posts in one generous column.
-- Posts are ordered newest first.
-- Each row shows:
-  - the change title,
-  - the owner,
-  - the last update date,
-  - the one action it wants from you.
-- Include a way in the header to get to:
-  - the feed,
-  - who owns what,
-  - how we work.
-- Footer text should say who keeps the site.
+- It should feel like a real internal site, not a document.
+- It answers the whole picture for sprint 1: what you see in front of you.
 
-## Real content
-- Site name: **What's Changed**.
-- Example topics already mentioned:
+## Structure
+- Header with:
+  - the site name,
+  - a short navigation with three links:
+    - Feed
+    - Owners
+    - How we work
+- Feed in one generous column.
+- Footer that says who keeps the site.
+
+## Feed
+- The feed is the main screen.
+- Posts are ordered newest first.
+- Each post must show:
+  - the owner,
+  - how often it is updated,
+  - what changed,
+  - what it meant,
+  - the one action it wants from you.
+- Posts should save somebody from having to ask a colleague.
+- Example topics already in the room:
   - what changed this week,
   - what's being tested,
   - who owns the dealer locator.
-- Keep the wording plain and concrete.
+
+## Owners / how we work
+- Include a place for who owns what.
+- Include a place for how we work.
+- Keep these as simple internal-site sections, not dashboards.
+- No extra system views are needed.
+
+## Copy and tone
+- Plain and concrete.
+- Short sentences.
 - Say what changed and what it meant, not what was done.
+- No marketing language.
 
 ## Look and feel
-- Real internal website, not a document.
-- White background with a lot of air.
+- White background.
+- A lot of air.
 - Navy headings.
-- Left-aligned text.
+- Text left-aligned.
 - Flat panels, no shadows.
-- One primary button only: fully round pill, orange with white text.
+- Primary action button: fully round pill, orange with white text.
 - Other buttons: fully round pill, outlined in navy.
 - States are small round tags, not coloured words.
-- Calm and quiet.
 
 ## Out of scope
 - No dashboard.
 - No charts.
-- No marketing language.
 - No decorative extras.
+- No other page types beyond the header nav, feed, owners, how we work, and footer.
 
-## Assumptions
-- The site is a prototype about the feed and ownership, not a full content system.
-- No extra sections beyond the three nav items and the feed are required unless the curator needs them later.
+## Notes
+- This is a prototype of the whole site, sized for the first sprint.
+- If a detail is not known, leave it out rather than inventing it.
