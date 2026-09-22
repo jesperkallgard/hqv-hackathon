@@ -70,8 +70,14 @@ export default async function ResultPage({ params }: { params: Promise<{ event: 
                   Open it on its own
                 </Link>
               </div>
-              <div className="frame canvas mt-4">
-                <RenderBlocks blocks={prototype} event={slug} />
+              {/* Full-bleed on purpose. The reading page keeps its own column
+                  for its own text; the prototype is not its text. How wide the
+                  prototype is, and whether it is a column at all, is the
+                  hackathon's decision, made in the stylesheet it wrote. */}
+              <div className="bleed mt-4">
+                <div className="frame canvas">
+                  <RenderBlocks blocks={prototype} event={slug} />
+                </div>
               </div>
             </>
           ) : (

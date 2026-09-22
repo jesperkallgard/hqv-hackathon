@@ -76,8 +76,10 @@ export function IdeaSheet({
       <article className="stack">
         <p className="eyebrow">Sprint {cycle}</p>
         <h1 className="display">{doc.frontmatter.title ?? doc.slug}</h1>
-        <div className="canvas">
-          <RenderBlocks blocks={doc.blocks} event={event} group={doc.slug} />
+        <div className="bleed">
+          <div className="canvas">
+            <RenderBlocks blocks={doc.blocks} event={event} group={doc.slug} />
+          </div>
         </div>
       </article>
     );
@@ -103,8 +105,10 @@ export function IdeaSheet({
       )}
 
       {idea.blocks.length > 0 && (
-        <div className="canvas mt-12">
-          <RenderBlocks blocks={idea.blocks} event={event} group={doc.slug} />
+        <div className="bleed mt-12">
+          <div className="canvas">
+            <RenderBlocks blocks={idea.blocks} event={event} group={doc.slug} />
+          </div>
         </div>
       )}
     </article>

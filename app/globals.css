@@ -171,10 +171,20 @@ body {
 /* The prototype sits in a frame so it reads as a thing on the page rather than
    as the page. Whatever the room built brings its own layout inside it. */
 .result .frame {
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
   overflow: hidden;
   background: var(--paper);
+}
+
+/* Out of the reading column and across the whole viewport. The site's column
+   is for the site's text; the prototype inside decides its own width — a
+   centred 760px measure, edge to edge, three columns — in the stylesheet the
+   hackathon wrote. Nothing here narrows it. */
+.result .bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 .result .ghost-button {
