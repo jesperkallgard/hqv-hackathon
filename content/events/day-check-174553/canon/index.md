@@ -1,15 +1,21 @@
 ---
-title: What's Changed
+title: DBS 4 President
 ---
 
 ```block
-type: PortalPostPage
+type: PortalHome
 ```
 
 ## What the room decided
 
-This sprint turns **What’s changed** from a door on the front page into one opened post, inside the site Team Bo described: the site is called **What’s Changed**, it has a short header navigation, one generous column, and a footer saying who keeps the site. Team Dag set the post shape: the opened page is one entry, not a roundup, titled exactly **My Husqvarna login moved**, with the owner, cadence, audience, a three-line summary, a status or date, and one onward link. The list view is kept short to headline, owner and date.
+The front door opens on four doors — **What's changed, What we're testing, How we do things, Who owns what** (Team Dag), in that order, each carrying only its name and when it was last updated. Above them sit the four KPIs and, right after them, the **AI chat** rather than a search box (Team Ada): ask it about a named initiative and it says what is being done and what the status is.
 
-We kept Bo’s site frame and newest-first feed context, then opened one entry from it. We did not keep the broader front-door behaviour from the existing page here: KPI panel, chat and the four doors are replaced on this page because this sprint asked for one post, opened. The room only fixed the title, owner and monthly cadence for this post; the audience, summary, status wording, list rows and keeper details are filled in so the page can be judged as a finished internal page.
+The two ideas conflicted on the top of the page. *Four cards, exact names, nothing else* argued for the four doors and nothing above them — no KPI panel, no chat, nothing to configure on the front door. The page keeps Ada's KPI panel and chat because looking up one named initiative is the thing this site replaces, but Dag wins the shape below: the doors are the page, and the feed no longer sits on the front.
 
-<!-- merged: day-check-174553 sprint 3 — Team Dag, Team Bo -->
+Explore, Optimize and Scale stay phases, not topics — the tag on every post and the way into the feed, from behind *What's changed*. They are not in the navigation.
+
+## What we filled in
+
+The room decided the name, the four card names and their order, the four KPI categories, the chat's job, the phases and the rule that every post names an owner and a cadence. The figures, the chat's answers, the update stamps, the owners and the working rules are ours so there is a whole page to argue with; all people on it are invented. Open: the KPI figures and units, what the orange button does beyond *Post an update*, the chat's no-result wording, who exactly the site is for, and whether the date stamp is relative ("Last updated 3 days ago") or plain — we kept the relative form Dag picked.
+
+<!-- merged: day-check-174553 sprint 2 — Team Ada, Team Dag -->
