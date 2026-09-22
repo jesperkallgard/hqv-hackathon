@@ -56,7 +56,7 @@ export default async function CyclePage({
                   : doc.slug}
               </p>
             </div>
-            <RenderBlocks blocks={doc.blocks} event={slug} />
+            <RenderBlocks blocks={doc.blocks} event={slug} group={doc.slug} />
           </article>
         ))
       )}
