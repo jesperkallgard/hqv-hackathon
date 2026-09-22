@@ -5,14 +5,14 @@
   --space-4: 1.5rem;
   --space-5: 2rem;
   --space-6: 3rem;
-  --space-7: 4rem;
+  --space-7: 4.5rem;
   --text-xs: 0.8125rem;
   --text-sm: 0.9375rem;
   --text-body: 1rem;
-  --text-lg: 1.25rem;
-  --text-xl: 1.75rem;
-  --text-2xl: 2.75rem;
-  --measure: 68rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2.25rem;
+  --measure: 72rem;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
@@ -35,23 +35,22 @@
   margin: 0;
   color: var(--heading-ink);
   font-family: var(--font-heading);
-  line-height: 1.12;
+  line-height: 1.15;
   font-weight: 700;
 }
 
 .canvas h1 {
   font-size: var(--text-2xl);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 .canvas h2 {
   font-size: var(--text-xl);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .canvas h3 {
   font-size: var(--text-lg);
-  letter-spacing: -0.01em;
 }
 
 .canvas p,
@@ -85,27 +84,27 @@
 
 .canvas :focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: 3px;
+  outline-offset: 2px;
 }
 
 .canvas .site-shell {
   width: min(100%, var(--measure));
   margin: 0 auto;
-  padding: var(--space-6) var(--space-5) var(--space-7);
+  padding: var(--space-5) var(--space-4) var(--space-6);
 }
 
 .canvas .site-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: var(--space-5);
-  padding-bottom: var(--space-5);
+  gap: var(--space-4);
+  padding-bottom: var(--space-4);
   border-bottom: 1px solid var(--rule);
 }
 
 .canvas .site-brand {
   display: grid;
-  gap: var(--space-2);
+  gap: var(--space-1);
   min-width: 0;
 }
 
@@ -114,7 +113,7 @@
 }
 
 .canvas .site-summary {
-  max-width: 40rem;
+  max-width: 42rem;
   color: var(--ink);
   font-size: var(--text-sm);
 }
@@ -124,7 +123,7 @@
   align-items: center;
   gap: var(--space-2);
   flex-wrap: wrap;
-  justify-content: flex-end;
+  padding-top: var(--space-1);
 }
 
 .canvas .nav-link {
@@ -149,27 +148,25 @@
 .canvas .page-main {
   display: grid;
   gap: var(--space-6);
-  padding-top: var(--space-6);
+  padding-top: var(--space-5);
 }
 
-.canvas .front-door {
+.canvas .section {
   display: grid;
-  gap: var(--space-5);
+  gap: var(--space-3);
 }
 
 .canvas .section-header {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: var(--space-4);
-}
-
-.canvas .section-header-front {
+  gap: var(--space-3);
   padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--rule);
 }
 
 .canvas .section-intro {
-  max-width: 42rem;
+  max-width: 44rem;
   color: var(--ink);
 }
 
@@ -179,106 +176,90 @@
   gap: var(--space-2);
 }
 
-.canvas .door-list {
-  display: grid;
-  gap: var(--space-3);
-}
-
-.canvas .door-card {
-  display: grid;
-  gap: var(--space-4);
-  padding: var(--space-4);
+.canvas .panel {
   background: var(--surface);
   border: 1px solid var(--rule);
   border-radius: 12px;
-  text-decoration: none;
-  transition: border-color 160ms ease, background-color 160ms ease;
+  padding: var(--space-4);
 }
 
-.canvas .door-card:hover {
-  background: var(--paper);
-  border-color: var(--heading-ink);
-  color: var(--heading-ink);
+.canvas .panel-muted {
+  padding: var(--space-3) var(--space-4);
 }
 
-.canvas .is-primary-door {
-  padding: var(--space-5);
+.canvas .feed-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--rule);
 }
 
-.canvas .door-card-top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: var(--space-4);
+.canvas .feed-item {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--rule);
 }
 
-.canvas .door-copy {
-  min-width: 0;
-}
-
-.canvas .door-heading-row {
+.canvas .feed-head {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--space-3);
-  flex-wrap: wrap;
 }
 
-.canvas .door-title {
+.canvas .feed-title {
   font-size: var(--text-lg);
 }
 
-.canvas .door-date {
-  display: inline-flex;
+.canvas .feed-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
   align-items: center;
-  min-height: 1.75rem;
-  padding: 0 var(--space-2);
-  border: 1px solid var(--heading-ink);
-  border-radius: 999px;
-  font-size: var(--text-xs);
-  font-weight: 700;
-  color: var(--heading-ink);
-  background: var(--paper);
-  white-space: nowrap;
+  color: var(--ink);
+  font-size: var(--text-sm);
 }
 
-.canvas .door-note {
-  max-width: 42rem;
+.canvas .feed-summary {
+  max-width: 48rem;
+}
+
+.canvas .feed-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.canvas .meta-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.canvas .meta-card {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+}
+
+.canvas .meta-label {
+  font-size: var(--text-xs);
   color: var(--ink);
 }
 
-.canvas .door-action {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  min-height: 2.75rem;
-  padding: 0 var(--space-4);
-  border: 1px solid var(--heading-ink);
-  border-radius: 999px;
+.canvas .meta-value {
   color: var(--heading-ink);
-  background: var(--paper);
   font-weight: 700;
-  flex-shrink: 0;
 }
 
-.canvas .door-card:hover .door-action {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.canvas .card-icon {
-  width: 1rem;
-  height: 1rem;
-  flex-shrink: 0;
-}
-
-.canvas .door-meta {
+.canvas .tag-row {
   display: flex;
-  align-items: center;
-  gap: var(--space-3);
   flex-wrap: wrap;
-  padding-top: var(--space-3);
-  border-top: 1px solid var(--rule);
+  gap: var(--space-2);
 }
 
 .canvas .tag,
@@ -296,20 +277,13 @@
   white-space: nowrap;
 }
 
-.canvas .owner-cell {
-  display: grid;
-  gap: 0.125rem;
-}
-
-.canvas .owner-name {
-  color: var(--heading-ink);
-  font-weight: 700;
-}
-
-.canvas .owner-role,
-.canvas .footer-note {
-  color: var(--ink);
-  font-size: var(--text-sm);
+.canvas .status-tag.is-active,
+.canvas .status-tag.is-new,
+.canvas .status-tag.is-testing,
+.canvas .status-tag.is-weekly,
+.canvas .status-tag.is-monthly,
+.canvas .status-tag.is-live {
+  background: var(--surface);
 }
 
 .canvas .button {
@@ -355,6 +329,105 @@
   cursor: not-allowed;
 }
 
+.canvas .directory-table,
+.canvas .rules-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.canvas .table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--paper);
+}
+
+.canvas th,
+.canvas td {
+  padding: var(--space-3);
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--rule);
+}
+
+.canvas th {
+  color: var(--heading-ink);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  background: var(--surface);
+}
+
+.canvas tbody tr:nth-child(even) td {
+  background: var(--surface-alt);
+}
+
+.canvas tbody tr:hover td {
+  background: var(--surface);
+}
+
+.canvas td:last-child,
+.canvas th:last-child {
+  white-space: nowrap;
+}
+
+.canvas .owner-cell,
+.canvas .contact-line {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.canvas .owner-name {
+  color: var(--heading-ink);
+  font-weight: 700;
+}
+
+.canvas .owner-role,
+.canvas .muted,
+.canvas .table-note,
+.canvas .footer-note {
+  color: var(--ink);
+  font-size: var(--text-sm);
+}
+
+.canvas .rule-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.canvas .rule-item {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.canvas .rule-title {
+  color: var(--heading-ink);
+  font-weight: 700;
+}
+
+.canvas .empty-state,
+.canvas .error-state {
+  padding: var(--space-4);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.canvas .empty-state {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.canvas .error-state {
+  display: grid;
+  gap: var(--space-2);
+  border-color: var(--accent);
+}
+
 .canvas .site-footer {
   margin-top: var(--space-7);
   padding-top: var(--space-4);
@@ -373,38 +446,45 @@
 
 .canvas .stack {
   display: grid;
+  gap: var(--space-3);
+}
+
+.canvas .cluster {
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--space-2);
 }
 
 @media (max-width: 760px) {
   .canvas .site-shell {
-    padding: var(--space-5) var(--space-3) var(--space-6);
+    padding: var(--space-4) var(--space-3) var(--space-5);
   }
 
   .canvas .site-header,
   .canvas .section-header,
-  .canvas .door-card-top,
+  .canvas .feed-head,
   .canvas .site-footer {
-    display: grid;
     grid-template-columns: 1fr;
+    display: grid;
   }
 
-  .canvas .site-nav {
-    justify-content: flex-start;
+  .canvas .meta-list {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .canvas .door-action {
-    justify-self: start;
+  .canvas th,
+  .canvas td {
+    padding: var(--space-2) var(--space-3);
   }
 }
 
 @media (max-width: 390px) {
   .canvas h1 {
-    font-size: 2.125rem;
+    font-size: 1.875rem;
   }
 
   .canvas h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .canvas .site-shell {
@@ -419,20 +499,15 @@
 
   .canvas .site-nav,
   .canvas .section-actions,
-  .canvas .footer-links {
+  .canvas .feed-actions,
+  .canvas .footer-links,
+  .canvas .cluster {
     display: grid;
     gap: var(--space-2);
   }
 
-  .canvas .door-heading-row,
-  .canvas .door-meta {
-    display: grid;
-    gap: var(--space-2);
-  }
-
-  .canvas .door-action {
-    width: 100%;
-    justify-content: center;
+  .canvas .meta-list {
+    grid-template-columns: 1fr;
   }
 }
 
