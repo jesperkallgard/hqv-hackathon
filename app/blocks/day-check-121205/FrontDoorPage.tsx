@@ -1,10 +1,11 @@
 /**
- * The whole site in one page: header, the four-card front door in one column, and the four lists behind the cards. Clicking a card shows that area's newest-first list; a back link returns to the doors. Built from Team Cleo and Team Bo, which proposed the same front door and differed only on whether a card carries a description line.
+ * The whole site in one page: header, the four bare doors in one column, each area's newest-first list behind a door, and now the single post behind a row. Three views, one component.
  */
 "use client";
 
 import { useState } from "react";
 import EntryRow from "./EntryRow";
+import PostView from "./PostView";
 
 function AreaCard({ name, lastUpdated, onOpen }) {
   return (
@@ -49,7 +50,16 @@ export default function FrontDoorPage({
   footerNote,
 }) {
   const [openId, setOpenId] = useState(null);
+  const [postIndex, setPostIndex] = useState(null);
+
   const open = areas.find((a) => a.id === openId) || null;
+  const entries = open ? open.entries || [] : [];
+  const post = postIndex === null ? null : entries[postIndex] || null;
+
+  function goHome() {
+    setOpenId(null);
+    setPostIndex(null);
+  }
 
   return (
     <div>
@@ -60,7 +70,7 @@ export default function FrontDoorPage({
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                setOpenId(null);
+                goHome();
               }}
               className="label"
               style={{ color: "var(--heading-ink)", textDecoration: "none" }}
@@ -90,7 +100,10 @@ export default function FrontDoorPage({
                     key={area.id}
                     name={area.name}
                     lastUpdated={area.lastUpdated}
-                    onOpen={() => setOpenId(area.id)}
+                    onOpen={() => {
+                      setOpenId(area.id);
+                      setPostIndex(null);
+                    }}
                   />
                 ))}
               </ul>
@@ -99,11 +112,17 @@ export default function FrontDoorPage({
 
               {rule ? (
                 <div className="panel stack-sm">
-                  <p className="label">What earns a row its place</p>
+                  <p className="label">What earns a post its place</p>
                   <p className="measure">{rule}</p>
                 </div>
               ) : null}
             </div>
+          ) : post !== null ? (
+            <PostView
+              post={post}
+              areaName={open.name}
+              onBack={() => setPostIndex(null)}
+            />
           ) : (
             <div className="stack-lg">
               <div className="stack-sm">
@@ -112,7 +131,7 @@ export default function FrontDoorPage({
                   className="small"
                   onClick={(e) => {
                     e.preventDefault();
-                    setOpenId(null);
+                    goHome();
                   }}
                 >
                   All four areas
@@ -121,7 +140,7 @@ export default function FrontDoorPage({
                 <p className="small muted">Last updated {open.lastUpdated}</p>
                 <div className="row">
                   <a className="button button-primary" href="#">
-                    Add a row
+                    Add a post
                   </a>
                 </div>
               </div>
@@ -129,19 +148,28 @@ export default function FrontDoorPage({
               <div className="stack">
                 {open.note ? <p className="note measure">{open.note}</p> : null}
 
-                {(open.entries || []).length === 0 ? (
+                {entries.length === 0 ? (
                   <div className="empty">
-                    Nothing has been added here yet. A row appears the moment
-                    somebody writes one line, names an owner and says how often
-                    it is checked.
+                    Nothing has been added here yet. A post appears the moment
+                    somebody writes the seven things: headline, audience, three
+                    lines of summary, a status or date, an owner, how often it
+                    is updated, and one link onward.
                   </div>
                 ) : (
                   <ul
                     className="stack"
                     style={{ listStyle: "none", padding: 0, margin: 0 }}
                   >
-                    {open.entries.map((entry, i) => (
-                      <EntryRow key={i} {...entry} first={i === 0} />
+                    {entries.map((entry, i) => (
+                      <EntryRow
+                        key={i}
+                        line={entry.headline}
+                        owner={entry.owner}
+                        date={entry.date}
+                        cadence={entry.cadence}
+                        first={i === 0}
+                        onOpen={() => setPostIndex(i)}
+                      />
                     ))}
                   </ul>
                 )}
@@ -149,7 +177,7 @@ export default function FrontDoorPage({
 
               {rule ? (
                 <div className="panel stack-sm">
-                  <p className="label">What earns a row its place</p>
+                  <p className="label">What earns a post its place</p>
                   <p className="measure">{rule}</p>
                 </div>
               ) : null}
@@ -162,7 +190,9 @@ export default function FrontDoorPage({
         <div className="wrap section-tight">
           <div className="split">
             <span className="small muted">{footerNote}</span>
-            <span className="small muted">Four areas. Newest first. No search box.</span>
+            <span className="small muted">
+              Four areas. Newest first. No search box.
+            </span>
           </div>
         </div>
       </footer>
