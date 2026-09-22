@@ -58,7 +58,7 @@ export default async function ResultPage({ params }: { params: Promise<{ event: 
       <div className="space-y-20">
         <section>
           <p className="eyebrow">What this room set out to do</p>
-          <h1 className="measure mt-4">{event.goal}</h1>
+          <h1 className="display mt-4">{event.goal}</h1>
         </section>
 
         <section>
@@ -70,7 +70,7 @@ export default async function ResultPage({ params }: { params: Promise<{ event: 
                   Open it on its own
                 </Link>
               </div>
-              <div className="frame mt-4">
+              <div className="frame canvas mt-4">
                 <RenderBlocks blocks={prototype} event={slug} />
               </div>
             </>
@@ -98,7 +98,7 @@ export default async function ResultPage({ params }: { params: Promise<{ event: 
                 headings, and one of them is usually exactly that. A label that
                 repeats the first heading under it reads as a stutter. */}
             <h2 className="section-label">Why it looks like this</h2>
-            <div className="mt-6 grid gap-12 md:grid-cols-2">
+            <div className={`mt-6 grid gap-12 ${notes.length > 1 ? "md:grid-cols-2" : ""}`}>
               {notes.map(({ doc, blocks, titled }) => (
                 <article key={doc.slug} id={doc.slug} className="scroll-mt-24">
                   {doc.frontmatter.title && !titled && (

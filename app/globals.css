@@ -460,3 +460,453 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ==========================================================================
+   The prototype's baseline
+   ==========================================================================
+
+   `.canvas` wraps whatever the room built — on `/<event>` inside the frame, on
+   `/<event>/live` as the whole page. Everything under it is written by one
+   model call, in one pass, with no chance to look at the result.
+
+   That is the constraint this section answers. A generated component cannot be
+   asked to invent a type scale, a spacing rhythm, a table treatment and a focus
+   state on the spot and get all four right — it has been coming back as an
+   unstyled document in the right colours. So plain semantic markup is made to
+   look considered before the component does anything, and everything a
+   component might otherwise guess at has a name it can reach for instead.
+
+   The division of labour:
+
+   - The baseline owns anything a component would get wrong by guessing, and
+     anything that has to agree across components written in different sprints:
+     the type scale, the space scale, hairlines, table and list treatment,
+     control shapes, focus, hover, and the behaviour of a long word in a narrow
+     column.
+   - A component owns its layout and its hierarchy: what is big, what is beside
+     what, what the page leads with. Those are decisions about the content, and
+     a stylesheet that made them would be making the same page every time.
+
+   Nothing here names a colour. Every value is a token from the event's own
+   theme, so a room that chose navy and Arial gets navy and Arial.
+*/
+
+.result .canvas {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  accent-color: var(--accent);
+}
+
+/*
+ * A safety net, and only that. A page-level component lays out its own gutters
+ * with `.wrap`, and when it has one nothing is added here — its header band can
+ * then run the full width of the frame the way a real page's does. A component
+ * that laid out no gutters at all would otherwise print its text hard against
+ * the frame border, which is what every prototype built so far has done.
+ */
+.result .canvas:not(:has(.wrap)) { padding: var(--gutter); }
+
+/*
+ * A flex or grid child refuses to shrink below its content by default, so one
+ * long word or one wide table pushes the whole prototype past the frame and
+ * the right-hand column is clipped. This has happened on every page built so
+ * far. It is a browser default, not a design decision, and no generated
+ * component should have to remember it.
+ */
+:where(.result .canvas) :where(div, section, article, main, header, footer, aside, nav,
+  ul, ol, dl, li, figure, form, label, p, table) {
+  min-width: 0;
+}
+
+/* ------------------------------------------------------------------- type */
+
+/* Browser heading and paragraph margins are em-based and therefore different
+   at every size. Replaced by the space scale, so the rhythm is the same down
+   the whole page. */
+:where(.result .canvas) :where(p, ul, ol, dl, table, figure, blockquote, pre) {
+  margin: 0 0 var(--space-4);
+}
+:where(.result .canvas) :where(p, ul, ol, dl, table, figure, blockquote, pre):last-child {
+  margin-bottom: 0;
+}
+
+/* A line of body text stops at the measure the room set. It is a maximum, so
+   it never forces a column wider or narrower than its layout wants. */
+:where(.result .canvas) :where(p) {
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+:where(.result .canvas) :where(small) { font-size: var(--text-sm); color: var(--muted); }
+:where(.result .canvas) :where(strong, b) { font-weight: var(--weight-strong); }
+
+/*
+ * Links in running text are the accent and underlined. Links used as
+ * navigation are not: a header whose every item is accent-coloured is a page
+ * shouting at you before you have read a word of it.
+ */
+/* One notch above nothing, so it beats the event stylesheet's blanket link
+   colour, and one notch below a component's own class rule. */
+.result .canvas :where(a) { color: inherit; text-decoration: none; }
+.result .canvas :where(p, li, dd, td, figcaption) a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: from-font;
+}
+.result .canvas :where(a:hover) { color: var(--accent); }
+
+/* ------------------------------------------------------------------ lists */
+
+:where(.result .canvas) :where(ul, ol) { padding-left: 1.35em; }
+:where(.result .canvas) :where(ul) { list-style: disc; }
+:where(.result .canvas) :where(ol) { list-style: decimal; }
+:where(.result .canvas) :where(li + li) { margin-top: var(--space-1); }
+:where(.result .canvas) :where(li)::marker { color: var(--muted); }
+
+/* A definition list is a spec sheet: the term is the quiet half. */
+:where(.result .canvas) :where(dt) { color: var(--muted); font-size: var(--text-sm); }
+:where(.result .canvas) :where(dd) { margin-left: 0; }
+
+/* ----------------------------------------------------------------- tables */
+
+/*
+ * A table is rules and alignment, not a grid of boxes. Hairlines between rows,
+ * one heavier rule under the head, no zebra, no vertical lines, no hover on a
+ * row that does nothing when clicked. Figures line up because the whole table
+ * is set in tabular numerals.
+ */
+:where(.result .canvas) :where(table) {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  line-height: var(--leading-snug);
+}
+:where(.result .canvas) :where(th, td) {
+  padding: var(--space-2) var(--space-4);
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: baseline;
+}
+:where(.result .canvas) :where(th) {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-strong);
+  color: var(--muted);
+}
+:where(.result .canvas) :where(thead th) { border-bottom: 1px solid var(--rule-strong); }
+:where(.result .canvas) :where(tbody tr:last-child) :where(th, td) { border-bottom: 0; }
+/* The first and last column sit flush with whatever contains the table, so a
+   table reads as part of the page rather than as an inset object. */
+:where(.result .canvas) :where(th, td):first-child { padding-left: 0; }
+:where(.result .canvas) :where(th, td):last-child { padding-right: 0; }
+:where(.result .canvas) :where(caption) {
+  caption-side: bottom;
+  padding-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--muted);
+  text-align: left;
+}
+
+/* --------------------------------------------------------------- controls */
+
+:where(.result .canvas) :where(button, [role="button"]) {
+  font: inherit;
+  font-weight: var(--weight-medium);
+  line-height: 1.2;
+  color: inherit;
+  background: transparent;
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-4);
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease;
+}
+:where(.result .canvas) :where(button, [role="button"]):hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--surface);
+}
+:where(.result .canvas) :where(button, [role="button"]):disabled {
+  color: var(--muted);
+  border-color: var(--rule);
+  cursor: not-allowed;
+}
+/* A toggle that is on is filled, so you can see the state from the back of a
+   room rather than by comparing two borders. */
+:where(.result .canvas) :where(button, [role="button"])[aria-pressed="true"],
+:where(.result .canvas) :where(button, [role="button"])[aria-selected="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--on-ink);
+}
+
+:where(.result .canvas) :where(input, select, textarea) {
+  font: inherit;
+  color: inherit;
+  background: var(--paper);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-3);
+}
+:where(.result .canvas) :where(input, select, textarea)::placeholder { color: var(--muted); }
+:where(.result .canvas) :where(input[type="checkbox"], input[type="radio"], input[type="range"]) {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+:where(.result .canvas) :where(label) { cursor: pointer; }
+
+/* The focus ring is the event's accent, at a width you can see on a projector,
+   and it is never removed. */
+.result :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------ media */
+
+.result ::selection { background: var(--accent-soft); color: var(--ink); }
+
+:where(.result .canvas) :where(img, svg, video) { max-width: 100%; height: auto; }
+:where(.result .canvas) :where(img) { display: block; }
+:where(.result .canvas) :where(figure) { margin: 0 0 var(--space-4); }
+:where(.result .canvas) :where(figcaption) {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--muted);
+  max-width: var(--measure);
+}
+:where(.result .canvas) :where(hr) {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: var(--space-8) 0;
+}
+:where(.result .canvas) :where(blockquote) {
+  border-left: 2px solid var(--accent);
+  padding-left: var(--space-4);
+  margin-left: 0;
+}
+
+/* ==========================================================================
+   The vocabulary
+   ==========================================================================
+
+   The classes a generated component is told it can use. Every one of them is
+   named in the build prompt; a class here that the prompt does not name is a
+   class nothing will ever write, so the two lists stay the same length.
+*/
+
+/* -- shell and layout ---------------------------------------------------- */
+
+/* The page container. Everything full-width sits inside one of these so the
+   left edge is in the same place from the header to the footer. */
+.result .wrap {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* A band of the page. Consecutive bands are separated by this and nothing
+   else, which is what makes the vertical rhythm read as deliberate. */
+.result .section { padding-block: var(--space-12); }
+.result .section-tight { padding-block: var(--space-8); }
+
+/* Vertical rhythm inside a component. */
+.result .stack > * + * { margin-top: var(--space-4); }
+.result .stack-sm > * + * { margin-top: var(--space-2); }
+.result .stack-lg > * + * { margin-top: var(--space-8); }
+
+/* Things side by side that wrap on a phone. `.row` groups, `.split` pushes
+   apart — a header, a price beside a label, a toolbar. */
+.result .row,
+.result .split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.result .row { align-items: center; }
+.result .split { align-items: baseline; justify-content: space-between; }
+
+/* Equal columns that become one column on a phone without a media query. */
+.result .grid {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+}
+
+/* One wide column and one narrow one — an image and its details, a page and
+   its filters. Stacked below 52rem. */
+.result .sidebar { display: grid; gap: var(--space-8); }
+@media (min-width: 52rem) {
+  .result .sidebar { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: start; }
+  .result .sidebar-left { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); }
+}
+
+.result .measure { max-width: var(--measure); }
+.result .measure-heading { max-width: var(--measure-heading); }
+.result .pad { padding: var(--gutter); }
+
+/* Centred text that keeps its measure centred with it. */
+.result .center { text-align: center; }
+.result .center > * { margin-inline: auto; }
+
+/* -- surfaces ------------------------------------------------------------ */
+
+/* Depth is a tint of the paper and a hairline. There are no drop shadows on
+   these pages: a shadow is the one thing on a generated page that always looks
+   the same whatever the room chose. */
+.result .card {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+  background: var(--paper);
+}
+.result .panel {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+}
+.result .rule-top { border-top: 1px solid var(--rule); padding-top: var(--space-4); }
+.result .rule-bottom { border-bottom: 1px solid var(--rule); padding-bottom: var(--space-4); }
+
+/* -- type ---------------------------------------------------------------- */
+
+.result .display {
+  color: var(--heading-ink);
+  font-family: var(--font-heading);
+  font-weight: var(--heading-weight);
+  letter-spacing: var(--heading-tracking);
+  font-size: var(--text-display);
+  line-height: var(--leading-display);
+  max-width: var(--measure-heading);
+  text-wrap: balance;
+}
+.result .lead {
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+  max-width: var(--measure);
+}
+.result .small { font-size: var(--text-sm); }
+/* The quiet line under something — a source, a caveat, the line that says
+   which rows are examples. It sits like a caption under a photograph. */
+.result .note {
+  font-size: var(--text-sm);
+  color: var(--muted);
+  max-width: var(--measure);
+}
+/* The name of a field or a figure. Sentence case: a tracked-out capitalised
+   label above every heading is the commonest tell of a generated page. */
+.result .label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--muted);
+}
+.result .numeric { font-variant-numeric: tabular-nums; text-align: right; }
+.result .canvas .muted { color: var(--muted); }
+.result .muted { color: var(--muted); }
+.result .rule { border-color: var(--rule); }
+
+/* -- controls ------------------------------------------------------------ */
+
+.result .canvas .button,
+.result .canvas a.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-weight: var(--weight-medium);
+  line-height: 1.2;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius);
+  background: transparent;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease;
+}
+.result .canvas .button:hover { border-color: var(--accent); background: var(--surface); }
+/* One filled button per view. The accent is the thing the page wants you to
+   do, and a page with four of them has told you nothing. */
+.result .canvas .button-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+.result .canvas .button-primary:hover {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: var(--on-accent);
+}
+.result .canvas .button-quiet { border-color: transparent; padding-inline: var(--space-2); }
+.result .canvas .button-quiet:hover { border-color: transparent; color: var(--accent); }
+
+/* A choice among a few: sizes, colours, a filter. Wide enough to hit on a
+   phone, filled when it is the one that is chosen. */
+.result .canvas .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 2.5rem;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+}
+.result .canvas .chip[aria-pressed="true"],
+.result .canvas .chip[aria-selected="true"],
+.result .canvas .chip.is-on {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--on-ink);
+}
+
+/* A state, not an action: in stock, draft, overdue. Never clickable. */
+.result .canvas .badge {
+  display: inline-block;
+  padding: 0.15em 0.6em;
+  border-radius: var(--radius-pill);
+  background: var(--surface-alt);
+  color: var(--muted);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  white-space: nowrap;
+}
+.result .canvas .badge-accent { background: var(--accent-soft); color: var(--ink); }
+
+/* Label above its control, never beside it: a label that wraps beside a field
+   on a phone drags the field down with it. */
+.result .canvas .field { display: grid; gap: var(--space-1); }
+.result .canvas .field > :where(input, select, textarea) { width: 100%; }
+
+/* Nothing here yet. An empty state says what belongs here and how it arrives —
+   it is never a shrug, and it is never a blank box. */
+.result .canvas .empty {
+  border: 1px dashed var(--rule-strong);
+  border-radius: var(--radius);
+  padding: var(--space-8) var(--space-6);
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+
+/* Rows the eye has to track across six columns. Add `zebra` to the table; it
+   is the only thing `--surface-alt` is for, and a table under five rows does
+   not need it. */
+.result .canvas table.zebra tbody tr:nth-child(even) { background: var(--surface-alt); }
+.result .canvas table.zebra :where(th, td):first-child { padding-left: var(--space-3); }
+.result .canvas table.zebra :where(th, td):last-child { padding-right: var(--space-3); }
+
+/* A wide table on a narrow screen scrolls sideways instead of forcing the page
+   to. Wrap every table in one of these. */
+.result .canvas .table-scroll { overflow-x: auto; margin-bottom: var(--space-4); }
+.result .canvas .table-scroll > table { margin-bottom: 0; }

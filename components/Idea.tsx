@@ -75,8 +75,10 @@ export function IdeaSheet({
     return (
       <article className="stack">
         <p className="eyebrow">Sprint {cycle}</p>
-        <h1 className="text-balance">{doc.frontmatter.title ?? doc.slug}</h1>
-        <RenderBlocks blocks={doc.blocks} event={event} group={doc.slug} />
+        <h1 className="display">{doc.frontmatter.title ?? doc.slug}</h1>
+        <div className="canvas">
+          <RenderBlocks blocks={doc.blocks} event={event} group={doc.slug} />
+        </div>
       </article>
     );
   }
@@ -86,7 +88,7 @@ export function IdeaSheet({
       <p className="eyebrow">
         Sprint {cycle} · {byline(idea.authors, doc.slug)}
       </p>
-      <h1 className="mt-3 text-balance">{idea.title}</h1>
+      <h1 className="display mt-3">{idea.title}</h1>
       {idea.ingress && <p className="lead measure mt-5">{idea.ingress}</p>}
       <Points points={idea.points} />
 
@@ -101,7 +103,7 @@ export function IdeaSheet({
       )}
 
       {idea.blocks.length > 0 && (
-        <div className="mt-12">
+        <div className="canvas mt-12">
           <RenderBlocks blocks={idea.blocks} event={event} group={doc.slug} />
         </div>
       )}

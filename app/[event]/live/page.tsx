@@ -36,13 +36,22 @@ export default async function LivePage({ params }: { params: Promise<{ event: st
   // this view exists to get away from.
   const blocks = docs.flatMap((doc) => doc.blocks).filter((block) => block.type !== "Post");
 
-  if (blocks.length > 0) return <RenderBlocks blocks={blocks} event={slug} />;
+  // The prototype's baseline lives on `.canvas`: the type scale, the space
+  // scale, and what plain markup does with them. Without it a merged component
+  // renders as an unstyled document in the right colours.
+  if (blocks.length > 0) {
+    return (
+      <div className="canvas">
+        <RenderBlocks blocks={blocks} event={slug} />
+      </div>
+    );
+  }
 
   // Sprint one, on a projector, in front of the room that is about to fill it.
   // The goal in the room's own words is the most useful thing this page can
   // hold until there is something to show.
   return (
-    <main className="holding">
+    <main className="canvas holding">
       <p className="eyebrow">{event.name}</p>
       <p className="holding-goal">{event.goal}</p>
       <p className="muted holding-note">
