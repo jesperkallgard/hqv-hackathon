@@ -1,48 +1,57 @@
 ---
-title: "Find the feed without our language"
-ingress: "Make the feed usable by someone outside the team who needs the answer fast and does not know our terms. Keep the site calm and spare, and let the list do the work."
+title: "What's Changed"
+ingress: "An internal site for finding the answer fast without asking a colleague. It gives one calm place to read what changed, who owns it, and how the site is run."
 points:
-  - "The feed is the first thing people land on, with newest changes first and no dashboard ahead of it."
-  - "Each row says what changed, who owns it, and when it was updated so nobody has to ask around."
-  - "The site still offers three plain routes in the header: the feed, who owns what, and how we work."
-  - "The page avoids internal jargon in the main list so an outsider can read it without a glossary."
-  - "There are no charts or extra status screens; the feed stays the simplest way in."
+  - "The home feed is the main way in, with the newest changes first and each row showing the owner and update date."
+  - "The header gives three plain routes: the feed, who owns what, and how we work."
+  - "Every post earns its place by saving somebody from asking a colleague."
+  - "Each post names an owner and says how often it is updated."
+  - "The page stays a real internal website: one generous column, a simple footer, and no dashboard or charts."
 cycle: 4
 pair: "quinn"
 authors: ["Quinn", "Olga", "Sam", "Ada"]
 ---
 
-Make the feed usable by someone outside the team who needs the answer fast and does not know our terms. Keep the site calm and spare, and let the list do the work.
+An internal site for finding the answer fast without asking a colleague. It gives one calm place to read what changed, who owns it, and how the site is run.
 
-- The feed is the first thing people land on, with newest changes first and no dashboard ahead of it.
-- Each row says what changed, who owns it, and when it was updated so nobody has to ask around.
-- The site still offers three plain routes in the header: the feed, who owns what, and how we work.
-- The page avoids internal jargon in the main list so an outsider can read it without a glossary.
-- There are no charts or extra status screens; the feed stays the simplest way in.
+- The home feed is the main way in, with the newest changes first and each row showing the owner and update date.
+- The header gives three plain routes: the feed, who owns what, and how we work.
+- Every post earns its place by saving somebody from asking a colleague.
+- Each post names an owner and says how often it is updated.
+- The page stays a real internal website: one generous column, a simple footer, and no dashboard or charts.
 
-Build the page as a real internal website: header, short navigation, one generous content column, footer. White background, a lot of air, navy headings, left-aligned text, flat panels with no shadows. Use the site name from the canon: What’s Changed.
+Build the whole site as a real internal website, not a document. Use the site name from the canon: What's Changed.
 
-The main content is the feed. It is the thing people see first. Show newest items first. Each row must include:
-- a plain description of what changed
-- the owner
-- the update date
+Structure:
+- Header with the site name and a short navigation.
+- Main feed as the primary content.
+- A clear owners area.
+- A clear how-we-work area.
+- Footer.
 
-Keep the row copy concrete and short. It must read as internal status, not marketing. It should help someone from another team understand the change without knowing the house style.
+Visual direction:
+- White background, a lot of air.
+- Navy headings.
+- Left-aligned text.
+- Flat panels, no shadows.
+- One primary button only: fully round, orange, white text.
+- Other buttons: fully round outlined navy pills.
+- State labels: small round tags, not coloured words.
 
-Keep the header navigation short and plain. The group wants three routes: the feed, who owns what, and how we work. Do not add a dashboard route or any extra sections.
-
-Do not add charts. Do not add a dashboard. Do not turn the feed into a document.
-
-Keep the footer simple and factual. It should say who keeps the site.
-
-Visual rules from the room:
-- One primary button only, fully round, orange with white text.
-- All other buttons are fully round outlined navy pills.
-- Any state labels should be small round tags, not coloured words.
-
-Content rules:
-- No jargon in the feed rows.
+Content direction:
+- Plain and concrete.
+- Short sentences.
+- Say what changed and what it meant, not what was done.
+- No marketing language.
+- The feed should be newest first.
+- Every row in the feed must show the change, the owner, and the date.
 - Every post on the site must name an owner and how often it is updated.
-- This group is focused on helping an outsider find the answer without asking a colleague.
+- The site should help somebody from another team understand it without needing our vocabulary.
 
-If any wording is still unclear, keep it plain rather than inventive. The point is clarity, not style.
+Scope:
+- Include the full site picture, not just a single post.
+- Do not add charts.
+- Do not add a dashboard.
+- Keep the footer simple and factual.
+
+If any content is still undecided, keep it plain and do not invent detail.
