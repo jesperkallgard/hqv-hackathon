@@ -1,0 +1,8 @@
+{
+  "slug": "dbs-portal",
+  "name": "DBS Portal",
+  "goal": "An internal portal that makes DBS legible to the rest of Husqvarna: what we do, what is coming, and who to ask. Someone outside DBS opens one page and understands it without asking anyone.",
+  "sprintMinutes": 15,
+  "sprintCount": 4,
+  "createdAt": "2026-09-23T09:49:49.297Z"
+}
