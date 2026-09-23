@@ -1,0 +1,8 @@
+{
+  "slug": "door-check",
+  "name": "Door check",
+  "goal": "A room arriving.",
+  "sprintMinutes": 15,
+  "sprintCount": 4,
+  "createdAt": "2026-09-23T04:39:12.481Z"
+}
