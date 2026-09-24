@@ -1,52 +1,23 @@
 ---
-title: "Content types and owners for the DBS start page"
-ingress: "The page carries nine kinds of content, each with a clear job and a named owner so people outside DBS can scan what changed, what it means, and who keeps it current."
+title: "DBS content is organised into clear, tagged post types"
+ingress: "The site carries a small set of real post types, grouped so a colleague can scan what is happening, what is coming next, and where to find help without reading a guide beside it."
 points:
-  - "Highlights show the most important proof points first and are owned by the named content owner for each item."
-  - "KPI cards show the dated numbers at a glance and are owned by analytics."
-  - "Metrics support the headline cards with the measurement context and are owned by the measurement owner."
-  - "Areas group the working content by track and BU and are owned by the named area owner."
-  - "Release timeline rows show live and planned work and are owned by the release owner."
+  - "Highlights and KPI cards surface the top proof points first, so the homepage opens with what changed and what it meant."
+  - "Areas group the core buckets like Explore, Optimize, Scale, and supportservices, so a user can drill into a topic area quickly."
+  - "Planned, Doing, and Done show work status in a simple flow, and each item in those sections is tagged with the relevant user in dbs."
+  - "Show and tell items, summaries of demos, and source links keep previous sessions and their originals together, so the page also works as a communication hub."
+  - "Activities, howto, step-bystep, knowledgebase, and quick links carry the practical follow-up content, while contacts point to a named person for ownership and updates."
 cycle: 3
 pair: "erkan"
 authors: ["Jonas H", "Jonas", "Erkan"]
 ---
 
-The page carries nine kinds of content, each with a clear job and a named owner so people outside DBS can scan what changed, what it means, and who keeps it current.
+The site carries a small set of real post types, grouped so a colleague can scan what is happening, what is coming next, and where to find help without reading a guide beside it.
 
-- Highlights show the most important proof points first and are owned by the named content owner for each item.
-- KPI cards show the dated numbers at a glance and are owned by analytics.
-- Metrics support the headline cards with the measurement context and are owned by the measurement owner.
-- Areas group the working content by track and BU and are owned by the named area owner.
-- Release timeline rows show live and planned work and are owned by the release owner.
+- Highlights and KPI cards surface the top proof points first, so the homepage opens with what changed and what it meant.
+- Areas group the core buckets like Explore, Optimize, Scale, and supportservices, so a user can drill into a topic area quickly.
+- Planned, Doing, and Done show work status in a simple flow, and each item in those sections is tagged with the relevant user in dbs.
+- Show and tell items, summaries of demos, and source links keep previous sessions and their originals together, so the page also works as a communication hub.
+- Activities, howto, step-bystep, knowledgebase, and quick links carry the practical follow-up content, while contacts point to a named person for ownership and updates.
 
-## Content types to build
-
-Use the page’s existing buckets as the content types the site carries:
-
-- **Highlights** — the top proof points the homepage surfaces first. Owned by the named content owner for each item and updated weekly or monthly.
-- **KPI cards** — the dated numbers that show outcome at a glance. Owned by analytics and updated on the stated reporting cycle.
-- **Metrics** — the supporting reads behind the headline cards. Owned by the measurement owner and updated monthly.
-- **Areas** — the bucketed content for Scale, Optimise, Explore, Analytics, and Contact and support services. Owned by the named area owner and updated on the area’s frequency.
-- **Release timeline rows** — the live/planned work queue. Owned by the release owner and updated when status changes.
-- **Quick links** — routes to the knowledge base, show and tell, initiative pages, and handoff guides. Owned by DBS and updated when links or guidance change.
-- **Show-and-tell items** — recent session summaries and source links. Owned by the presenter or topic owner and updated after each session.
-- **Activities** — the ongoing and upcoming work list. Owned by the work owner and updated as work moves.
-- **Contacts** — the named people to ask. Owned by the person listed and updated when ownership changes.
-
-## What this page must keep
-- Real content only. Placeholder text counts as empty.
-- Say what changed and what it meant, not what was done.
-- Every item carries a frequency: static, monthly, or weekly.
-- Owner means a person; the team is not an owner.
-- Reuse the existing phrasing and structure already on the page rather than inventing new content types.
-- Keep the page scan-first: one card per area, generous column, white space, navy headings, pill buttons, and small round state tags.
-- Keep track and BU visible wherever a content item needs them so readers do not need a follow-up question.
-
-## Out of scope
-- No new content model beyond the page’s existing buckets.
-- No extra wiki-style sections.
-- No placeholder copy or invented metrics.
-
-## Assumption
-- The item buckets are the page’s content types; the AI mapping idea belongs as a requirement for how items are surfaced, not as a new content type.
+Build a web page, not a wiki: one generous column, header with the site’s name and short navigation, footer, white space, navy headings, left-aligned text, and the full-width screen feel already set. Keep the content as real, easy-to-digest cards that can be scanned at a glance, with states shown as small round tags. Every item needs a clear owner as a person, a stated update frequency where it exists, and a tag for the relevant user in dbs on each item inside the Planned / Doing / Done sections. The content must stay concrete and internal: no placeholder text, no invented categories, no separate feature area, and nothing that needs the old DBS context to parse. The open part is the exact final set of post types beyond the named examples, because only the items above were clearly grounded in the conversation.
