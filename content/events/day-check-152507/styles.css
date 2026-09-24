@@ -11,8 +11,8 @@
   --text-body: 1rem;
   --text-lg: 1.125rem;
   --text-xl: 1.5rem;
-  --text-2xl: 2.25rem;
-  --measure: 72rem;
+  --text-2xl: 2.5rem;
+  --measure: 64rem;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
@@ -78,12 +78,12 @@
 }
 
 .canvas h1 {
-  font-size: clamp(var(--text-xl), 4vw, var(--text-2xl));
+  font-size: clamp(2rem, 5vw, var(--text-2xl));
   letter-spacing: -0.02em;
 }
 
 .canvas h2 {
-  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   letter-spacing: -0.01em;
 }
 
@@ -126,36 +126,6 @@
 
 .canvas button {
   cursor: pointer;
-}
-
-.canvas table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 44rem;
-}
-
-.canvas th {
-  color: var(--heading-ink);
-  font-size: var(--text-sm);
-  font-weight: 700;
-  text-align: left;
-  padding: var(--space-3);
-  border-bottom: 1px solid var(--rule);
-  vertical-align: bottom;
-}
-
-.canvas td {
-  padding: var(--space-3);
-  border-bottom: 1px solid var(--rule);
-  vertical-align: top;
-}
-
-.canvas tbody tr {
-  background: var(--paper);
-}
-
-.canvas tbody tr:nth-child(even) {
-  background: var(--surface-alt);
 }
 
 .canvas strong {
@@ -255,7 +225,7 @@
   grid-template-columns: minmax(0, 1fr) auto;
   gap: var(--space-4);
   align-items: end;
-  padding-bottom: var(--space-4);
+  padding-bottom: var(--space-5);
   border-bottom: 1px solid var(--rule);
 }
 
@@ -265,9 +235,13 @@
   gap: var(--space-2);
 }
 
+.canvas .hero-copy p {
+  font-size: var(--text-lg);
+}
+
 .canvas .hero-meta {
-  color: var(--ink);
-  font-size: var(--text-sm);
+  color: var(--muted);
+  font-size: var(--text-sm) !important;
 }
 
 .canvas .section {
@@ -288,20 +262,6 @@
   font-size: var(--text-body);
 }
 
-.canvas .panel {
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  padding: var(--space-4);
-}
-
-.canvas .panel-quiet {
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  padding: var(--space-4);
-}
-
 .canvas .button-row {
   display: flex;
   flex-wrap: wrap;
@@ -312,7 +272,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: var(--space-1);
   min-height: 2.75rem;
   padding: 0 1rem;
   border-radius: 999px;
@@ -350,25 +310,6 @@
   background: var(--surface);
 }
 
-.canvas .button-plain {
-  border-color: transparent;
-  padding-left: 0;
-  padding-right: 0;
-  min-height: auto;
-  border-radius: 0;
-}
-
-.canvas .button-plain:hover {
-  background: transparent;
-  color: var(--accent);
-}
-
-.canvas .button:disabled,
-.canvas .button[aria-disabled="true"] {
-  opacity: 0.55;
-  cursor: not-allowed;
-}
-
 .canvas .tag {
   display: inline-flex;
   align-items: center;
@@ -383,216 +324,65 @@
   white-space: nowrap;
 }
 
-.canvas .tag-accent {
-  border-color: var(--accent);
-  color: var(--accent);
+.canvas .front-door-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
 }
 
-.canvas .tag-muted {
+.canvas .front-door-card {
   background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
 }
 
-.canvas .feed-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.canvas .front-door-card-head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.canvas .front-door-card-title {
+  margin-bottom: var(--space-2);
+}
+
+.canvas .front-door-card-summary {
+  color: var(--ink);
+}
+
+.canvas .front-door-card-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+  padding-top: var(--space-3);
   border-top: 1px solid var(--rule);
 }
 
-.canvas .feed-item {
-  display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(11rem, 0.7fr) minmax(8rem, 0.7fr) minmax(8rem, 0.6fr);
-  gap: var(--space-3);
-  padding: var(--space-4) 0;
-  border-bottom: 1px solid var(--rule);
-  align-items: start;
-}
-
-.canvas .feed-main {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  min-width: 0;
-}
-
-.canvas .feed-title {
-  color: var(--heading-ink);
-  font-size: var(--text-lg);
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.canvas .feed-summary {
-  color: var(--ink);
-  font-size: var(--text-body);
-}
-
-.canvas .feed-meta {
+.canvas .front-door-card-meta > div {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
-  font-size: var(--text-sm);
 }
 
 .canvas .meta-label {
   color: var(--heading-ink);
+  font-size: var(--text-sm);
   font-weight: 700;
 }
 
 .canvas .meta-value {
   color: var(--ink);
+  font-size: var(--text-sm);
 }
 
-.canvas .owners-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-3);
-}
-
-.canvas .owner-card {
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  padding: var(--space-4);
+.canvas .front-door-card-footer {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
-
-.canvas .owner-line {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--space-3);
-  align-items: start;
-}
-
-.canvas .owner-name {
-  color: var(--heading-ink);
-  font-weight: 700;
-}
-
-.canvas .owner-role,
-.canvas .owner-detail {
-  font-size: var(--text-sm);
-}
-
-.canvas .table-wrap {
-  overflow-x: auto;
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  background: var(--paper);
-}
-
-.canvas .status-cell,
-.canvas .date-cell,
-.canvas .num-cell {
-  white-space: nowrap;
-}
-
-.canvas .num-cell {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-.canvas .date-cell {
-  font-variant-numeric: tabular-nums;
-}
-
-.canvas .how-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border-top: 1px solid var(--rule);
-}
-
-.canvas .how-item {
-  display: grid;
-  grid-template-columns: 2rem minmax(0, 1fr);
-  gap: var(--space-3);
-  padding: var(--space-4) 0;
-  border-bottom: 1px solid var(--rule);
-}
-
-.canvas .step-marker {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 999px;
-  border: 1px solid var(--heading-ink);
-  color: var(--heading-ink);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--text-sm);
-  font-weight: 700;
-}
-
-.canvas .empty {
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  background: var(--surface);
-  padding: var(--space-4);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
-
-.canvas .empty-title {
-  color: var(--heading-ink);
-  font-size: var(--text-lg);
-  font-weight: 700;
-}
-
-.canvas .form-row {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-3);
-}
-
-.canvas .field {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
-.canvas .field label {
-  color: var(--heading-ink);
-  font-size: var(--text-sm);
-  font-weight: 700;
-}
-
-.canvas .input,
-.canvas .select,
-.canvas .textarea {
-  width: 100%;
-  min-height: 2.75rem;
-  padding: 0.75rem 0.875rem;
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  background: var(--paper);
-  color: var(--ink);
-}
-
-.canvas .textarea {
-  min-height: 8rem;
-  resize: vertical;
-}
-
-.canvas .input:hover,
-.canvas .select:hover,
-.canvas .textarea:hover {
-  border-color: var(--heading-ink);
-}
-
-.canvas .field-note,
-.canvas .muted {
-  color: var(--muted);
-  font-size: var(--text-sm);
-}
-
-.canvas .error-text {
-  color: var(--accent);
-  font-size: var(--text-sm);
-  font-weight: 700;
+  justify-content: flex-start;
 }
 
 .canvas .site-footer {
@@ -627,26 +417,13 @@
   font-size: var(--text-sm);
 }
 
-@media (max-width: 900px) {
-  .canvas .feed-item {
-    grid-template-columns: minmax(0, 1fr) minmax(10rem, 0.8fr) minmax(8rem, 0.7fr);
-  }
-
-  .canvas .feed-item > :last-child {
-    grid-column: 1 / -1;
-  }
-
-  .canvas .owners-grid,
-  .canvas .form-row {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 640px) {
   .canvas .site-header-inner,
   .canvas .hero,
   .canvas .section-heading,
-  .canvas .site-footer-inner {
+  .canvas .site-footer-inner,
+  .canvas .front-door-card-head,
+  .canvas .front-door-card-meta {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -659,15 +436,6 @@
   .canvas .nav-link,
   .canvas .button {
     min-height: 2.75rem;
-  }
-
-  .canvas .feed-item {
-    grid-template-columns: 1fr;
-    gap: var(--space-2);
-  }
-
-  .canvas .how-item {
-    grid-template-columns: 1fr;
   }
 }
 
