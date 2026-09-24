@@ -11,15 +11,15 @@ data:
     means, and who to ask.
   nav:
   - label: Start page
-    href: /dbs-portal
+    href: /dbs-portal/live
   - label: Areas
-    href: /dbs-portal/canon/areas
+    href: /dbs-portal/live/areas
   - label: Release pipeline
-    href: /dbs-portal/canon/pipeline
+    href: /dbs-portal/live/pipeline
   - label: Activities
-    href: /dbs-portal/canon/activities
+    href: /dbs-portal/live/activities
   - label: Contacts
-    href: /dbs-portal/canon/contacts
+    href: /dbs-portal/live/contacts
 ```
 
 ```block

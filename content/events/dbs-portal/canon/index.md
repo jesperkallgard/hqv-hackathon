@@ -11,15 +11,15 @@ data:
     means, and who to ask.
   nav:
   - label: Start page
-    href: /dbs-portal
+    href: /dbs-portal/live
   - label: Areas
-    href: /dbs-portal/canon/areas
+    href: /dbs-portal/live/areas
   - label: Release pipeline
-    href: /dbs-portal/canon/pipeline
+    href: /dbs-portal/live/pipeline
   - label: Activities
-    href: /dbs-portal/canon/activities
+    href: /dbs-portal/live/activities
   - label: Contacts
-    href: /dbs-portal/canon/contacts
+    href: /dbs-portal/live/contacts
 ```
 
 ```block
@@ -61,7 +61,7 @@ data:
 type: DbsPortalHero
 data:
   hero:
-    title: What content belongs on the DBS start page
+    title: What DBS changed on husqvarna.com, and what it meant
     intro: 'One page for the people outside DBS who need the picture fast: what changed on husqvarna.com,
       what is in progress, what kind of post to expect here, and who keeps each part current.'
     primaryAction:
