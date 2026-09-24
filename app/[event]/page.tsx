@@ -39,7 +39,13 @@ export default async function ResultPage({ params }: { params: Promise<{ event: 
 
   // Prose and prototype are two different things. Threaded together they read
   // as an article somebody dropped a widget into, which is not what was built.
-  const prototype = docs.flatMap((doc) => doc.blocks).filter((block) => block.type !== "Post");
+  // The front door only. Once the prototype outgrew one page, the rest of it
+  // moved to `/<event>/canon/<slug>` — one document, one page — and this page
+  // shows what a hackathon calls `index`, with the deeper pages linked from
+  // inside the prototype's own navigation. A hackathon that never split still
+  // has exactly one document, so this is the whole of it.
+  const front = docs.filter((doc) => doc.slug === "index").length ? docs.filter((doc) => doc.slug === "index") : docs;
+  const prototype = front.flatMap((doc) => doc.blocks).filter((block) => block.type !== "Post");
   const notes = docs
     .map((doc) => {
       const blocks = doc.blocks.filter((block) => block.type === "Post");
