@@ -225,7 +225,10 @@
   display: grid;
   grid-template-columns: minmax(0, 1.6fr) minmax(18rem, 0.9fr);
   gap: var(--space-6);
-  align-items: end;
+  /* Both columns start at the top. Bottom-aligning them worked while the KPI
+     strip was one row; at two rows it pushed the headline halfway down the
+     page and left a hole above it. */
+  align-items: start;
 }
 
 .canvas .hero-copy {
@@ -307,7 +310,12 @@
 
 .canvas .kpi-strip {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  /* The strip sits inside the hero's right column, which is at most about
+     430px wide. Four fixed columns made each card 95px, and the labels broke
+     mid-word — "experime nts", "husqvar na.com". Let the cards set their own
+     minimum instead: they take two columns beside the hero and four if they
+     are ever given the full width. */
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   gap: var(--space-4);
 }
 
