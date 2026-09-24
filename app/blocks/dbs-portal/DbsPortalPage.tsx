@@ -1,5 +1,5 @@
 /**
- * One-page internal DBS portal with KPI-first opening, five area cards, release pipeline, follow-up links and contact owners.
+ * Refined one-page DBS portal with quieter hierarchy and outcome-first KPI cards while preserving all existing sections and content.
  */
 import React from "react";
 
