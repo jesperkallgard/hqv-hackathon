@@ -1,63 +1,58 @@
 ---
-title: "Monthly show-and-tell view for the rest of the org"
-ingress: "A DBS view for Madde’s monthly show-and-tell, aimed at the rest of the organisation. It lifts the story out of the start page and into a meeting-ready layout with the clearest updates, the business meaning, and who should be in the room next."
+title: "A hook that says what is in it for me"
+ingress: "A DBS front door with a sharper hook for people who are deciding whether to open it. It promises the answer to “what is in it for me” up front, so the page earns the click before it asks for attention."
 points:
-  - "The page is not the start page; it is a separate show-and-tell view that can be opened for the monthly meeting."
-  - "It leads with the clearest updates for the wider organisation, not the whole DBS working wall."
-  - "Each item says what changed and what it meant, so the meeting gets information rather than activity."
-  - "It names a person owner, the track, the BU, and the update frequency so the rest of the org can follow up."
-  - "It stays visual and scan-first, using cards and short sections that Madde can present without extra explanation."
+  - "The hero answers why someone should come here before it explains the page."
+  - "The first line speaks to the reader’s gain, not DBS’s org chart or process."
+  - "The page shows what is in it for each audience: marketers, brand, IT, management, and new joiners."
+  - "The hook leads into the latest outcomes, so the value is obvious before the details."
+  - "The page still stays scan-first and real, with no filler or generic marketing copy."
 cycle: 2
 pair: "quan"
 authors: ["Quan"]
 ---
 
-A DBS view for Madde’s monthly show-and-tell, aimed at the rest of the organisation. It lifts the story out of the start page and into a meeting-ready layout with the clearest updates, the business meaning, and who should be in the room next.
+A DBS front door with a sharper hook for people who are deciding whether to open it. It promises the answer to “what is in it for me” up front, so the page earns the click before it asks for attention.
 
-- The page is not the start page; it is a separate show-and-tell view that can be opened for the monthly meeting.
-- It leads with the clearest updates for the wider organisation, not the whole DBS working wall.
-- Each item says what changed and what it meant, so the meeting gets information rather than activity.
-- It names a person owner, the track, the BU, and the update frequency so the rest of the org can follow up.
-- It stays visual and scan-first, using cards and short sections that Madde can present without extra explanation.
+- The hero answers why someone should come here before it explains the page.
+- The first line speaks to the reader’s gain, not DBS’s org chart or process.
+- The page shows what is in it for each audience: marketers, brand, IT, management, and new joiners.
+- The hook leads into the latest outcomes, so the value is obvious before the details.
+- The page still stays scan-first and real, with no filler or generic marketing copy.
 
 ## Purpose
-- Create a separate view on the DBS page for Madde’s monthly show-and-tell meeting.
-- The audience is the rest of the organisation, not just DBS.
-- This view should work as a meeting surface, not as the main start page.
+- Strengthen the top of the DBS page so it earns the click.
+- Make the “what is in it for me” value clear before any deeper content.
+- Keep it as a real internal website, not a promo page.
 
-## What it should do
-- Surface the strongest updates worth showing to a wider audience.
-- Make the business meaning obvious quickly.
-- Help Madde present the story without having to explain the page structure.
-- Let people in the room see what changed, why it matters, and who owns it.
+## What the hook has to do
+- Say why a colleague should open the page.
+- Show that the page is useful to people outside DBS.
+- Make the business value feel immediate.
+- Lead naturally into the outcome cards and section cards below.
 
-## Order and structure
-1. Short header with the view name and meeting context.
-2. A lead section with the biggest / most important update first.
-3. A small set of scan-first cards with the strongest monthly highlights.
-4. A simple follow-up section for who to talk to next.
-5. Footer or close with DBS identity.
+## Hero direction
+- The hero headline should promise a direct benefit.
+- The intro should answer “why should I come here?” in plain language.
+- It should speak to the reader’s role or need, not to DBS internally.
+- It can mention that the page helps people see what changed, what it means, and who to ask, but it should do so as a benefit.
 
-## Content rules
-- Use only real content from the canon or clearly agreed show-and-tell wording.
-- Keep it understandable for people outside DBS.
-- Say what changed and what it meant, not the task that produced it.
-- Every item must show owner, track, BU, and frequency.
-- If something is monthly, say monthly.
-- Avoid internal jargon in the headlines.
-- If a detail is not known, leave it out rather than inventing it.
+## Audience promise
+- Marketers: see what changed and what to do next.
+- Brand: see whether the change fits the message and market.
+- IT: see what is live and what is moving.
+- Management: see business impact without digging.
+- New joiners: see where to start and who owns what.
 
 ## Look and feel
-- Same overall visual language as the DBS site.
-- White background, lots of air, navy headings, left-aligned text.
-- Cards that can be scanned in one glance.
-- Fully round pill buttons if any action is shown.
-- Use tags for status or frequency, not coloured text.
-- It should feel like a real internal website page, not a wiki section.
+- Keep the same white, airy, navy, left-aligned visual language.
+- Keep the page feeling like a real internal website.
+- One strong hook, then scan-first content below.
+- Do not add decorative marketing language that does not help the reader.
 
 ## Scope limits
-- Do not turn this into the start page again.
-- Do not add a long timeline or every DBS update.
-- Do not add new invented metrics or fake quotes.
-- Do not make it dependent on hidden context from the start page.
-- Keep it fit for a monthly meeting hosted by Madde.
+- Do not turn the page into a landing page for customers.
+- Do not change the whole site structure.
+- Do not invent new content categories.
+- Do not replace the outcomes with slogans.
+- Keep the hook short enough to read in one glance.
