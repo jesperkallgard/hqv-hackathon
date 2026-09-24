@@ -1,64 +1,52 @@
 ---
-title: "One post with the real shape"
-ingress: "A single post card with the content visible in the list and the fuller detail visible when opened. It is for colleagues who need to scan fast, then read the post that matters."
+title: "Content types and owners for the DBS start page"
+ingress: "The page carries nine kinds of content, each with a clear job and a named owner so people outside DBS can scan what changed, what it means, and who keeps it current."
 points:
-  - "It shows one real post in the list, not a collection of posts."
-  - "The list view shows the title, a short summary, owner, track, BU, frequency, and state at a glance."
-  - "Opening the post reveals the fuller content and the follow-up context behind the headline."
-  - "It is built as a web page card, not a wiki page or document fragment."
-  - "It stays easy to scan, with a white, airy layout and clear navigation back to the area it belongs to."
+  - "Highlights show the most important proof points first and are owned by the named content owner for each item."
+  - "KPI cards show the dated numbers at a glance and are owned by analytics."
+  - "Metrics support the headline cards with the measurement context and are owned by the measurement owner."
+  - "Areas group the working content by track and BU and are owned by the named area owner."
+  - "Release timeline rows show live and planned work and are owned by the release owner."
 cycle: 3
 pair: "erkan"
 authors: ["Jonas H", "Jonas", "Erkan"]
 ---
 
-A single post card with the content visible in the list and the fuller detail visible when opened. It is for colleagues who need to scan fast, then read the post that matters.
+The page carries nine kinds of content, each with a clear job and a named owner so people outside DBS can scan what changed, what it means, and who keeps it current.
 
-- It shows one real post in the list, not a collection of posts.
-- The list view shows the title, a short summary, owner, track, BU, frequency, and state at a glance.
-- Opening the post reveals the fuller content and the follow-up context behind the headline.
-- It is built as a web page card, not a wiki page or document fragment.
-- It stays easy to scan, with a white, airy layout and clear navigation back to the area it belongs to.
+- Highlights show the most important proof points first and are owned by the named content owner for each item.
+- KPI cards show the dated numbers at a glance and are owned by analytics.
+- Metrics support the headline cards with the measurement context and are owned by the measurement owner.
+- Areas group the working content by track and BU and are owned by the named area owner.
+- Release timeline rows show live and planned work and are owned by the release owner.
 
-Build a single post-idea card for the DBS start page.
+## Content types to build
 
-## What it is
-- This sprint is about one real post idea.
-- The page needs to show what appears in the list versus what appears when the post is opened.
-- Keep it as one post, not a feed or a full archive.
+Use the page’s existing buckets as the content types the site carries:
 
-## List view
-- The list state must be easy to scan at a glance.
-- Show the post title.
-- Show a short summary.
-- Show the owner as a person.
-- Show track and BU, one word each.
-- Show frequency.
-- Show state as a small round tag.
+- **Highlights** — the top proof points the homepage surfaces first. Owned by the named content owner for each item and updated weekly or monthly.
+- **KPI cards** — the dated numbers that show outcome at a glance. Owned by analytics and updated on the stated reporting cycle.
+- **Metrics** — the supporting reads behind the headline cards. Owned by the measurement owner and updated monthly.
+- **Areas** — the bucketed content for Scale, Optimise, Explore, Analytics, and Contact and support services. Owned by the named area owner and updated on the area’s frequency.
+- **Release timeline rows** — the live/planned work queue. Owned by the release owner and updated when status changes.
+- **Quick links** — routes to the knowledge base, show and tell, initiative pages, and handoff guides. Owned by DBS and updated when links or guidance change.
+- **Show-and-tell items** — recent session summaries and source links. Owned by the presenter or topic owner and updated after each session.
+- **Activities** — the ongoing and upcoming work list. Owned by the work owner and updated as work moves.
+- **Contacts** — the named people to ask. Owned by the person listed and updated when ownership changes.
 
-## Open view
-- When opened, the post shows the fuller content.
-- The open state includes the follow-up context behind the headline.
-- The open state should make the meaning clearer than the list state.
-- The open view stays tied to the same post, not a different page.
-
-## Look and feel
-- Use the same DBS page style: white, airy, navy-led, left-aligned.
-- Keep navigation obvious so the user knows where the post belongs.
-- Do not use wiki styling.
-- Do not add dashboard clutter.
-
-## Content rules
-- Use real content only.
-- No placeholder text.
-- Say what changed and what it meant, not just activity.
-- Owner means a person.
-- Do not use "the team" as an owner.
-- Track and BU must both be named where relevant.
-- If something is not decided, leave it out rather than inventing it.
+## What this page must keep
+- Real content only. Placeholder text counts as empty.
+- Say what changed and what it meant, not what was done.
+- Every item carries a frequency: static, monthly, or weekly.
+- Owner means a person; the team is not an owner.
+- Reuse the existing phrasing and structure already on the page rather than inventing new content types.
+- Keep the page scan-first: one card per area, generous column, white space, navy headings, pill buttons, and small round state tags.
+- Keep track and BU visible wherever a content item needs them so readers do not need a follow-up question.
 
 ## Out of scope
-- No multi-post feed.
-- No dense information wall.
-- No unrelated areas.
-- No extra chrome beyond what helps the list/open distinction read clearly.
+- No new content model beyond the page’s existing buckets.
+- No extra wiki-style sections.
+- No placeholder copy or invented metrics.
+
+## Assumption
+- The item buckets are the page’s content types; the AI mapping idea belongs as a requirement for how items are surfaced, not as a new content type.
