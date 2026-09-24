@@ -14,7 +14,7 @@ data:
     - { label: Contacts, href: "#contacts" }
   hero:
     title: What DBS changed on husqvarna.com this week
-    intro: One page for the people outside DBS who need the picture fast: what is live, what is moving next, what it means for their market, and who owns the follow-up.
+    intro: "One page for the people outside DBS who need the picture fast: what is live, what is moving next, what it means for their market, and who owns the follow-up."
     primaryAction: { label: Open knowledge base, href: "#" }
     secondaryAction: { label: See this week's priorities, href: "#areas" }
   kpis:
