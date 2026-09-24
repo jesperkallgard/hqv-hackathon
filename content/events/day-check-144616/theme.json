@@ -1,0 +1,16 @@
+{
+  "paper": "#FFFFFF",
+  "ink": "#2E3238",
+  "headingInk": "#273B60",
+  "surface": "#F1F2F5",
+  "surfaceAlt": "#DFE2E8",
+  "accent": "#F25421",
+  "muted": null,
+  "rule": "#DFE2E8",
+  "radius": 4,
+  "font": "system",
+  "headingFont": "system",
+  "density": "airy",
+  "align": "left",
+  "uppercaseHeadings": false
+}
