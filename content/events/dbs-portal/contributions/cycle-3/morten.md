@@ -1,23 +1,23 @@
 ---
-title: ".comni as a card-based start page with five areas"
-ingress: "The page becomes a web page, not a wiki: a short-named internal start page for Husqvarna employees to skim digital work at a glance, with one dashboard of cards and no need for a guide beside you."
+title: "DBS hub content areas"
+ingress: "DBS hub carries five named content areas for employees to skim on a card-based start page: completed initiatives, ongoing initiatives, SEO, Analytics, and Optimisation."
 points:
-  - "It opens with a dashboard of cards, one card per area, so the first view is quick to scan."
-  - "Each card shows a short description first and expands for more information only when needed."
-  - "The content is grouped into five areas: completed initiatives, ongoing initiatives, SEO, Analytics, and Optimisation."
-  - "The page carries real content about digital initiatives, A/B test results, metrics, tracking data, SEO and analytics, plus where initiatives sit in time."
-  - "It is an internal website with a header, short navigation, one generous content column, a footer, white space, navy headings, left-aligned text, and pill buttons and round tags as the visual language."
+  - "Completed initiatives shows finished digital work and what it changed."
+  - "Ongoing initiatives shows active work in progress and where it sits now."
+  - "SEO carries search-related updates and results."
+  - "Analytics carries web traffic and performance charts."
+  - "Optimisation carries A/B test results and the outcome of experiments."
 cycle: 3
 pair: "morten"
 authors: ["Ehsan", "Morten", "Madde", "Mattias"]
 ---
 
-The page becomes a web page, not a wiki: a short-named internal start page for Husqvarna employees to skim digital work at a glance, with one dashboard of cards and no need for a guide beside you.
+DBS hub carries five named content areas for employees to skim on a card-based start page: completed initiatives, ongoing initiatives, SEO, Analytics, and Optimisation.
 
-- It opens with a dashboard of cards, one card per area, so the first view is quick to scan.
-- Each card shows a short description first and expands for more information only when needed.
-- The content is grouped into five areas: completed initiatives, ongoing initiatives, SEO, Analytics, and Optimisation.
-- The page carries real content about digital initiatives, A/B test results, metrics, tracking data, SEO and analytics, plus where initiatives sit in time.
-- It is an internal website with a header, short navigation, one generous content column, a footer, white space, navy headings, left-aligned text, and pill buttons and round tags as the visual language.
+- Completed initiatives shows finished digital work and what it changed.
+- Ongoing initiatives shows active work in progress and where it sits now.
+- SEO carries search-related updates and results.
+- Analytics carries web traffic and performance charts.
+- Optimisation carries A/B test results and the outcome of experiments.
 
-Must be built as a web page, not a wiki, for employees. Must feel like a real internal website with a header, short navigation, a generous single column, a footer, white with a lot of air, navy headings, and left-aligned text. The first screen must be a dashboard of cards; each card needs a short summary and the option to expand for more detail. The five areas are completed initiatives, ongoing initiatives, SEO, Analytics, and Optimisation. Real content only: digital initiatives, A/B test results, metrics, tracking data, SEO and analytics, and the timing of initiatives. Do not add placeholder text or extra areas, and do not make it a document or wiki. The name is .comni.
+This is a web page, not a wiki: one generous column, a dashboard of cards, short descriptions at a glance, and each card can expand for more information. The page is for Husqvarna employees and starts with a short, clear site name; internal acronyms do not belong in headings unless the meaning is obvious to an outsider. The named content areas are the canon, and each one must say what it is for, who keeps it up to date, and how often it changes if that matters. Owners are people: initiative owners keep completed and ongoing initiatives current, the analytics manager keeps analytics current, and the optimization team keeps A/B test content current. Real content only; placeholder text does not count. The site also keeps the full dashboard shape with a header, short navigation, and footer, but the sprint’s scope is the content each section carries, not more chrome.
