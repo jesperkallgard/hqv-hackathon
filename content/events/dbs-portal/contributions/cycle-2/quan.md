@@ -1,58 +1,62 @@
 ---
-title: "A hook that says what is in it for me"
-ingress: "A DBS front door with a sharper hook for people who are deciding whether to open it. It promises the answer to “what is in it for me” up front, so the page earns the click before it asks for attention."
+title: "Kaj, the AI chat for local marketers"
+ingress: "A help view for local marketers who want a fast answer from DBS without digging through the whole site. It puts Kaj, the internal AI chat, at the front so people can ask, get directed, and keep moving."
 points:
-  - "The hero answers why someone should come here before it explains the page."
-  - "The first line speaks to the reader’s gain, not DBS’s org chart or process."
-  - "The page shows what is in it for each audience: marketers, brand, IT, management, and new joiners."
-  - "The hook leads into the latest outcomes, so the value is obvious before the details."
-  - "The page still stays scan-first and real, with no filler or generic marketing copy."
+  - "The page offers Kaj as an AI chat for local marketers, not another static help page."
+  - "It answers common DBS questions fast, so people do not need to hunt through the site or ask around."
+  - "The chat is framed as an internal guide for market teams, not a customer-facing bot."
+  - "It helps people get to the right owner, process, or update without starting from zero."
+  - "It stays inside the DBS website and supports the wider org with one clear next step."
 cycle: 2
 pair: "quan"
 authors: ["Quan"]
 ---
 
-A DBS front door with a sharper hook for people who are deciding whether to open it. It promises the answer to “what is in it for me” up front, so the page earns the click before it asks for attention.
+A help view for local marketers who want a fast answer from DBS without digging through the whole site. It puts Kaj, the internal AI chat, at the front so people can ask, get directed, and keep moving.
 
-- The hero answers why someone should come here before it explains the page.
-- The first line speaks to the reader’s gain, not DBS’s org chart or process.
-- The page shows what is in it for each audience: marketers, brand, IT, management, and new joiners.
-- The hook leads into the latest outcomes, so the value is obvious before the details.
-- The page still stays scan-first and real, with no filler or generic marketing copy.
+- The page offers Kaj as an AI chat for local marketers, not another static help page.
+- It answers common DBS questions fast, so people do not need to hunt through the site or ask around.
+- The chat is framed as an internal guide for market teams, not a customer-facing bot.
+- It helps people get to the right owner, process, or update without starting from zero.
+- It stays inside the DBS website and supports the wider org with one clear next step.
 
 ## Purpose
-- Strengthen the top of the DBS page so it earns the click.
-- Make the “what is in it for me” value clear before any deeper content.
-- Keep it as a real internal website, not a promo page.
+- Add a page or section for Kaj, the internal AI chat for local marketers.
+- Use it as a fast way to get answers, guidance, or the right route into DBS.
+- Make it feel like a useful internal tool, not a generic chatbot.
 
-## What the hook has to do
-- Say why a colleague should open the page.
-- Show that the page is useful to people outside DBS.
-- Make the business value feel immediate.
-- Lead naturally into the outcome cards and section cards below.
+## What the Kaj view has to do
+- Let local marketers ask questions in plain language.
+- Help them find the right owner, process, or page quickly.
+- Reduce the need to search through the site for every small task.
+- Make clear that Kaj is an internal helper for DBS and local marketing teams.
+- Support the “what is in it for me” hook by giving people a direct way to get help.
 
-## Hero direction
-- The hero headline should promise a direct benefit.
-- The intro should answer “why should I come here?” in plain language.
-- It should speak to the reader’s role or need, not to DBS internally.
-- It can mention that the page helps people see what changed, what it means, and who to ask, but it should do so as a benefit.
+## Suggested structure
+1. A short hook that says Kaj is the fastest way to get help from DBS.
+2. A brief line that says who it is for: local marketers and other internal users.
+3. The chat entry point or prompt.
+4. A few example questions or common tasks.
+5. A fallback route to the right DBS owner or knowledge page.
 
-## Audience promise
-- Marketers: see what changed and what to do next.
-- Brand: see whether the change fits the message and market.
-- IT: see what is live and what is moving.
-- Management: see business impact without digging.
-- New joiners: see where to start and who owns what.
+## Content rules
+- Use the name Kaj.
+- Keep the language plain and internal.
+- Make it clear this is for people inside the organisation.
+- Avoid customer-service language or marketing fluff.
+- If the chat does not know, it should point to the right owner or page.
+- Keep content real; do not invent capabilities that are not agreed.
 
 ## Look and feel
-- Keep the same white, airy, navy, left-aligned visual language.
-- Keep the page feeling like a real internal website.
-- One strong hook, then scan-first content below.
-- Do not add decorative marketing language that does not help the reader.
+- Same DBS visual language: white, airy, navy headings, left-aligned text.
+- Should feel like a working internal tool, not a toy bot.
+- Use cards or short prompts that are easy to scan.
+- If there is a primary action, it can be a round orange pill.
+- Keep it simple enough to understand in one glance.
 
 ## Scope limits
-- Do not turn the page into a landing page for customers.
-- Do not change the whole site structure.
-- Do not invent new content categories.
-- Do not replace the outcomes with slogans.
-- Keep the hook short enough to read in one glance.
+- Do not turn Kaj into a full support centre.
+- Do not replace the main site navigation.
+- Do not invent automation or integrations not already agreed.
+- Do not make it customer-facing.
+- Keep it focused on answering the quick question: what is in it for me?
