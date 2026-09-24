@@ -18,22 +18,22 @@ data:
     primaryAction: { label: Open knowledge base, href: "#" }
     secondaryAction: { label: See this week's priorities, href: "#areas" }
   kpis:
-    - label: Weekly experiments shipped
-      value: "4"
-      context: Three on husqvarna.com, one in My Husqvarna.
+    - label: Checkout starts up 11%
+      value: "11%"
+      context: Sticky navigation kept key actions visible on mobile product pages without reducing product-detail reading.
       detail: Optimise · EU
-    - label: Revenue-impacting changes live
-      value: "2"
-      context: Sticky navigation and support-path updates are now visible to customers.
-      detail: Scale · US
-    - label: Releases awaiting IT handoff
-      value: "3"
-      context: Items in Sitecore and Dynamics need confirmed deployment windows.
-      detail: Scale · PAC
-    - label: Areas with fresh updates
-      value: "5"
-      context: Every section below carries this week's current owner and frequency.
-      detail: Weekly
+    - label: Spare-parts starts up 14% in EU
+      value: "14%"
+      context: A clearer route from product pages into Support moved more customers into spare-parts journeys.
+      detail: Scale · EU
+    - label: 38 seconds faster to a first answer
+      value: "38s"
+      context: Conversational support concepts helped visitors reach a relevant support path sooner in moderated testing.
+      detail: Explore · EU
+    - label: Chainsaw engagement up 9%
+      value: "9%"
+      context: Clearer proof points on category pages increased onward clicks to detail pages for tree care professionals.
+      detail: Optimise · US
   areasTitle: Areas
   areasSummary: Five scan-first areas combine the dashboard, the working wall of updates and the owner board into one front door.
   areas:
@@ -178,7 +178,7 @@ data:
           track: Optimise
           bu: PAC
   pipelineTitle: Release pipeline and follow-up work
-  pipelineSummary: The page opens on KPIs, but it still needs a clear route into release work, ticket status and knowledge support.
+  pipelineSummary: The page opens on outcomes first, then gives a clear route into release work, ticket status and knowledge support.
   pipelineRows:
     - item: Support content component rollout
       track: Scale
@@ -290,6 +290,6 @@ data:
       - { label: Contact DBS, href: "#" }
 ```
 
-The winning ideas converged on one airy front door: KPI-first, one card per area, clear owners, frequencies and contact paths. I kept Team Jonas's DBS name and KPI opening over .comni, folded Team Amanda's five-content-layer idea into the area cards and release section, and kept Team Jennie's owner board as a contact layer rather than making the page a people directory alone. I supplied the post bodies, names, dates and statuses so the whole picture could be judged as a finished internal page.
+This refinement keeps the page structure and every existing post, owner, frequency, track and BU, but lifts Team Jonas’s KPI-first idea into outcome-first result cards. I kept the calmer one-page front door from Team Amanda and the existing owner path, and did not add Team Madde or Team Jennie’s structures as separate layers because the page already resolves them inside the areas and contacts.
 
 <!-- merged: dbs-portal sprint 1 — Team Jonas, Team Madde, Team Amanda, Team Jennie -->
