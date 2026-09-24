@@ -29,7 +29,10 @@ export default function DbsPortalContacts({ title, summary, contacts }) {
             </div>
             <div className="contact-name">{contact.name}</div>
             <div className="contact-role">{contact.role}</div>
-            <div className="contact-detail">{contact.detail}</div>
+            <p className="contact-helps">
+              <span className="contact-helps-label">Can help with</span>
+              {contact.detail}
+            </p>
             <div className="meta-row">
               {contact.meta.map((item) => (
                 <span key={item} className="tag tag-muted">{item}</span>

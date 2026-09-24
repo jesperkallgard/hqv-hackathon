@@ -22,7 +22,7 @@ export default function DbsPortalHero({ hero, kaj }) {
     <section className="hero hero-centred" id="overview">
       <div className="hero-copy">
         <h1>{hero.title}</h1>
-        <p className="hero-intro">{hero.intro}</p>
+        {hero.intro ? <p className="hero-intro">{hero.intro}</p> : null}
       </div>
 
       <form className="hero-search" action={kaj?.action?.href ?? "#kaj"}>
@@ -41,6 +41,8 @@ export default function DbsPortalHero({ hero, kaj }) {
           {kaj?.action?.label ?? "Ask Kaj"}
         </button>
       </form>
+
+      {kaj?.refuses ? <p className="hero-limit">{kaj.refuses}</p> : null}
 
       {kaj?.chips?.length ? (
         <div className="chip-row chip-row-centred">

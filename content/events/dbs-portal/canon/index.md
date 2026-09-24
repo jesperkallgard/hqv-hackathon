@@ -23,12 +23,27 @@ data:
 ```
 
 ```block
+type: DbsPortalRouting
+data:
+  question: What are you interested in seeing on this page?
+  options:
+  - label: Economics
+    href: '#kpis'
+  - label: Feature releases
+    href: '#recent'
+  - label: Who to contact
+    href: /dbs-portal/live/contacts
+  - label: KPIs
+    href: '#kpis'
+  - label: What changed
+    href: '#feed'
+```
+
+```block
 type: DbsPortalHero
 data:
   hero:
     title: What DBS changed on husqvarna.com, and what it meant
-    intro: 'One page for the people outside DBS who need the picture fast: what changed on husqvarna.com,
-      what is in progress, what kind of post to expect here, and who keeps each part current.'
     primaryAction:
       label: Ask Kaj
       href: '#kaj'
@@ -43,8 +58,8 @@ data:
       href: '#'
   kaj:
     title: Kaj
-    body: Kaj is the internal AI chat for quick questions about DBS, the right owner, and where to go
-      next.
+    body: Ask one vague question. Kaj answers what it can, and when it cannot it names the owner and the
+      next step instead of guessing.
     prompt: Ask about a market change, a release dependency, an experiment result, or who owns a topic.
     chips:
     - Who owns Support in PAC?
@@ -54,6 +69,31 @@ data:
     action:
       label: Start a question
       href: '#'
+    refuses: It does not answer for other teams' systems, and it says so rather than improvising.
+```
+
+```block
+type: DbsPortalRecent
+data:
+  title: Recently added
+  summary: The newest thing first, and what came just before it.
+  featured:
+    title: Sticky navigation moved checkout starts by 11%
+    body: Markets can use the mobile pattern on priority product families without losing product-detail
+      reading.
+    author: Sofia Marin
+    date: 12 Mar 2025
+  items:
+  - title: Spare-parts starts are up 14% in EU
+    body: A clearer route from product pages into Support is moving more customers into help journeys
+      before they drop off.
+    author: Lena Kovacs
+    date: 11 Mar 2025
+  - title: Revenue impact is being reviewed with the March readout
+    body: The start page now surfaces revenue as a named business question so management can see where
+      outcome reading is still open.
+    author: Hannah Petrov
+    date: 31 Mar 2025
 ```
 
 ```block

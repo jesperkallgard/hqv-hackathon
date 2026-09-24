@@ -26,8 +26,8 @@ data:
 type: DbsPortalContacts
 data:
   title: Who to ask
-  summary: Each area has one clear owner person, plus role context, so colleagues can reach the right
-    person without digging through a wiki.
+  summary: Everyone here says what they can help with, so you can find help without knowing the org chart
+    first.
   contacts:
   - name: Lena Kovacs
     role: Scale lead

@@ -1025,3 +1025,156 @@
   max-width: 40rem;
   margin-inline: auto;
 }
+
+/* The first question, and the answer that chooses what opens first. */
+.canvas .routing {
+  text-align: center;
+  padding-block: var(--space-2);
+}
+
+.canvas .routing-question {
+  margin: 0 0 var(--space-3);
+  font-weight: 650;
+}
+
+.canvas .hero-limit {
+  margin: var(--space-3) auto 0;
+  max-width: 44rem;
+  font-size: var(--text-sm);
+  color: var(--muted, inherit);
+}
+
+/* Recently added: the newest thing gets the room, the rest sit beside it. */
+.canvas .recent-featured {
+  margin-top: var(--space-5);
+  padding: var(--space-5);
+  border: 0.0625rem solid var(--rule);
+  border-radius: 0.75rem;
+  background: var(--surface);
+}
+
+.canvas .recent-kicker {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted, inherit);
+}
+
+.canvas .recent-featured h3 {
+  margin: 0;
+  font-size: var(--text-xl);
+}
+
+.canvas .recent-body {
+  margin: var(--space-3) 0 0;
+  max-width: 52rem;
+}
+
+.canvas .recent-by {
+  margin: var(--space-3) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  font-size: var(--text-sm);
+  color: var(--muted, inherit);
+}
+
+.canvas .recent-rail {
+  margin-top: var(--space-4);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--space-4);
+}
+
+.canvas .recent-card {
+  padding: var(--space-4);
+  border: 0.0625rem solid var(--rule);
+  border-radius: 0.75rem;
+}
+
+.canvas .recent-card h4 {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-lg);
+}
+
+.canvas .recent-card p {
+  margin: 0;
+}
+
+/* Who to ask: what a person can help with, not only what they are called. */
+.canvas .contact-helps {
+  margin: var(--space-3) 0 0;
+  font-size: var(--text-sm);
+}
+
+.canvas .contact-helps-label {
+  display: block;
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted, inherit);
+  margin-bottom: 0.25rem;
+}
+
+/* ---- Phone. The page was laid out for a desk and read on a phone all morning.
+   Nothing here changes what is on the page, only what it does when the window
+   is narrow. */
+@media (max-width: 40rem) {
+  /* The search: a field you cannot read what you typed in is not a field. The
+     button goes under it rather than eating two thirds of the row. */
+  .canvas .hero-search {
+    flex-wrap: wrap;
+    border-radius: 1.25rem;
+    padding: 0.75rem;
+  }
+
+  .canvas .hero-search input {
+    flex: 1 1 100%;
+    order: 2;
+    padding-inline: 0.25rem;
+  }
+
+  .canvas .hero-search .search-icon {
+    order: 1;
+  }
+
+  .canvas .hero-search .button {
+    order: 3;
+    flex: 1 1 100%;
+    margin-top: 0.5rem;
+  }
+
+  /* Navigation is a row of links, not five stacked buttons filling the screen
+     before anything else on the page. */
+  .canvas .site-nav {
+    justify-content: flex-start;
+    gap: var(--space-2);
+  }
+
+  .canvas .site-nav .nav-link {
+    /* Content width, not one pill per line. The header becomes a single
+       grid column on a phone, and the links were stretching to fill it —
+       five full-width buttons before the page had said anything. */
+    flex: 0 0 auto;
+    width: auto;
+    padding-inline: 0.75rem;
+    font-size: var(--text-sm);
+  }
+
+  .canvas {
+    padding-inline: var(--space-4);
+    gap: var(--space-6);
+  }
+}
+
+/* Cards wrap by their own minimum rather than by a fixed count, so six people
+   never leave one stranded alone on a second row. */
+.canvas .contact-grid {
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+/* The caveat belongs under the examples, not between the field and them. */
+.canvas .hero-limit {
+  order: 3;
+}
