@@ -1,51 +1,49 @@
 ---
-title: "A living start page with visuals and a way to react"
-ingress: "A start page for colleagues who need the picture fast, but now it feels alive: the biggest pieces are visual, the updates include images and charts, and people can react to ideas as they move."
+title: "A start page that feels alive and answers back"
+ingress: "A start page for people who want the latest work fast, but also want the page to react to them. It mixes visual updates, role-aware sections, and a chat-style way to ask why something moved."
 points:
-  - "The page puts images, sketches, and graphs beside the updates, not in a separate place."
-  - "The design wall lets people heart concepts and add ideas, so the page is not just read-only."
-  - "The interface feels more alive and dynamic, with stronger motion and a more distinctive logo."
-  - "The biggest section stays obvious at a glance, so the page still reads fast."
-  - "The structure stays a web page with cards, air, and clear navigation, not a wiki or a dashboard maze."
+  - "Recent initiatives are shown with short comments from named people, not just raw status."
+  - "The page can adapt to the viewer’s role so people only see the areas that matter to them first."
+  - "A chat with the platform can explain status, priority, and why something was pushed up or down."
+  - "The start page stays visual, with images, graphs, sketches, and other quick scans instead of text-only blocks."
+  - "The page still reads as one clear web page with cards, air, and a biggest section that is obvious at a glance."
 cycle: 1
 pair: "amanda"
 authors: ["Jonas H", "Amanda", "Quan", "David"]
 ---
 
-A start page for colleagues who need the picture fast, but now it feels alive: the biggest pieces are visual, the updates include images and charts, and people can react to ideas as they move.
+A start page for people who want the latest work fast, but also want the page to react to them. It mixes visual updates, role-aware sections, and a chat-style way to ask why something moved.
 
-- The page puts images, sketches, and graphs beside the updates, not in a separate place.
-- The design wall lets people heart concepts and add ideas, so the page is not just read-only.
-- The interface feels more alive and dynamic, with stronger motion and a more distinctive logo.
-- The biggest section stays obvious at a glance, so the page still reads fast.
-- The structure stays a web page with cards, air, and clear navigation, not a wiki or a dashboard maze.
+- Recent initiatives are shown with short comments from named people, not just raw status.
+- The page can adapt to the viewer’s role so people only see the areas that matter to them first.
+- A chat with the platform can explain status, priority, and why something was pushed up or down.
+- The start page stays visual, with images, graphs, sketches, and other quick scans instead of text-only blocks.
+- The page still reads as one clear web page with cards, air, and a biggest section that is obvious at a glance.
 
-## What changes on the page
-- Keep the start page structure from canon, but make it more visual and more active.
-- The page should not feel like plain text blocks only.
-- Add images, graphs, sketch-like examples, or other visual evidence alongside the sections.
-- Add a design wall / concept reaction area where people can heart ideas and contribute their own.
-- Create a logo for the platform.
+## What the page should carry
+- Recent rolled-out initiatives with a short comment from a named person such as Hilda, Olivia, or Niklas.
+- A role-aware start page, so someone can land on the areas they care about most.
+- A chat-style interface for asking about status, priority, and why items were prioritised or deprioritised.
 
-## Visual content
-- Use real visual examples where possible, not decorative filler.
-- Show analytics in a visual way, not only as numbers.
-- Include sketches or concept images where they help explain an update.
-- Make the biggest section visually dominant so it is obvious what matters most.
+## Content
+- Use real initiative names where available.
+- Keep comments short and attributed to a person.
+- Show why something mattered, not just that it happened.
+- If a role-based view is used, the page should say what that role is seeing first.
+- If the page answers priority questions, it should explain the decision in plain language.
 
-## Interaction
-- Users can heart design concepts.
-- Users can contribute ideas to the design wall.
-- The page should feel more alive and dynamic through movement and interaction, but stay easy to scan.
+## Visual layer
+- Include images, charts, sketches, or other visual examples.
+- Keep it scannable.
+- Make the biggest section visually dominant.
+- Use the existing web-page style: white, airy, navy headings, left-aligned text, pill buttons, round state tags.
 
-## Design direction
-- Keep the web-page feel, not a wiki.
-- Keep one card per area.
-- Keep the white, airy, left-aligned look with navy headings.
-- Keep pill buttons and round state tags.
-- Make the UI more interesting and distinctive than a plain internal portal.
+## Interaction layer
+- Users can ask the platform why something was prioritised or deprioritised.
+- Users can ask about current status.
+- Users can move quickly between areas without feeling like they are in a wiki.
 
 ## Scope
-- Do not turn this into a separate app or a complex social network.
-- Do not add extra unrelated sections.
-- The visual layer and reaction layer should fit inside the existing page shape.
+- Keep it as one page.
+- Do not add separate products or flows.
+- Do not invent placeholder content; use real content or leave the gap visible.
