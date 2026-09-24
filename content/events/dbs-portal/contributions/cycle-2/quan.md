@@ -1,68 +1,63 @@
 ---
-title: "Start page with areas, outcomes, and one clear next step"
-ingress: "A scan-first start page for DBS people outside the team who need to see what changed, what it meant, and where to go next. It puts the biggest thing first, then lets the rest fall into a one-page route to the right owner or follow-up."
+title: "Monthly show-and-tell view for the rest of the org"
+ingress: "A DBS view for Madde’s monthly show-and-tell, aimed at the rest of the organisation. It lifts the story out of the start page and into a meeting-ready layout with the clearest updates, the business meaning, and who should be in the room next."
 points:
-  - "The page opens as a real internal website, not a wiki, with a header, short navigation, one generous content column, and a footer."
-  - "The biggest thing on the page is the top outcome card or hero, so a reader can grasp the main result at a glance."
-  - "Each section carries one clear kind of content: outcomes, areas, release pipeline, knowledge, and contacts."
-  - "Every post stays scan-first, with real owner, BU, track, and frequency visible so no one has to guess."
-  - "The page refuses filler, placeholders, and multiple versions of the same idea; every section uses only true content and one clear action."
+  - "The page is not the start page; it is a separate show-and-tell view that can be opened for the monthly meeting."
+  - "It leads with the clearest updates for the wider organisation, not the whole DBS working wall."
+  - "Each item says what changed and what it meant, so the meeting gets information rather than activity."
+  - "It names a person owner, the track, the BU, and the update frequency so the rest of the org can follow up."
+  - "It stays visual and scan-first, using cards and short sections that Madde can present without extra explanation."
 cycle: 2
 pair: "quan"
 authors: ["Quan"]
 ---
 
-A scan-first start page for DBS people outside the team who need to see what changed, what it meant, and where to go next. It puts the biggest thing first, then lets the rest fall into a one-page route to the right owner or follow-up.
+A DBS view for Madde’s monthly show-and-tell, aimed at the rest of the organisation. It lifts the story out of the start page and into a meeting-ready layout with the clearest updates, the business meaning, and who should be in the room next.
 
-- The page opens as a real internal website, not a wiki, with a header, short navigation, one generous content column, and a footer.
-- The biggest thing on the page is the top outcome card or hero, so a reader can grasp the main result at a glance.
-- Each section carries one clear kind of content: outcomes, areas, release pipeline, knowledge, and contacts.
-- Every post stays scan-first, with real owner, BU, track, and frequency visible so no one has to guess.
-- The page refuses filler, placeholders, and multiple versions of the same idea; every section uses only true content and one clear action.
+- The page is not the start page; it is a separate show-and-tell view that can be opened for the monthly meeting.
+- It leads with the clearest updates for the wider organisation, not the whole DBS working wall.
+- Each item says what changed and what it meant, so the meeting gets information rather than activity.
+- It names a person owner, the track, the BU, and the update frequency so the rest of the org can follow up.
+- It stays visual and scan-first, using cards and short sections that Madde can present without extra explanation.
 
-## What the start page has to do
-- Present DBS as a real internal website front door, not a document.
-- Let a colleague understand what changed, what it meant, and who to ask within a few seconds.
-- Make the page easy to scan without needing guidance beside it.
-- Put the most important outcome first, then support it with the rest of the page.
+## Purpose
+- Create a separate view on the DBS page for Madde’s monthly show-and-tell meeting.
+- The audience is the rest of the organisation, not just DBS.
+- This view should work as a meeting surface, not as the main start page.
+
+## What it should do
+- Surface the strongest updates worth showing to a wider audience.
+- Make the business meaning obvious quickly.
+- Help Madde present the story without having to explain the page structure.
+- Let people in the room see what changed, why it matters, and who owns it.
 
 ## Order and structure
-1. Header with the site name and a short navigation.
-2. One biggest top section: the lead outcome / hero card.
-3. Outcome cards that show what changed and what it meant.
-4. Areas section with one card per area.
-5. Release pipeline section.
-6. Follow-up work / knowledge section.
-7. Contacts section.
-8. Footer.
-
-## Look and feel
-- White page with a lot of air.
-- Navy headings.
-- Left-aligned text.
-- One generous column.
-- One innovative full-width screen treatment at the top is allowed, but the page should still feel like a website.
-- Buttons are fully round pills.
-- Primary action is orange with white text.
-- Secondary actions are outlined in navy.
-- States are small round tags, not coloured words.
+1. Short header with the view name and meeting context.
+2. A lead section with the biggest / most important update first.
+3. A small set of scan-first cards with the strongest monthly highlights.
+4. A simple follow-up section for who to talk to next.
+5. Footer or close with DBS identity.
 
 ## Content rules
-- Use real content only. No placeholder copy.
-- Keep the tone like writing for a colleague who does not work here.
-- No internal acronyms in headlines unless the acronym is already part of the site name or section name.
-- Say what changed and what it meant, not what was done.
-- Each post must show whether it is static, monthly, or weekly.
-- Every owner must be a person, never “the team”.
-- Name the track and the BU on each post.
-- Keep each area to true, concise posts that can be read at a glance.
+- Use only real content from the canon or clearly agreed show-and-tell wording.
+- Keep it understandable for people outside DBS.
+- Say what changed and what it meant, not the task that produced it.
+- Every item must show owner, track, BU, and frequency.
+- If something is monthly, say monthly.
+- Avoid internal jargon in the headlines.
+- If a detail is not known, leave it out rather than inventing it.
+
+## Look and feel
+- Same overall visual language as the DBS site.
+- White background, lots of air, navy headings, left-aligned text.
+- Cards that can be scanned in one glance.
+- Fully round pill buttons if any action is shown.
+- Use tags for status or frequency, not coloured text.
+- It should feel like a real internal website page, not a wiki section.
 
 ## Scope limits
-- Do not add a news feed, live chat, or extra engagement features unless they already exist in canon.
-- Do not invent new sections beyond the agreed page structure.
-- Do not add multiple alternate layouts or variant cards for the same content.
-- Do not turn the page into a blog, wiki, or dashboard full of small widgets.
-
-## Notes
-- If a section has nothing true to say, leave the gap visible rather than inventing copy.
-- Reuse existing phrasing and patterns before inventing new ones.
+- Do not turn this into the start page again.
+- Do not add a long timeline or every DBS update.
+- Do not add new invented metrics or fake quotes.
+- Do not make it dependent on hidden context from the start page.
+- Keep it fit for a monthly meeting hosted by Madde.
