@@ -23,6 +23,40 @@ data:
 ```
 
 ```block
+type: DbsPortalHero
+data:
+  hero:
+    title: What DBS changed on husqvarna.com, and what it meant
+    intro: 'One page for the people outside DBS who need the picture fast: what changed on husqvarna.com,
+      what is in progress, what kind of post to expect here, and who keeps each part current.'
+    primaryAction:
+      label: Ask Kaj
+      href: '#kaj'
+    secondaryAction:
+      label: Open knowledge base
+      href: '#knowledge'
+    tertiaryAction:
+      label: See the content map
+      href: '#content-map'
+    favouriteAction:
+      label: Save this start page
+      href: '#'
+  kaj:
+    title: Kaj
+    body: Kaj is the internal AI chat for quick questions about DBS, the right owner, and where to go
+      next.
+    prompt: Ask about a market change, a release dependency, an experiment result, or who owns a topic.
+    chips:
+    - Who owns Support in PAC?
+    - What is next in the release timeline?
+    - Show recent Optimise results
+    - Where do experimentation requests start?
+    action:
+      label: Start a question
+      href: '#'
+```
+
+```block
 type: DbsPortalKpis
 data:
   title: KPI cards
@@ -58,58 +92,38 @@ data:
 ```
 
 ```block
-type: DbsPortalHero
+type: DbsPortalFeed
 data:
-  hero:
-    title: What DBS changed on husqvarna.com, and what it meant
-    intro: 'One page for the people outside DBS who need the picture fast: what changed on husqvarna.com,
-      what is in progress, what kind of post to expect here, and who keeps each part current.'
-    primaryAction:
-      label: Ask Kaj
-      href: '#kaj'
-    secondaryAction:
-      label: Open knowledge base
-      href: '#knowledge'
-    tertiaryAction:
-      label: See the content map
-      href: '#content-map'
-    favouriteAction:
-      label: Save this start page
-      href: '#'
-  highlights:
+  title: What changed lately
+  summary: 'Newest first: what moved on husqvarna.com, what it meant, and who owns the follow-up.'
+  items:
   - title: Sticky navigation moved checkout starts by 11%
-    quote: Markets can use the mobile pattern on priority product families without losing product-detail
+    body: Markets can use the mobile pattern on priority product families without losing product-detail
       reading.
-    value: 11%
     status: Live
     owner: Sofia Marin
     frequency: Weekly
     track: Optimise
     bu: EU
-    measured: 12 Mar 2025
-    comparison: 12 Mar 2024
+    date: 12 Mar 2025
   - title: Spare-parts starts are up 14% in EU
-    quote: A clearer route from product pages into Support is moving more customers into help journeys
+    body: A clearer route from product pages into Support is moving more customers into help journeys
       before they drop off.
-    value: 14%
     status: Live
     owner: Lena Kovacs
     frequency: Weekly
     track: Scale
     bu: EU
-    measured: 11 Mar 2025
-    comparison: 11 Mar 2024
+    date: 11 Mar 2025
   - title: Revenue impact is being reviewed with the March readout
-    quote: The start page now surfaces revenue as a named business question so management can see where
+    body: The start page now surfaces revenue as a named business question so management can see where
       outcome reading is still open.
-    value: Open
     status: In review
     owner: Hannah Petrov
     frequency: Monthly
     track: Analytics
     bu: EU
-    measured: 31 Mar 2025
-    comparison: 31 Mar 2024
+    date: 31 Mar 2025
 ```
 
 ```block
@@ -354,24 +368,6 @@ data:
     - As needed
     - 'Owner: Vera Lund'
     items: []
-```
-
-```block
-type: DbsPortalKaj
-data:
-  kaj:
-    title: Kaj
-    body: Kaj is the internal AI chat for quick questions about DBS, the right owner, and where to go
-      next.
-    prompt: Ask about a market change, a release dependency, an experiment result, or who owns a topic.
-    chips:
-    - Who owns Support in PAC?
-    - What is next in the release timeline?
-    - Show recent Optimise results
-    - Where do experimentation requests start?
-    action:
-      label: Start a question
-      href: '#'
 ```
 
 ```block

@@ -870,3 +870,124 @@
     animation-duration: 0.01ms !important;
   }
 }
+
+/* The opening, centred, with the way in under it. Added when the room asked
+   for a start page that leads with a question box rather than a wall of
+   cards. */
+.canvas .hero-centred {
+  display: block;
+  text-align: center;
+  padding-block: var(--space-6);
+}
+
+.canvas .hero-centred .hero-copy {
+  margin-inline: auto;
+  max-width: 46rem;
+}
+
+.canvas .hero-search {
+  margin: var(--space-5) auto 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: min(42rem, 100%);
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  border: 0.0625rem solid var(--rule);
+  border-radius: 999px;
+  background: var(--surface);
+}
+
+.canvas .hero-search .search-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: none;
+  color: var(--ink-muted, currentColor);
+}
+
+.canvas .hero-search input {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 1rem;
+  padding: 0.6rem 0;
+  color: inherit;
+}
+
+.canvas .hero-search input:focus {
+  outline: none;
+}
+
+.canvas .chip-row-centred {
+  justify-content: center;
+  margin-top: var(--space-4);
+}
+
+.canvas .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* The feed: one column, newest first, read downwards. */
+.canvas .feed {
+  list-style: none;
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+}
+
+.canvas .feed-item {
+  padding-block: var(--space-4);
+  border-top: 0.0625rem solid var(--rule);
+}
+
+.canvas .feed-item:last-child {
+  border-bottom: 0.0625rem solid var(--rule);
+}
+
+.canvas .feed-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.canvas .feed-title {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.canvas .feed-body {
+  margin: 0.5rem 0 0;
+  max-width: 52rem;
+}
+
+.canvas .feed-meta {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  font-size: 0.85rem;
+  color: var(--muted, inherit);
+}
+
+/* The headline is the widest thing on the page; a 46rem measure broke it into
+   four short lines. And the bare view has no page around it, so the canvas
+   provides its own air at the top. */
+.canvas .hero-centred .hero-copy {
+  max-width: 58rem;
+}
+
+.canvas .hero-centred h1 {
+  text-wrap: balance;
+}
+
+.canvas > .site-header:first-child {
+  padding-top: var(--space-5);
+}
