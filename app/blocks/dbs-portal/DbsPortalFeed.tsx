@@ -32,9 +32,11 @@ export default function DbsPortalFeed({ title, summary, items }) {
           <p className="section-summary">{summary}</p>
         </div>
       </div>
-      <ol className="feed">
+      <ol className="feed feed-timeline">
         {items.map((item) => (
           <li key={item.title} className="feed-item">
+            <span className="feed-mark" aria-hidden="true" />
+            {item.date ? <p className="feed-when">{item.date}</p> : null}
             <div className="feed-head">
               <h3 className="feed-title">{item.title}</h3>
               <StatusTag status={item.status} />
@@ -45,7 +47,6 @@ export default function DbsPortalFeed({ title, summary, items }) {
               {item.frequency ? <span>{item.frequency}</span> : null}
               {item.track ? <span>{item.track}</span> : null}
               {item.bu ? <span>{item.bu}</span> : null}
-              {item.date ? <span className="feed-date">{item.date}</span> : null}
             </div>
           </li>
         ))}
