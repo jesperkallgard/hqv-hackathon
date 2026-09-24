@@ -4,7 +4,7 @@ ingress: "DBS gives the B2C team a quick read on the KPIs that matter now, then 
 points:
   - "It opens with a dashboard-style overview of the current KPIs before anything else."
   - "It is called DBS and is framed as an internal hub for the B2C team."
-  - "It shows follow-up work next to the KPIs so people can move from signal to action."
+  - "It makes follow-up work easy to reach, with clear navigation to how-to, step-by-step, and knowledge base content."
   - "It is organised into one card per area with names outsiders understand, including Explore, Optimize, Scale, and Support Services."
   - "It is a web page, not a wiki, with a white, airy, navy-led look and round pill buttons."
 cycle: 1
@@ -16,7 +16,7 @@ DBS gives the B2C team a quick read on the KPIs that matter now, then points str
 
 - It opens with a dashboard-style overview of the current KPIs before anything else.
 - It is called DBS and is framed as an internal hub for the B2C team.
-- It shows follow-up work next to the KPIs so people can move from signal to action.
+- It makes follow-up work easy to reach, with clear navigation to how-to, step-by-step, and knowledge base content.
 - It is organised into one card per area with names outsiders understand, including Explore, Optimize, Scale, and Support Services.
 - It is a web page, not a wiki, with a white, airy, navy-led look and round pill buttons.
 
@@ -31,7 +31,8 @@ Build the DBS internal hub for the B2C team.
 ## First screen
 - The first thing on the page is a KPI overview.
 - The page should make it easy to see what needs follow-up.
-- Follow-up items should sit close to the KPI context, not hidden away.
+- Follow-up items should be easy to reach from the top level.
+- Navigation must clearly lead to how-to, step-by-step, and knowledge base content.
 
 ## Areas
 - Use one card per area.
