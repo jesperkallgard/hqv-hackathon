@@ -1,62 +1,70 @@
 ---
-title: "Kaj, the AI chat for local marketers"
-ingress: "A help view for local marketers who want a fast answer from DBS without digging through the whole site. It puts Kaj, the internal AI chat, at the front so people can ask, get directed, and keep moving."
+title: "Start page with three highlights and Kaj in the middle"
+ingress: "A DBS start page for people who want the quick answer first. Three news highlights sit at the top, Kaj the internal AI chat sits in the middle, and the rest of the page follows with the deeper detail and owner paths."
 points:
-  - "The page offers Kaj as an AI chat for local marketers, not another static help page."
-  - "It answers common DBS questions fast, so people do not need to hunt through the site or ask around."
-  - "The chat is framed as an internal guide for market teams, not a customer-facing bot."
-  - "It helps people get to the right owner, process, or update without starting from zero."
-  - "It stays inside the DBS website and supports the wider org with one clear next step."
+  - "The page starts with three news or quote highlights that say what is new and why it matters."
+  - "Kaj, the internal AI chat, sits in the middle of the page as the main action."
+  - "The layout gives people a fast way in before the longer DBS content below."
+  - "The page is for internal users who want a quick answer, not a wiki or a PPT replacement."
+  - "The design stays scan-first and real, with one clear hook and no filler."
 cycle: 2
 pair: "quan"
 authors: ["Quan"]
 ---
 
-A help view for local marketers who want a fast answer from DBS without digging through the whole site. It puts Kaj, the internal AI chat, at the front so people can ask, get directed, and keep moving.
+A DBS start page for people who want the quick answer first. Three news highlights sit at the top, Kaj the internal AI chat sits in the middle, and the rest of the page follows with the deeper detail and owner paths.
 
-- The page offers Kaj as an AI chat for local marketers, not another static help page.
-- It answers common DBS questions fast, so people do not need to hunt through the site or ask around.
-- The chat is framed as an internal guide for market teams, not a customer-facing bot.
-- It helps people get to the right owner, process, or update without starting from zero.
-- It stays inside the DBS website and supports the wider org with one clear next step.
+- The page starts with three news or quote highlights that say what is new and why it matters.
+- Kaj, the internal AI chat, sits in the middle of the page as the main action.
+- The layout gives people a fast way in before the longer DBS content below.
+- The page is for internal users who want a quick answer, not a wiki or a PPT replacement.
+- The design stays scan-first and real, with one clear hook and no filler.
 
 ## Purpose
-- Add a page or section for Kaj, the internal AI chat for local marketers.
-- Use it as a fast way to get answers, guidance, or the right route into DBS.
-- Make it feel like a useful internal tool, not a generic chatbot.
+- Make the start page feel useful immediately to people asking “what is in it for me”.
+- Use the page as a quick entry point to DBS, not as a long presentation.
+- Put Kaj, the internal AI chat, in the centre of the experience.
 
-## What the Kaj view has to do
-- Let local marketers ask questions in plain language.
-- Help them find the right owner, process, or page quickly.
-- Reduce the need to search through the site for every small task.
-- Make clear that Kaj is an internal helper for DBS and local marketing teams.
-- Support the “what is in it for me” hook by giving people a direct way to get help.
+## Layout order
+1. Header with DBS name and short navigation.
+2. Three quote or news highlight cards at the top.
+3. Kaj AI chat bar in the middle of the page.
+4. The main DBS content below: outcomes, areas, pipeline, contacts.
+5. Footer.
 
-## Suggested structure
-1. A short hook that says Kaj is the fastest way to get help from DBS.
-2. A brief line that says who it is for: local marketers and other internal users.
-3. The chat entry point or prompt.
-4. A few example questions or common tasks.
-5. A fallback route to the right DBS owner or knowledge page.
+## What the top highlights should do
+- Show three short items that feel like news, quotes, or highlights.
+- Each one should say what changed and what it meant.
+- They should be the first thing people notice.
+- They should give a reason to keep scrolling.
+- Keep them short enough to scan at a glance.
+
+## What Kaj should do
+- Act as the quick question box for internal users.
+- Help people ask for the right route, owner, or page.
+- Make the page feel active and helpful rather than static.
+- Be clearly named as Kaj, the internal AI chat.
+- Sit visually between the highlights and the deeper content.
 
 ## Content rules
-- Use the name Kaj.
-- Keep the language plain and internal.
-- Make it clear this is for people inside the organisation.
-- Avoid customer-service language or marketing fluff.
-- If the chat does not know, it should point to the right owner or page.
-- Keep content real; do not invent capabilities that are not agreed.
+- Use real content only.
+- Keep the writing for colleagues, not customers.
+- Avoid internal acronyms in headlines unless necessary.
+- Say what changed and what it meant.
+- Keep owner, track, BU, and frequency visible where relevant.
+- Do not invent features or capabilities that are not agreed.
 
 ## Look and feel
-- Same DBS visual language: white, airy, navy headings, left-aligned text.
-- Should feel like a working internal tool, not a toy bot.
-- Use cards or short prompts that are easy to scan.
-- If there is a primary action, it can be a round orange pill.
-- Keep it simple enough to understand in one glance.
+- White, airy, navy headings, left-aligned text.
+- Real internal website, not a wiki.
+- One generous column.
+- Cards that can be read in a glance.
+- Primary action can be a round orange pill if needed.
+- The whole page should feel like a sharp internal front door.
 
 ## Scope limits
-- Do not turn Kaj into a full support centre.
-- Do not replace the main site navigation.
-- Do not invent automation or integrations not already agreed.
-- Do not make it customer-facing.
-- Keep it focused on answering the quick question: what is in it for me?
+- Do not turn the page into a presentation deck.
+- Do not replace the existing DBS content structure.
+- Do not add more than three opening highlights.
+- Do not make Kaj customer-facing.
+- Keep the page focused on quick value and easy entry.
