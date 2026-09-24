@@ -1,10 +1,8 @@
 /**
- * Page-level component that renders the full internal site with header, hero, feed-first content, owner directory, working rules, and footer.
+ * Page-level component for the finished front door with header, intro, four fixed-entry cards, and footer.
  */
 import React from "react";
-import FeedList from "./FeedList";
-import OwnersDirectory from "./OwnersDirectory";
-import HowWeWorkList from "./HowWeWorkList";
+import FrontDoorCards from "./FrontDoorCards";
 
 export default function WhatsChangedPage({
   siteName,
@@ -12,9 +10,7 @@ export default function WhatsChangedPage({
   nav = [],
   hero,
   primaryAction,
-  feed,
-  owners,
-  waysOfWorking,
+  frontDoor,
   footer,
 }) {
   return (
@@ -58,9 +54,7 @@ export default function WhatsChangedPage({
               </div>
             </section>
 
-            <FeedList {...feed} />
-            <OwnersDirectory {...owners} />
-            <HowWeWorkList {...waysOfWorking} />
+            <FrontDoorCards {...frontDoor} />
           </div>
         </div>
       </main>
