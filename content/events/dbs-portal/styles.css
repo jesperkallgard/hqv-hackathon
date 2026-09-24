@@ -11,9 +11,9 @@
   --text-sm: 0.9375rem;
   --text-base: 1rem;
   --text-lg: 1.125rem;
-  --text-xl: 1.5rem;
-  --text-2xl: 2.25rem;
-  --text-3xl: 3.25rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.875rem;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
@@ -72,29 +72,29 @@
   margin: 0;
   font-family: var(--font-heading);
   color: var(--heading-ink);
-  line-height: 1.1;
+  line-height: 1.08;
 }
 
 .canvas h1 {
-  font-size: clamp(var(--text-2xl), 4vw, var(--text-3xl));
+  font-size: clamp(2.25rem, 4vw, var(--text-3xl));
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
 }
 
 .canvas h2 {
-  font-size: clamp(1.75rem, 2.4vw, 2.25rem);
+  font-size: clamp(1.5rem, 2.2vw, var(--text-2xl));
   font-weight: 700;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.028em;
 }
 
 .canvas h3 {
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.018em;
 }
 
 .canvas h4 {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   font-weight: 700;
 }
 
@@ -155,9 +155,9 @@
 }
 
 .canvas .page {
-  width: min(100%, 90rem);
+  width: min(100%, 88rem);
   margin: 0 auto;
-  padding: var(--space-6) var(--space-5) var(--space-7);
+  padding: var(--space-6) var(--space-5) var(--space-8);
 }
 
 .canvas .site-header {
@@ -217,34 +217,32 @@
 
 .canvas .main-content {
   display: grid;
-  gap: var(--space-7);
+  gap: var(--space-8);
   padding-top: var(--space-6);
 }
 
 .canvas .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(18rem, 0.9fr);
   gap: var(--space-6);
-  /* Both columns start at the top. Bottom-aligning them worked while the KPI
-     strip was one row; at two rows it pushed the headline halfway down the
-     page and left a hole above it. */
-  align-items: start;
 }
 
 .canvas .hero-copy {
   display: grid;
   gap: var(--space-4);
+  max-width: 48rem;
 }
 
 .canvas .hero-intro {
   font-size: var(--text-lg);
-  max-width: 48rem;
+  color: var(--ink);
+  max-width: 44rem;
 }
 
 .canvas .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);
+  padding-top: var(--space-2);
 }
 
 .canvas .button {
@@ -310,12 +308,7 @@
 
 .canvas .kpi-strip {
   display: grid;
-  /* The strip sits inside the hero's right column, which is at most about
-     430px wide. Four fixed columns made each card 95px, and the labels broke
-     mid-word — "experime nts", "husqvar na.com". Let the cards set their own
-     minimum instead: they take two columns beside the hero and four if they
-     are ever given the full width. */
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   gap: var(--space-4);
 }
 
@@ -331,13 +324,13 @@
   display: grid;
   gap: var(--space-2);
   align-content: start;
-  min-height: 10.5rem;
+  min-height: 0;
 }
 
 .canvas .kpi-label {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--muted);
+  color: var(--heading-ink);
 }
 
 .canvas .kpi-value {
@@ -351,6 +344,7 @@
 .canvas .kpi-context {
   font-size: var(--text-sm);
   color: var(--ink);
+  max-width: 28rem;
 }
 
 .canvas .kpi-detail {
@@ -402,6 +396,10 @@
 .canvas .area-card-copy {
   display: grid;
   gap: var(--space-2);
+}
+
+.canvas .area-card-copy p {
+  font-size: var(--text-sm);
 }
 
 .canvas .area-meta,
@@ -605,16 +603,13 @@
 }
 
 @media (max-width: 64rem) {
-  .canvas .hero,
-  .canvas .split-panel,
   .canvas .area-grid,
-  .canvas .contact-grid,
-  .canvas .kpi-strip {
+  .canvas .contact-grid {
     grid-template-columns: 1fr 1fr;
   }
 
-  .canvas .hero {
-    align-items: start;
+  .canvas .split-panel {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -626,8 +621,6 @@
   .canvas .site-header,
   .canvas .section-heading,
   .canvas .area-card-header,
-  .canvas .hero,
-  .canvas .split-panel,
   .canvas .site-footer {
     grid-template-columns: 1fr;
     display: grid;
