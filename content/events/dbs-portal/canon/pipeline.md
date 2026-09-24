@@ -6,19 +6,14 @@ title: Release pipeline
 type: DbsPortalHeader
 data:
   title: DBS
-  summary: DBS — Digital Business Solutions — owns building and optimising husqvarna.com on Sitecore.
-    This start page helps market teams, brand, IT, management and new joiners see what changed, what it
-    means, and who to ask.
   nav:
-  - label: Start page
-    href: /dbs-portal/live
   - label: Areas
     href: /dbs-portal/live/areas
-  - label: Release pipeline
+  - label: Releases
     href: /dbs-portal/live/pipeline
   - label: Activities
     href: /dbs-portal/live/activities
-  - label: Contacts
+  - label: Who to ask
     href: /dbs-portal/live/contacts
 ```
 

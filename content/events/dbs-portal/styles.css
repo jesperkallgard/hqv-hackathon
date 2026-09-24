@@ -1381,3 +1381,82 @@
   letter-spacing: -0.035em;
   line-height: 1.02;
 }
+
+/* ---- The bar.
+
+   It was five outlined pills and a paragraph about the team — a section, not a
+   navigation. A start page's bar should be readable in one glance and take no
+   more room than it needs: the name, and four places to go.
+
+   The links stop being buttons. A button is for doing something; these are for
+   going somewhere, and outlining all five made the page's one real action —
+   Start a question — compete with the furniture. */
+.canvas .site-header {
+  align-items: center;
+  padding-bottom: var(--space-4);
+}
+
+.canvas .site-title {
+  font-size: var(--text-lg);
+  letter-spacing: -0.01em;
+}
+
+.canvas .site-nav {
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.canvas .site-nav .nav-link {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  min-height: 0;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 0.125rem solid transparent;
+  padding-bottom: 0.15rem;
+}
+
+.canvas .site-nav .nav-link:hover,
+.canvas .site-nav .nav-link.is-active {
+  color: var(--heading-ink);
+  background: none;
+  border-bottom-color: var(--accent);
+}
+
+@media (max-width: 40rem) {
+  .canvas .site-nav {
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  .canvas .site-nav .nav-link {
+    width: auto;
+    padding: 0 0 0.15rem;
+    font-size: var(--text-sm);
+  }
+}
+
+/* The date leads each recent item, as a tag in the one accent the site uses.
+   A wash rather than a fill: it marks when without shouting over the primary
+   action, which is the only thing on the page allowed to be solid orange. */
+.canvas .date-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+  font-size: var(--text-xs);
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.canvas .recent-by {
+  align-items: center;
+  gap: 0.5rem 0.9rem;
+}

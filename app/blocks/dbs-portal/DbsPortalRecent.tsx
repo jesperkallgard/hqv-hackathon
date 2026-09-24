@@ -22,8 +22,8 @@ export default function DbsPortalRecent({ title, summary, featured, items }) {
         <h3>{featured.title}</h3>
         <p className="recent-body">{featured.body}</p>
         <p className="recent-by">
+          {featured.date ? <span className="date-tag">{featured.date}</span> : null}
           {featured.author ? <span className="owner-line">By {featured.author}</span> : null}
-          {featured.date ? <span>{featured.date}</span> : null}
         </p>
       </article>
 
@@ -33,8 +33,8 @@ export default function DbsPortalRecent({ title, summary, featured, items }) {
             <h4>{item.title}</h4>
             <p>{item.body}</p>
             <p className="recent-by">
+              {item.date ? <span className="date-tag">{item.date}</span> : null}
               {item.author ? <span className="owner-line">By {item.author}</span> : null}
-              {item.date ? <span>{item.date}</span> : null}
             </p>
           </article>
         ))}
