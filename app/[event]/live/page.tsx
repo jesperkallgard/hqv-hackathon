@@ -34,7 +34,14 @@ export default async function LivePage({ params }: { params: Promise<{ event: st
   // Prose is a block too: the parser wraps every paragraph in a Post. Keeping
   // them here would put the commentary back on the page, which is the thing
   // this view exists to get away from.
-  const blocks = docs.flatMap((doc) => doc.blocks).filter((block) => block.type !== "Post");
+  // The front door, not every page of it. Once the prototype was split across
+  // several documents this rendered all of them end to end — five headers, five
+  // footers, one below the other — which reads as a broken page rather than a
+  // long one.
+  const front = docs.some((doc) => doc.slug === "index")
+    ? docs.filter((doc) => doc.slug === "index")
+    : docs;
+  const blocks = front.flatMap((doc) => doc.blocks).filter((block) => block.type !== "Post");
 
   // The prototype's baseline lives on `.canvas`: the type scale, the space
   // scale, and what plain markup does with them. Without it a merged component

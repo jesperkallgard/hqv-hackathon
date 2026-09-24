@@ -181,6 +181,14 @@ body {
    is for the site's text; the prototype inside decides its own width — a
    centred 760px measure, edge to edge, three columns — in the stylesheet the
    hackathon wrote. Nothing here narrows it. */
+/* 100vw counts the scrollbar, so a full-bleed block is a scrollbar wider than
+   the window and everything inside it sits a few pixels off the left edge —
+   which looks like a broken page rather than a wide one. A stable gutter makes
+   the two agree. */
+html {
+  scrollbar-gutter: stable;
+}
+
 .result .bleed {
   width: 100vw;
   margin-left: calc(50% - 50vw);

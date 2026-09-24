@@ -7,10 +7,10 @@ type: DbsPortalHeader
 data:
   title: DBS
   summary: DBS — Digital Business Solutions — owns building and optimising husqvarna.com on Sitecore.
-    This front door helps market teams, brand, IT, management and new joiners see what changed, what it
+    This start page helps market teams, brand, IT, management and new joiners see what changed, what it
     means, and who to ask.
   nav:
-  - label: Front door
+  - label: Start page
     href: /dbs-portal
   - label: Areas
     href: /dbs-portal/canon/areas

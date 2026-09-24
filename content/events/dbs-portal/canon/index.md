@@ -7,10 +7,10 @@ type: DbsPortalHeader
 data:
   title: DBS
   summary: DBS — Digital Business Solutions — owns building and optimising husqvarna.com on Sitecore.
-    This front door helps market teams, brand, IT, management and new joiners see what changed, what it
+    This start page helps market teams, brand, IT, management and new joiners see what changed, what it
     means, and who to ask.
   nav:
-  - label: Front door
+  - label: Start page
     href: /dbs-portal
   - label: Areas
     href: /dbs-portal/canon/areas
@@ -23,10 +23,45 @@ data:
 ```
 
 ```block
+type: DbsPortalKpis
+data:
+  title: KPI cards
+  summary: Every number is dated so markets, brand and management can read it in context.
+  kpis:
+  - label: Checkout starts up 11%
+    value: 11%
+    context: Sticky navigation kept key actions visible on mobile product pages without reducing product-detail
+      reading.
+    detail: Optimise · EU
+    measured: 12 Mar 2025
+    comparison: 12 Mar 2024
+  - label: Spare-parts starts up 14% in EU
+    value: 14%
+    context: A clearer route from product pages into Support moved more customers into spare-parts journeys.
+    detail: Scale · EU
+    measured: 11 Mar 2025
+    comparison: 11 Mar 2024
+  - label: 38 seconds faster to a first answer
+    value: 38s
+    context: Conversational support concepts helped visitors reach a relevant support path sooner in moderated
+      testing.
+    detail: Explore · EU
+    measured: 7 Mar 2025
+    comparison: 15 Feb 2025
+  - label: Chainsaw engagement up 9%
+    value: 9%
+    context: Clearer proof points on category pages increased onward clicks to detail pages for tree care
+      professionals.
+    detail: Optimise · US
+    measured: 10 Mar 2025
+    comparison: 10 Mar 2024
+```
+
+```block
 type: DbsPortalHero
 data:
   hero:
-    title: What content belongs on the DBS front door
+    title: What content belongs on the DBS start page
     intro: 'One page for the people outside DBS who need the picture fast: what changed on husqvarna.com,
       what is in progress, what kind of post to expect here, and who keeps each part current.'
     primaryAction:
@@ -78,44 +113,9 @@ data:
 ```
 
 ```block
-type: DbsPortalKpis
-data:
-  title: KPI cards
-  summary: Every number is dated so markets, brand and management can read it in context.
-  kpis:
-  - label: Checkout starts up 11%
-    value: 11%
-    context: Sticky navigation kept key actions visible on mobile product pages without reducing product-detail
-      reading.
-    detail: Optimise · EU
-    measured: 12 Mar 2025
-    comparison: 12 Mar 2024
-  - label: Spare-parts starts up 14% in EU
-    value: 14%
-    context: A clearer route from product pages into Support moved more customers into spare-parts journeys.
-    detail: Scale · EU
-    measured: 11 Mar 2025
-    comparison: 11 Mar 2024
-  - label: 38 seconds faster to a first answer
-    value: 38s
-    context: Conversational support concepts helped visitors reach a relevant support path sooner in moderated
-      testing.
-    detail: Explore · EU
-    measured: 7 Mar 2025
-    comparison: 15 Feb 2025
-  - label: Chainsaw engagement up 9%
-    value: 9%
-    context: Clearer proof points on category pages increased onward clicks to detail pages for tree care
-      professionals.
-    detail: Optimise · US
-    measured: 10 Mar 2025
-    comparison: 10 Mar 2024
-```
-
-```block
 type: DbsPortalContentMap
 data:
-  title: Content the DBS front door carries
+  title: Content the DBS start page carries
   summary: A named list of real content types so colleagues can see what belongs here, what each part
     is for, who keeps it current, and how often it changes.
   contentMap:
@@ -389,6 +389,6 @@ data:
 ```
 
 
-This sprint keeps the existing front door and all current sections, then adds one named content map that makes the site’s post types explicit: Team Amanda’s owner-and-frequency rule, Team Anton’s concrete buckets and Kaj entry, Team Morten’s outcome-led content families, and Team Erkan’s tagged post types all land there. I kept Team Hilda’s track logic inside the existing Areas section rather than collapsing the page to only three buckets, and took Team Quan’s argument that KPI proof points should stay high on the page without replacing the broader front-door structure.
+This sprint keeps the existing start page and all current sections, then adds one named content map that makes the site’s post types explicit: Team Amanda’s owner-and-frequency rule, Team Anton’s concrete buckets and Kaj entry, Team Morten’s outcome-led content families, and Team Erkan’s tagged post types all land there. I kept Team Hilda’s track logic inside the existing Areas section rather than collapsing the page to only three buckets, and took Team Quan’s argument that KPI proof points should stay high on the page without replacing the broader front-door structure.
 
 <!-- merged: dbs-portal sprint 3 — Team Amanda, Team Morten, Team Hilda, Team Erkan, Team Anton, Team Quan -->
