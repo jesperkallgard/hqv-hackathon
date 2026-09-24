@@ -25,11 +25,11 @@ export default function DbsPortalHero({ hero, kaj }) {
         {hero.intro ? <p className="hero-intro">{hero.intro}</p> : null}
       </div>
 
-      <p className="hero-ai-badge">Kaj · AI assistant</p>
+      <p className="hero-ai-badge">CAI · AI assistant</p>
 
       <form className="hero-search" action={kaj?.action?.href ?? "#kaj"}>
         <label className="visually-hidden" htmlFor="ask-kaj">
-          {kaj?.prompt ?? "Ask Kaj"}
+          {kaj?.prompt ?? "Ask CAI"}
         </label>
         <SearchIcon />
         <input
@@ -40,7 +40,7 @@ export default function DbsPortalHero({ hero, kaj }) {
           placeholder="What are you looking for?"
         />
         <button type="submit" className="button button-primary">
-          {kaj?.action?.label ?? "Ask Kaj"}
+          {kaj?.action?.label ?? "Ask CAI"}
         </button>
       </form>
 

@@ -23,7 +23,7 @@ data:
   hero:
     title: Be the answer everywhere.
     primaryAction:
-      label: Ask Kaj
+      label: Ask CAI
       href: '#kaj'
     secondaryAction:
       label: Open knowledge base
@@ -35,8 +35,8 @@ data:
       label: Save this start page
       href: '#'
   kaj:
-    title: Kaj
-    body: Ask one vague question. Kaj answers what it can, and when it cannot it names the owner and the
+    title: CAI
+    body: Ask one vague question. CAI answers what it can, and when it cannot it names the owner and the
       next step instead of guessing.
     prompt: Ask about a market change, a release dependency, an experiment result, or who owns a topic.
     chips:
@@ -223,7 +223,7 @@ data:
 ```block
 type: DbsPortalCai
 data:
-  title: Kaj
+  title: CAI
   exchange:
     turns:
     - who: them
@@ -244,11 +244,11 @@ data:
     - Send this to Sofia
     - See the release pipeline
     - Ask something else
-    limit: Kaj does not answer for other teams' systems. When a question needs another source, it says
+    limit: CAI does not answer for other teams' systems. When a question needs another source, it says
       so and points there.
 ```
 
 
-This sprint keeps the existing start page and all current sections, then adds one named content map that makes the site’s post types explicit: Team Amanda’s owner-and-frequency rule, Team Anton’s concrete buckets and Kaj entry, Team Morten’s outcome-led content families, and Team Erkan’s tagged post types all land there. I kept Team Hilda’s track logic inside the existing Areas section rather than collapsing the page to only three buckets, and took Team Quan’s argument that KPI proof points should stay high on the page without replacing the broader front-door structure.
+This sprint keeps the existing start page and all current sections, then adds one named content map that makes the site’s post types explicit: Team Amanda’s owner-and-frequency rule, Team Anton’s concrete buckets and CAI entry, Team Morten’s outcome-led content families, and Team Erkan’s tagged post types all land there. I kept Team Hilda’s track logic inside the existing Areas section rather than collapsing the page to only three buckets, and took Team Quan’s argument that KPI proof points should stay high on the page without replacing the broader front-door structure.
 
 <!-- merged: dbs-portal sprint 3 — Team Amanda, Team Morten, Team Hilda, Team Erkan, Team Anton, Team Quan -->
