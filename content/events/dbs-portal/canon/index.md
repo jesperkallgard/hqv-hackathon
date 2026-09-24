@@ -9,16 +9,17 @@ data:
   summary: DBS — Digital Business Solutions — owns building and optimising husqvarna.com on Sitecore. This front door helps market teams, brand, IT, management and new joiners see what changed, what it means, and who to ask.
   nav:
     - { label: Overview, href: "#overview" }
+    - { label: Content, href: "#content-map" }
     - { label: Areas, href: "#areas" }
     - { label: Release timeline, href: "#pipeline" }
     - { label: Show and tell, href: "#show-and-tell" }
     - { label: Contacts, href: "#contacts" }
   hero:
-    title: What DBS changed on husqvarna.com this week
-    intro: "One page for the people outside DBS who need the picture fast: what is live, what is moving next, what it means for their market, and who owns the follow-up."
+    title: What content belongs on the DBS front door
+    intro: "One page for the people outside DBS who need the picture fast: what changed on husqvarna.com, what is in progress, what kind of post to expect here, and who keeps each part current."
     primaryAction: { label: Ask Kaj, href: "#kaj" }
     secondaryAction: { label: Open knowledge base, href: "#knowledge" }
-    tertiaryAction: { label: See this week's priorities, href: "#areas" }
+    tertiaryAction: { label: See the content map, href: "#content-map" }
     favouriteAction: { label: Save this start page, href: "#" }
   highlights:
     - title: Sticky navigation moved checkout starts by 11%
@@ -103,6 +104,198 @@ data:
       reading: Exit rate remains under review after internal search on support content.
       measured: 8 Mar 2025
       comparison: 1 Mar 2025
+  contentMapTitle: Content the DBS front door carries
+  contentMapSummary: A named list of real content types so colleagues can see what belongs here, what each part is for, who keeps it current, and how often it changes.
+  contentMap:
+    - name: What’s new
+      purpose: Tell colleagues what changed and why it matters.
+      owner: Rosa Lindberg
+      frequency: Weekly or monthly
+      tags:
+        - Updates
+        - Weekly or monthly
+        - "Owner: Rosa Lindberg"
+      items:
+        - title: Support entry points reduced drop-off in spare parts journeys
+          status: Live
+          body: A clearer route from product pages into Support lifted spare parts starts by 14% in EU, which means fewer customers abandon the journey before they see help content.
+          owner: Rosa Lindberg
+          track: Scale
+          bu: EU
+        - title: Sticky navigation moved checkout starts by 11%
+          status: Live
+          body: The winning variant kept key actions visible on mobile product pages for consumers in EU, which increased movement into checkout without lowering product-detail reading.
+          owner: Owen Mercer
+          track: Optimise
+          bu: EU
+    - name: Try this prototype
+      purpose: Let colleagues experience a new flow or concept.
+      owner: Talia Brennan
+      frequency: Weekly
+      tags:
+        - Prototype
+        - Weekly
+        - "Owner: Talia Brennan"
+      items:
+        - title: Product advice prototype for Riders comparison
+          status: Planned
+          body: Early concept feedback showed stronger confidence when the assistant translated model differences into plain language rather than feature tables alone.
+          owner: Talia Brennan
+          track: Explore
+          bu: US
+        - title: Conversational support entry prototype
+          status: Watch
+          body: Visitors reached a relevant support path 38 seconds faster in moderated testing, which suggests a simpler starting point for high-intent questions.
+          owner: Emil Hartmann
+          track: Explore
+          bu: EU
+    - name: Polls
+      purpose: Collect quick feedback or a decision.
+      owner: Nadia Flores
+      frequency: As needed
+      tags:
+        - Feedback
+        - As needed
+        - "Owner: Nadia Flores"
+      items:
+        - title: Which market should receive the next sticky navigation rollout?
+          status: Open
+          body: Market teams are choosing whether Riders in US or Automowers in PAC should receive the next production rollout first.
+          owner: Nadia Flores
+          track: Optimise
+          bu: US
+        - title: Which support topic needs a clearer route from product pages?
+          status: Open
+          body: Support and market teams are ranking the journeys that most need a stronger handoff from product detail pages.
+          owner: Callum Reid
+          track: Scale
+          bu: EU
+    - name: Demos and show and tell
+      purpose: Let people catch up without attending live.
+      owner: Mara Jensen
+      frequency: Weekly or monthly
+      tags:
+        - Show and tell
+        - Weekly or monthly
+        - "Owner: Mara Jensen"
+      items:
+        - title: Mobile product-page patterns that moved checkout starts
+          status: Live
+          body: The session focused on the sticky navigation result, what moved, and where the pattern can travel next.
+          owner: Mara Jensen
+          track: Optimise
+          bu: US
+        - title: Conversational AI guardrails for support entry points
+          status: Live
+          body: Explore and brand reviewed response boundaries, escalation paths and where conversational support can appear safely.
+          owner: Leo Hammond
+          track: Explore
+          bu: PAC
+    - name: Status and known issues
+      purpose: Make risk visible.
+      owner: Ingrid Walsh
+      frequency: Weekly
+      tags:
+        - Operating status
+        - Weekly
+        - "Owner: Ingrid Walsh"
+      items:
+        - title: My Husqvarna support handoff is waiting for Dynamics mapping
+          status: Watch
+          body: The service flow is designed and tested, but PAC deployment depends on final field mapping in Dynamics before customers can move through without manual support.
+          owner: Ingrid Walsh
+          track: Scale
+          bu: PAC
+        - title: Support search exits are under review in PAC
+          status: Investigating
+          body: The latest reading shows a higher exit rate after internal search on support content, which points to a findability issue rather than a traffic issue.
+          owner: Felix Rowan
+          track: Scale
+          bu: PAC
+    - name: KPIs
+      purpose: Show results and direction of travel.
+      owner: Helena Brooks
+      frequency: Monthly
+      tags:
+        - KPI
+        - Monthly
+        - "Owner: Helena Brooks"
+      items:
+        - title: Product-family reporting now compares Automowers, Riders and chainsaws in one view
+          status: Live
+          body: GA4 and BigQuery now report product-family performance in one structure, which lets markets compare movement without rebuilding the dataset.
+          owner: Helena Brooks
+          track: Scale
+          bu: EU
+        - title: Segment impact view shows where experiment wins travel
+          status: Live
+          body: Consumer, green space professional and tree care professional results are visible side by side, making it easier to see where a win holds and where it does not.
+          owner: Marcus Doyle
+          track: Optimise
+          bu: US
+    - name: Kaj
+      purpose: Let people ask for owners, next steps and context without digging.
+      owner: Sanna Doyle
+      frequency: Static
+      tags:
+        - Chat entry
+        - Static
+        - "Owner: Sanna Doyle"
+      items:
+        - title: Quick route to the right owner
+          status: Live
+          body: Kaj answers who owns a topic, where a request starts, and what to read next when a colleague does not know the DBS structure.
+          owner: Sanna Doyle
+          track: Scale
+          bu: EU
+        - title: Fast context on releases and experiments
+          status: Live
+          body: Kaj pulls together release dependencies, experiment outcomes and support context so colleagues can ask one question instead of opening several pages.
+          owner: Sanna Doyle
+          track: Optimise
+          bu: PAC
+    - name: Explore
+      purpose: Show what is being tried and why.
+      owner: Adrian Wells
+      frequency: Weekly
+      tags:
+        - Explore
+        - Weekly
+        - "Owner: Adrian Wells"
+      items:
+        - title: Conversational support concept cut time to first answer
+          status: Watch
+          body: In moderated testing, visitors reached a relevant support path 38 seconds faster when guided by a conversational entry point, which suggests a simpler start for high-intent questions.
+          owner: Adrian Wells
+          track: Explore
+          bu: EU
+        - title: Brand review requested clearer guardrails for generated answers
+          status: Watch
+          body: The concept is promising, but brand needs tighter wording boundaries before AI-generated responses can appear against live product content.
+          owner: Celia Novak
+          track: Explore
+          bu: PAC
+    - name: Optimise
+      purpose: Show what changed, what it meant, and what should happen next.
+      owner: Rowan Pierce
+      frequency: Weekly
+      tags:
+        - Optimise
+        - Weekly
+        - "Owner: Rowan Pierce"
+      items:
+        - title: Sticky navigation moved checkout starts by 11%
+          status: Live
+          body: The winning variant kept key actions visible on mobile product pages for consumers in EU, which increased movement into checkout without lowering product-detail reading.
+          owner: Rowan Pierce
+          track: Optimise
+          bu: EU
+        - title: Category-page proof points improved chainsaw engagement
+          status: Live
+          body: Adding clearer performance proof raised onward clicks to chainsaw detail pages by 9% among tree care professionals in US.
+          owner: Daria Quinn
+          track: Optimise
+          bu: US
   areasTitle: Areas
   areasSummary: Five scan-first areas combine the dashboard, the working wall of updates and the owner board into one front door.
   areas:
@@ -438,6 +631,6 @@ data:
       - { label: Contact DBS, href: "#" }
 ```
 
-This merge keeps the existing front door and every current area, post, owner, frequency, track and BU, while sharpening the first screen around Team Quan’s three highlights, Team Marwa’s quick links and release timeline, and Team Jonas H’s show-and-tell, weekly activity and favourite path. I kept Kaj as the main action, dated KPI and metric cards, and an open revenue read rather than inventing a number; I did not take Team David’s larger hero or three state columns, and I treated Team Andreas W’s ideas-first/KPI order as a push toward a stronger first screen rather than replacing the DBS start-page structure.
+This sprint keeps the existing front door and all current sections, then adds one named content map that makes the site’s post types explicit: Team Amanda’s owner-and-frequency rule, Team Anton’s concrete buckets and Kaj entry, Team Morten’s outcome-led content families, and Team Erkan’s tagged post types all land there. I kept Team Hilda’s track logic inside the existing Areas section rather than collapsing the page to only three buckets, and took Team Quan’s argument that KPI proof points should stay high on the page without replacing the broader front-door structure.
 
-<!-- merged: dbs-portal sprint 2 — Team Quan, Team Marwa, Team Jonas H, Team David, Team Joakim2, Team Andreas W -->
+<!-- merged: dbs-portal sprint 3 — Team Amanda, Team Morten, Team Hilda, Team Erkan, Team Anton, Team Quan -->
