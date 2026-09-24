@@ -43,7 +43,7 @@ data:
 type: DbsPortalHero
 data:
   hero:
-    title: What DBS changed on husqvarna.com, and what it meant
+    title: Be the answer everywhere.
     primaryAction:
       label: Ask Kaj
       href: '#kaj'

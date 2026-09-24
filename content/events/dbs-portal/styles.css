@@ -1178,3 +1178,206 @@
 .canvas .hero-limit {
   order: 3;
 }
+
+/* ==========================================================================
+   A pass for hierarchy, not for decoration.
+
+   The page had one weight: every section arrived as the same grey panel with
+   the same corner and the same tag row, so nothing on it was more important
+   than anything else — which is the opposite of what the room asked for when
+   it said one thing should dominate.
+
+   The subject of this site is what changed and what it meant. So the numbers
+   carry the page and everything else steps back. Nothing below changes a word
+   of what the room wrote.
+   ========================================================================== */
+
+/* A start page is read, not monitored. Eighty-eight rems gave four columns of
+   cards and the feel of a dashboard; seventy-six gives three and the feel of a
+   site. */
+.canvas {
+  width: min(100%, 76rem);
+}
+
+/* Headings belong to what follows them, so the space above is larger than the
+   space below. */
+.canvas .section-heading {
+  margin-bottom: var(--space-4);
+}
+
+.canvas .section-heading h2 {
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  letter-spacing: -0.015em;
+}
+
+.canvas .section-summary {
+  max-width: 60ch;
+}
+
+/* The numbers. This is the one place the page raises its voice: the figure is
+   the headline and the label is the caption, not the other way round. */
+.canvas .kpi-value {
+  font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.canvas .kpi-label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--muted, inherit);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.canvas .kpi-card {
+  padding: var(--space-5);
+}
+
+/* The content map is a reference list, not six products. Rules instead of
+   cards: the same information, a third of the ink. */
+.canvas .content-grid {
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 0 var(--space-6);
+}
+
+.canvas .content-grid .area-card {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: var(--space-4) 0;
+  border-top: 0.0625rem solid var(--rule);
+}
+
+/* One corner radius for panels, one for pills, and nothing in between. */
+.canvas .kpi-card,
+.canvas .recent-featured,
+.canvas .recent-card,
+.canvas .contact-card {
+  border-radius: 0.75rem;
+}
+
+/* Tags are metadata, not buttons. They were competing with the navigation. */
+.canvas .tag {
+  font-size: var(--text-xs);
+  font-weight: 500;
+}
+
+/* My own decoration, removed on the way out the door: the newest item is
+   already first and already the largest. It does not need a label saying so. */
+.canvas .recent-kicker {
+  display: none;
+}
+
+.canvas .recent-featured {
+  border: 0;
+  background: var(--panel, var(--surface));
+  padding: var(--space-6);
+}
+
+.canvas .recent-featured h3 {
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  letter-spacing: -0.015em;
+}
+
+/* The one accent, on the one action. Everything else that was orange is a
+   link, and links are navy with an underline. */
+.canvas .site-footer a {
+  color: var(--heading-ink);
+}
+
+/* Keyboard focus has to be visible on a page people tab through looking for an
+   owner. */
+.canvas a:focus-visible,
+.canvas button:focus-visible,
+.canvas input:focus-visible {
+  outline: 0.1875rem solid var(--accent);
+  outline-offset: 0.125rem;
+  border-radius: 0.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .canvas * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ---- Second look, with the page in front of me.
+
+   Three things were still wrong. The navigation wrapped, so the last item sat
+   alone on a second line. The opening asked three questions before the page
+   said anything — a routing question, a headline, and a search — each at full
+   volume. And the space between sections was the same as the space inside
+   them, so nothing grouped. */
+
+/* Five items, one line. */
+.canvas .site-nav .nav-link {
+  padding-inline: var(--space-3);
+  font-size: var(--text-xs);
+  min-height: 2.25rem;
+}
+
+/* The opening is one moment, not three. The headline steps down, the question
+   and the search sit close enough to read as one block, and the suggestions
+   underneath are quiet enough to be suggestions. */
+.canvas .hero-centred h1 {
+  font-size: clamp(1.75rem, 2.8vw, 2.25rem);
+  letter-spacing: -0.02em;
+}
+
+.canvas .routing {
+  padding-block: 0;
+}
+
+.canvas .routing-question {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--muted, inherit);
+}
+
+.canvas .hero-centred {
+  padding-block: var(--space-3) 0;
+}
+
+.canvas .hero-search {
+  margin-top: var(--space-4);
+}
+
+.canvas .chip-row-centred .tag-action {
+  font-size: var(--text-xs);
+  padding-inline: var(--space-3);
+}
+
+.canvas .hero-limit {
+  font-size: var(--text-xs);
+}
+
+/* Group with space: more between sections than inside them. The routing
+   question and the hero are one group, so they sit together; everything after
+   is a section of its own. */
+.canvas {
+  gap: var(--space-9);
+}
+
+.canvas .routing + .hero {
+  margin-top: calc(var(--space-9) * -1 + var(--space-4));
+}
+
+/* The headline was capped at fourteen characters — a measure written when it
+   was a two-word poster line, and the reason it was breaking into five short
+   stacks. A headline that is a sentence needs a sentence's measure. */
+.canvas .hero-centred h1 {
+  max-width: 26ch;
+  margin-inline: auto;
+}
+
+/* The headline is the vision now — five words, not a sentence. A line that
+   short can carry the size the page was designed around, and it is the one
+   place this page raises its voice before the numbers do. */
+.canvas .hero-centred h1 {
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  max-width: 18ch;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+}
