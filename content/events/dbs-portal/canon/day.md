@@ -251,6 +251,83 @@ data:
   - what: The routing question above the fold
     who: Anton
     words: “What are you interested in seeing on this page?” — pill buttons, as written.
+  realise:
+    title: How we make it real
+    summary: 'Five groups wrote down how this gets built and kept alive. Four of the five said the same
+      thing first: start small and make it live.'
+    steps:
+    - title: Start small and make it live
+      body: Identify what is needed for a first useful version and ship that. Do not wait for every integration
+        or automation to exist. Existing sources plus limited manual maintenance first, then automate
+        progressively. Divide it into small widgets rather than one big build.
+      who: Niklas, Quan, Mattias, Erkan · Jonas H, Andreas C, Jenny, Marwa
+    - title: Everything shown has a source and an owner
+      body: Define where the information comes from before defining the page. Identify what already exists
+        elsewhere and where. Avoid creating information that has to be maintained only here — reuse and
+        link rather than duplicate.
+      who: Jonas H, Andreas C, Jenny, Marwa
+    - title: Automate what can be automated
+      body: Pull initiative and status information from ADO where feasible. Pull KPIs from GA, Kameleoon
+        or the other data sources. Explore automation for What changed, based on releases and completed
+        work.
+      who: Jonas H, Andreas C, Jenny, Marwa · Niklas, Quan, Mattias, Erkan
+    - title: Keep the human hand where it adds value
+      body: Automation provides the facts; owners add the context. Especially for What changed — the release
+        is the fact, the reason it mattered is not. Some data can be automated, some needs a human touch.
+      who: Jonas H, Andreas C, Jenny, Marwa
+    - title: Connect it to the workflows that already exist
+      body: Explore whether Submit an idea can feed the existing intake and backlog process — an idea
+        sent in creates an ADO ticket, and that has to be managed by someone. Link existing documentation
+        and Show and Tell material rather than copying it.
+      who: Jonas H, Andreas C, Jenny, Marwa
+    - title: Decide where the content lives
+      body: Its own CMS, or read from SharePoint and Confluence. One group proposed SharePoint for static
+        content creation with a continuous workflow around it, and CAI fetching and indexing across SharePoint,
+        ClickUp, ADO and analytics — the hub's answers then coming from prompting CAI. Single sign-on
+        either way.
+      who: Ehsan Haque, Joakim Hellström, Katja
+    - title: Split the work between sub-teams
+      body: A UX section and a frontend section, with responsibilities divided rather than held by one
+        group. Add a step to the rollout team so content is posted when a feature ships, instead of hoping
+        someone remembers.
+      who: Anton, Amanda, Olivia, Marin
+    - title: Make it a UX ticket and slot it between initiatives
+      body: Turn this brief into a UX ticket and prioritise it in the gaps between initiatives, when there
+        is capacity. It is the one answer anybody gave to the hardest problem on the list — getting internal
+        project time — and it does not need anyone's permission to start.
+      who: added after the workshop
+  hard:
+    title: What will make it hard
+    summary: Said plainly, by the people who would have to do it.
+    items:
+    - what: Getting buy-in for internal project time
+      who: Niklas, Quan, Mattias, Erkan
+    - what: Getting external stakeholders to come back a second time
+      who: Niklas, Quan, Mattias, Erkan
+    - what: Maintenance — the risk that it goes out of date
+      who: Anton, Amanda, Olivia, Marin · Niklas, Quan, Mattias, Erkan
+    - what: Prioritising which information to display
+      who: Niklas, Quan, Mattias, Erkan
+    - what: Selling the benefits
+      who: Niklas, Quan, Mattias, Erkan
+    - what: Where do you edit it?
+      who: the widgets group
+    - what: It is time consuming
+      who: the widgets group
+    - what: Getting others to read it, find it and be interested
+      who: the widgets group
+    - what: Whether prompting will actually return meaningful answers
+      who: Anton, Amanda, Olivia, Marin
+  next:
+    title: What to do next
+    items:
+    - Talk to stakeholders about what they need from this, before building more of it.
+    - 'Define the core content: areas, initiative details and status, KPIs, who to ask, Show and Tell
+      material, what changed.'
+    - Pick the first useful version and put it in front of people.
+    - Release notes as a blog, so they read as written by a person — Dia Browser's release notes were
+      the example given.
+    - Investigate whether asking CAI returns meaningful answers before building the rest around it.
 ```
 
 ```block

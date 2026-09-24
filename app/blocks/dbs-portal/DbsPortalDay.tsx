@@ -8,7 +8,17 @@
  */
 import React from "react";
 
-export default function DbsPortalDay({ title, standfirst, note, sprints, threads, landed }) {
+export default function DbsPortalDay({
+  title,
+  standfirst,
+  note,
+  sprints,
+  threads,
+  landed,
+  realise,
+  hard,
+  next: nextUp,
+}) {
   return (
     <>
       <section className="day-open">
@@ -58,6 +68,48 @@ export default function DbsPortalDay({ title, standfirst, note, sprints, threads
           ))}
         </div>
       </section>
+
+      {realise ? (
+        <section className="day-realise">
+          <h2>{realise.title}</h2>
+          <p className="section-summary">{realise.summary}</p>
+          <ol className="day-steps">
+            {realise.steps.map((step) => (
+              <li key={step.title}>
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+                <p className="day-said-by">{step.who}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ) : null}
+
+      {hard ? (
+        <section className="day-hard">
+          <h2>{hard.title}</h2>
+          <p className="section-summary">{hard.summary}</p>
+          <ul className="day-hard-list">
+            {hard.items.map((item) => (
+              <li key={item.what}>
+                <span className="day-hard-what">{item.what}</span>
+                <span className="day-hard-who">{item.who}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      {nextUp ? (
+        <section className="day-next">
+          <h2>{nextUp.title}</h2>
+          <ul className="day-next-list">
+            {nextUp.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <section className="day-landed">
         <h2>What is on the page now, and whose it was</h2>
