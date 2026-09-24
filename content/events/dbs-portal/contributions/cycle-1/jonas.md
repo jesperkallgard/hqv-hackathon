@@ -1,68 +1,66 @@
 ---
-title: "DBI hub for B2C teams"
-ingress: "An internal communication hub for the DBI B2C team. It gives colleagues a quick read on what is happening now, then lets them open Explore, Optimize, Scale, and Support Services without needing to hunt through source systems."
+title: "DBS at a glance"
+ingress: "DBS gives the B2C team a quick read on the KPIs that matter now, then points straight to the follow-up work. It is a modern internal hub for people who need the picture fast and then need to act."
 points:
-  - "It opens as a real web page, not a wiki, with a header, short navigation, one generous content column, and a footer."
-  - "The first thing it does is give a quick overview of what is happening now, then lets the user drill into the areas."
-  - "It has four named areas outsiders can understand: Explore, Optimize, Scale, and Support Services."
-  - "Each area is a card that shows roadsmaps, progress, articles, and communications from multiple sources in one place."
-  - "It feels modern and technical, with white space, navy headings, left-aligned text, and round orange and outlined navy pill buttons."
+  - "It opens with a dashboard-style overview of the current KPIs before anything else."
+  - "It is called DBS and is framed as an internal hub for the B2C team."
+  - "It shows follow-up work next to the KPIs so people can move from signal to action."
+  - "It is organised into one card per area with names outsiders understand, including Explore, Optimize, Scale, and Support Services."
+  - "It is a web page, not a wiki, with a white, airy, navy-led look and round pill buttons."
 cycle: 1
 pair: "jonas"
 authors: ["Mattias", "Katja", "Olivia", "Jonas"]
 ---
 
-An internal communication hub for the DBI B2C team. It gives colleagues a quick read on what is happening now, then lets them open Explore, Optimize, Scale, and Support Services without needing to hunt through source systems.
+DBS gives the B2C team a quick read on the KPIs that matter now, then points straight to the follow-up work. It is a modern internal hub for people who need the picture fast and then need to act.
 
-- It opens as a real web page, not a wiki, with a header, short navigation, one generous content column, and a footer.
-- The first thing it does is give a quick overview of what is happening now, then lets the user drill into the areas.
-- It has four named areas outsiders can understand: Explore, Optimize, Scale, and Support Services.
-- Each area is a card that shows roadsmaps, progress, articles, and communications from multiple sources in one place.
-- It feels modern and technical, with white space, navy headings, left-aligned text, and round orange and outlined navy pill buttons.
+- It opens with a dashboard-style overview of the current KPIs before anything else.
+- It is called DBS and is framed as an internal hub for the B2C team.
+- It shows follow-up work next to the KPIs so people can move from signal to action.
+- It is organised into one card per area with names outsiders understand, including Explore, Optimize, Scale, and Support Services.
+- It is a web page, not a wiki, with a white, airy, navy-led look and round pill buttons.
 
-Create a polished internal communication hub for the DBI team, starting with the B2C team.
+Build the DBS internal hub for the B2C team.
 
-## Content and structure
-- The page is a web page, not a wiki or document.
-- Include a header with the site name and a short navigation.
-- Keep the main content in one generous column.
-- End with a footer.
-- The landing view gives a quick overview of what is happening, then leads into the areas.
-- Four areas are required: Explore, Optimize, Scale, and Support Services.
-- Use names an outsider understands.
-- Support Services is a real area, alongside the other three.
+## What it is
+- The site name is DBS.
+- It is a web page, not a wiki or document.
+- It is for the DBS B2C team.
+- It should give people a quick overview of the KPIs and the follow-up work.
 
-## What each area carries
-- Each area is presented as a card.
-- Each card aggregates information from multiple source systems.
-- Cards can carry roadmaps, progress, articles, and communications.
-- A user can drill down from the overview into each area.
-- Frequency must be visible for each item: static, monthly, or weekly.
-- Real content only. Placeholder text means empty and must not be used.
-- Three true posts are better than eight fake-looking ones.
+## First screen
+- The first thing on the page is a KPI overview.
+- The page should make it easy to see what needs follow-up.
+- Follow-up items should sit close to the KPI context, not hidden away.
 
-## Tone and content rules
-- Write for a colleague who does not work here.
-- No internal acronyms in headlines.
-- If a post needs DBS context to parse, it fails.
-- Show what changed and what it meant, not just what was done.
-- Include track and BU where relevant, in one word each.
+## Areas
+- Use one card per area.
+- The area names must be understandable from the outside.
+- Include these areas: Explore, Optimize, Scale, Support Services.
+- Each area can carry posts, progress, and communications.
+
+## Content rules
+- Real content only.
+- No placeholder copy.
+- The page should help people move from KPI signal to action.
+- Track and BU should be named where needed, using one word each.
 - Owner means a person. Do not use "the team" as an owner.
+- If something is not decided, leave it out rather than inventing it.
 
 ## Look and feel
-- White background, lots of air.
+- White background.
+- Lots of air.
 - Navy headings.
 - Left-aligned text.
-- Every button is a fully round pill.
-- Primary action: orange pill with white text.
-- Secondary actions: outlined navy pills.
-- State tags are small round tags, not coloured words.
-- The overall feeling is modern, forward-leaning, technical, and easy to scan.
+- Round pill buttons.
+- Orange primary action with white text.
+- Outlined navy secondary actions.
+- Small round tags for states.
+- Modern, forward-leaning, technical, and easy to scan.
 
 ## Out of scope
-- No wiki-style layout.
+- No wiki styling.
 - No dense dashboard clutter.
-- No placeholder copy.
-- No invented internal jargon.
-- No duplicated timeline variants.
-- No component-heavy complexity that makes the page hard to skim.
+- No internal acronym headlines.
+- No fake posts or filler content.
+- No extra area beyond the ones named above.
