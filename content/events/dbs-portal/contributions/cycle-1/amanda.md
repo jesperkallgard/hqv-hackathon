@@ -1,64 +1,51 @@
 ---
-title: "The picture is a working wall of updates"
-ingress: "A web page for people who need the day’s work at a glance, not a wiki. It starts with one clear page and five named areas so a colleague can open it, read what changed, and move on."
+title: "A living start page with visuals and a way to react"
+ingress: "A start page for colleagues who need the picture fast, but now it feels alive: the biggest pieces are visual, the updates include images and charts, and people can react to ideas as they move."
 points:
-  - "It is one page with a header, short navigation, one generous column, and a footer."
-  - "Each area is a card you can scan without a guide beside you."
-  - "The page shows ongoing activity, weekly updates, show-and-tell items, statistics, ticket status, and a place to like concepts."
-  - "Every post says who owns it, what changed, what it meant, and whether it is static, weekly, or monthly."
-  - "It uses white space, navy headings, left-aligned text, orange primary pills, outlined navy secondary pills, and small round status tags."
+  - "The page puts images, sketches, and graphs beside the updates, not in a separate place."
+  - "The design wall lets people heart concepts and add ideas, so the page is not just read-only."
+  - "The interface feels more alive and dynamic, with stronger motion and a more distinctive logo."
+  - "The biggest section stays obvious at a glance, so the page still reads fast."
+  - "The structure stays a web page with cards, air, and clear navigation, not a wiki or a dashboard maze."
 cycle: 1
 pair: "amanda"
 authors: ["Jonas H", "Amanda", "Quan", "David"]
 ---
 
-A web page for people who need the day’s work at a glance, not a wiki. It starts with one clear page and five named areas so a colleague can open it, read what changed, and move on.
+A start page for colleagues who need the picture fast, but now it feels alive: the biggest pieces are visual, the updates include images and charts, and people can react to ideas as they move.
 
-- It is one page with a header, short navigation, one generous column, and a footer.
-- Each area is a card you can scan without a guide beside you.
-- The page shows ongoing activity, weekly updates, show-and-tell items, statistics, ticket status, and a place to like concepts.
-- Every post says who owns it, what changed, what it meant, and whether it is static, weekly, or monthly.
-- It uses white space, navy headings, left-aligned text, orange primary pills, outlined navy secondary pills, and small round status tags.
+- The page puts images, sketches, and graphs beside the updates, not in a separate place.
+- The design wall lets people heart concepts and add ideas, so the page is not just read-only.
+- The interface feels more alive and dynamic, with stronger motion and a more distinctive logo.
+- The biggest section stays obvious at a glance, so the page still reads fast.
+- The structure stays a web page with cards, air, and clear navigation, not a wiki or a dashboard maze.
 
-## What the page has to show
-- A real internal website, not a document or wiki.
-- One card per area, each readable in a glance.
-- The five areas are:
-  1. Ongoing activities and status
-  2. Weekly update
-  3. Show and tell database
-  4. Statistics
-  5. Ticket status follower / design wall for concepts and ideas
+## What changes on the page
+- Keep the start page structure from canon, but make it more visual and more active.
+- The page should not feel like plain text blocks only.
+- Add images, graphs, sketch-like examples, or other visual evidence alongside the sections.
+- Add a design wall / concept reaction area where people can heart ideas and contribute their own.
+- Create a logo for the platform.
 
-## Content rules
-- The page is for a colleague who does not work here.
-- No internal acronyms in headings.
-- If a post needs DBS context to parse, it is wrong.
-- Say what changed and what it meant, not what was done.
-- Every post must show its frequency: static, weekly, or monthly.
-- Owner means a person. Do not use “the team” as an owner.
-- Real content only. Placeholder text is empty.
-- Three true posts beat eight fake-looking ones.
-- Name the track and the BU in the content where relevant.
-- Reuse existing phrasing or components before inventing new ones.
+## Visual content
+- Use real visual examples where possible, not decorative filler.
+- Show analytics in a visual way, not only as numbers.
+- Include sketches or concept images where they help explain an update.
+- Make the biggest section visually dominant so it is obvious what matters most.
 
-## Look and feel
-- White background.
-- Lots of air.
-- Navy headings.
-- Left-aligned text.
-- A header with the site name and short navigation.
-- One generous content column.
-- A footer.
-- Buttons are fully round pills.
-- Primary button: orange with white text.
-- Secondary buttons: outlined navy.
-- States are small round tags, not coloured words.
+## Interaction
+- Users can heart design concepts.
+- Users can contribute ideas to the design wall.
+- The page should feel more alive and dynamic through movement and interaction, but stay easy to scan.
 
-## Deliberate scope
-- No deep hierarchy.
-- No wiki-style navigation.
-- No placeholder posts.
-- No separate concepts gallery and ticket tracker if one card can hold both.
-- No extra sections beyond the five areas above.
-- Keep it to a prototype-sized page that shows the structure and the content shape.
+## Design direction
+- Keep the web-page feel, not a wiki.
+- Keep one card per area.
+- Keep the white, airy, left-aligned look with navy headings.
+- Keep pill buttons and round state tags.
+- Make the UI more interesting and distinctive than a plain internal portal.
+
+## Scope
+- Do not turn this into a separate app or a complex social network.
+- Do not add extra unrelated sections.
+- The visual layer and reaction layer should fit inside the existing page shape.
