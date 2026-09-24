@@ -2507,3 +2507,258 @@
     text-align: left;
   }
 }
+
+/* The brief.
+
+   The day page is a record and reads long on purpose. This one is meant to be
+   read once, by somebody deciding whether to spend time on it, so it is set
+   tighter: shorter measure, heavier heads, and two places where it raises its
+   voice — the vision and the ask. Everything between them stays quiet. */
+.canvas .brief-open {
+  padding-top: var(--space-7);
+  border-bottom: 0.0625rem solid var(--rule);
+  padding-bottom: var(--space-6);
+}
+
+.canvas .brief-eyebrow {
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 650;
+  color: var(--accent);
+}
+
+.canvas .brief-open h1 {
+  margin: 0;
+  max-width: 22ch;
+}
+
+.canvas .brief-standfirst {
+  margin: var(--space-4) 0 0;
+  max-width: 58ch;
+  font-size: var(--text-lg);
+  line-height: 1.5;
+}
+
+.canvas .brief-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-6) 0 0;
+}
+
+.canvas .brief-meta dt {
+  font-size: var(--text-sm);
+  color: var(--muted, inherit);
+  margin-bottom: 0.25rem;
+}
+
+.canvas .brief-meta dd {
+  margin: 0;
+  font-weight: 650;
+  color: var(--heading-ink);
+}
+
+.canvas .brief-vision {
+  margin-top: var(--space-6);
+  padding: var(--space-6) var(--space-6) var(--space-5);
+  background: var(--heading-ink);
+  color: var(--paper);
+}
+
+.canvas .brief-vision-words {
+  margin: 0;
+  color: var(--paper);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  line-height: 1.15;
+  max-width: 20ch;
+}
+
+.canvas .brief-vision-who {
+  margin: var(--space-3) 0 0;
+  font-size: var(--text-sm);
+  opacity: 0.75;
+  max-width: 52ch;
+}
+
+.canvas .brief-block {
+  margin-top: var(--space-7);
+}
+
+.canvas .brief-block > h2 {
+  margin: 0 0 var(--space-3);
+}
+
+.canvas .brief-body {
+  max-width: 64ch;
+  margin: 0 0 var(--space-4);
+}
+
+.canvas .brief-audience {
+  list-style: none;
+  margin: var(--space-4) 0 0;
+  padding: 0;
+}
+
+.canvas .brief-audience li {
+  display: grid;
+  grid-template-columns: minmax(0, 18rem) minmax(0, 1fr);
+  gap: var(--space-2) var(--space-5);
+  padding-block: var(--space-4);
+  border-top: 0.0625rem solid var(--rule);
+}
+
+.canvas .brief-audience-who {
+  font-weight: 650;
+  color: var(--heading-ink);
+}
+
+.canvas .brief-principles {
+  list-style: none;
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  gap: var(--space-5) var(--space-6);
+}
+
+.canvas .brief-principles h3 {
+  margin: 0 0 var(--space-2);
+  padding-top: var(--space-3);
+  border-top: 0.125rem solid var(--accent);
+  font-size: var(--text-lg);
+}
+
+.canvas .brief-principles p {
+  margin: 0;
+}
+
+.canvas .brief-scope {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: var(--space-5) var(--space-6);
+  margin-top: var(--space-5);
+}
+
+.canvas .brief-scope-col h3 {
+  margin: 0 0 var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 0.125rem solid var(--rule);
+  font-size: var(--text-base);
+}
+
+.canvas .brief-scope-in h3 {
+  border-top-color: var(--accent);
+}
+
+.canvas .brief-scope-col ul {
+  list-style: disc;
+  margin: 0;
+  padding-left: var(--space-5);
+}
+
+.canvas .brief-scope-col li {
+  margin-bottom: var(--space-2);
+}
+
+.canvas .brief-scope-out {
+  color: var(--muted, inherit);
+}
+
+.canvas .brief-content {
+  list-style: none;
+  margin: var(--space-5) 0 0;
+  padding: 0;
+}
+
+.canvas .brief-content li {
+  padding-block: var(--space-4);
+  border-top: 0.0625rem solid var(--rule);
+  display: grid;
+  grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+  gap: var(--space-2) var(--space-5);
+}
+
+.canvas .brief-content h3 {
+  margin: 0;
+  grid-row: 1 / span 2;
+  font-size: var(--text-lg);
+}
+
+.canvas .brief-content p {
+  margin: 0;
+  max-width: 58ch;
+}
+
+.canvas .brief-source {
+  font-size: var(--text-sm);
+  color: var(--muted, inherit);
+}
+
+.canvas .brief-open-questions {
+  margin-top: var(--space-6);
+}
+
+.canvas .brief-open-questions .day-next-list {
+  list-style: disc;
+}
+
+.canvas .brief-open-questions h3 {
+  margin: 0;
+  font-size: var(--text-lg);
+}
+
+.canvas .brief-risks {
+  list-style: none;
+  margin: var(--space-5) 0 0;
+  padding: 0;
+}
+
+.canvas .brief-risks li {
+  padding-block: var(--space-4);
+  border-top: 0.0625rem solid var(--rule);
+}
+
+.canvas .brief-risks h3 {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-lg);
+  color: var(--accent);
+}
+
+.canvas .brief-risks p {
+  margin: 0;
+  max-width: 64ch;
+}
+
+.canvas .brief-ask {
+  margin: var(--space-7) 0 var(--space-7);
+  padding: var(--space-6);
+  border: 0.125rem solid var(--accent);
+}
+
+.canvas .brief-ask h2 {
+  margin: 0 0 var(--space-3);
+}
+
+.canvas .brief-ask p {
+  margin: 0;
+  max-width: 62ch;
+  font-size: var(--text-lg);
+  line-height: 1.5;
+}
+
+.canvas .brief-ask-link {
+  display: inline-block;
+  margin-top: var(--space-5);
+}
+
+@media (max-width: 48rem) {
+  .canvas .brief-audience li,
+  .canvas .brief-content li {
+    grid-template-columns: 1fr;
+  }
+
+  .canvas .brief-content h3 {
+    grid-row: auto;
+  }
+}

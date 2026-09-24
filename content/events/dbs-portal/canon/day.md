@@ -336,6 +336,8 @@ data:
   footer:
     text: DBS sits inside Digital Solutions under Martin Cronholm and owns building and optimising husqvarna.com.
     links:
+    - label: The brief
+      href: /dbs-portal/live/brief
     - label: Sitecore guide
       href: '#'
     - label: Experiment library

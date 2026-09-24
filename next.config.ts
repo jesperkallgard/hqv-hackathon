@@ -18,6 +18,16 @@ const nextConfig: NextConfig = {
    * warning in preview and is left out in production.
    */
   typescript: { ignoreBuildErrors: true },
+
+  /**
+   * `/brief` is a URL people paste into a chat. It is short enough to say out
+   * loud, which the canonical path is not.
+   */
+  async redirects() {
+    return [
+      { source: "/brief", destination: "/dbs-portal/live/brief", permanent: false },
+    ];
+  },
 };
 
 export default nextConfig;
