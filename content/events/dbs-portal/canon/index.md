@@ -42,7 +42,7 @@ data:
       tags:
         - Scale
         - Weekly
-        - Owner: Lena Kovacs
+        - "Owner: Lena Kovacs"
       posts:
         - title: Support entry points reduced drop-off in spare parts journeys
           status: Live
@@ -70,7 +70,7 @@ data:
       tags:
         - Optimise
         - Weekly
-        - Owner: Sofia Marin
+        - "Owner: Sofia Marin"
       posts:
         - title: Sticky navigation moved checkout starts by 11%
           status: Live
@@ -98,7 +98,7 @@ data:
       tags:
         - Explore
         - Weekly
-        - Owner: Mateo Silva
+        - "Owner: Mateo Silva"
       posts:
         - title: Conversational support concept cut time to first answer
           status: Watch
@@ -125,7 +125,7 @@ data:
       description: Measurement, KPI reading and reporting that help management and markets see whether investment in husqvarna.com is producing results.
       tags:
         - Monthly
-        - Owner: Hannah Petrov
+        - "Owner: Hannah Petrov"
         - GA4
       posts:
         - title: New product-family view makes Automowers and Riders easier to compare
@@ -154,7 +154,7 @@ data:
       tags:
         - Static
         - Weekly
-        - Owner: Clara Westin
+        - "Owner: Clara Westin"
       posts:
         - title: Sitecore release calendar now includes market impact notes
           status: Live
