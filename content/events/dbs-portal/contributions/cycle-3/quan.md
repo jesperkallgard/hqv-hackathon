@@ -1,91 +1,23 @@
 ---
-title: "What the site carries, in one clear list"
-ingress: "A DBS page that names the kinds of content it carries and what each kind is for. It tells a colleague what lives here, who keeps it current, and which pieces are meant for quick scan versus opening up."
+title: "DBS content map with KPIs, contributions, metrics, and ideas"
+ingress: "The site carries four named content areas: KPIs, contributions, metrics, and ideas. It opens with the area people want first, and the content is arranged so it can be scanned at a glance rather than read like a document. Each area tells a colleague what changed, what it means, and where to go next."
 points:
-  - "The site carries headline highlights, metrics, posts, release timing, show-and-tell material, activities, and contacts."
-  - "Each kind of content has a job: quick value, context, follow-up, meeting support, work-in-flight, or a person to ask."
-  - "The list makes update ownership visible, so people know which parts are monthly, weekly, or static."
-  - "The page keeps the items grouped by what they are for, not by who wrote them."
-  - "The result is a practical internal front door, not a blog, wiki, or presentation deck."
+  - "KPIs are the first thing on the page, so the current business picture is visible immediately."
+  - "Ideas is the biggest area, because the site is meant to invite people to contribute, submit requests, and see what is being asked for."
+  - "Contributions and metrics sit after ideas, so the page still carries the supporting material without turning into a long reading page."
+  - "The content is written as real internal web content, with short labels, clear scan-first cards, and no explanatory intro text that needs DBS context to parse."
+  - "The page keeps a simple web-page shape: a header, short navigation, one generous main column, and a footer, with cards for each area and states shown as small round tags."
 cycle: 3
 pair: "quan"
-authors: ["Quan"]
+authors: ["Marin", "Marwa", "Andreas W", "Quan"]
 ---
 
-A DBS page that names the kinds of content it carries and what each kind is for. It tells a colleague what lives here, who keeps it current, and which pieces are meant for quick scan versus opening up.
+The site carries four named content areas: KPIs, contributions, metrics, and ideas. It opens with the area people want first, and the content is arranged so it can be scanned at a glance rather than read like a document. Each area tells a colleague what changed, what it means, and where to go next.
 
-- The site carries headline highlights, metrics, posts, release timing, show-and-tell material, activities, and contacts.
-- Each kind of content has a job: quick value, context, follow-up, meeting support, work-in-flight, or a person to ask.
-- The list makes update ownership visible, so people know which parts are monthly, weekly, or static.
-- The page keeps the items grouped by what they are for, not by who wrote them.
-- The result is a practical internal front door, not a blog, wiki, or presentation deck.
+- KPIs are the first thing on the page, so the current business picture is visible immediately.
+- Ideas is the biggest area, because the site is meant to invite people to contribute, submit requests, and see what is being asked for.
+- Contributions and metrics sit after ideas, so the page still carries the supporting material without turning into a long reading page.
+- The content is written as real internal web content, with short labels, clear scan-first cards, and no explanatory intro text that needs DBS context to parse.
+- The page keeps a simple web-page shape: a header, short navigation, one generous main column, and a footer, with cards for each area and states shown as small round tags.
 
-## Purpose
-- Describe the content the DBS site carries.
-- Make clear what each content type is for.
-- Make clear who keeps each kind of content up to date.
-- Help people understand what they should scan in a list and what they should open for detail.
-
-## Content types the site carries
-1. **Highlights**
-   - Short top-line items that say what changed and what it meant.
-   - For quick reading and business impact.
-   - Kept current by the relevant track owner.
-
-2. **Metrics**
-   - Dated reads that give measurement context.
-   - Include date, market, and what is being measured.
-   - Kept current by the analytics owner.
-
-3. **Posts / areas**
-   - Main content cards for Scale, Optimise, Explore, Analytics, and support services.
-   - For the current work and its outcome.
-   - Kept current by each area owner.
-
-4. **Release timeline**
-   - What is moving, what is live, and what is next.
-   - For people who need to know timing and dependencies.
-   - Kept current by release and delivery owners.
-
-5. **Show and tell**
-   - Meeting-ready summaries for the monthly org-wide session.
-   - For stakeholders outside DBS who want the main story.
-   - Kept current by the meeting owner or presenter.
-
-6. **Activities**
-   - Ongoing and upcoming work that is not yet a published outcome.
-   - For visibility on what is in flight.
-   - Kept current by the responsible owner.
-
-7. **Contacts**
-   - Named people and role context.
-   - For routing questions and follow-up.
-   - Kept current by the service or area owner.
-
-## List versus open
-- In the list: highlights, metrics, post titles, release items, show-and-tell titles, activity titles, and contact names.
-- Opened up: the full explanation, the metric context, the show-and-tell summary, the activity detail, and the contact detail.
-- The page should make this difference obvious.
-
-## What it has to do
-- Help a person know where to look first.
-- Make the site useful without needing a guide.
-- Keep the content categories stable so the page does not feel random.
-- Support the question “Which content do we build?” with a clear answer.
-
-## Look and feel
-- Real internal website, not a wiki or a slide deck.
-- White, airy, navy headings, left-aligned text.
-- Scan-first cards and short sections.
-- One clear hierarchy from top-level list to opened detail.
-
-## Scope limits
-- Do not turn this into a full information architecture spec.
-- Do not invent new content categories beyond what the page already carries.
-- Do not add decorative language that hides the content types.
-- Do not replace the existing DBS page structure.
-
-## Notes
-- Keep the wording simple enough for non-DBS colleagues.
-- Use real content and real owners where relevant.
-- If something is missing, leave the gap visible rather than inventing it.
+Build a real internal website page, not a wiki or a document. Keep the white, airy, navy-headed look with left-aligned text and fully round pill buttons, and make states small round tags rather than coloured words. The page must carry the named content areas KPIs, contributions, metrics, and ideas, with ideas as the biggest section and KPIs first. Each area must be readable at a glance, with clear content and no placeholder text. The content must say what changed and what it meant, not just what was done. It is out of scope to add new site concepts, to turn the page into a meeting deck, or to fill it with long explanatory text that needs a guide beside it.
