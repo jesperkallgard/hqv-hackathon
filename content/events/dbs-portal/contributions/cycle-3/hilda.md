@@ -1,23 +1,51 @@
 ---
-title: "Surface Revenue as a post"
-ingress: "A revenue stat sits in the numbers area as the one release number that matters most, so the start page can show what changed and what it meant."
+title: "Content types for the start page"
+ingress: "A start page for the content the site carries, so people can see what kind of material belongs here and who keeps it current. It groups the site into a few clear content types instead of a long dump of everything."
 points:
-  - "It surfaces revenue as the primary number in the numbers area."
-  - "The number is framed as the plain-English result of a release, not as activity."
-  - "The content stays focused on what changed in revenue and the direction it moved."
-  - "It supports the goal of understanding whether a user goal has been met."
-  - "It keeps the page as a web page with real content, not a wiki or a broad planner board."
+  - "Shows the site content as named types, not one mixed feed"
+  - "Includes statistics, data, quotes, chat, and screenshots as separate content kinds"
+  - "Says what each kind is for in plain English"
+  - "Says who keeps each kind up to date"
+  - "Makes it obvious which content belongs on the start page and which does not"
 cycle: 3
 pair: "hilda"
 authors: ["Olivia", "Jennie", "Hilda", "David"]
 ---
 
-A revenue stat sits in the numbers area as the one release number that matters most, so the start page can show what changed and what it meant.
+A start page for the content the site carries, so people can see what kind of material belongs here and who keeps it current. It groups the site into a few clear content types instead of a long dump of everything.
 
-- It surfaces revenue as the primary number in the numbers area.
-- The number is framed as the plain-English result of a release, not as activity.
-- The content stays focused on what changed in revenue and the direction it moved.
-- It supports the goal of understanding whether a user goal has been met.
-- It keeps the page as a web page with real content, not a wiki or a broad planner board.
+- Shows the site content as named types, not one mixed feed
+- Includes statistics, data, quotes, chat, and screenshots as separate content kinds
+- Says what each kind is for in plain English
+- Says who keeps each kind up to date
+- Makes it obvious which content belongs on the start page and which does not
 
-Build the numbers area around one revenue post, because “Revenue” is the stat that answers the question. The post has to say what changed, and whether revenue is up, down, or flat by how much. It has to read as information about the result, not a log of what was done. Frequency still matters, so the post has to say whether it is static, monthly, or weekly. Keep it as a start-page card that can be taken in at a glance, with the existing site style: white page, lots of air, navy headings, left-aligned text, and a full-width web page feel. Do not turn it into a planner board, a member directory, or a wiki, and do not add broader sales stats beyond the one revenue claim.
+## What this must contain
+- A named list of the content the site carries.
+- Each content type needs a short purpose statement.
+- Each content type needs an owner: a person or role that keeps it updated.
+- Keep the list small and clear enough to read at a glance.
+
+## Content types mentioned so far
+- Statistics
+- Data
+- Quotes
+- Chat
+- Screenshots
+
+## Content rules
+- Use real content only.
+- Do not invent owners if they are not known; say what is missing.
+- Write in plain English, even if the group talked in another language.
+- If a content type is not for the site, leave it out rather than forcing it in.
+
+## Look and feel
+- White web page, lots of air, navy headings, left-aligned text.
+- One card per area.
+- Fully round pill buttons: orange primary, navy outline secondary.
+- Small round tags for states.
+
+## Out of scope
+- No wiki formatting.
+- No placeholder text.
+- No deep detail about every content item; this sprint is about the kinds of content the site carries and who maintains them.
