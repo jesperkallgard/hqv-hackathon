@@ -25,6 +25,8 @@ export default function DbsPortalHero({ hero, kaj }) {
         {hero.intro ? <p className="hero-intro">{hero.intro}</p> : null}
       </div>
 
+      <p className="hero-ai-badge">Kaj · AI assistant</p>
+
       <form className="hero-search" action={kaj?.action?.href ?? "#kaj"}>
         <label className="visually-hidden" htmlFor="ask-kaj">
           {kaj?.prompt ?? "Ask Kaj"}
