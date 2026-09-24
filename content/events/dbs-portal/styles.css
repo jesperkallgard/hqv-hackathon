@@ -988,6 +988,40 @@
   text-wrap: balance;
 }
 
-.canvas > .site-header:first-child {
-  padding-top: var(--space-5);
+/* The page shell, on the canvas itself.
+   The prototype used to be one component that wrapped everything in `.page`:
+   eighty-eight rems, centred, with air down both sides. Split into one
+   component per section, the sections became direct children of the canvas and
+   the shell went with the wrapper — so every heading and every card sat flush
+   against the edge of the window. The shell belongs to the page, not to the
+   component that happened to hold it. */
+.canvas {
+  display: grid;
+  align-content: start;
+  gap: var(--space-8);
+  width: min(100%, 88rem);
+  margin-inline: auto;
+  padding: var(--space-6) var(--space-5) var(--space-8);
+}
+
+/* The opening should be read in one glance and then give way to the numbers.
+   At the page's full display size it filled the first screen on its own and
+   pushed the KPIs under the fold, which is the opposite of what the room
+   asked for. */
+.canvas .hero-centred {
+  padding-block: var(--space-5) var(--space-4);
+}
+
+.canvas .hero-centred h1 {
+  font-size: clamp(2rem, 3.4vw, 2.75rem);
+  line-height: 1.08;
+}
+
+.canvas .hero-centred .hero-copy {
+  max-width: 44rem;
+}
+
+.canvas .hero-centred .hero-intro {
+  max-width: 40rem;
+  margin-inline: auto;
 }
