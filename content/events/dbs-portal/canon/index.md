@@ -46,29 +46,8 @@ data:
     - Where do experimentation requests start?
     action:
       label: Start a question
-      href: '#'
+      href: '#ask-kaj'
     refuses: It does not answer for other teams' systems, and it says so rather than improvising.
-```
-
-```block
-type: DbsPortalCai
-data:
-  title: Ask Kaj
-  summary: A vague question goes in. Kaj names the owner and the team, then offers the next step.
-  exchange:
-    state: Answering
-    question: Who owns Support in PAC, and why did the handoff slip?
-    answer: Support in PAC sits under Scale. The My Husqvarna support handoff is waiting on final field
-      mapping in Dynamics before customers can move through without manual support.
-    owner:
-      name: Priya Nair
-      team: Scale — release readiness across Sitecore, integrations and IT handoff
-    choices:
-    - Send this to Priya
-    - See the release pipeline
-    - Ask something else
-    limit: Kaj does not answer for other teams' systems. When a question needs another source, it says
-      so and points there.
 ```
 
 ```block
@@ -239,6 +218,34 @@ data:
       href: '#'
     - label: Contact DBS
       href: '#'
+```
+
+```block
+type: DbsPortalCai
+data:
+  title: Kaj
+  exchange:
+    turns:
+    - who: them
+      text: What are the plans for the checkout?
+    - who: kaj
+      text: Checkout sits under Optimise. The sticky navigation winner moved checkout starts by 11% on
+        mobile product pages, and that pattern is rolling out to Riders templates next. Nothing else on
+        checkout is in the pipeline this month.
+      owner:
+        name: Sofia Marin
+        team: Optimise — the A/B testing programme in Kameleoon
+    - who: them
+      text: Does that hold outside EU?
+    - who: kaj
+      text: The 11% reading is EU only, measured 12 March against the same week last year. US has a separate
+        result on category pages, up 9% for tree care professionals. I do not have a PAC reading.
+    choices:
+    - Send this to Sofia
+    - See the release pipeline
+    - Ask something else
+    limit: Kaj does not answer for other teams' systems. When a question needs another source, it says
+      so and points there.
 ```
 
 

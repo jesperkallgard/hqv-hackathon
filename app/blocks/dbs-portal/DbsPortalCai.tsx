@@ -1,54 +1,66 @@
 /**
- * What happens after you ask — the room's own design for Kaj, shown rather
- * than described.
+ * Kaj, as a drawer over the page you were already reading.
  *
- * Two groups landed on the same shape in the last sprint: a vague question
- * goes in, the answer names the owner and the team rather than guessing, and
- * it ends with the next step instead of ending at a name. Three choices, not a
- * menu, and it says plainly when a question is not its to answer.
+ * Asking a question is not leaving the site, so it does not become a page. The
+ * drawer opens on `:target` — the field in the band links to it — which keeps
+ * the whole thing server-rendered and still lets a person open and close it.
+ *
+ * The exchange follows what two groups landed on in the last sprint: a vague
+ * question goes in, the answer names the owner and the team rather than
+ * guessing, and it ends with the next step instead of ending at a name.
  */
 import React from "react";
 
-export default function DbsPortalCai({ title, summary, exchange }) {
+export default function DbsPortalCai({ title, exchange }) {
   return (
-    <section id="kaj">
-      <div className="section-heading">
-        <div className="section-heading-copy">
-          <h2>{title}</h2>
-          <p className="section-summary">{summary}</p>
-        </div>
-      </div>
-
-      <div className="cai">
+    <aside className="cai-drawer" id="ask-kaj" aria-label={title}>
+      <a className="cai-scrim" href="#" aria-label="Close" />
+      <div className="cai-panel" role="dialog" aria-modal="false" aria-label={title}>
         <div className="cai-head">
           <span className="cai-dot" aria-hidden="true" />
-          <span className="cai-name">Kaj</span>
-          <span className="cai-state">{exchange.state}</span>
+          <span className="cai-name">{title}</span>
+          <a className="cai-close" href="#" aria-label="Close">
+            Close
+          </a>
         </div>
 
-        <p className="cai-ask">{exchange.question}</p>
+        <div className="cai-thread">
+          {exchange.turns.map((turn, index) =>
+            turn.who === "them" ? (
+              <p key={index} className="cai-bubble cai-bubble-them">
+                {turn.text}
+              </p>
+            ) : (
+              <div key={index} className="cai-bubble cai-bubble-kaj">
+                <p className="cai-line">{turn.text}</p>
+                {turn.owner ? (
+                  <div className="cai-owner">
+                    <span className="cai-owner-label">Owner</span>
+                    <span className="cai-owner-name">{turn.owner.name}</span>
+                    <span className="cai-owner-team">{turn.owner.team}</span>
+                  </div>
+                ) : null}
+              </div>
+            ),
+          )}
+        </div>
 
-        <div className="cai-reply">
-          <p className="cai-line">{exchange.answer}</p>
-
-          <div className="cai-owner">
-            <span className="cai-owner-label">Owner</span>
-            <span className="cai-owner-name">{exchange.owner.name}</span>
-            <span className="cai-owner-team">{exchange.owner.team}</span>
-          </div>
-
+        <div className="cai-foot">
           <p className="cai-next-label">What would you like to do?</p>
           <div className="cai-choices">
             {exchange.choices.map((choice, index) => (
-              <button key={choice} type="button" className={index === 0 ? "button button-primary" : "button button-secondary"}>
+              <button
+                key={choice}
+                type="button"
+                className={index === 0 ? "button button-primary" : "button button-secondary"}
+              >
                 {choice}
               </button>
             ))}
           </div>
-
           <p className="cai-limit">{exchange.limit}</p>
         </div>
       </div>
-    </section>
+    </aside>
   );
 }

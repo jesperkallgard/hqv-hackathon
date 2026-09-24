@@ -1740,6 +1740,16 @@
   width: 4.75rem;
 }
 
+/* The number never breaks. A percentage split across two lines pushed the mark
+   beside it out of line with the rest of the strip. */
+.canvas .kpi-value {
+  white-space: nowrap;
+}
+
+.canvas .kpi-slope {
+  width: 4.75rem;
+}
+
 /* Kaj, shown. A window rather than a card: the question sits where a person
    typed it, the answer below, and the three choices are the end of it. */
 .canvas .cai {
@@ -1834,6 +1844,380 @@
 
 .canvas .cai-limit {
   margin: var(--space-5) 0 0;
+  font-size: var(--text-xs);
+  color: var(--muted, inherit);
+}
+
+/* ==========================================================================
+   The other pages.
+
+   Variation is information: a reader who meets the same card four times
+   learns nothing from the shape of it. So each page states its content in the
+   form that content actually has — releases are time, areas are a hierarchy,
+   activities are two lists side by side, people are a grid of faces.
+   ========================================================================== */
+
+/* Releases: time, so a timeline. The same rail the start page's feed uses, so
+   the two read as the same idea rather than two designs. */
+.canvas .split-panel-timeline .panel {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.canvas .timeline-list {
+  position: relative;
+  padding-left: var(--space-6);
+  margin-top: var(--space-5);
+}
+
+.canvas .timeline-list::before {
+  content: "";
+  position: absolute;
+  left: 0.3125rem;
+  top: 0.9rem;
+  bottom: 0.9rem;
+  width: 0.0625rem;
+  background: var(--rule);
+}
+
+.canvas .timeline-item {
+  position: relative;
+  display: block;
+  padding-block: var(--space-5);
+  border-top: 0;
+}
+
+.canvas .timeline-item::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--space-6) * -1 + 0.0625rem);
+  top: calc(var(--space-5) + 0.5rem);
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 999px;
+  background: var(--paper);
+  border: 0.125rem solid var(--accent);
+}
+
+.canvas .timeline-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.4rem;
+  font-size: var(--text-xs);
+  font-weight: 650;
+  color: var(--accent);
+}
+
+.canvas .timeline-date svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+/* Areas: a hierarchy, not six boxes with boxes inside them. The area is a
+   heading with a rule under it and its posts hang below. */
+.canvas .area-grid {
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+.canvas .area-card {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  border-top: 0.125rem solid var(--heading-ink);
+  padding-top: var(--space-4);
+}
+
+.canvas .area-card h3 {
+  font-size: var(--text-xl);
+  letter-spacing: -0.015em;
+}
+
+.canvas .area-card .post-list {
+  margin-top: var(--space-4);
+}
+
+.canvas .area-card .post-item {
+  border-top: 0.0625rem solid var(--rule);
+  padding-block: var(--space-4);
+}
+
+/* Activities: two lists that belong side by side, so they stay side by side
+   and lose their panels. */
+.canvas .activity-grid .panel {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.canvas .activity-grid .panel-header h3 {
+  font-size: var(--text-lg);
+  padding-bottom: var(--space-3);
+  border-bottom: 0.125rem solid var(--heading-ink);
+}
+
+.canvas .list-row {
+  padding-block: var(--space-4);
+  border-bottom: 0.0625rem solid var(--rule);
+}
+
+/* Show and tell keeps its cards: it is the one place on the site where the
+   content is a set of similar things you pick between. */
+.canvas .show-card {
+  border-radius: 0.75rem;
+}
+
+.canvas .show-date {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+  font-size: var(--text-xs);
+  font-weight: 650;
+}
+
+/* The status belongs to the item, so it sits beside the title rather than
+   drifting to the far edge of a column it has nothing to do with. */
+.canvas .timeline-body .post-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.canvas .timeline-body .post-title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--heading-ink);
+}
+
+/* Areas, as an editorial spread.
+
+   A full-width column of prose under a heading is a document. Put the area in
+   a narrow left column and its posts in a wider right one, and the page states
+   its own hierarchy: this is the area, these are the things in it. It also
+   gives the site a third shape — the band is one, the timeline is two, this is
+   three — so the pages stop looking like the same page with other words. */
+.canvas .area-card {
+  display: grid;
+  grid-template-columns: 17rem minmax(0, 1fr);
+  gap: var(--space-4) var(--space-8);
+  align-items: start;
+  border-top-width: 0.0625rem;
+  padding-top: var(--space-5);
+}
+
+.canvas .area-card-header {
+  display: block;
+  position: sticky;
+  top: var(--space-5);
+}
+
+.canvas .area-card h3 {
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-xl);
+}
+
+.canvas .area-card-copy p {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--muted, inherit);
+}
+
+.canvas .area-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: var(--space-4);
+}
+
+.canvas .area-card .post-list {
+  margin-top: 0;
+}
+
+.canvas .area-card .post-item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+/* The status sits with the headline it describes. */
+.canvas .area-card .post-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.canvas .area-card .post-body {
+  max-width: 62ch;
+}
+
+@media (max-width: 56rem) {
+  .canvas .area-card {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .canvas .area-card-header {
+    position: static;
+  }
+}
+
+/* ---- Kaj, as a drawer.
+
+   Closed by default and opened by the field in the band linking to it, so the
+   whole thing is a link and a stylesheet — no script, and the page behind it
+   never goes away. */
+.canvas .cai-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: none;
+}
+
+.canvas .cai-drawer:target {
+  display: block;
+}
+
+.canvas .cai-scrim {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--heading-ink) 45%, transparent);
+}
+
+.canvas .cai-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(30rem, 100%);
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  box-shadow: -1rem 0 3rem rgb(0 0 0 / 12%);
+}
+
+.canvas .cai-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 0.0625rem solid var(--rule);
+}
+
+.canvas .cai-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.canvas .cai-name {
+  font-weight: 700;
+  color: var(--heading-ink);
+}
+
+.canvas .cai-close {
+  margin-left: auto;
+  font-size: var(--text-sm);
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 0.125rem solid transparent;
+}
+
+.canvas .cai-close:hover {
+  border-bottom-color: var(--accent);
+}
+
+.canvas .cai-thread {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: var(--space-5);
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+}
+
+.canvas .cai-bubble {
+  margin: 0;
+  padding: var(--space-4);
+  border-radius: 1rem;
+  max-width: 24rem;
+}
+
+.canvas .cai-bubble-them {
+  justify-self: end;
+  background: var(--heading-ink);
+  color: var(--paper);
+  border-bottom-right-radius: 0.25rem;
+}
+
+.canvas .cai-bubble-kaj {
+  justify-self: start;
+  background: var(--panel, var(--surface));
+  border-bottom-left-radius: 0.25rem;
+}
+
+.canvas .cai-bubble-kaj .cai-line {
+  margin: 0;
+}
+
+.canvas .cai-owner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem var(--space-3);
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 0.0625rem solid var(--rule);
+}
+
+.canvas .cai-owner-label {
+  width: 100%;
+  font-size: var(--text-xs);
+  color: var(--muted, inherit);
+}
+
+.canvas .cai-owner-name {
+  font-weight: 700;
+  color: var(--heading-ink);
+}
+
+.canvas .cai-owner-team {
+  font-size: var(--text-sm);
+  color: var(--muted, inherit);
+}
+
+.canvas .cai-foot {
+  border-top: 0.0625rem solid var(--rule);
+  padding: var(--space-4) var(--space-5) var(--space-5);
+}
+
+.canvas .cai-next-label {
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--muted, inherit);
+}
+
+.canvas .cai-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.canvas .cai-choices .button {
+  font-size: var(--text-sm);
+}
+
+.canvas .cai-limit {
+  margin: var(--space-4) 0 0;
   font-size: var(--text-xs);
   color: var(--muted, inherit);
 }
