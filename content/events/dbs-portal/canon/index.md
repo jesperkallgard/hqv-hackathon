@@ -333,6 +333,7 @@ data:
     tags:
     - Weekly
     - 'Owner: Elsa Ranger'
+    items: []
   - name: Statistics and ticket status
     purpose: A statistics area with a ticket status follower, so people can check numbers and track follow-up
       work.
@@ -342,6 +343,7 @@ data:
     - Statistics
     - Weekly
     - 'Owner: Tomas Ek'
+    items: []
   - name: Design wall
     purpose: A wall where people can heart concepts and add ideas, so design thinking collects feedback
       in one place.
@@ -351,6 +353,7 @@ data:
     - Design
     - As needed
     - 'Owner: Vera Lund'
+    items: []
 ```
 
 ```block
