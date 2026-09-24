@@ -1,23 +1,48 @@
 ---
-title: "Add visual, interactive, and personalised areas to the start page"
-ingress: "The start page becomes more alive and more useful by mixing visual content, a heart-and-contribute area, and role-based views with real updates and context."
+title: "A content library with guides, playbooks, and live updates"
+ingress: "A named content hub for people who create for the site, where each workstream shows what it owns, who keeps it current, and what happens after you ask for help. It mixes clear cards, guides, and live examples so the page is useful and easy to scan."
 points:
-  - "It shows images, graphs, sketches, and other visual examples so the page is not just text."
-  - "It adds a place where people can heart design concepts and contribute ideas."
-  - "It includes recently rolled out initiatives with a short comment from Hilda, Olivia, or Niklas."
-  - "It can be personalised based on role so people only see the areas they care about."
-  - "It can include AI chat to explain status, prioritisation, and why things were prioritised or down prioritised."
+  - "It lists content by workstream: explore, optimise, and scale."
+  - "Each content type says what it is for and who keeps it up to date."
+  - "It includes step-by-step guides for anyone creating content for the site."
+  - "It explains the explore process and what happens after a request goes to the team."
+  - "It keeps the start page visual and card-led, with examples, playbooks, and status that can be scanned fast."
 cycle: 3
 pair: "amanda"
-authors: ["Niklas", "Katja", "Amanda", "Andreas"]
+authors: ["Amanda"]
 ---
 
-The start page becomes more alive and more useful by mixing visual content, a heart-and-contribute area, and role-based views with real updates and context.
+A named content hub for people who create for the site, where each workstream shows what it owns, who keeps it current, and what happens after you ask for help. It mixes clear cards, guides, and live examples so the page is useful and easy to scan.
 
-- It shows images, graphs, sketches, and other visual examples so the page is not just text.
-- It adds a place where people can heart design concepts and contribute ideas.
-- It includes recently rolled out initiatives with a short comment from Hilda, Olivia, or Niklas.
-- It can be personalised based on role so people only see the areas they care about.
-- It can include AI chat to explain status, prioritisation, and why things were prioritised or down prioritised.
+- It lists content by workstream: explore, optimise, and scale.
+- Each content type says what it is for and who keeps it up to date.
+- It includes step-by-step guides for anyone creating content for the site.
+- It explains the explore process and what happens after a request goes to the team.
+- It keeps the start page visual and card-led, with examples, playbooks, and status that can be scanned fast.
 
-Build on the DBS start page. Keep the site feeling like a real internal website, not a document. The new direction is a more interesting, alive, and dynamic UI with more than text: analytics, graphs, sketches, and visual examples belong on the page. Add a heart-and-contribute area for design concepts. Include real content examples such as recently rolled out initiatives with short comments from Hilda, Olivia, or Niklas. Allow the start page to be personalised by role. AI chat for status and prioritisation is in scope as a possible content area. A logo for the platform is requested. The page still needs to fit the existing start-page structure and stay based on real content, not placeholders.
+## What the content page carries
+- A named list of the content the site carries.
+- Three workstreams must be shown: Explore, Optimise, Scale.
+- Each workstream should have at least one example of the content it owns.
+- The page should explain what each kind of content is for.
+- The page should say who keeps each kind of content up to date.
+
+## Guide content
+- Step-by-step guides for everyone who creates content for the site.
+- A clear explanation of how the explore process works.
+- Explain what happens after someone requests something from the team.
+- Include playbooks where they help, especially for SEO and marketing automation.
+- Keep the tone practical and plain, not marketing copy.
+
+## Visual and interaction direction
+- Use cards that feel like the cards on husqvarna.com/uk/chainsaws/.
+- Take inspiration from the feel of husqvarna.com/se/.
+- Add visual content, not just text.
+- The page should feel alive and useful, not static.
+- Keep room for a heart-and-contribute area, role-based views, and AI chat if they belong on the page.
+
+## Scope
+- Keep the page as one clear start page, not a wiki.
+- No placeholder-only sections.
+- If a content type does not yet exist, say that plainly instead of inventing it.
+- Do not spread this into separate products or flows.
